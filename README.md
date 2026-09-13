@@ -1,13 +1,14 @@
 # SetTime
 
-**AI + AR Construction Execution Platform for Structural Rebar**
+**AI Rebar Estimation Automation, Shipping Today — AR + AI Verification On the Roadmap**
 
 SetTime treats the structural drawing as the single source of truth for a
-construction site: it automatically parses drawings into rebar bar-schedules
-and cut-lists, drives fabrication directly, overlays AR guidance so field
-crews place rebar to spec, and uses computer vision to verify as-built
-against as-designed before the pour — producing an auditable record for
-review by government inspectors and general contractors.
+construction site. Shipping today: it automatically parses drawings into
+rebar shop drawings and a material-list workbook, ready for fabrication. In
+development on the same roadmap: AR guidance so field crews place rebar to
+spec, and computer vision that verifies as-built against as-designed before
+the pour, producing an auditable record for review by government inspectors
+and general contractors.
 
 Built by [Kairos.ai](https://www.kairosaitech.com/?lang=zh-TW) for Taiwan's
 construction market (營造/鋼筋施工).
@@ -23,7 +24,7 @@ Structural drawing (single source of truth)
 AI drawing parsing ──► bar schedule / cut list / bend list
         │
         ▼
-Fabrication ──► QR-tagged rebar, delivered by pour zone
+Fabrication ──► shop drawings + material list (QR-tagging and pour-zone delivery: in development)
         │
         ▼
 AR-guided field placement ──► 3D overlay on formwork (green = correct, red = deviation)
@@ -41,8 +42,8 @@ Tamper-evident audit trail ──► hash-chained, timestamped, exportable recor
 cross-platform desktop app (Avalonia) that converts structural drawings
 directly into shop drawings and a material-list workbook (`.xlsm`), importing
 natively into a fabricator's existing macro tooling (GTA/CCM). Beam/column
-recognition ≥ 90%, with a tunable Style Guide rules engine for firm-specific
-drafting conventions.
+recognition meets contract acceptance thresholds, with a tunable Style Guide
+rules engine for firm-specific drafting conventions.
 
 ## In Development
 
@@ -71,19 +72,21 @@ developers/owners and investors evaluating the platform.
 
 | Current method | Upside | Gap | SetTime |
 |---|---|---|---|
-| Manual 2D drawing reading | Familiar workflow | Easy to misread, no field verification | Automated parsing + AR alignment |
-| BIM viewers (Navisworks) | 3D visualization | Office tool, no field guidance | Brings AR into the field |
-| Manual site inspection | Experience-based judgment | Limited sampling, caught after the pour | 100% continuous verification |
+| Manual 2D drawing reading | Familiar workflow | Easy to misread, no field verification | Automated parsing + AR alignment (in development) |
+| BIM viewers (Navisworks) | 3D visualization | Office tool, no field guidance | Brings AR into the field (in development) |
+| Manual site inspection | Experience-based judgment | Limited sampling, caught after the pour | Continuous AI verification (in development) |
 | Manual estimation | Matches existing process | Slow, error-prone, version drift | Drawing-to-estimate in seconds |
 
 ## Moats
 
 - **As-built database** — every job site adds as-built data; the model
-  improves with use, building a Taiwan-specific data advantage.
-- **Local CV model** — trained on real Taiwanese job-site footage, tuned to
-  domestic rebar specs and field practice.
+  (in development) improves with use, building a Taiwan-specific data
+  advantage.
+- **Local CV model** (in development) — trained on real Taiwanese job-site
+  footage, tuned to domestic rebar specs and field practice.
 - **Public-works relationships** — built to support public-project audit
-  review, with a hand in shaping smart-construction as-built standards.
+  review (in development), with a hand in shaping smart-construction as-built
+  standards.
 - **Fabricator/contractor network** — an in-house shop-drawing automation
   engine that plugs directly into the existing fabricator and contractor
   supply chain.
@@ -139,7 +142,7 @@ building AI systems from 0 to 1.
 We welcome contractors, fabricators, structural engineers, developers,
 government agencies, and investors interested in SetTime to get in touch.
 
-- Free pilot program: apply via the [product page](https://itech.kairosaitech.com/#pilot)
+- Free pilot program: apply via the [product page](https://settime.kairosaitech.com/#pilot)
   with company name, email, and construction type.
 - Email: kairos.ai.tech@gmail.com
 - Website: [Kairos.ai](https://www.kairosaitech.com/?lang=zh-TW)

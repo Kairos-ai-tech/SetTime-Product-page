@@ -42,11 +42,13 @@
 //    custom property, including the inline-SVG color tokens that have no
 //    other runtime signal when broken (they just silently fall back to
 //    the CSS-wide initial value).
-// 9. index.html's <link rel="alternate" hreflang="..."> tags and the
-//    JSON-LD @graph's WebSite.inLanguage array must both list exactly
-//    translations' locales (run through toHtmlLang(), same as
-//    document.documentElement.lang) — two more hand-maintained locale
-//    lists (SEO/hreflang, structured data) nothing else kept in sync.
+// 9. index.html's <link rel="alternate" hreflang="..."> tags must be just
+//    DEFAULT_LANG + x-default (the page is one URL with client-side
+//    language switching, not real per-language documents, so hreflang only
+//    self-references it). The JSON-LD @graph's WebSite.inLanguage array
+//    still must list exactly translations' locales (run through
+//    toHtmlLang(), same as document.documentElement.lang) — a hand-
+//    maintained locale list (structured data) nothing else keeps in sync.
 // 10. i18n.js's hero.subtitle-en key must be byte-identical across every
 //     locale — it's documented as a persistent tagline, not a per-locale
 //     gloss, and nothing previously enforced that invariant.
@@ -254,6 +256,13 @@ if (undefinedProps.length) {
 // --- 9. hreflang <link> tags and JSON-LD inLanguage match translations ---
 const expectedHtmlLangs = locales.map((l) => sandbox.toHtmlLang(l));
 
+// The page is a single URL with client-side JS language switching, not
+// separate per-language documents — so hreflang only self-references the
+// one real document (zh-Hant, the DEFAULT_LANG) plus x-default, rather than
+// one entry per UI locale pointing at the same URL (which Google can't
+// verify as distinct language versions and may ignore the whole set).
+const expectedHreflangs = [sandbox.toHtmlLang(sandbox.DEFAULT_LANG)];
+
 // Attribute order within the tag isn't fixed by HTML, so match the whole
 // <link> tag first and require rel="alternate" and hreflang="..." to both
 // appear somewhere inside it, rather than anchoring on which comes first.
@@ -264,7 +273,7 @@ const hreflangs = [...html.matchAll(/<link\b[^>]*>/g)]
   .filter(Boolean)
   .map((mm) => mm[1])
   .filter((h) => h !== "x-default");
-diffSets("index.html's hreflang tags", hreflangs, expectedHtmlLangs);
+diffSets("index.html's hreflang tags", hreflangs, expectedHreflangs);
 
 const jsonLdMatch = html.match(/"inLanguage":\s*(\[[^\]]*\])/);
 if (jsonLdMatch) {
@@ -282,6 +291,51 @@ const heroSubtitleEnValues = new Set(locales.map((l) => translations[l]["hero.su
 if (heroSubtitleEnValues.size > 1) {
   failed = true;
   console.error(`hero.subtitle-en differs across locales (should be identical everywhere): ${[...heroSubtitleEnValues].map((v) => JSON.stringify(v)).join(" vs ")}`);
+}
+
+// --- 11. index.html's static data-i18n fallback text matches translations[DEFAULT_LANG] ---
+// setLanguage() only overwrites an element's content once DOMContentLoaded
+// fires (or once a user picks a non-default language), so index.html's own
+// hardcoded markup IS the DEFAULT_LANG content for a no-JS client, most
+// non-JS-executing crawlers, and the flash-of-content before JS runs. A
+// content rewrite that only touched translations[DEFAULT_LANG] and forgot
+// the matching HTML would leave the real page showing stale text while this
+// script's other checks (which only look at key names, not content) still
+// pass — this check closes that gap for the common case: a leaf element
+// (no nested tags besides <br>, used for the handful of two-line headings)
+// whose data-i18n value is a plain string or array. Elements with richer
+// nested markup are skipped rather than risking a false positive from a
+// naive regex tag-matcher.
+const dataI18nTagPattern = /<([a-z0-9]+)([^>]*?)\sdata-i18n="([^"]+)"([^>]*)>([^<]*(?:<br\s*\/?>[^<]*)*)<\/\1>/gi;
+// The regex reads raw markup, so a literal &, <, > in the fallback text
+// necessarily appears entity-escaped in index.html even though
+// translations holds the plain character — decode the handful of entities
+// actually used on this page before comparing, not a full HTML-entity table.
+// &amp; must decode LAST — decoding it first would turn a literal "&amp;lt;"
+// (the escaped form of the visible text "&lt;") into "&lt;" and then, on the
+// next replace, into "<" — silently corrupting doubly-escaped text instead
+// of leaving it alone.
+const decodeEntities = (s) => s.replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/&amp;/g, "&");
+let dm;
+while ((dm = dataI18nTagPattern.exec(html))) {
+  const key = dm[3];
+  const rawContent = dm[5];
+  const expected = baseLocale[key];
+  if (expected === undefined) continue; // already reported by part 2
+  const actualLines = rawContent.split(/<br\s*\/?>/i).map((s) => decodeEntities(s.trim()));
+  if (Array.isArray(expected)) {
+    const expectedLines = expected.map((s) => s.trim());
+    if (actualLines.join("\n") !== expectedLines.join("\n")) {
+      failed = true;
+      console.error(`index.html's static content for data-i18n="${key}" is ${JSON.stringify(actualLines)} but translations["${sandbox.DEFAULT_LANG}"]["${key}"] is ${JSON.stringify(expected)}`);
+    }
+  } else if (typeof expected === "string") {
+    if (actualLines.length > 1) continue; // a <br> where a plain string was expected — shape mismatch, not this check's job
+    if (actualLines[0] !== expected.trim()) {
+      failed = true;
+      console.error(`index.html's static content for data-i18n="${key}" is ${JSON.stringify(actualLines[0])} but translations["${sandbox.DEFAULT_LANG}"]["${key}"] is ${JSON.stringify(expected)}`);
+    }
+  }
 }
 
 if (failed) {

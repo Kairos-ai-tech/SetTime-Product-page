@@ -737,6 +737,20 @@ html.no-3d {
   line-height: 1.5;
 }
 
+.crisis-source {
+  margin-top: 10px;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  opacity: 0.75;
+}
+
+.loss-source {
+  text-align: center;
+  margin-top: 20px;
+  color: var(--cream);
+  opacity: 0.55;
+}
+
 .crisis-quote {
   border-left: 2px solid var(--gold);
   padding: 18px 22px;
@@ -928,6 +942,29 @@ html.no-3d {
   letter-spacing: 0.04em;
   text-transform: uppercase;
   font-weight: 500;
+}
+
+.panel-status {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  padding: 3px 10px;
+  border-radius: 999px;
+  border: 1px solid;
+  margin: 0 0 16px;
+}
+
+.panel-status.live {
+  background: rgba(21, 128, 61, 0.07);
+  border-color: rgba(21, 128, 61, 0.2);
+  color: var(--accent-green);
+}
+
+.panel-status.dev {
+  background: rgba(221, 142, 31, 0.08);
+  border-color: rgba(221, 142, 31, 0.25);
+  color: var(--gold);
 }
 
 .tech-panel-content > p:not(.tech-en) {
@@ -1439,6 +1476,12 @@ html.no-3d {
 .faq {
   padding: clamp(80px, 12vh, 140px) 0;
   background: var(--cream);
+}
+
+.faq-updated {
+  margin-top: 8px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
 }
 
 .faq-list {

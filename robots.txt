@@ -51,7 +51,7 @@ Allow: /
 User-agent: CCBot
 Allow: /
 
-Sitemap: https://itech.kairosaitech.com/sitemap.xml
+Sitemap: https://settime.kairosaitech.com/sitemap.xml
 
 # llms.txt: machine-readable product summary for AI answer engines (AEO/GEO)
-# https://itech.kairosaitech.com/llms.txt
+# https://settime.kairosaitech.com/llms.txt

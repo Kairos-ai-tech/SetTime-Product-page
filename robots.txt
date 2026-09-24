@@ -51,6 +51,15 @@ Allow: /
 User-agent: CCBot
 Allow: /
 
+User-agent: Amazonbot
+Allow: /
+
+User-agent: DuckAssistBot
+Allow: /
+
+User-agent: MistralAI-User
+Allow: /
+
 Sitemap: https://settime.kairosaitech.com/sitemap.xml
 
 # llms.txt: machine-readable product summary for AI answer engines (AEO/GEO)

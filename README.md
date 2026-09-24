@@ -10,7 +10,7 @@ spec, and computer vision that verifies as-built against as-designed before
 the pour, producing an auditable record for review by government inspectors
 and general contractors.
 
-Built by [Kairos.ai](https://www.kairosaitech.com/?lang=zh-TW) for Taiwan's
+Built by [Kairos.ai](https://www.kairosaitech.com) for Taiwan's
 construction market (營造/鋼筋施工).
 
 ---
@@ -145,4 +145,4 @@ government agencies, and investors interested in SetTime to get in touch.
 - Free pilot program: apply via the [product page](https://settime.kairosaitech.com/#pilot)
   with company name, email, and construction type.
 - Email: kairos.ai.tech@gmail.com
-- Website: [Kairos.ai](https://www.kairosaitech.com/?lang=zh-TW)
+- Website: [Kairos.ai](https://www.kairosaitech.com)

@@ -3,9 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="SetTime 鋼筋估算自動化已上線：結構施工圖轉加工圖與計料表（.xlsm），支援 AutoCAD 2021 外掛與桌面版。AR 現場指導與 AI 竣工驗證開發中。申請免費試點。">
-  <meta name="keywords" content="SetTime, SetTime 鋼筋施工, SetTime 鋼筋估算自動化, 鋼筋估算軟體, AI 鋼筋估算, 鋼筋施工, AR 營造, 智慧工地, 鋼筋自動化, 施工圖自動解析, 竣工驗證, 稽核鏈, 法遵, SetTime construction platform, SetTime rebar automation, construction execution, rebar verification, AR construction, smart construction, as-built, audit trail, compliance">
-  <meta property="og:title" content="SetTime | AI Rebar Estimation, Shipping Today">
+  <meta name="description" content="SetTime 鋼筋估算自動化已上線：結構施工圖轉加工圖與計料表（.xlsm），支援 AutoCAD 2021 外掛與桌面版。AR 現場指導與 AI 竣工驗證開發中。由 Kairos.ai 開發，申請免費試點。">
+  <meta name="keywords" content="SetTime, SetTime 鋼筋, SetTime 鋼筋估算自動化, Kairos.ai, 鋼筋估算軟體, 鋼筋計料, 鋼筋加工圖, 鋼筋計料表, AI 鋼筋估算, 鋼筋施工, AR 營造, 智慧工地, 鋼筋自動化, 施工圖自動解析, 竣工驗證, 稽核鏈, SetTime rebar estimation software, rebar takeoff automation, rebar shop drawings, bar bending schedule, AutoCAD rebar plugin, construction execution, rebar verification, AR construction, as-built verification, audit trail">
+  <meta name="author" content="Kairos.ai">
+  <meta name="application-name" content="SetTime">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="theme-color" content="#FBFAF7">
+  <meta property="og:site_name" content="SetTime by Kairos.ai">
+  <meta property="og:title" content="SetTime｜AI 鋼筋估算自動化 — Rebar Estimation Software by Kairos.ai">
   <meta property="og:description" content="結構施工圖轉加工圖與計料表（.xlsm），AutoCAD 2021 外掛與桌面版已上線。AR 現場指導與 AI 竣工驗證開發中。Shipping: estimation automation. In development: AR guidance and AI verification.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://settime.kairosaitech.com/">
@@ -14,15 +19,20 @@
   <meta property="og:image" content="https://settime.kairosaitech.com/assets/settime-og-card.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="SetTime logo — AI rebar estimation automation by Kairos.ai">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="SetTime | AI Rebar Estimation, Shipping Today">
+  <meta name="twitter:title" content="SetTime｜AI 鋼筋估算自動化 — Rebar Estimation Software by Kairos.ai">
   <meta name="twitter:description" content="結構施工圖轉加工圖與計料表（.xlsm），AutoCAD 2021 外掛與桌面版已上線。AR 現場指導與 AI 竣工驗證開發中。Shipping: estimation automation. In development: AR guidance and AI verification.">
   <meta name="twitter:image" content="https://settime.kairosaitech.com/assets/settime-og-card.jpg">
+  <meta name="twitter:image:alt" content="SetTime logo — AI rebar estimation automation by Kairos.ai">
   <link rel="canonical" href="https://settime.kairosaitech.com/">
   <link rel="alternate" hreflang="zh-Hant" href="https://settime.kairosaitech.com/">
   <link rel="alternate" hreflang="x-default" href="https://settime.kairosaitech.com/">
+  <!-- Machine-readable product summary for AI answer engines / LLM crawlers. -->
+  <link rel="alternate" type="text/plain" href="https://settime.kairosaitech.com/llms.txt" title="SetTime llms.txt">
   <link rel="icon" type="image/png" href="assets/settime-favicon.png">
-  <title>SetTime | AI Rebar Estimation, Shipping Today</title>
+  <link rel="apple-touch-icon" href="assets/settime-favicon.png">
+  <title>SetTime｜AI 鋼筋估算自動化軟體 — 施工圖轉加工圖與計料表 | Kairos.ai</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@600;700&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
@@ -37,38 +47,92 @@
     "@graph": [
       {
         "@type": "Organization",
-        "@id": "https://settime.kairosaitech.com/#organization",
+        "@id": "https://www.kairosaitech.com/#organization",
+        "name": "Kairos.ai",
+        "url": "https://www.kairosaitech.com",
+        "email": "kairos.ai.tech@gmail.com",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "sales",
+          "email": "kairos.ai.tech@gmail.com",
+          "areaServed": "TW",
+          "availableLanguage": ["zh-Hant", "en"]
+        },
+        "brand": { "@id": "https://settime.kairosaitech.com/#brand" },
+        "owns": { "@id": "https://settime.kairosaitech.com/#software" }
+      },
+      {
+        "@type": "Brand",
+        "@id": "https://settime.kairosaitech.com/#brand",
         "name": "SetTime",
         "url": "https://settime.kairosaitech.com/",
         "logo": "https://settime.kairosaitech.com/assets/settime-logo-og.png",
-        "email": "kairos.ai.tech@gmail.com",
-        "description": "Rebar estimation automation for structural construction, shipping today: automated drawing parsing to shop drawings and material lists. AR field guidance and computer-vision as-built verification are in development on the same product roadmap.",
-        "parentOrganization": {
-          "@type": "Organization",
-          "name": "Kairos.ai",
-          "url": "https://www.kairosaitech.com/?lang=zh-TW"
-        }
+        "slogan": "SetTime — 凝固之前，一次到位"
       },
       {
         "@type": "WebSite",
         "@id": "https://settime.kairosaitech.com/#website",
         "url": "https://settime.kairosaitech.com/",
         "name": "SetTime",
+        "alternateName": "SetTime by Kairos.ai",
         "inLanguage": ["zh-Hant", "en", "ja", "es", "fr", "de", "it", "pt"],
-        "publisher": { "@id": "https://settime.kairosaitech.com/#organization" }
+        "publisher": { "@id": "https://www.kairosaitech.com/#organization" }
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://settime.kairosaitech.com/#webpage",
+        "url": "https://settime.kairosaitech.com/",
+        "name": "SetTime｜AI 鋼筋估算自動化軟體 — 施工圖轉加工圖與計料表",
+        "description": "SetTime 鋼筋估算自動化已上線：結構施工圖轉加工圖與計料表（.xlsm），支援 AutoCAD 2021 外掛與桌面版。AR 現場指導與 AI 竣工驗證開發中。",
+        "inLanguage": "zh-Hant",
+        "dateModified": "2026-09-24",
+        "isPartOf": { "@id": "https://settime.kairosaitech.com/#website" },
+        "about": { "@id": "https://settime.kairosaitech.com/#software" },
+        "mainEntity": { "@id": "https://settime.kairosaitech.com/#software" },
+        "publisher": { "@id": "https://www.kairosaitech.com/#organization" },
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          "url": "https://settime.kairosaitech.com/assets/settime-og-card.jpg",
+          "width": 1200,
+          "height": 630
+        }
       },
       {
         "@type": "SoftwareApplication",
-        "name": "SetTime Rebar Estimation Automation System",
+        "@id": "https://settime.kairosaitech.com/#software",
+        "name": "SetTime",
+        "alternateName": ["SetTime Rebar Estimation Automation System", "SetTime 鋼筋估算自動化系統"],
         "applicationCategory": "BusinessApplication",
-        "operatingSystem": "Windows, AutoCAD 2021",
-        "url": "https://settime.kairosaitech.com/#product",
-        "description": "AutoCAD 2021 plugin plus a cross-platform desktop app that converts structural drawings directly into shop drawings and a material-list workbook (.xlsm), importing natively into a fabricator's existing macro tooling.",
-        "provider": { "@id": "https://settime.kairosaitech.com/#organization" }
+        "applicationSubCategory": "Construction rebar estimation and shop-drawing automation",
+        "operatingSystem": "Windows (AutoCAD 2021 plugin); cross-platform desktop app",
+        "softwareRequirements": "AutoCAD 2021 (for the plugin)",
+        "url": "https://settime.kairosaitech.com/",
+        "image": "https://settime.kairosaitech.com/assets/settime-og-card.jpg",
+        "description": "SetTime is Kairos.ai's rebar estimation automation software, shipping today: an AutoCAD 2021 plugin plus a cross-platform desktop app that converts structural drawings directly into shop drawings and a material-list workbook (.xlsm), importing natively into a fabricator's existing macro tooling. AR field guidance and computer-vision as-built verification are in development on the same product roadmap.",
+        "featureList": [
+          "Structural drawing recognition (beams and columns)",
+          "Automatic rebar shop-drawing generation",
+          "Material-list / cut-list export to .xlsm for existing fabricator macro tooling",
+          "Workflow and quality-control tracking",
+          "In development: AR field guidance for rebar placement",
+          "In development: AI as-built vs. as-designed verification",
+          "In development: SHA-256 hash-chained audit trail"
+        ],
+        "audience": {
+          "@type": "BusinessAudience",
+          "audienceType": "Construction companies, rebar fabricators, structural engineering firms, public agencies"
+        },
+        "areaServed": "TW",
+        "inLanguage": ["zh-Hant", "en", "ja", "es", "fr", "de", "it", "pt"],
+        "brand": { "@id": "https://settime.kairosaitech.com/#brand" },
+        "publisher": { "@id": "https://www.kairosaitech.com/#organization" },
+        "author": { "@id": "https://www.kairosaitech.com/#organization" }
       },
       {
         "@type": "FAQPage",
         "@id": "https://settime.kairosaitech.com/#faq",
+        "isPartOf": { "@id": "https://settime.kairosaitech.com/#webpage" },
+        "inLanguage": "zh-Hant",
         "mainEntity": [
           {
             "@type": "Question",
@@ -132,7 +196,7 @@
 
   <nav class="navbar" id="navbar">
     <div class="nav-container">
-      <a href="https://www.kairosaitech.com/?lang=zh-TW" class="nav-logo" target="_blank" rel="noopener">
+      <a href="https://www.kairosaitech.com" class="nav-logo" target="_blank" rel="noopener">
         <img class="logo-mark" src="assets/settime-logo-64.jpg" alt="" width="32" height="32">
         <span class="logo-text">SetTime</span>
       </a>
@@ -220,7 +284,7 @@
   <section class="problem" id="problem">
     <div class="problem-visual">
       <!-- TODO: replace with branded rebar / construction site image (steel reinforcement close-up preferred) -->
-      <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=960&q=80" alt="Construction site" data-i18n-alt="alt.problem" class="problem-img fade-in">
+      <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=960&q=80" alt="Construction site" data-i18n-alt="alt.problem" class="problem-img fade-in" loading="lazy" decoding="async">
     </div>
     <div class="problem-content">
       <p class="section-label fade-in" data-i18n="problem.label">THE CRISIS 產業缺口</p>
@@ -872,10 +936,10 @@
     <div class="container footer-inner">
       <div class="footer-brand">
         <img class="logo-mark" src="assets/settime-logo-64.jpg" alt="SetTime" width="32" height="32">
-        <a href="https://www.kairosaitech.com/?lang=zh-TW" target="_blank" rel="noopener" data-i18n="footer.company">Kairos.ai</a>
+        <a href="https://www.kairosaitech.com" target="_blank" rel="noopener" data-i18n="footer.company">Kairos.ai</a>
       </div>
       <div class="footer-contact">
-        <a href="https://www.kairosaitech.com/?lang=zh-TW" target="_blank" rel="noopener" class="footer-link">
+        <a href="https://www.kairosaitech.com" target="_blank" rel="noopener" class="footer-link">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
           <span>www.kairosaitech.com</span>
         </a>

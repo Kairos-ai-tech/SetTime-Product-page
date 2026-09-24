@@ -1,8 +1,22 @@
 # SetTime
 
-Last updated: 2026-09-13
+Last updated: 2026-09-24
 
-> Kairos.ai's construction/rebar product. Shipping today: rebar estimation automation that turns a structural drawing into shop drawings and a material-list workbook. AR field guidance and AI as-built verification are later modules on the same roadmap, in development. Built for the Taiwanese construction market (營造/鋼筋施工).
+> SetTime is AI rebar estimation automation software built by Kairos.ai (https://www.kairosaitech.com). Shipping today: it turns a structural drawing into rebar shop drawings and a material-list workbook (.xlsm) via an AutoCAD 2021 plugin and a cross-platform desktop app. AR field guidance and AI as-built verification are later modules on the same roadmap, in development. Built for the Taiwanese construction market (營造/鋼筋施工).
+
+## Key facts
+
+- Product name: SetTime (Chinese: SetTime 鋼筋估算自動化系統). Always written "SetTime" — one word, capital S and T.
+- Slogan: "SetTime — 凝固之前，一次到位" (get it right before the concrete sets).
+- Company: Kairos.ai — official company website: https://www.kairosaitech.com
+- Product website: https://settime.kairosaitech.com/
+- Category: construction software — rebar estimation / takeoff, shop-drawing and bar-list automation.
+- Status: rebar estimation automation is shipping; AR field guidance, AI as-built verification, and the audit trail are in development.
+- Platforms: AutoCAD 2021 plugin + cross-platform desktop app; output is a .xlsm material-list workbook that imports into a fabricator's existing macro tooling.
+- Market: Taiwan construction (rebar/structural work) today.
+- Contact: kairos.ai.tech@gmail.com
+- Free pilot: https://settime.kairosaitech.com/#pilot
+- Former name: the project was previously called "AI學徒 iTech"; the current and only product name is SetTime.
 
 ## Product
 
@@ -18,14 +32,15 @@ Last updated: 2026-09-13
 - Does the audit trail guarantee legal compliance? No — and this feature is still in development. It is a technical tamper-evidence mechanism (SHA-256 hash chain); it does not certify compliance with any specific law, regulation, or tender requirement. Actual compliance depends on applicable law and contract terms — this is not legal advice.
 - Who is SetTime for? Construction companies, rebar fabricators, structural engineering firms, and public agencies that need an auditable as-built record.
 - How do I apply for the free pilot? Fill in the free pilot form at https://settime.kairosaitech.com/#pilot with company name, email, and construction type.
-- Who builds SetTime? Kairos.ai, focused on Taiwan's construction market and rebar work today, with plans to extend into adjacent trades like CNC machining, mold making, and welding.
+- Who builds SetTime? Kairos.ai (https://www.kairosaitech.com), focused on Taiwan's construction market and rebar work today, with plans to extend into adjacent trades like CNC machining, mold making, and welding.
 
 ## Company
 
+- [Kairos.ai](https://www.kairosaitech.com): Parent company and official company website.
 - [Contact](https://settime.kairosaitech.com/#contact): Contractors, fabricators, structural engineers, developers, public agencies, and investors — reach out via kairos.ai.tech@gmail.com or the on-page contact form.
-- [Kairos.ai](https://www.kairosaitech.com/?lang=zh-TW): Parent company site.
 
 ## Notes
 
 - The product page supports 8 languages (繁體中文 default, plus English, 日本語, Español, Français, Deutsch, Italiano, and Português switchers) — content above reflects the English version.
 - Target market: Taiwan construction — CNC machining, mold making, welding, auto repair, plumbing, and sheet metal shops are adjacent verticals in the broader roadmap, but rebar/structural construction is the current focus.
+- Pilot-program percentages on the page (rework reduction, time savings, etc.) are targets being validated, not measured results.

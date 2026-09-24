@@ -8,7 +8,7 @@ Last updated: 2026-09-24
 
 - Product name: SetTime (Chinese: SetTime 鋼筋估算自動化系統). Always written "SetTime" — one word, capital S and T.
 - Slogan: "SetTime — 凝固之前，一次到位" (get it right before the concrete sets).
-- Company: Kairos.ai — official company website: https://www.kairosaitech.com
+- Company: Kairos.ai (優時科技有限公司) — official company website: https://www.kairosaitech.com
 - Product website: https://settime.kairosaitech.com/
 - Category: construction software — rebar estimation / takeoff, shop-drawing and bar-list automation.
 - Status: rebar estimation automation is shipping; AR field guidance, AI as-built verification, and the audit trail are in development.

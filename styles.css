@@ -1980,9 +1980,6 @@ html.lenis, html.lenis body { height: auto; }
 .lenis.lenis-smooth { scroll-behavior: auto !important; }
 .lenis.lenis-stopped { overflow: clip; }
 
-/* GSAP drives reveals when active, so the CSS transition must not double-animate. */
-html.fx .fade-in { transition: none; }
-
 .scroll-progress {
   position: fixed;
   top: 0; left: 0;
@@ -2033,7 +2030,3 @@ html.fx .fade-in { transition: none; }
 .vanta-host canvas { pointer-events: none; }
 .pilot-inner { position: relative; }
 
-@media (prefers-reduced-motion: reduce) {
-  .fx-shiny { animation: none; background: none; -webkit-text-fill-color: currentColor; color: var(--accent-gold-light); }
-  .scroll-progress { display: none; }
-}

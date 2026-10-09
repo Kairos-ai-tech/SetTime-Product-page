@@ -53,7 +53,8 @@
       a.addEventListener('click', function (e) {
         const id = a.getAttribute('href');
         if (id.length < 2) return;
-        const target = document.querySelector(id);
+        let target = null;
+        try { target = document.querySelector(id); } catch (err) { /* invalid selector */ }
         if (!target) return;
         e.preventDefault();
         lenis.scrollTo(target, { offset: -((navbar ? navbar.offsetHeight : 68) + 16), duration: 1.4 });
@@ -74,6 +75,9 @@
         once: true,
         onEnter: function () {
           el.classList.add('visible'); // some descendants key off .fade-in.visible
+          // Suppress the element's own CSS transition only while GSAP drives it,
+          // so cards keep their hover transitions afterwards.
+          el.style.transition = 'none';
           gsap.fromTo(
             el,
             { opacity: 0, y: 28, filter: blur ? 'blur(10px)' : 'none' },
@@ -85,6 +89,7 @@
               delay: delay,
               ease: 'expo.out',
               clearProps: 'opacity,transform,filter',
+              onComplete: function () { el.style.removeProperty('transition'); },
             }
           );
         },
@@ -102,8 +107,9 @@
       ease: 'none',
       scrollTrigger: {
         trigger: track,
-        start: 'top top-=' + window.innerHeight * 0.1,
-        end: 'top top-=' + window.innerHeight * 0.75,
+        start: function () { return 'top top-=' + window.innerHeight * 0.1; },
+        end: function () { return 'top top-=' + window.innerHeight * 0.75; },
+        invalidateOnRefresh: true,
         scrub: true,
       },
     });
@@ -186,6 +192,7 @@
 
     let effect = null;
     let loading = null;
+    let visible = false;
 
     function loadVanta() {
       if (loading) return loading;
@@ -205,11 +212,11 @@
     function start() {
       if (effect) return;
       loadVanta().then(function (NET) {
-        if (effect || !NET) return;
+        if (effect || !NET || !visible) return; // left the viewport while loading
         try {
           effect = NET({
             el: host,
-            mouseControls: true,
+            mouseControls: false,
             touchControls: false,
             gyroControls: false,
             minHeight: 200,
@@ -236,7 +243,8 @@
     }
 
     new IntersectionObserver(function (entries) {
-      entries[0].isIntersecting ? start() : stop();
+      visible = entries[0].isIntersecting;
+      visible ? start() : stop();
     }, { rootMargin: '200px 0px' }).observe(section);
   }
 })();

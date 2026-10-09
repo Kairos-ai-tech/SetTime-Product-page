@@ -41,7 +41,9 @@ document.addEventListener('DOMContentLoaded', function () {
     { threshold: 0.15, rootMargin: '0px 0px -40px 0px' }
   );
 
+  // effects.js (GSAP/ScrollTrigger) takes over reveals when it's active.
   fadeElements.forEach(function (el) {
+    if (window.__fx) return;
     observer.observe(el);
   });
 

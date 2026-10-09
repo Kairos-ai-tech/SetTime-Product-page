@@ -65,6 +65,12 @@
   --shadow-lg: 0 24px 48px -12px rgba(11, 26, 45, 0.18);
 
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* set per-element by effects.js (spotlight cursor position, magnet offset) */
+  --sx: 50%;
+  --sy: 50%;
+  --mag-x: 0px;
+  --mag-y: 0px;
 }
 
 /* ===== Reset ===== */
@@ -1965,4 +1971,69 @@ html.no-3d {
   .hero-subtitle { margin-bottom: 4px !important; }
 
   .hero-stats { display: none !important; }
+}
+
+/* ===== Motion layer (effects.js) ===== */
+
+/* Lenis owns smooth scrolling when active — native smooth-scroll would fight it. */
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-stopped { overflow: clip; }
+
+/* GSAP drives reveals when active, so the CSS transition must not double-animate. */
+html.fx .fade-in { transition: none; }
+
+.scroll-progress {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--gold), var(--accent-gold-light));
+  transform-origin: 0 50%;
+  transform: scaleX(0);
+  z-index: 1100;
+  pointer-events: none;
+}
+
+/* react-bits ShinyText: a light band sweeps across the gold slogan */
+.fx-shiny {
+  background: linear-gradient(110deg, var(--accent-gold-light) 40%, #fff 50%, var(--accent-gold-light) 60%) 150% 0 / 250% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  animation: fx-shine 4.5s linear infinite;
+}
+@keyframes fx-shine { to { background-position: -50% 0; } }
+
+/* react-bits SpotlightCard: cursor-following glow */
+.fx-spot { position: relative; }
+.fx-spot::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s;
+  background: radial-gradient(240px circle at var(--sx) var(--sy), rgba(221, 142, 31, 0.16), transparent 70%);
+}
+.fx-spot:hover::after { opacity: 1; }
+
+/* react-bits Magnet: composes with each button's own hover `transform` */
+.fx-magnet { translate: var(--mag-x) var(--mag-y); }
+
+/* Vanta NET backdrop for the pilot section */
+.pilot { position: relative; overflow: hidden; }
+.vanta-host {
+  position: absolute; inset: 0; opacity: 0.3; pointer-events: none;
+  -webkit-mask-image: radial-gradient(70% 70% at 50% 50%, transparent 20%, #000 100%);
+  mask-image: radial-gradient(70% 70% at 50% 50%, transparent 20%, #000 100%);
+}
+.vanta-host canvas { pointer-events: none; }
+.pilot-inner { position: relative; }
+
+@media (prefers-reduced-motion: reduce) {
+  .fx-shiny { animation: none; background: none; -webkit-text-fill-color: currentColor; color: var(--accent-gold-light); }
+  .scroll-progress { display: none; }
 }

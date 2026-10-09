@@ -10,7 +10,8 @@ SetTime (formerly AI學徒 iTech) — a product page / strategy documentation pr
 
 - `README.md` — Product overview: pipeline, what's shipping vs. in development, competitive positioning, tech stack
 - `AI學徒-iTech商業策略書簡報.pdf` — Legacy business strategy deck from the original craft-skill-training pivot (Chinese) — predates the rebrand to SetTime/rebar-construction; kept for historical reference, not current strategy
-- `index.html`, `styles.css`, `script.js`, `hero3d.js`, `i18n.js` — the product landing page: static HTML/CSS with a Three.js rebar-cage backdrop (scroll-scrubbed flythrough during the hero, then a fixed translucent background for the rest of the page) and client-side i18n (8 languages)
+- `index.html`, `styles.css`, `script.js`, `effects.js`, `hero3d.js`, `i18n.js` — the product landing page: static HTML/CSS with a Three.js rebar-cage backdrop (scroll-scrubbed flythrough during the hero, then a fixed translucent background for the rest of the page) and client-side i18n (8 languages). `effects.js` is the motion layer: Lenis smooth scroll, GSAP/ScrollTrigger reveals, react-bits-style vanilla effects (spotlight cards, magnetic buttons, shiny text), and a lazy Vanta NET backdrop on the pilot section. It no-ops under `prefers-reduced-motion` or if the vendored libs fail to load
+- `vendor/` — vendored third-party libs (three, gsap + ScrollTrigger, lenis, vanta.net); no CDN dependency
 - `llms.txt`, `sitemap.xml`, `robots.txt` — SEO/AEO/GEO: machine-readable product summary and crawl configuration
 
 ## Tech Stack
@@ -20,7 +21,7 @@ SetTime (formerly AI學徒 iTech) — a product page / strategy documentation pr
 | Drawing automation | AutoCAD 2021 plugin, .NET, Avalonia (cross-platform desktop) |
 | AR field guidance | ARKit, RealityKit |
 | Computer vision | PyTorch, Open3D |
-| Product page | Vanilla HTML/CSS/JS, Three.js + WebXR |
+| Product page | Vanilla HTML/CSS/JS, Three.js, GSAP + ScrollTrigger, Lenis, Vanta |
 
 ## Key Domain Concepts
 

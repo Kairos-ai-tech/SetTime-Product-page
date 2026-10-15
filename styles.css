@@ -2137,7 +2137,6 @@ html.lenis, html.lenis body { height: auto; }
   font-size: 0.72rem;
   font-weight: 600;
   letter-spacing: 0.06em;
-  text-transform: uppercase;
   color: var(--text-subtle);
   background: var(--cream);
 }

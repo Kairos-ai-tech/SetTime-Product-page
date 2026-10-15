@@ -2030,3 +2030,245 @@ html.lenis, html.lenis body { height: auto; }
 .vanta-host canvas { pointer-events: none; }
 .pilot-inner { position: relative; }
 
+
+
+/* ===== DEMO ===== */
+.demo {
+  padding: clamp(80px, 12vh, 140px) 0;
+  background: var(--cream-glass);
+}
+
+.demo-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: clamp(20px, 3vw, 40px);
+  margin-top: 48px;
+  align-items: start;
+}
+
+.demo-drawing {
+  background: var(--navy-deep);
+  border: 1px solid var(--hairline-strong);
+  border-radius: var(--r-lg);
+  padding: clamp(12px, 2vw, 24px);
+  box-shadow: var(--shadow-lg);
+}
+
+.demo-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.demo-svg text {
+  font-family: var(--font-body);
+}
+
+.demo-member {
+  cursor: pointer;
+  outline: none;
+}
+
+.demo-member .shape {
+  fill: rgba(255, 255, 255, 0.03);
+  stroke: var(--illust-label);
+  stroke-opacity: 0.6;
+  stroke-width: 1.5;
+  transition: fill 0.25s, stroke 0.25s, stroke-opacity 0.25s;
+}
+
+.demo-member:hover .shape,
+.demo-member.active .shape {
+  stroke: var(--accent-gold-light);
+  stroke-opacity: 1;
+}
+
+.demo-member.active .shape {
+  fill: rgba(242, 192, 102, 0.14);
+}
+
+.demo-member:focus-visible .shape {
+  stroke: var(--accent-gold-light);
+  stroke-opacity: 1;
+  stroke-width: 3;
+}
+
+.demo-bars {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+
+.demo-member.active .demo-bars {
+  opacity: 1;
+}
+
+.demo-pin circle {
+  fill: var(--navy);
+  stroke: var(--illust-label);
+  stroke-width: 1.5;
+  transition: fill 0.25s, stroke 0.25s;
+}
+
+.demo-pin text {
+  fill: var(--cream);
+  font-size: 13px;
+  font-weight: 700;
+  pointer-events: none;
+}
+
+.demo-member.active .demo-pin circle {
+  fill: var(--accent-gold-light);
+  stroke: var(--accent-gold-light);
+}
+
+.demo-member.active .demo-pin text {
+  fill: var(--navy);
+}
+
+.demo-dim-text {
+  fill: var(--accent-gold-light);
+  font-size: 13px;
+}
+
+.demo-sample {
+  margin-top: 12px;
+  font-size: 0.78rem;
+  color: var(--illust-label);
+  text-align: center;
+}
+
+.demo-schedule {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.demo-table-wrap {
+  background: var(--surface);
+  border: 1px solid var(--hairline-strong);
+  border-radius: var(--r-lg);
+  box-shadow: var(--shadow-sm);
+  overflow-x: auto;
+}
+
+.demo-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.demo-table th,
+.demo-table td {
+  padding: 12px 14px;
+  text-align: left;
+  border-bottom: 1px solid var(--hairline);
+  white-space: nowrap;
+}
+
+.demo-table thead th {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-subtle);
+  background: var(--cream);
+}
+
+.demo-table .num {
+  text-align: right;
+}
+
+.demo-table tbody tr {
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.demo-table tbody tr:hover {
+  background: var(--gold-soft);
+}
+
+.demo-table tbody tr.active {
+  background: rgba(221, 142, 31, 0.14);
+  box-shadow: inset 3px 0 0 var(--gold);
+}
+
+.demo-table tfoot th {
+  text-align: right;
+  font-weight: 600;
+  color: var(--text-muted);
+  border-bottom: 0;
+}
+
+.demo-table tfoot td {
+  font-weight: 700;
+  border-bottom: 0;
+}
+
+.demo-mark {
+  font: inherit;
+  font-weight: 600;
+  color: var(--navy);
+  background: none;
+  border: 0;
+  padding: 2px 4px;
+  margin: -2px -4px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.demo-mark:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+
+.demo-detail {
+  min-height: 3.4em;
+}
+
+.demo-detail p {
+  font-size: 0.94rem;
+  line-height: 1.7;
+  color: var(--text-muted);
+}
+
+.demo-detail p[hidden] {
+  display: none;
+}
+
+.demo-cta {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  border-radius: var(--r-full);
+  background: var(--gold);
+  color: var(--navy);
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.demo-cta:hover {
+  background: var(--gold-hover);
+}
+
+.demo-cta svg {
+  transition: transform 0.2s;
+}
+
+.demo-cta:hover svg {
+  transform: translateX(4px);
+}
+
+.demo-cta:focus-visible {
+  outline: 2px solid var(--navy);
+  outline-offset: 3px;
+}
+
+@media (max-width: 900px) {
+  .demo-grid {
+    grid-template-columns: 1fr;
+  }
+}

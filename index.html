@@ -229,17 +229,12 @@
         </button>
       </div>
       <ul class="nav-links" id="navLinks">
-        <li><a href="#problem" data-i18n="nav.crisis">危機</a></li>
+        <li><a href="#demo" data-i18n="nav.demo">實際操作</a></li>
         <li><a href="#solution" data-i18n="nav.tech">技術</a></li>
         <li><a href="#product" data-i18n="nav.product">產品</a></li>
         <li><a href="#process" data-i18n="nav.process">流程</a></li>
-        <li><a href="#results" data-i18n="nav.results">成效</a></li>
-        <li><a href="#advantage" data-i18n="nav.advantage">優勢</a></li>
         <li><a href="#faq" data-i18n="nav.faq">常見問題</a></li>
-        <li><a href="#pilot" data-i18n="nav.pilot">免費試點</a></li>
-        <!-- TODO: add href="<real application URL>" target="_blank" rel="noopener" and remove class="nav-disabled" aria-disabled="true" -->
-        <li><a class="nav-disabled" aria-disabled="true" data-i18n="nav.app">應用系統</a></li>
-        <li><a href="#contact" class="nav-cta" data-i18n="nav.contact">聯絡我們</a></li>
+        <li><a href="#pilot" class="nav-cta" data-i18n="nav.pilot">免費試點</a></li>
       </ul>
     </div>
   </nav>
@@ -257,27 +252,12 @@
       <h1 class="hero-title fade-in" data-delay="1" data-i18n="hero.title">結構施工圖<br>自動轉成鋼筋計料與加工圖</h1>
       <p class="hero-subtitle fade-in" data-delay="2" data-i18n="hero.subtitle">已上線：估算自動化（AutoCAD 外掛 + 桌面版）。規劃中：AR 綁紮指導、AI 竣工比對與可稽核紀錄。</p>
       <p class="hero-subtitle-en fade-in" data-delay="2" data-i18n="hero.subtitle-en">From structural drawing to shop-ready rebar.</p>
-      <a href="#contact" class="hero-cta fade-in" data-delay="3">
-        <span data-i18n="hero.cta">開始合作</span>
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
-    </div>
-    <div class="hero-stats">
-      <div class="stat fade-in" data-delay="4">
-        <span class="stat-number"><span data-count="40">0</span><span class="stat-unit">%</span></span>
-        <span class="stat-label" data-i18n="hero.stat1.label">鋼筋返工降幅 (目標)</span>
-      </div>
-      <div class="stat fade-in" data-delay="5">
-        <span class="stat-number">70<span class="stat-unit">%</span></span>
-        <span class="stat-label" data-i18n="hero.stat2.label">估算工時節省 (目標)</span>
-      </div>
-      <div class="stat fade-in" data-delay="6">
-        <span class="stat-number">1.2<span class="stat-unit" data-i18n="hero.stat3.unit">兆</span></span>
-        <span class="stat-label" data-i18n="hero.stat3.label">年市場規模 TWD（產業估計）</span>
-      </div>
-      <div class="stat fade-in" data-delay="7">
-        <span class="stat-number">50<span class="stat-unit">%</span></span>
-        <span class="stat-label" data-i18n="hero.stat4.label">驗收週期縮短 (目標)</span>
+      <div class="hero-actions fade-in" data-delay="3">
+        <a href="#pilot" class="hero-cta">
+          <span data-i18n="cta.pilot">申請免費試點</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#demo" class="hero-cta-ghost" data-i18n="hero.cta.demo">看實際操作</a>
       </div>
     </div>
     <div class="scroll-hint" aria-hidden="true">
@@ -286,6 +266,115 @@
     </div>
   </section>
   </div>
+
+  <!-- ===== DEMO (click a member on the sample plan, the bar schedule follows) ===== -->
+  <section class="demo" id="demo">
+    <div class="container">
+      <p class="section-label fade-in" data-i18n="demo.label">SEE IT WORK 實際操作</p>
+      <h2 class="section-heading fade-in" data-delay="1" data-i18n="demo.heading">點選構件<br>計料表即時對位</h2>
+      <p class="section-lead fade-in" data-delay="2" data-i18n="demo.lead">每支鋼筋都對應回施工圖上的構件。點圖上的柱、梁、板，或點表格列，看圖與計料如何互相定位。</p>
+
+      <div class="demo-grid fade-in" data-delay="3">
+        <figure class="demo-drawing">
+          <svg class="demo-svg" viewBox="0 0 640 470" role="group" aria-labelledby="demo-svg-title">
+            <title id="demo-svg-title" data-i18n="demo.drawing.aria">示意結構平面圖：柱 C1、梁 B1、板 S1</title>
+            <defs>
+              <pattern id="demo-slab-bars" width="16" height="16" patternUnits="userSpaceOnUse">
+                <line x1="8" y1="0" x2="8" y2="16" stroke="var(--accent-gold-light)" stroke-width="1.5"/>
+              </pattern>
+              <g id="demo-col-bars" fill="var(--accent-gold-light)">
+                <circle cx="-13" cy="-13" r="2.8"/><circle cx="0" cy="-13" r="2.8"/><circle cx="13" cy="-13" r="2.8"/>
+                <circle cx="-13" cy="0" r="2.8"/><circle cx="13" cy="0" r="2.8"/>
+                <circle cx="-13" cy="13" r="2.8"/><circle cx="0" cy="13" r="2.8"/><circle cx="13" cy="13" r="2.8"/>
+              </g>
+            </defs>
+            <rect width="640" height="470" fill="url(#tech-grid)"/>
+
+            <g class="demo-member" data-member="s1" tabindex="0" role="button" aria-pressed="false" data-i18n-aria-label="demo.m.s1">
+              <rect class="shape" x="100" y="62" width="440" height="312"/>
+              <rect class="demo-bars" x="104" y="66" width="432" height="304" fill="url(#demo-slab-bars)" opacity="0.55"/>
+              <g class="demo-pin"><circle cx="320" cy="218" r="12"/><text x="320" y="223" text-anchor="middle">3</text></g>
+            </g>
+
+            <g class="demo-member" data-member="b1" tabindex="0" role="button" aria-pressed="false" data-i18n-aria-label="demo.m.b1">
+              <rect class="shape" x="100" y="38" width="440" height="24"/>
+              <rect class="shape" x="100" y="374" width="440" height="24"/>
+              <g class="demo-bars" stroke="var(--accent-gold-light)" fill="none">
+                <line x1="106" y1="44" x2="534" y2="44" stroke-width="2"/>
+                <line x1="106" y1="56" x2="534" y2="56" stroke-width="2"/>
+                <line x1="106" y1="50" x2="534" y2="50" stroke-width="20" stroke-dasharray="1.5 10.5" stroke-opacity="0.7"/>
+                <line x1="106" y1="380" x2="534" y2="380" stroke-width="2"/>
+                <line x1="106" y1="392" x2="534" y2="392" stroke-width="2"/>
+                <line x1="106" y1="386" x2="534" y2="386" stroke-width="20" stroke-dasharray="1.5 10.5" stroke-opacity="0.7"/>
+              </g>
+              <g class="demo-pin"><circle cx="320" cy="16" r="12"/><text x="320" y="21" text-anchor="middle">2</text></g>
+            </g>
+
+            <g class="demo-member" data-member="c1" tabindex="0" role="button" aria-pressed="false" data-i18n-aria-label="demo.m.c1">
+              <rect class="shape" x="60" y="30" width="40" height="40"/>
+              <rect class="shape" x="540" y="30" width="40" height="40"/>
+              <rect class="shape" x="60" y="366" width="40" height="40"/>
+              <rect class="shape" x="540" y="366" width="40" height="40"/>
+              <g class="demo-bars">
+                <use href="#demo-col-bars" x="80" y="50"/>
+                <use href="#demo-col-bars" x="560" y="50"/>
+                <use href="#demo-col-bars" x="80" y="386"/>
+                <use href="#demo-col-bars" x="560" y="386"/>
+              </g>
+              <g class="demo-pin"><circle cx="34" cy="24" r="12"/><text x="34" y="29" text-anchor="middle">1</text></g>
+            </g>
+
+            <g class="demo-dim" stroke="var(--gold)" stroke-width="1" fill="none">
+              <line x1="80" y1="432" x2="560" y2="432"/>
+              <line x1="80" y1="425" x2="80" y2="439"/>
+              <line x1="560" y1="425" x2="560" y2="439"/>
+              <line x1="618" y1="50" x2="618" y2="386"/>
+              <line x1="611" y1="50" x2="625" y2="50"/>
+              <line x1="611" y1="386" x2="625" y2="386"/>
+            </g>
+            <text class="demo-dim-text" x="320" y="455" text-anchor="middle">6000</text>
+            <text class="demo-dim-text" x="604" y="218" text-anchor="middle" transform="rotate(-90 604 218)">4200</text>
+          </svg>
+          <figcaption class="demo-sample" data-i18n="demo.sample">示意資料，非真實案場。單位：mm。</figcaption>
+        </figure>
+
+        <div class="demo-schedule">
+          <div class="demo-table-wrap">
+            <table class="demo-table">
+              <thead>
+                <tr>
+                  <th data-i18n="demo.th.mark">編號</th>
+                  <th data-i18n="demo.th.bar">鋼筋</th>
+                  <th class="num" data-i18n="demo.th.qty">數量</th>
+                  <th class="num" data-i18n="demo.th.cut">下料長 mm</th>
+                  <th class="num" data-i18n="demo.th.weight">重量 kg</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr data-member="c1"><td><button type="button" class="demo-mark" aria-pressed="false">C1-1</button></td><td>D25</td><td class="num">8</td><td class="num">4150</td><td class="num">132</td></tr>
+                <tr data-member="b1"><td><button type="button" class="demo-mark" aria-pressed="false">B1-1</button></td><td>D22</td><td class="num">3</td><td class="num">6400</td><td class="num">58</td></tr>
+                <tr data-member="b1"><td><button type="button" class="demo-mark" aria-pressed="false">B1-2</button></td><td>D22</td><td class="num">4</td><td class="num">6400</td><td class="num">78</td></tr>
+                <tr data-member="b1"><td><button type="button" class="demo-mark" aria-pressed="false">B1-3</button></td><td>D10</td><td class="num">42</td><td class="num">1900</td><td class="num">45</td></tr>
+                <tr data-member="s1"><td><button type="button" class="demo-mark" aria-pressed="false">S1-1</button></td><td>D13</td><td class="num">30</td><td class="num">4200</td><td class="num">125</td></tr>
+              </tbody>
+              <tfoot>
+                <tr><th colspan="4" scope="row" data-i18n="demo.total">合計</th><td class="num">438</td></tr>
+              </tfoot>
+            </table>
+          </div>
+          <div class="demo-detail">
+            <p data-detail="c1" data-i18n="demo.d.c1">柱 C1：8-D25 主筋，下料長含搭接 4150 mm；箍筋另列。</p>
+            <p data-detail="b1" data-i18n="demo.d.b1">梁 B1：上層 3-D22、下層 4-D22，箍筋 D10 共 42 支，錨定長度已計入。</p>
+            <p data-detail="s1" data-i18n="demo.d.s1">板 S1：D13 @200，短向 30 支、單支 4200 mm。</p>
+          </div>
+          <a href="#pilot" class="cta-pill">
+            <span data-i18n="demo.cta">用您的施工圖試試</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- ===== PROBLEM ===== -->
   <section class="problem" id="problem">
@@ -514,6 +603,12 @@
         </div>
       </article>
     </div>
+    <div class="container section-cta fade-in">
+      <a href="#pilot" class="cta-pill">
+        <span data-i18n="cta.pilot">申請免費試點</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
   </section>
 
   <!-- ===== PRODUCT (live today) ===== -->
@@ -686,6 +781,12 @@
         </div>
       </div>
     </div>
+    <div class="container section-cta fade-in">
+      <a href="#pilot" class="cta-pill">
+        <span data-i18n="cta.pilot">申請免費試點</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
   </section>
 
   <!-- ===== RESULTS ===== -->
@@ -822,6 +923,12 @@
         </div>
       </div>
     </div>
+    <div class="container section-cta fade-in">
+      <a href="#pilot" class="cta-pill">
+        <span data-i18n="cta.pilot">申請免費試點</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
   </section>
 
   <!-- ===== FAQ ===== -->
@@ -857,6 +964,12 @@
           <p data-i18n="faq.q6.a">不能，此功能目前開發中。稽核鏈是技術性防竄改機制（SHA-256 雜湊鏈），可偵測竄改與刪除，但不構成對任何特定法規、驗收基準或政府標案要求之合規保證。實際法遵義務依個案適用法規及契約條款而定，建議就個案洽詢法律顧問；本頁面內容不構成法律意見。</p>
         </details>
       </div>
+    </div>
+    <div class="container section-cta fade-in">
+      <a href="#pilot" class="cta-pill">
+        <span data-i18n="cta.pilot">申請免費試點</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
     </div>
   </section>
 
@@ -954,6 +1067,12 @@
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
           <span>kairos.ai.tech@gmail.com</span>
         </a>
+      </div>
+      <div class="footer-ai">
+        <span data-i18n="footer.ai">用 AI 摘要本頁：</span>
+        <a href="https://chatgpt.com/?q=Summarize%20https%3A%2F%2Fsettime.kairosaitech.com%2F%20%3A%20what%20SetTime%20does%20for%20rebar%20estimation%2C%20and%20what%20is%20shipping%20versus%20in%20development." target="_blank" rel="noopener" class="footer-link">ChatGPT</a>
+        <a href="https://claude.ai/new?q=Summarize%20https%3A%2F%2Fsettime.kairosaitech.com%2F%20%3A%20what%20SetTime%20does%20for%20rebar%20estimation%2C%20and%20what%20is%20shipping%20versus%20in%20development." target="_blank" rel="noopener" class="footer-link">Claude</a>
+        <a href="https://www.perplexity.ai/search?q=Summarize%20https%3A%2F%2Fsettime.kairosaitech.com%2F%20%3A%20what%20SetTime%20does%20for%20rebar%20estimation%2C%20and%20what%20is%20shipping%20versus%20in%20development." target="_blank" rel="noopener" class="footer-link">Perplexity</a>
       </div>
       <p class="footer-rights" data-i18n="footer.rights">© 2026 SetTime. All rights reserved.</p>
     </div>

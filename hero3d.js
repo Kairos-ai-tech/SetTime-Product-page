@@ -58,10 +58,10 @@ async function init() {
 
   const camera = new THREE.PerspectiveCamera(50, canvas.clientWidth / canvas.clientHeight, 0.1, 100);
 
-  const dpr = window.devicePixelRatio || 1;
-  const renderer = new THREE.WebGLRenderer({ canvas, antialias: dpr < 1.5, alpha: false });
+  const pixelRatio = Math.min(window.devicePixelRatio || 1, isNarrow ? 1 : 1.5);
+  const renderer = new THREE.WebGLRenderer({ canvas, antialias: pixelRatio < 1.5, alpha: false });
   renderer.setClearColor(0x0b1a2d, 1);
-  renderer.setPixelRatio(Math.min(dpr, isNarrow ? 1 : 1.5));
+  renderer.setPixelRatio(pixelRatio);
 
   // Context loss now degrades the whole page's backdrop, not just the hero,
   // so fall all the way back to the opaque static styling while it's lost
@@ -145,12 +145,16 @@ async function init() {
   const camPos = new THREE.Vector3();
   const lookPos = new THREE.Vector3();
 
+  let lastRender = 0;
+  let lastProgress = -1;
+
   function resize() {
     const w = canvas.clientWidth || window.innerWidth;
     const h = canvas.clientHeight || window.innerHeight;
     camera.aspect = w / h;
     camera.updateProjectionMatrix();
     renderer.setSize(w, h, false);
+    lastProgress = -1;
   }
   resize();
   window.addEventListener('resize', resize);
@@ -174,10 +178,8 @@ async function init() {
 
   let ready = false;
   const startTime = performance.now();
-  let lastRender = 0;
-  let lastProgress = -1;
   const HERO_IDLE_MS = 1000 / 30;
-  const PAGE_IDLE_MS = 1000 / 8;
+  const PAGE_IDLE_MS = 1000 / 12;
 
   function tick(now) {
     requestAnimationFrame(tick);

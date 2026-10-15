@@ -123,6 +123,8 @@
   --anatomy-lo: #425a72;
   --anatomy-faint: #2a4058;
   --anatomy-lit: #f2c066;
+  --anatomy-lit-top: #1d3a58;
+  --anatomy-lit-shade: #163049;
   --anatomy-halo: #040a12;
   --anatomy-dot: #dbe6f2;
   max-width: 920px;

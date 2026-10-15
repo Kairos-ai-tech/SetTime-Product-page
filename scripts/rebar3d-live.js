@@ -13,6 +13,7 @@ if (stage) {
     list[Number(node.getAttribute("data-mid"))] = node;
   });
   var still = window.matchMedia("(prefers-reduced-motion: reduce)");
+  var canHover = window.matchMedia("(hover: hover)");
   var ax = [CFG.sinA * CFG.k, CFG.cosA * CFG.sinE * CFG.k];
   var span = CFG.spacing.max - CFG.spacing.min;
   var gaugeSpan = CFG.gauge.x1 - CFG.gauge.x0;
@@ -35,27 +36,33 @@ if (stage) {
     return out;
   };
 
+  var tour = [150, 100, 200, 300, 120, 250];
+  var tourStep = 0;
   var spacing = CFG.spacing.start;
   var target = spacing;
   var knob = gaugeX(spacing);
+  var knobGoal = knob;
   var pos = targetsFor(spacing);
   var alpha = pos.map(function (_, i) { return i < intervals(spacing) - 1 ? 1 : 0; });
-  var touring = true;
+  var touring = !still.matches;
   var visible = false;
   var frame = 0;
   var last = 0;
-  var clock = 0;
+  var tourTimer = 0;
   var idleTimer = 0;
   var dragging = null;
-  var tour = [150, 100, 200, 300, 120, 250];
+  var shown = "";
+
+  function segment(x, y0, y1) {
+    var a = screen(x, y0, CFG.sheetZ + 0.1);
+    var b = screen(x, y1, CFG.sheetZ + 0.1);
+    return "M" + fine(a[0]) + " " + fine(a[1]) + "L" + fine(b[0]) + " " + fine(b[1]);
+  }
 
   function ticks() {
     var fixed = "";
     CFG.endLeft.concat(CFG.endRight).forEach(function (mm) {
-      var x = mm / CFG.mm;
-      var a = screen(x, CFG.elev.y0, CFG.sheetZ + 0.1);
-      var b = screen(x, CFG.elev.y1, CFG.sheetZ + 0.1);
-      fixed += "M" + fine(a[0]) + " " + fine(a[1]) + "L" + fine(b[0]) + " " + fine(b[1]);
+      fixed += segment(mm / CFG.mm, CFG.elev.y0, CFG.elev.y1);
     });
     tickFixed.setAttribute("d", fixed);
   }
@@ -71,11 +78,7 @@ if (stage) {
       midFront[i].setAttribute("transform", t);
       midBack[i].style.opacity = o;
       midFront[i].style.opacity = o;
-      if (alpha[i] > 0.04) {
-        var a = screen(x, CFG.elev.y0, CFG.sheetZ + 0.1);
-        var b = screen(x, CFG.elev.y1, CFG.sheetZ + 0.1);
-        mid += "M" + fine(a[0]) + " " + fine(a[1]) + "L" + fine(b[0]) + " " + fine(b[1]);
-      }
+      if (alpha[i] > 0.04) mid += segment(x, CFG.elev.y0, CFG.elev.y1);
       if (i < intervals(target) - 1) count++;
     }
     tickMid.setAttribute("d", mid);
@@ -83,28 +86,26 @@ if (stage) {
     var total = 8 + count;
     var kg = Math.round(CFG.barKg + total * CFG.stirrupKg);
     var text = "D10 @ " + target + " · ×" + total + " · " + kg + " kg";
-    if (readout.textContent !== text) readout.textContent = text;
-    stage.setAttribute("aria-valuenow", String(target));
-    stage.setAttribute("aria-valuetext", text);
+    if (text !== shown) {
+      shown = text;
+      readout.textContent = text;
+      stage.setAttribute("aria-valuenow", String(target));
+      stage.setAttribute("aria-valuetext", text);
+    }
   }
 
   function step(now) {
     var dt = last ? Math.min((now - last) / 1000, 1 / 30) : 1 / 60;
     last = now;
     var calm = still.matches;
-    if (touring) {
-      clock += dt;
-      target = tour[Math.floor(clock / 2.6) % tour.length];
-    }
     var goal = targetsFor(target);
-    var wantKnob = dragging ? knob : gaugeX(target);
     var settled = true;
-    knob = calm || dragging ? wantKnob : knob + (wantKnob - knob) * (1 - Math.exp(-dt / 0.16));
-    if (Math.abs(wantKnob - knob) < 0.02) knob = wantKnob;
+    var tau = dragging ? 0.05 : 0.16;
+    knob = calm ? knobGoal : knob + (knobGoal - knob) * (1 - Math.exp(-dt / tau));
+    if (Math.abs(knobGoal - knob) < 0.02) knob = knobGoal;
     else settled = false;
     for (var i = 0; i < CFG.midMax; i++) {
-      var live = i < intervals(target) - 1;
-      var wantAlpha = live ? 1 : 0;
+      var wantAlpha = i < intervals(target) - 1 ? 1 : 0;
       pos[i] = calm ? goal[i] : pos[i] + (goal[i] - pos[i]) * (1 - Math.exp(-dt / 0.22));
       alpha[i] = calm ? wantAlpha : alpha[i] + (wantAlpha - alpha[i]) * (1 - Math.exp(-dt / 0.12));
       if (Math.abs(goal[i] - pos[i]) < 0.15) pos[i] = goal[i];
@@ -113,7 +114,7 @@ if (stage) {
       else settled = false;
     }
     draw();
-    frame = visible && !(settled && !touring) ? requestAnimationFrame(step) : 0;
+    frame = visible && !settled ? requestAnimationFrame(step) : 0;
   }
 
   function run() {
@@ -123,56 +124,87 @@ if (stage) {
     }
   }
 
-  function steer(next) {
+  function advanceTour() {
+    clearTimeout(tourTimer);
+    if (!touring) return;
+    if (visible) {
+      target = tour[tourStep++ % tour.length];
+      knobGoal = gaugeX(target);
+      run();
+    }
+    tourTimer = setTimeout(advanceTour, 2600);
+  }
+
+  function stopTour() {
     touring = false;
-    target = snap(next);
+    clearTimeout(tourTimer);
+    clearTimeout(idleTimer);
+  }
+
+  function arm() {
     clearTimeout(idleTimer);
     idleTimer = setTimeout(function () {
-      if (dragging) return;
-      touring = !still.matches;
-      clock = 0;
-      run();
+      if (dragging || still.matches || stage.matches(":focus-visible") || (canHover.matches && stage.matches(":hover"))) return;
+      touring = true;
+      advanceTour();
     }, 5200);
+  }
+
+  function steer(next) {
+    stopTour();
+    target = snap(next);
+    if (!dragging) knobGoal = gaugeX(target);
+    arm();
     run();
   }
 
-  function worldAt(event) {
+  function worldAt(event, z) {
     var box = svg.getBoundingClientRect();
     var vb = svg.viewBox.baseVal;
     var sx = ((event.clientX - box.left) / box.width) * vb.width;
     var sy = ((event.clientY - box.top) / box.height) * vb.height;
     var u = (sx - CFG.origin[0]) / CFG.k;
-    var v = (sy - CFG.origin[1] + CFG.knobZ * CFG.cosE * CFG.k) / (CFG.k * CFG.sinE);
+    var v = (sy - CFG.origin[1] + z * CFG.cosE * CFG.k) / (CFG.k * CFG.sinE);
     return u * CFG.sinA + v * CFG.cosA;
   }
 
   track.addEventListener("pointerdown", function (event) {
+    if (event.button !== 0) return;
     event.preventDefault();
     track.setPointerCapture(event.pointerId);
-    var x = worldAt(event);
-    var grabbed = event.target === track && Math.abs(x - knob) > 9 ? 0 : x - knob;
-    dragging = { id: event.pointerId, grab: grabbed };
+    var onKnob = Math.abs(worldAt(event, CFG.knobZ) - knob) <= 9;
+    var x = worldAt(event, onKnob ? CFG.knobZ : 2);
+    dragging = { id: event.pointerId, grab: onKnob ? x - knob : 0 };
     stage.focus({ preventScroll: true });
-    steer(spacingAt(x - grabbed));
+    knobGoal = clamp(x - dragging.grab, CFG.gauge.x0, CFG.gauge.x1);
+    steer(spacingAt(knobGoal));
   });
   track.addEventListener("pointermove", function (event) {
     if (!dragging || dragging.id !== event.pointerId) return;
-    var x = clamp(worldAt(event) - dragging.grab, CFG.gauge.x0, CFG.gauge.x1);
-    knob = x;
-    steer(spacingAt(x));
+    knobGoal = clamp(worldAt(event, dragging.grab ? CFG.knobZ : 2) - dragging.grab, CFG.gauge.x0, CFG.gauge.x1);
+    steer(spacingAt(knobGoal));
   });
   var release = function (event) {
-    if (dragging && dragging.id === event.pointerId) dragging = null;
+    if (!dragging || dragging.id !== event.pointerId) return;
+    dragging = null;
+    knobGoal = gaugeX(target);
+    arm();
     run();
   };
   track.addEventListener("pointerup", release);
   track.addEventListener("pointercancel", release);
 
+  stage.addEventListener("focusin", stopTour);
+  stage.addEventListener("focusout", arm);
+  stage.addEventListener("pointerenter", stopTour);
+  stage.addEventListener("pointerleave", arm);
   stage.addEventListener("keydown", function (event) {
     var big = event.shiftKey ? 5 : 1;
     var to = null;
     if (event.key === "ArrowRight" || event.key === "ArrowUp") to = target + CFG.spacing.step * big;
     if (event.key === "ArrowLeft" || event.key === "ArrowDown") to = target - CFG.spacing.step * big;
+    if (event.key === "PageUp") to = target + CFG.spacing.step * 5;
+    if (event.key === "PageDown") to = target - CFG.spacing.step * 5;
     if (event.key === "Home") to = CFG.spacing.min;
     if (event.key === "End") to = CFG.spacing.max;
     if (to === null) return;
@@ -180,12 +212,21 @@ if (stage) {
     steer(to);
   });
 
+  still.addEventListener("change", function () {
+    if (still.matches) stopTour();
+    else arm();
+    run();
+  });
+
   new IntersectionObserver(function (entries) {
     visible = entries[entries.length - 1].isIntersecting;
-    if (visible) run();
+    if (visible) {
+      run();
+      if (touring) advanceTour();
+    }
   }, { rootMargin: "120px 0px" }).observe(stage);
 
-  if (still.matches) touring = false;
   ticks();
   draw();
+  if (touring) tourTimer = setTimeout(advanceTour, 2600);
 }

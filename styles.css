@@ -604,47 +604,29 @@ html.no-3d {
 .hero-cta svg { transition: transform 0.2s; }
 .hero-cta:hover svg { transform: translateX(4px); }
 
-.hero-stats {
-  position: relative;
-  z-index: 2;
+.hero-actions {
   display: flex;
-  gap: clamp(24px, 4vw, 56px);
-  padding: clamp(40px, 6vh, 64px) clamp(20px, 4vw, 48px) clamp(36px, 5vh, 56px);
-  max-width: var(--max-width);
-  margin: clamp(40px, 6vh, 72px) auto 0;
-  width: 100%;
+  align-items: center;
   flex-wrap: wrap;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  gap: 12px 20px;
 }
 
-.stat {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.stat-number {
-  font-family: var(--font-display);
-  font-size: clamp(2rem, 3.6vw, 2.75rem);
-  font-weight: 700;
-  color: #fff;
-  line-height: 1;
-  letter-spacing: -0.02em;
-  font-feature-settings: "tnum";
-  font-variant-numeric: tabular-nums;
-}
-
-.stat-unit {
-  font-size: 0.55em;
-  opacity: 0.65;
-  margin-left: 2px;
+.hero-cta-ghost {
+  padding: 14px 6px;
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 0.95rem;
   font-weight: 500;
+  border-bottom: 1px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
 }
 
-.stat-label {
-  font-size: 0.78rem;
-  color: rgba(255, 255, 255, 0.78);
-  letter-spacing: 0.01em;
+.hero-cta-ghost:hover {
+  color: var(--accent-gold-light);
+  border-color: var(--accent-gold-light);
+}
+
+.hero-cta-ghost:focus-visible {
+  outline-offset: 3px;
 }
 
 .scroll-hint {
@@ -1828,14 +1810,6 @@ html.no-3d {
     padding-bottom: 32px;
   }
 
-  .hero-stats {
-    gap: 24px;
-  }
-
-  .stat-number {
-    font-size: 1.75rem;
-  }
-
   .problem {
     grid-template-columns: 1fr;
   }
@@ -1917,12 +1891,6 @@ html.no-3d {
 }
 
 @media (max-width: 480px) {
-  .hero-stats {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 24px 20px;
-  }
-
   .results-grid {
     grid-template-columns: 1fr;
   }
@@ -1969,8 +1937,6 @@ html.no-3d {
   }
 
   .hero-subtitle { margin-bottom: 4px !important; }
-
-  .hero-stats { display: none !important; }
 }
 
 /* ===== Motion layer (effects.js) ===== */
@@ -2237,7 +2203,7 @@ html.lenis, html.lenis body { height: auto; }
   display: none;
 }
 
-.demo-cta {
+.cta-pill {
   align-self: flex-start;
   display: inline-flex;
   align-items: center;
@@ -2250,19 +2216,19 @@ html.lenis, html.lenis body { height: auto; }
   transition: background 0.2s;
 }
 
-.demo-cta:hover {
+.cta-pill:hover {
   background: var(--gold-hover);
 }
 
-.demo-cta svg {
+.cta-pill svg {
   transition: transform 0.2s;
 }
 
-.demo-cta:hover svg {
+.cta-pill:hover svg {
   transform: translateX(4px);
 }
 
-.demo-cta:focus-visible {
+.cta-pill:focus-visible {
   outline: 2px solid var(--navy);
   outline-offset: 3px;
 }
@@ -2271,4 +2237,18 @@ html.lenis, html.lenis body { height: auto; }
   .demo-grid {
     grid-template-columns: 1fr;
   }
+}
+
+
+.section-cta {
+  margin-top: 48px;
+}
+
+.footer-ai {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 0.82rem;
 }

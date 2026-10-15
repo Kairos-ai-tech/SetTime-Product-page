@@ -229,17 +229,12 @@
         </button>
       </div>
       <ul class="nav-links" id="navLinks">
-        <li><a href="#problem" data-i18n="nav.crisis">危機</a></li>
+        <li><a href="#demo" data-i18n="nav.demo">實際操作</a></li>
         <li><a href="#solution" data-i18n="nav.tech">技術</a></li>
         <li><a href="#product" data-i18n="nav.product">產品</a></li>
         <li><a href="#process" data-i18n="nav.process">流程</a></li>
-        <li><a href="#results" data-i18n="nav.results">成效</a></li>
-        <li><a href="#advantage" data-i18n="nav.advantage">優勢</a></li>
         <li><a href="#faq" data-i18n="nav.faq">常見問題</a></li>
-        <li><a href="#pilot" data-i18n="nav.pilot">免費試點</a></li>
-        <!-- TODO: add href="<real application URL>" target="_blank" rel="noopener" and remove class="nav-disabled" aria-disabled="true" -->
-        <li><a class="nav-disabled" aria-disabled="true" data-i18n="nav.app">應用系統</a></li>
-        <li><a href="#contact" class="nav-cta" data-i18n="nav.contact">聯絡我們</a></li>
+        <li><a href="#pilot" class="nav-cta" data-i18n="nav.pilot">免費試點</a></li>
       </ul>
     </div>
   </nav>
@@ -257,27 +252,12 @@
       <h1 class="hero-title fade-in" data-delay="1" data-i18n="hero.title">結構施工圖<br>自動轉成鋼筋計料與加工圖</h1>
       <p class="hero-subtitle fade-in" data-delay="2" data-i18n="hero.subtitle">已上線：估算自動化（AutoCAD 外掛 + 桌面版）。規劃中：AR 綁紮指導、AI 竣工比對與可稽核紀錄。</p>
       <p class="hero-subtitle-en fade-in" data-delay="2" data-i18n="hero.subtitle-en">From structural drawing to shop-ready rebar.</p>
-      <a href="#contact" class="hero-cta fade-in" data-delay="3">
-        <span data-i18n="hero.cta">開始合作</span>
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
-    </div>
-    <div class="hero-stats">
-      <div class="stat fade-in" data-delay="4">
-        <span class="stat-number"><span data-count="40">0</span><span class="stat-unit">%</span></span>
-        <span class="stat-label" data-i18n="hero.stat1.label">鋼筋返工降幅 (目標)</span>
-      </div>
-      <div class="stat fade-in" data-delay="5">
-        <span class="stat-number">70<span class="stat-unit">%</span></span>
-        <span class="stat-label" data-i18n="hero.stat2.label">估算工時節省 (目標)</span>
-      </div>
-      <div class="stat fade-in" data-delay="6">
-        <span class="stat-number">1.2<span class="stat-unit" data-i18n="hero.stat3.unit">兆</span></span>
-        <span class="stat-label" data-i18n="hero.stat3.label">年市場規模 TWD（產業估計）</span>
-      </div>
-      <div class="stat fade-in" data-delay="7">
-        <span class="stat-number">50<span class="stat-unit">%</span></span>
-        <span class="stat-label" data-i18n="hero.stat4.label">驗收週期縮短 (目標)</span>
+      <div class="hero-actions fade-in" data-delay="3">
+        <a href="#pilot" class="hero-cta">
+          <span data-i18n="cta.pilot">申請免費試點</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#demo" class="hero-cta-ghost" data-i18n="hero.cta.demo">看實際操作</a>
       </div>
     </div>
     <div class="scroll-hint" aria-hidden="true">
@@ -387,7 +367,7 @@
             <p data-detail="b1" data-i18n="demo.d.b1">梁 B1：上層 3-D22、下層 4-D22，箍筋 D10 共 42 支，錨定長度已計入。</p>
             <p data-detail="s1" data-i18n="demo.d.s1">板 S1：D13 @200，短向 30 支、單支 4,200 mm。</p>
           </div>
-          <a href="#pilot" class="demo-cta">
+          <a href="#pilot" class="cta-pill">
             <span data-i18n="demo.cta">用您的施工圖試試</span>
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
@@ -623,6 +603,12 @@
         </div>
       </article>
     </div>
+    <div class="container section-cta fade-in">
+      <a href="#pilot" class="cta-pill">
+        <span data-i18n="cta.pilot">申請免費試點</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
   </section>
 
   <!-- ===== PRODUCT (live today) ===== -->
@@ -795,6 +781,12 @@
         </div>
       </div>
     </div>
+    <div class="container section-cta fade-in">
+      <a href="#pilot" class="cta-pill">
+        <span data-i18n="cta.pilot">申請免費試點</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
   </section>
 
   <!-- ===== RESULTS ===== -->
@@ -931,6 +923,12 @@
         </div>
       </div>
     </div>
+    <div class="container section-cta fade-in">
+      <a href="#pilot" class="cta-pill">
+        <span data-i18n="cta.pilot">申請免費試點</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
   </section>
 
   <!-- ===== FAQ ===== -->
@@ -966,6 +964,12 @@
           <p data-i18n="faq.q6.a">不能，此功能目前開發中。稽核鏈是技術性防竄改機制（SHA-256 雜湊鏈），可偵測竄改與刪除，但不構成對任何特定法規、驗收基準或政府標案要求之合規保證。實際法遵義務依個案適用法規及契約條款而定，建議就個案洽詢法律顧問；本頁面內容不構成法律意見。</p>
         </details>
       </div>
+    </div>
+    <div class="container section-cta fade-in">
+      <a href="#pilot" class="cta-pill">
+        <span data-i18n="cta.pilot">申請免費試點</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
     </div>
   </section>
 
@@ -1063,6 +1067,12 @@
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
           <span>kairos.ai.tech@gmail.com</span>
         </a>
+      </div>
+      <div class="footer-ai">
+        <span data-i18n="footer.ai">用 AI 摘要本頁：</span>
+        <a href="https://chatgpt.com/?q=Summarize%20https%3A%2F%2Fsettime.kairosaitech.com%2F%20%3A%20what%20SetTime%20does%20for%20rebar%20estimation%2C%20and%20what%20is%20shipping%20versus%20in%20development." target="_blank" rel="noopener" class="footer-link">ChatGPT</a>
+        <a href="https://claude.ai/new?q=Summarize%20https%3A%2F%2Fsettime.kairosaitech.com%2F%20%3A%20what%20SetTime%20does%20for%20rebar%20estimation%2C%20and%20what%20is%20shipping%20versus%20in%20development." target="_blank" rel="noopener" class="footer-link">Claude</a>
+        <a href="https://www.perplexity.ai/search?q=Summarize%20https%3A%2F%2Fsettime.kairosaitech.com%2F%20%3A%20what%20SetTime%20does%20for%20rebar%20estimation%2C%20and%20what%20is%20shipping%20versus%20in%20development." target="_blank" rel="noopener" class="footer-link">Perplexity</a>
       </div>
       <p class="footer-rights" data-i18n="footer.rights">© 2026 SetTime. All rights reserved.</p>
     </div>

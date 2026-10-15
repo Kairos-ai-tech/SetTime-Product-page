@@ -58,9 +58,10 @@ async function init() {
 
   const camera = new THREE.PerspectiveCamera(50, canvas.clientWidth / canvas.clientHeight, 0.1, 100);
 
-  const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: false });
+  const pixelRatio = Math.min(window.devicePixelRatio || 1, isNarrow ? 1 : 1.5);
+  const renderer = new THREE.WebGLRenderer({ canvas, antialias: pixelRatio < 1.5, alpha: false });
   renderer.setClearColor(0x0b1a2d, 1);
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, isNarrow ? 1.5 : 2));
+  renderer.setPixelRatio(pixelRatio);
 
   // Context loss now degrades the whole page's backdrop, not just the hero,
   // so fall all the way back to the opaque static styling while it's lost
@@ -144,38 +145,56 @@ async function init() {
   const camPos = new THREE.Vector3();
   const lookPos = new THREE.Vector3();
 
+  let lastRender = 0;
+  let lastProgress = -1;
+
   function resize() {
     const w = canvas.clientWidth || window.innerWidth;
     const h = canvas.clientHeight || window.innerHeight;
     camera.aspect = w / h;
     camera.updateProjectionMatrix();
     renderer.setSize(w, h, false);
+    lastProgress = -1;
   }
   resize();
   window.addEventListener('resize', resize);
 
-  function getProgress() {
+  let trackTop = 0;
+  let trackHeight = 0;
+  function measureTrack() {
     const rect = track.getBoundingClientRect();
-    const total = rect.height - window.innerHeight;
+    trackTop = rect.top + window.scrollY;
+    trackHeight = rect.height;
+  }
+  measureTrack();
+  window.addEventListener('load', measureTrack);
+  new ResizeObserver(measureTrack).observe(track);
+
+  function getProgress() {
+    const total = trackHeight - window.innerHeight;
     if (total <= 0) return 0;
-    return Math.min(1, Math.max(0, -rect.top / total));
+    return Math.min(1, Math.max(0, (window.scrollY - trackTop) / total));
   }
 
   let ready = false;
   const startTime = performance.now();
+  const HERO_IDLE_MS = 1000 / 30;
+  const PAGE_IDLE_MS = 1000 / 12;
 
-  function tick() {
+  function tick(now) {
     requestAnimationFrame(tick);
-    // ponytail: rendering pauses only on a backgrounded tab (document.hidden).
-    // It still runs every frame for the whole page whenever the tab is
-    // visible — required for the idle backdrop to keep animating past the
-    // hero, per the page-wide-backdrop design. Add scroll-based throttling
-    // if mobile battery complaints come in.
     if (contextLost || document.hidden) return;
 
-    const t = (performance.now() - startTime) / 1000;
     const p = getProgress();
-    const eased = p * p * (3 - 2 * p); // smoothstep
+    const inHero = window.scrollY < trackTop + trackHeight;
+    const scrubbing = p !== lastProgress;
+    const idleMs = inHero ? HERO_IDLE_MS : PAGE_IDLE_MS;
+    if (!scrubbing && now - lastRender < idleMs) return;
+    lastRender = now;
+    lastProgress = p;
+
+    const t = (now - startTime) / 1000;
+    const eased = p * p * (3 - 2 * p);
 
     camPos.lerpVectors(camStart, camEnd, eased);
     lookPos.lerpVectors(lookStart, lookEnd, eased);
@@ -192,5 +211,5 @@ async function init() {
       setReady(true);
     }
   }
-  tick();
+  requestAnimationFrame(tick);
 }

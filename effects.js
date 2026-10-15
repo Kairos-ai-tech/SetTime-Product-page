@@ -65,10 +65,8 @@
 
   // ===== Scroll-triggered reveals (replaces the CSS-transition fade-in) =====
   function initReveals() {
-    const heading = '.section-heading, .hero-title';
     document.querySelectorAll('.fade-in').forEach(function (el) {
       const delay = (parseInt(el.getAttribute('data-delay'), 10) || 0) * 0.08;
-      const blur = el.matches(heading);
       ScrollTrigger.create({
         trigger: el,
         start: 'top 90%',
@@ -80,15 +78,14 @@
           el.style.transition = 'none';
           gsap.fromTo(
             el,
-            { opacity: 0, y: 28, filter: blur ? 'blur(10px)' : 'none' },
+            { opacity: 0, y: 28 },
             {
               opacity: 1,
               y: 0,
-              filter: blur ? 'blur(0px)' : 'none',
               duration: 1,
               delay: delay,
               ease: 'expo.out',
-              clearProps: 'opacity,transform,filter',
+              clearProps: 'opacity,transform',
               onComplete: function () { el.style.removeProperty('transition'); },
             }
           );
@@ -221,8 +218,8 @@
             gyroControls: false,
             minHeight: 200,
             minWidth: 200,
-            scale: 1,
-            scaleMobile: 1,
+            scale: 2,
+            scaleMobile: 2,
             color: 0xdd8e1f,
             backgroundColor: 0x0b1a2d,
             points: 9,

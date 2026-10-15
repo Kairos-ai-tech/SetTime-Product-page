@@ -2235,7 +2235,7 @@ html.lenis, html.lenis body { height: auto; }
 
 @media (max-width: 900px) {
   .demo-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 }
 

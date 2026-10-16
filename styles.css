@@ -2161,13 +2161,15 @@ html.lenis, html.lenis body { height: auto; }
 
 .rm-gauge {
   display: grid;
-  grid-template-columns: auto minmax(0, 1fr) auto;
+  grid-template-columns: minmax(0, 1fr) auto;
   align-items: center;
-  gap: 14px;
+  gap: 6px 14px;
   margin-top: 12px;
   font-size: 0.8rem;
   color: var(--cream);
 }
+
+.rm-gauge > span { grid-column: 1 / -1; }
 
 .rm-gauge input {
   width: 100%;

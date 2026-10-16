@@ -1,12 +1,12 @@
 (function () {
-var CFG = {"cam":{"origin":[201.64414364977694,143.4356373314996],"sinA":0.8480480961564261,"cosA":0.5299192642332049,"sinE":0.49999999999999994,"cosE":0.8660254037844387,"k":1.634639304913693},"view":{"azimuth":58,"elevation":30,"elevationMin":12,"elevationMax":60},"mm":8,"length":200,"endLeft":[50,150,250,350],"endRight":[1250,1350,1450,1550],"midFrom":350,"midTo":1250,"midMax":8,"spacing":{"min":100,"max":300,"step":10,"start":150},"gauge":{"x0":30,"x1":190},"knobZ":5.5,"elev":{"y0":31,"y1":39},"sheetZ":0.8,"barKg":49.3,"stirrupKg":0.913};
+var CFG = {"cam":{"origin":[255.37780218092416,204.33361195472528],"sinA":0.8480480961564261,"cosA":0.5299192642332049,"sinE":0.49999999999999994,"cosE":0.8660254037844387,"k":1.5957559656876572,"pinY":16},"view":{"azimuth":58,"elevation":30,"elevationMin":12,"elevationMax":60},"mm":10,"sx0":58,"endLeft":[50,150],"endRight":[950,1050],"midFrom":150,"midTo":950,"midMax":7,"spacing":{"min":100,"max":300,"step":10,"start":150},"gauge":{"x0":74,"x1":170},"knobZ":22.5,"trackZ":19,"elev":{"y0":37,"y1":45},"sheetZ":17.8,"pin":{"z0":26,"z1":33},"barKg":10.8,"stirrupKg":0.75,"fixedCount":4};
 var stage = document.querySelector(".cage-stage");
 if (stage) {
   var svg = stage.querySelector("svg");
   var sceneNode = svg.querySelector("[data-scene]");
   var orbitBar = document.querySelector(".cage-orbit");
   var readout = document.querySelector(".cage-figure [data-readout]");
-  var carriage, track, tickFixed, tickMid, midBack, midFront, ax;
+  var carriage, track, tickFixed, tickMid, pinMid, capMid, midBack, midFront, ax;
   var cam = CFG.cam;
   var still = window.matchMedia("(prefers-reduced-motion: reduce)");
   var canHover = window.matchMedia("(hover: hover)");
@@ -61,6 +61,8 @@ if (stage) {
     track = svg.querySelector("[data-track]");
     tickFixed = svg.querySelector('[data-ticks="fixed"]');
     tickMid = svg.querySelector('[data-ticks="mid"]');
+    pinMid = svg.querySelector('.rb-pin[data-pin="mid"]');
+    capMid = svg.querySelector('.rb-pin-cap[data-pin="mid"]');
     midBack = [];
     midFront = [];
     svg.querySelectorAll("[data-mid]").forEach(function (node) {
@@ -79,14 +81,22 @@ if (stage) {
   function ticks() {
     var fixed = "";
     CFG.endLeft.concat(CFG.endRight).forEach(function (mm) {
-      fixed += segment(mm / CFG.mm, CFG.elev.y0, CFG.elev.y1);
+      fixed += segment(CFG.sx0 + mm / CFG.mm, CFG.elev.y0, CFG.elev.y1);
     });
     tickFixed.setAttribute("d", fixed);
+  }
+
+  function pin(x) {
+    var a = screen(x, cam.pinY, CFG.pin.z0);
+    var b = screen(x, cam.pinY, CFG.pin.z1);
+    return ["M" + fine(a[0]) + " " + fine(a[1]) + "L" + fine(b[0]) + " " + fine(b[1]), "M" + fine(b[0]) + " " + fine(b[1]) + "h0.01"];
   }
 
   function draw() {
     var count = 0;
     var mid = "";
+    var stems = "";
+    var caps = "";
     for (var i = 0; i < CFG.midMax; i++) {
       var x = pos[i] / CFG.mm;
       var t = "translate(" + fine(x * ax[0]) + " " + fine(x * ax[1]) + ")";
@@ -95,12 +105,19 @@ if (stage) {
       midFront[i].setAttribute("transform", t);
       midBack[i].style.opacity = o;
       midFront[i].style.opacity = o;
-      if (alpha[i] > 0.04) mid += segment(x, CFG.elev.y0, CFG.elev.y1);
+      if (alpha[i] > 0.04) {
+        mid += segment(CFG.sx0 + x, CFG.elev.y0, CFG.elev.y1);
+        var p = pin(CFG.sx0 + x);
+        stems += p[0];
+        caps += p[1];
+      }
       if (i < intervals(target) - 1) count++;
     }
     tickMid.setAttribute("d", mid);
+    pinMid.setAttribute("d", stems);
+    capMid.setAttribute("d", caps);
     carriage.setAttribute("transform", "translate(" + fine(knob * ax[0]) + " " + fine(knob * ax[1]) + ")");
-    var total = 8 + count;
+    var total = CFG.fixedCount + count;
     var kg = Math.round(CFG.barKg + total * CFG.stirrupKg);
     var text = "D10 @ " + target + " · ×" + total + " · " + kg + " kg";
     if (text !== shown) {
@@ -236,7 +253,7 @@ if (stage) {
 
   function grab(event) {
     var onKnob = Math.abs(worldAt(event, CFG.knobZ) - knob) <= 9;
-    var x = worldAt(event, onKnob ? CFG.knobZ : 2);
+    var x = worldAt(event, onKnob ? CFG.knobZ : CFG.trackZ);
     dragging = { id: event.pointerId, grab: onKnob ? x - knob : 0 };
     stage.focus({ preventScroll: true });
     knobGoal = clamp(x - dragging.grab, CFG.gauge.x0, CFG.gauge.x1);
@@ -260,7 +277,7 @@ if (stage) {
   });
   stage.addEventListener("pointermove", function (event) {
     if (dragging && dragging.id === event.pointerId) {
-      knobGoal = clamp(worldAt(event, dragging.grab ? CFG.knobZ : 2) - dragging.grab, CFG.gauge.x0, CFG.gauge.x1);
+      knobGoal = clamp(worldAt(event, dragging.grab ? CFG.knobZ : CFG.trackZ) - dragging.grab, CFG.gauge.x0, CFG.gauge.x1);
       steer(spacingAt(knobGoal));
     } else if (orbiting && orbiting.id === event.pointerId) {
       aim(orbiting.az + (event.clientX - orbiting.x) * 0.45, orbiting.touch ? orbiting.el : orbiting.el + (event.clientY - orbiting.y) * 0.3);

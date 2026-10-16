@@ -21,6 +21,7 @@
   --anatomy-lit-shade: #163049;
   --anatomy-halo: #040a12;
   --anatomy-dot: #dbe6f2;
+  --rb-ok: #5fd49b;
   max-width: 920px;
   margin: 48px auto 0;
 }
@@ -69,6 +70,69 @@
 
 .iso-svg .rb-wire {
   stroke-width: 1.7;
+}
+
+.iso-svg .rb-case[data-w="mat"] {
+  stroke-width: 3.4;
+}
+
+.iso-svg .rb-wire[data-w="mat"] {
+  stroke-width: 1.7;
+}
+
+.iso-svg .rb-case[data-w="main"] {
+  stroke-width: 5.4;
+}
+
+.iso-svg .rb-wire[data-w="main"] {
+  stroke-width: 3.3;
+}
+
+.iso-svg .rb-wire[data-tone="mid"] {
+  stroke: var(--anatomy-mid);
+}
+
+.iso-svg .rb-chair,
+.iso-svg .rb-stake,
+.iso-svg .rb-pin,
+.iso-svg .rb-pin-cap {
+  fill: none;
+  stroke-linejoin: round;
+}
+
+.iso-svg .rb-chair {
+  stroke: var(--anatomy-lo);
+  stroke-width: 6;
+  stroke-linecap: butt;
+}
+
+.iso-svg .rb-stake {
+  stroke: var(--anatomy-lo);
+  stroke-width: 4;
+  stroke-linecap: butt;
+}
+
+.iso-svg .rb-pin {
+  stroke: var(--rb-ok);
+  stroke-width: 1.6;
+  stroke-linecap: round;
+}
+
+.iso-svg .rb-pin-cap {
+  stroke: var(--rb-ok);
+  stroke-width: 5.2;
+  stroke-linecap: round;
+}
+
+.iso-swatch[data-mark="pin"] path {
+  stroke: var(--rb-ok);
+  fill: none;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+}
+
+.iso-swatch[data-mark="pin"] path + path {
+  stroke-width: 5.2;
 }
 
 .iso-svg .rb-wire[data-tone="hi"] {

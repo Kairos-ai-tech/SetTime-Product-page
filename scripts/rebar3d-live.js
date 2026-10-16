@@ -4,7 +4,7 @@ if (stage) {
   var sceneNode = svg.querySelector("[data-scene]");
   var orbitBar = document.querySelector(".cage-orbit");
   var readout = document.querySelector(".cage-figure [data-readout]");
-  var carriage, track, tickFixed, tickMid, midBack, midFront, ax;
+  var carriage, track, tickFixed, tickMid, pinMid, capMid, midBack, midFront, ax;
   var cam = CFG.cam;
   var still = window.matchMedia("(prefers-reduced-motion: reduce)");
   var canHover = window.matchMedia("(hover: hover)");
@@ -59,6 +59,8 @@ if (stage) {
     track = svg.querySelector("[data-track]");
     tickFixed = svg.querySelector('[data-ticks="fixed"]');
     tickMid = svg.querySelector('[data-ticks="mid"]');
+    pinMid = svg.querySelector('.rb-pin[data-pin="mid"]');
+    capMid = svg.querySelector('.rb-pin-cap[data-pin="mid"]');
     midBack = [];
     midFront = [];
     svg.querySelectorAll("[data-mid]").forEach(function (node) {
@@ -77,14 +79,22 @@ if (stage) {
   function ticks() {
     var fixed = "";
     CFG.endLeft.concat(CFG.endRight).forEach(function (mm) {
-      fixed += segment(mm / CFG.mm, CFG.elev.y0, CFG.elev.y1);
+      fixed += segment(CFG.sx0 + mm / CFG.mm, CFG.elev.y0, CFG.elev.y1);
     });
     tickFixed.setAttribute("d", fixed);
+  }
+
+  function pin(x) {
+    var a = screen(x, cam.pinY, CFG.pin.z0);
+    var b = screen(x, cam.pinY, CFG.pin.z1);
+    return ["M" + fine(a[0]) + " " + fine(a[1]) + "L" + fine(b[0]) + " " + fine(b[1]), "M" + fine(b[0]) + " " + fine(b[1]) + "h0.01"];
   }
 
   function draw() {
     var count = 0;
     var mid = "";
+    var stems = "";
+    var caps = "";
     for (var i = 0; i < CFG.midMax; i++) {
       var x = pos[i] / CFG.mm;
       var t = "translate(" + fine(x * ax[0]) + " " + fine(x * ax[1]) + ")";
@@ -93,12 +103,19 @@ if (stage) {
       midFront[i].setAttribute("transform", t);
       midBack[i].style.opacity = o;
       midFront[i].style.opacity = o;
-      if (alpha[i] > 0.04) mid += segment(x, CFG.elev.y0, CFG.elev.y1);
+      if (alpha[i] > 0.04) {
+        mid += segment(CFG.sx0 + x, CFG.elev.y0, CFG.elev.y1);
+        var p = pin(CFG.sx0 + x);
+        stems += p[0];
+        caps += p[1];
+      }
       if (i < intervals(target) - 1) count++;
     }
     tickMid.setAttribute("d", mid);
+    pinMid.setAttribute("d", stems);
+    capMid.setAttribute("d", caps);
     carriage.setAttribute("transform", "translate(" + fine(knob * ax[0]) + " " + fine(knob * ax[1]) + ")");
-    var total = 8 + count;
+    var total = CFG.fixedCount + count;
     var kg = Math.round(CFG.barKg + total * CFG.stirrupKg);
     var text = "D10 @ " + target + " · ×" + total + " · " + kg + " kg";
     if (text !== shown) {
@@ -234,7 +251,7 @@ if (stage) {
 
   function grab(event) {
     var onKnob = Math.abs(worldAt(event, CFG.knobZ) - knob) <= 9;
-    var x = worldAt(event, onKnob ? CFG.knobZ : 2);
+    var x = worldAt(event, onKnob ? CFG.knobZ : CFG.trackZ);
     dragging = { id: event.pointerId, grab: onKnob ? x - knob : 0 };
     stage.focus({ preventScroll: true });
     knobGoal = clamp(x - dragging.grab, CFG.gauge.x0, CFG.gauge.x1);
@@ -258,7 +275,7 @@ if (stage) {
   });
   stage.addEventListener("pointermove", function (event) {
     if (dragging && dragging.id === event.pointerId) {
-      knobGoal = clamp(worldAt(event, dragging.grab ? CFG.knobZ : 2) - dragging.grab, CFG.gauge.x0, CFG.gauge.x1);
+      knobGoal = clamp(worldAt(event, dragging.grab ? CFG.knobZ : CFG.trackZ) - dragging.grab, CFG.gauge.x0, CFG.gauge.x1);
       steer(spacingAt(knobGoal));
     } else if (orbiting && orbiting.id === event.pointerId) {
       aim(orbiting.az + (event.clientX - orbiting.x) * 0.45, orbiting.touch ? orbiting.el : orbiting.el + (event.clientY - orbiting.y) * 0.3);

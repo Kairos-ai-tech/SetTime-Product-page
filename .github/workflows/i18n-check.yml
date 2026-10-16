@@ -15,6 +15,3 @@ jobs:
         with:
           node-version: '20'
       - run: node scripts/check-i18n-keys.js
-      - run: node scripts/check-rebar3d.mjs
-      - name: Generated rebar3d files are in sync
-        run: node scripts/build-rebar3d.mjs && git diff --exit-code

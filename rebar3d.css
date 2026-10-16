@@ -158,6 +158,7 @@
 
 .cage-stage [data-part="carriage"] {
   cursor: grab;
+  touch-action: none;
 }
 
 .cage-stage [data-part="carriage"]:active {

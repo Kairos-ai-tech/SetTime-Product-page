@@ -99,7 +99,7 @@
 }
 
 .cage-stage {
-  touch-action: pan-y;
+  touch-action: pan-y pinch-zoom;
   -webkit-user-select: none;
   user-select: none;
 }
@@ -163,5 +163,11 @@
 @media (max-width: 560px) {
   .cage-orbit {
     top: 38px;
+  }
+
+  .cage-figure .iso-plate-corner[data-corner="hint"] {
+    max-width: 100%;
+    line-height: 1.5;
+    white-space: normal;
   }
 }

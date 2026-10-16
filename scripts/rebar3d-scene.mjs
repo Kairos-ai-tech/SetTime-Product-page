@@ -159,9 +159,9 @@ export function renderScene(azimuth, elevation) {
     const plate = { x: cx - 11, y: -26, w: 22, d: 52, r: 2 };
     backOut.push(S(k.slabOf(plate, 0, 2, P, 3, 0.4), { tone: "lo" }));
     backOut.push(D([[cx - 7.5, -22.5], [cx + 7.5, -22.5], [cx - 7.5, 22.5], [cx + 7.5, 22.5]].map(([x, y]) => at([x, y, 2])), { size: 0.4 }));
+    backOut.push(S(k.slabOf({ x: cx - 8, y: plateY(-nearSide), w: 16, d: 3.4, r: 1 }, 2, 14, P, 2, 0.5), { tone: "mid" }));
     backOut.push(S(k.slabOf({ x: cx - 8, y: -19, w: 16, d: 38, r: 1.2 }, 2, CRADLE_TOP - 2, P, 3, 0.6), { tone: "mid" }));
     backOut.push(L(k.lineOnTop([cx - 5, -12], [cx + 5, -12], CRADLE_TOP, P), { tone: "faint" }), L(k.lineOnTop([cx - 5, 12], [cx + 5, 12], CRADLE_TOP, P), { tone: "faint" }));
-    backOut.push(S(k.slabOf({ x: cx - 8, y: plateY(-nearSide), w: 16, d: 3.4, r: 1 }, 2, 14, P, 2, 0.5), { tone: "mid" }));
     const frontOut = [S(k.slabOf({ x: cx - 8, y: plateY(nearSide), w: 16, d: 3.4, r: 1 }, 2, 14, P, 2, 0.5), { tone: "mid" })];
     const dotY = plateY(nearSide) + 1.7;
     frontOut.push(D([at([cx - 4, dotY, 16]), at([cx + 4, dotY, 16])], { size: 0.4 }));

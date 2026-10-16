@@ -157,7 +157,11 @@
 }
 
 .cage-stage [data-part="carriage"] {
-  pointer-events: none;
+  cursor: grab;
+}
+
+.cage-stage [data-part="carriage"]:active {
+  cursor: grabbing;
 }
 
 .iso-svg .rb-case,

@@ -18,7 +18,7 @@ const MAT_R = 0.8;
 const MAIN_R = 1.25;
 const BEAM_BAR_R = 0.8;
 
-export const SX0 = 58;
+export const SX0 = 60;
 export const END_LEFT = [50, 150];
 export const END_RIGHT = [950, 1050];
 export const MID_FROM = 150;

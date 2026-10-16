@@ -249,8 +249,8 @@ if (stage) {
     return u * cam.sinA + v * cam.cosA;
   }
 
-  function grab(event) {
-    var onKnob = Math.abs(worldAt(event, CFG.knobZ) - knob) <= 9;
+  function grab(event, onCarriage) {
+    var onKnob = onCarriage || Math.abs(worldAt(event, CFG.knobZ) - knob) <= 9;
     var x = worldAt(event, onKnob ? CFG.knobZ : CFG.trackZ);
     dragging = { id: event.pointerId, grab: onKnob ? x - knob : 0 };
     stage.focus({ preventScroll: true });
@@ -260,12 +260,13 @@ if (stage) {
 
   stage.addEventListener("pointerdown", function (event) {
     if (event.button !== 0 || dragging || orbiting) return;
-    var onTrack = event.target.closest && event.target.closest("[data-track]");
+    var onCarriage = !!(event.target.closest && event.target.closest('[data-part="carriage"]'));
+    var onTrack = onCarriage || !!(event.target.closest && event.target.closest("[data-track]"));
     if (!onTrack && !scene) return;
     event.preventDefault();
     stage.setPointerCapture(event.pointerId);
     if (onTrack) {
-      grab(event);
+      grab(event, onCarriage);
     } else {
       orbiting = { id: event.pointerId, x: event.clientX, y: event.clientY, az: viewGoal.az, el: viewGoal.el, touch: event.pointerType === "touch" };
       stage.classList.add("is-orbiting");

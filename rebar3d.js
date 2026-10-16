@@ -1,5 +1,5 @@
 (function () {
-var CFG = {"cam":{"origin":[255.37780218092416,204.33361195472528],"sinA":0.8480480961564261,"cosA":0.5299192642332049,"sinE":0.49999999999999994,"cosE":0.8660254037844387,"k":1.5957559656876572,"pinY":16},"view":{"azimuth":58,"elevation":30,"elevationMin":12,"elevationMax":60},"mm":10,"sx0":58,"endLeft":[50,150],"endRight":[950,1050],"midFrom":150,"midTo":950,"midMax":7,"spacing":{"min":100,"max":300,"step":10,"start":150},"gauge":{"x0":74,"x1":170},"knobZ":22.5,"trackZ":19,"elev":{"y0":37,"y1":45},"sheetZ":17.8,"pin":{"z0":26,"z1":33},"barKg":10.8,"stirrupKg":0.75,"fixedCount":4};
+var CFG = {"cam":{"origin":[255.37780218092416,204.33361195472528],"sinA":0.8480480961564261,"cosA":0.5299192642332049,"sinE":0.49999999999999994,"cosE":0.8660254037844387,"k":1.5957559656876572,"pinY":16},"view":{"azimuth":58,"elevation":30,"elevationMin":12,"elevationMax":60},"mm":10,"sx0":60,"endLeft":[50,150],"endRight":[950,1050],"midFrom":150,"midTo":950,"midMax":7,"spacing":{"min":100,"max":300,"step":10,"start":150},"gauge":{"x0":74,"x1":170},"knobZ":22.5,"trackZ":19,"elev":{"y0":37,"y1":45},"sheetZ":17.8,"pin":{"z0":26,"z1":33},"barKg":10.8,"stirrupKg":0.75,"fixedCount":4};
 var stage = document.querySelector(".cage-stage");
 if (stage) {
   var svg = stage.querySelector("svg");
@@ -251,8 +251,8 @@ if (stage) {
     return u * cam.sinA + v * cam.cosA;
   }
 
-  function grab(event) {
-    var onKnob = Math.abs(worldAt(event, CFG.knobZ) - knob) <= 9;
+  function grab(event, onCarriage) {
+    var onKnob = onCarriage || Math.abs(worldAt(event, CFG.knobZ) - knob) <= 9;
     var x = worldAt(event, onKnob ? CFG.knobZ : CFG.trackZ);
     dragging = { id: event.pointerId, grab: onKnob ? x - knob : 0 };
     stage.focus({ preventScroll: true });
@@ -262,12 +262,13 @@ if (stage) {
 
   stage.addEventListener("pointerdown", function (event) {
     if (event.button !== 0 || dragging || orbiting) return;
-    var onTrack = event.target.closest && event.target.closest("[data-track]");
+    var onCarriage = !!(event.target.closest && event.target.closest('[data-part="carriage"]'));
+    var onTrack = onCarriage || !!(event.target.closest && event.target.closest("[data-track]"));
     if (!onTrack && !scene) return;
     event.preventDefault();
     stage.setPointerCapture(event.pointerId);
     if (onTrack) {
-      grab(event);
+      grab(event, onCarriage);
     } else {
       orbiting = { id: event.pointerId, x: event.clientX, y: event.clientY, az: viewGoal.az, el: viewGoal.el, touch: event.pointerType === "touch" };
       stage.classList.add("is-orbiting");

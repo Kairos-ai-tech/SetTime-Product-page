@@ -203,3 +203,71 @@
     transition: none;
   }
 }
+
+.cage-stage {
+  touch-action: pan-y;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.cage-stage.is-orbit {
+  cursor: grab;
+}
+
+.cage-stage.is-orbiting {
+  cursor: grabbing;
+}
+
+.cage-orbit {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  z-index: 2;
+  display: flex;
+  gap: 4px;
+  transform: translateX(-50%);
+}
+
+.cage-orbit[hidden] {
+  display: none;
+}
+
+.cage-orbit button {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: 1px solid var(--anatomy-lo);
+  border-radius: 0;
+  background: rgba(15, 35, 55, 0.78);
+  color: var(--anatomy-text);
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.cage-orbit button:hover {
+  border-color: var(--anatomy-mid);
+  color: var(--anatomy-strong);
+}
+
+.cage-orbit button:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+
+.cage-orbit svg {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+@media (max-width: 560px) {
+  .cage-orbit {
+    top: 38px;
+  }
+}

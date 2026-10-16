@@ -1,22 +1,15 @@
 (function () {
-var CFG = {"origin":[182.74469727777893,126.04377055761998],"sinA":0.8480480961564261,"cosA":0.5299192642332049,"sinE":0.49999999999999994,"cosE":0.8660254037844387,"k":1.8956638019978054,"mm":8,"length":200,"endLeft":[50,150,250,350],"endRight":[1250,1350,1450,1550],"midFrom":350,"midTo":1250,"midMax":8,"spacing":{"min":100,"max":300,"step":10,"start":150},"gauge":{"x0":30,"x1":190},"knobZ":5.5,"elev":{"y0":31,"y1":39},"sheetZ":0.8,"barKg":49.3,"stirrupKg":0.913};
+var CFG = {"cam":{"origin":[201.64414364977694,143.4356373314996],"sinA":0.8480480961564261,"cosA":0.5299192642332049,"sinE":0.49999999999999994,"cosE":0.8660254037844387,"k":1.634639304913693},"view":{"azimuth":58,"elevation":30,"elevationMin":12,"elevationMax":60},"mm":8,"length":200,"endLeft":[50,150,250,350],"endRight":[1250,1350,1450,1550],"midFrom":350,"midTo":1250,"midMax":8,"spacing":{"min":100,"max":300,"step":10,"start":150},"gauge":{"x0":30,"x1":190},"knobZ":5.5,"elev":{"y0":31,"y1":39},"sheetZ":0.8,"barKg":49.3,"stirrupKg":0.913};
 var stage = document.querySelector(".cage-stage");
 if (stage) {
   var svg = stage.querySelector("svg");
-  var carriage = svg.querySelector('[data-part="carriage"]');
-  var track = svg.querySelector("[data-track]");
+  var sceneNode = svg.querySelector("[data-scene]");
+  var orbitBar = document.querySelector(".cage-orbit");
   var readout = document.querySelector(".cage-figure [data-readout]");
-  var tickFixed = svg.querySelector('[data-ticks="fixed"]');
-  var tickMid = svg.querySelector('[data-ticks="mid"]');
-  var midBack = [];
-  var midFront = [];
-  svg.querySelectorAll("[data-mid]").forEach(function (node) {
-    var list = node.closest('[data-layer="stirrups-back"]') ? midBack : midFront;
-    list[Number(node.getAttribute("data-mid"))] = node;
-  });
+  var carriage, track, tickFixed, tickMid, midBack, midFront, ax;
+  var cam = CFG.cam;
   var still = window.matchMedia("(prefers-reduced-motion: reduce)");
   var canHover = window.matchMedia("(hover: hover)");
-  var ax = [CFG.sinA * CFG.k, CFG.cosA * CFG.sinE * CFG.k];
   var span = CFG.spacing.max - CFG.spacing.min;
   var gaugeSpan = CFG.gauge.x1 - CFG.gauge.x0;
   var clamp = function (v, lo, hi) { return Math.min(hi, Math.max(lo, v)); };
@@ -25,8 +18,8 @@ if (stage) {
   var spacingAt = function (x) { return CFG.spacing.min + ((x - CFG.gauge.x0) * span) / gaugeSpan; };
   var screen = function (x, y, z) {
     return [
-      CFG.origin[0] + (x * CFG.sinA - y * CFG.cosA) * CFG.k,
-      CFG.origin[1] + ((x * CFG.cosA + y * CFG.sinA) * CFG.sinE - z * CFG.cosE) * CFG.k
+      cam.origin[0] + (x * cam.sinA - y * cam.cosA) * cam.k,
+      cam.origin[1] + ((x * cam.cosA + y * cam.sinA) * cam.sinE - z * cam.cosE) * cam.k
     ];
   };
   var fine = function (n) { return Math.round(n * 10) / 10; };
@@ -54,6 +47,28 @@ if (stage) {
   var idleTimer = 0;
   var dragging = null;
   var shown = "";
+
+  var scene = null;
+  var loading = false;
+  var orbiting = null;
+  var view = { az: CFG.view.azimuth, el: CFG.view.elevation };
+  var viewGoal = { az: view.az, el: view.el };
+  var viewFrame = 0;
+  var viewLast = 0;
+
+  function bind() {
+    carriage = svg.querySelector('[data-part="carriage"]');
+    track = svg.querySelector("[data-track]");
+    tickFixed = svg.querySelector('[data-ticks="fixed"]');
+    tickMid = svg.querySelector('[data-ticks="mid"]');
+    midBack = [];
+    midFront = [];
+    svg.querySelectorAll("[data-mid]").forEach(function (node) {
+      var list = node.closest('[data-layer="stirrups-back"]') ? midBack : midFront;
+      list[Number(node.getAttribute("data-mid"))] = node;
+    });
+    ax = [cam.sinA * cam.k, cam.cosA * cam.sinE * cam.k];
+  }
 
   function segment(x, y0, y1) {
     var a = screen(x, y0, CFG.sheetZ + 0.1);
@@ -126,6 +141,55 @@ if (stage) {
     }
   }
 
+  function paintView() {
+    var next = scene.renderScene(view.az, view.el);
+    sceneNode.innerHTML = next.body;
+    cam = next.cam;
+    bind();
+    ticks();
+    draw();
+  }
+
+  function viewStep(now) {
+    var dt = viewLast ? Math.min((now - viewLast) / 1000, 1 / 30) : 1 / 60;
+    viewLast = now;
+    var rate = still.matches ? 1 : 1 - Math.exp(-dt / 0.08);
+    view.az += (viewGoal.az - view.az) * rate;
+    view.el += (viewGoal.el - view.el) * rate;
+    var done = Math.abs(viewGoal.az - view.az) < 0.05 && Math.abs(viewGoal.el - view.el) < 0.05;
+    if (done) {
+      view.az = viewGoal.az;
+      view.el = viewGoal.el;
+    }
+    paintView();
+    viewFrame = done || !visible ? 0 : requestAnimationFrame(viewStep);
+  }
+
+  function runView() {
+    if (!viewFrame && scene && visible) {
+      viewLast = 0;
+      viewFrame = requestAnimationFrame(viewStep);
+    }
+  }
+
+  function aim(az, el) {
+    viewGoal.az = az;
+    viewGoal.el = clamp(el, CFG.view.elevationMin, CFG.view.elevationMax);
+    stopTour();
+    arm();
+    runView();
+  }
+
+  function loadScene() {
+    if (loading) return;
+    loading = true;
+    import("./rebar3d-scene.js").then(function (mod) {
+      scene = mod;
+      orbitBar.hidden = false;
+      stage.classList.add("is-orbit");
+    }).catch(function () { loading = false; });
+  }
+
   function advanceTour() {
     clearTimeout(tourTimer);
     if (!touring) return;
@@ -146,7 +210,7 @@ if (stage) {
   function arm() {
     clearTimeout(idleTimer);
     idleTimer = setTimeout(function () {
-      if (dragging || still.matches || stage.matches(":focus-visible") || (canHover.matches && stage.matches(":hover"))) return;
+      if (dragging || orbiting || still.matches || stage.matches(":focus-visible") || (canHover.matches && stage.matches(":hover"))) return;
       touring = true;
       advanceTour();
     }, 5200);
@@ -165,36 +229,69 @@ if (stage) {
     var vb = svg.viewBox.baseVal;
     var sx = ((event.clientX - box.left) / box.width) * vb.width;
     var sy = ((event.clientY - box.top) / box.height) * vb.height;
-    var u = (sx - CFG.origin[0]) / CFG.k;
-    var v = (sy - CFG.origin[1] + z * CFG.cosE * CFG.k) / (CFG.k * CFG.sinE);
-    return u * CFG.sinA + v * CFG.cosA;
+    var u = (sx - cam.origin[0]) / cam.k;
+    var v = (sy - cam.origin[1] + z * cam.cosE * cam.k) / (cam.k * cam.sinE);
+    return u * cam.sinA + v * cam.cosA;
   }
 
-  track.addEventListener("pointerdown", function (event) {
-    if (event.button !== 0) return;
-    event.preventDefault();
-    track.setPointerCapture(event.pointerId);
+  function grab(event) {
     var onKnob = Math.abs(worldAt(event, CFG.knobZ) - knob) <= 9;
     var x = worldAt(event, onKnob ? CFG.knobZ : 2);
     dragging = { id: event.pointerId, grab: onKnob ? x - knob : 0 };
     stage.focus({ preventScroll: true });
     knobGoal = clamp(x - dragging.grab, CFG.gauge.x0, CFG.gauge.x1);
     steer(spacingAt(knobGoal));
+  }
+
+  stage.addEventListener("pointerdown", function (event) {
+    if (event.button !== 0 || dragging || orbiting) return;
+    var onTrack = event.target.closest && event.target.closest("[data-track]");
+    if (!onTrack && !scene) return;
+    event.preventDefault();
+    stage.setPointerCapture(event.pointerId);
+    if (onTrack) {
+      grab(event);
+    } else {
+      orbiting = { id: event.pointerId, x: event.clientX, y: event.clientY, az: viewGoal.az, el: viewGoal.el, touch: event.pointerType === "touch" };
+      stage.classList.add("is-orbiting");
+      stopTour();
+      arm();
+    }
   });
-  track.addEventListener("pointermove", function (event) {
-    if (!dragging || dragging.id !== event.pointerId) return;
-    knobGoal = clamp(worldAt(event, dragging.grab ? CFG.knobZ : 2) - dragging.grab, CFG.gauge.x0, CFG.gauge.x1);
-    steer(spacingAt(knobGoal));
+  stage.addEventListener("pointermove", function (event) {
+    if (dragging && dragging.id === event.pointerId) {
+      knobGoal = clamp(worldAt(event, dragging.grab ? CFG.knobZ : 2) - dragging.grab, CFG.gauge.x0, CFG.gauge.x1);
+      steer(spacingAt(knobGoal));
+    } else if (orbiting && orbiting.id === event.pointerId) {
+      aim(orbiting.az + (event.clientX - orbiting.x) * 0.45, orbiting.touch ? orbiting.el : orbiting.el + (event.clientY - orbiting.y) * 0.3);
+    }
   });
   var release = function (event) {
+    if (orbiting && orbiting.id === event.pointerId) {
+      orbiting = null;
+      stage.classList.remove("is-orbiting");
+      arm();
+    }
     if (!dragging || dragging.id !== event.pointerId) return;
     dragging = null;
     knobGoal = gaugeX(target);
     arm();
     run();
   };
-  track.addEventListener("pointerup", release);
-  track.addEventListener("pointercancel", release);
+  stage.addEventListener("pointerup", release);
+  stage.addEventListener("pointercancel", release);
+
+  orbitBar.addEventListener("click", function (event) {
+    var button = event.target.closest("[data-orbit]");
+    if (!button || !scene) return;
+    var kind = button.getAttribute("data-orbit");
+    if (kind === "reset") {
+      var turns = Math.round((viewGoal.az - CFG.view.azimuth) / 360);
+      aim(CFG.view.azimuth + turns * 360, CFG.view.elevation);
+    } else {
+      aim(viewGoal.az + (kind === "left" ? -30 : 30), viewGoal.el);
+    }
+  });
 
   stage.addEventListener("focusin", stopTour);
   stage.addEventListener("focusout", arm);
@@ -223,11 +320,14 @@ if (stage) {
   new IntersectionObserver(function (entries) {
     visible = entries[entries.length - 1].isIntersecting;
     if (visible) {
+      loadScene();
       run();
+      runView();
       if (touring) advanceTour();
     }
   }, { rootMargin: "120px 0px" }).observe(stage);
 
+  bind();
   ticks();
   draw();
   if (touring) tourTimer = setTimeout(advanceTour, 2600);

@@ -66,7 +66,7 @@
   // ===== Scroll-triggered reveals (replaces the CSS-transition fade-in) =====
   function initReveals() {
     document.querySelectorAll('.fade-in').forEach(function (el) {
-      const delay = (parseInt(el.getAttribute('data-delay'), 10) || 0) * 0.08;
+      const delay = (parseInt(el.getAttribute('data-delay'), 10) || 0) * 0.1;
       ScrollTrigger.create({
         trigger: el,
         start: 'top 90%',
@@ -78,11 +78,11 @@
           el.style.transition = 'none';
           gsap.fromTo(
             el,
-            { opacity: 0, y: 28 },
+            { opacity: 0, y: 40 },
             {
               opacity: 1,
               y: 0,
-              duration: 1,
+              duration: 1.2,
               delay: delay,
               ease: 'expo.out',
               clearProps: 'opacity,transform',

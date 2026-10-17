@@ -38,8 +38,9 @@ let pre = `document.addEventListener('DOMContentLoaded',()=>{const s=document.cr
 }[v] || '')).join(''))};document.head.appendChild(s)});`;
 if (variant.includes('nofx')) pre += `window.gsap=undefined;`;
 await send('Page.addScriptToEvaluateOnNewDocument', { source: pre });
+if (process.env.EXTRA_CSS) await send('Page.addScriptToEvaluateOnNewDocument', { source: `document.addEventListener('DOMContentLoaded',()=>{const s=document.createElement('style');s.textContent=${JSON.stringify(process.env.EXTRA_CSS)};document.head.appendChild(s)});` });
 await send('Page.navigate', { url });
-await sleep(6000);
+await sleep(+process.env.WAIT || 6000);
 
 await ev(`window.__f=[];window.__y=[];(function l(t){window.__f.push(t);window.__y.push(Math.round(scrollY));requestAnimationFrame(l)})(performance.now());0`);
 const bver=await (await fetch(`http://127.0.0.1:${port}/json/version`)).json();

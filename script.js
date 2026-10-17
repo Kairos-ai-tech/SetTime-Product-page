@@ -124,14 +124,22 @@ document.addEventListener('DOMContentLoaded', function () {
   pilotForm.addEventListener('submit', function (e) {
     e.preventDefault();
 
-    const company = document.getElementById('pilotCompany').value;
-    const email = document.getElementById('pilotEmail').value;
-    const constructionType = document.getElementById('pilotType').value;
+    const field = (id) => document.getElementById(id).value.trim();
+    const company = field('pilotCompany');
+    const notes = field('pilotNotes');
 
     submitViaMailto('SetTime 免費試點申請 from ' + company, [
+      '姓名 Name: ' + field('pilotName'),
       '公司名稱 Company: ' + company,
-      'Email: ' + email,
-      '施工類型 Construction Type: ' + constructionType,
+      'Email: ' + field('pilotEmail'),
+      '電話 Phone: ' + field('pilotPhone'),
+      '國家/地區 Country: ' + field('pilotCountry'),
+      '身份 Role: ' + field('pilotRole'),
+      '施工類型 Construction Type: ' + field('pilotType'),
+      '年度鋼筋用量 Annual Rebar Volume: ' + field('pilotVolume'),
+      '希望試點時程 Pilot Timeline: ' + field('pilotTimeline'),
+      '',
+      '補充說明 Notes:\n' + notes,
     ]);
   });
 });

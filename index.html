@@ -35,7 +35,7 @@
   <title>SetTime｜AI 鋼筋估算自動化軟體 — 施工圖轉加工圖與計料表 | Kairos.ai</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@600;700&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;700&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+TC:wght@700&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <!-- Vendored, not CDN-loaded: no runtime dependency on a third-party host. -->
   <script type="importmap">
@@ -267,6 +267,78 @@
   </section>
   </div>
 
+  <!-- ===== PROBLEM ===== -->
+  <section class="problem" id="problem">
+    <div class="problem-visual">
+      <!-- TODO: replace with branded rebar / construction site image (steel reinforcement close-up preferred) -->
+      <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=960&q=80" alt="Construction site" data-i18n-alt="alt.problem" class="problem-img fade-in" loading="lazy" decoding="async">
+    </div>
+    <div class="problem-content">
+      <p class="section-label fade-in" data-i18n="problem.label">THE CRISIS 產業缺口</p>
+      <h2 class="section-heading fade-in" data-delay="1" data-i18n="problem.heading">設計與現場脫節<br>鋼筋錯誤太晚才發現</h2>
+      <p class="section-lead fade-in" data-delay="2" data-i18n="problem.lead">施工圖意圖經人工判讀後才到現場，誤差往往在監造抽查或灌漿後才浮現。鋼筋工嚴重短缺、返工成本高昂，且全程缺乏可稽核的竣工紀錄。</p>
+
+      <div class="crisis-grid fade-in" data-delay="3">
+        <div class="crisis-item">
+          <span class="crisis-stat" data-i18n="problem.crisis1.stat">30%</span>
+          <p data-i18n="problem.crisis1.text">工程成本超支來自返工</p>
+        </div>
+        <div class="crisis-item">
+          <span class="crisis-stat" data-i18n="problem.crisis2.stat">45%</span>
+          <p data-i18n="problem.crisis2.text">缺口：鋼筋工人力</p>
+        </div>
+        <div class="crisis-item">
+          <span class="crisis-stat" data-i18n="problem.crisis3.stat">70%</span>
+          <p data-i18n="problem.crisis3.text">缺失於灌漿後才發現</p>
+        </div>
+        <div class="crisis-item">
+          <span class="crisis-stat" data-i18n="problem.crisis4.stat">0</span>
+          <p data-i18n="problem.crisis4.text">傳統工法可稽核竣工資料</p>
+        </div>
+      </div>
+      <p class="crisis-source" data-i18n="problem.stats.source">產業估計數據，非本產品實測結果。</p>
+
+      <blockquote class="crisis-quote fade-in" data-delay="4">
+        <p data-i18n="problem.quote">「圖照著綁了，監造一來說間距不對、保護層不夠。打掉重綁一次，當週進度就沒了。」</p>
+        <cite data-i18n="problem.quote.cite">— 工地主任訪談（說明性引述，非署名客戶）</cite>
+      </blockquote>
+    </div>
+
+    <div class="loss-banner">
+      <div class="loss-banner-inner">
+        <div class="loss-item fade-in">
+          <span class="loss-number" data-count="180">0</span><span class="loss-unit" data-i18n="problem.loss.unit">億</span>
+          <span class="loss-label" data-i18n="problem.loss1.label">鋼筋返工直接成本</span>
+        </div>
+        <div class="loss-item fade-in" data-delay="1">
+          <span class="loss-number" data-count="75">0</span><span class="loss-unit" data-i18n="problem.loss.unit">億</span>
+          <span class="loss-label" data-i18n="problem.loss2.label">工期延誤損失</span>
+        </div>
+        <div class="loss-item fade-in" data-delay="2">
+          <span class="loss-number" data-count="50">0</span><span class="loss-unit" data-i18n="problem.loss.unit">億</span>
+          <span class="loss-label" data-i18n="problem.loss3.label">驗收失敗重做</span>
+        </div>
+      </div>
+      <p class="crisis-source loss-source" data-i18n="problem.stats.source">產業估計數據，非本產品實測結果。</p>
+    </div>
+  </section>
+
+  <!-- Shared defs for the tech-illustration SVGs below (blueprint grid + arrow marker) -->
+  <svg width="0" height="0" aria-hidden="true" style="position: absolute">
+    <defs>
+      <pattern id="tech-grid" width="40" height="40" patternUnits="userSpaceOnUse">
+        <path d="M40 0H0V40" fill="none" stroke="var(--accent-gold-light)" stroke-opacity="0.06"/>
+      </pattern>
+      <marker id="tech-arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+        <path d="M0 0 L10 5 L0 10 Z" fill="var(--accent-gold-light)"/>
+      </marker>
+      <g id="tech-bg">
+        <rect width="800" height="600" fill="var(--navy)"/>
+        <rect width="800" height="600" fill="url(#tech-grid)"/>
+      </g>
+    </defs>
+  </svg>
+
   <!-- ===== DEMO (click a member on the sample plan, the bar schedule follows) ===== -->
   <section class="demo" id="demo">
     <div class="container">
@@ -350,79 +422,6 @@
       </div>
     </div>
   </section>
-
-
-  <!-- ===== PROBLEM ===== -->
-  <section class="problem" id="problem">
-    <div class="problem-visual">
-      <!-- TODO: replace with branded rebar / construction site image (steel reinforcement close-up preferred) -->
-      <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=960&q=80" alt="Construction site" data-i18n-alt="alt.problem" class="problem-img fade-in" loading="lazy" decoding="async">
-    </div>
-    <div class="problem-content">
-      <p class="section-label fade-in" data-i18n="problem.label">THE CRISIS 產業缺口</p>
-      <h2 class="section-heading fade-in" data-delay="1" data-i18n="problem.heading">設計與現場脫節<br>鋼筋錯誤太晚才發現</h2>
-      <p class="section-lead fade-in" data-delay="2" data-i18n="problem.lead">施工圖意圖經人工判讀後才到現場，誤差往往在監造抽查或灌漿後才浮現。鋼筋工嚴重短缺、返工成本高昂，且全程缺乏可稽核的竣工紀錄。</p>
-
-      <div class="crisis-grid fade-in" data-delay="3">
-        <div class="crisis-item">
-          <span class="crisis-stat" data-i18n="problem.crisis1.stat">30%</span>
-          <p data-i18n="problem.crisis1.text">工程成本超支來自返工</p>
-        </div>
-        <div class="crisis-item">
-          <span class="crisis-stat" data-i18n="problem.crisis2.stat">45%</span>
-          <p data-i18n="problem.crisis2.text">缺口：鋼筋工人力</p>
-        </div>
-        <div class="crisis-item">
-          <span class="crisis-stat" data-i18n="problem.crisis3.stat">70%</span>
-          <p data-i18n="problem.crisis3.text">缺失於灌漿後才發現</p>
-        </div>
-        <div class="crisis-item">
-          <span class="crisis-stat" data-i18n="problem.crisis4.stat">0</span>
-          <p data-i18n="problem.crisis4.text">傳統工法可稽核竣工資料</p>
-        </div>
-      </div>
-      <p class="crisis-source" data-i18n="problem.stats.source">產業估計數據，非本產品實測結果。</p>
-
-      <blockquote class="crisis-quote fade-in" data-delay="4">
-        <p data-i18n="problem.quote">「圖照著綁了，監造一來說間距不對、保護層不夠。打掉重綁一次，當週進度就沒了。」</p>
-        <cite data-i18n="problem.quote.cite">— 工地主任訪談（說明性引述，非署名客戶）</cite>
-      </blockquote>
-    </div>
-
-    <div class="loss-banner">
-      <div class="loss-banner-inner">
-        <div class="loss-item fade-in">
-          <span class="loss-number" data-count="180">0</span><span class="loss-unit" data-i18n="problem.loss.unit">億</span>
-          <span class="loss-label" data-i18n="problem.loss1.label">鋼筋返工直接成本</span>
-        </div>
-        <div class="loss-item fade-in" data-delay="1">
-          <span class="loss-number" data-count="75">0</span><span class="loss-unit" data-i18n="problem.loss.unit">億</span>
-          <span class="loss-label" data-i18n="problem.loss2.label">工期延誤損失</span>
-        </div>
-        <div class="loss-item fade-in" data-delay="2">
-          <span class="loss-number" data-count="50">0</span><span class="loss-unit" data-i18n="problem.loss.unit">億</span>
-          <span class="loss-label" data-i18n="problem.loss3.label">驗收失敗重做</span>
-        </div>
-      </div>
-      <p class="crisis-source loss-source" data-i18n="problem.stats.source">產業估計數據，非本產品實測結果。</p>
-    </div>
-  </section>
-
-  <!-- Shared defs for the tech-illustration SVGs below (blueprint grid + arrow marker) -->
-  <svg width="0" height="0" aria-hidden="true" style="position: absolute">
-    <defs>
-      <pattern id="tech-grid" width="40" height="40" patternUnits="userSpaceOnUse">
-        <path d="M40 0H0V40" fill="none" stroke="var(--accent-gold-light)" stroke-opacity="0.06"/>
-      </pattern>
-      <marker id="tech-arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
-        <path d="M0 0 L10 5 L0 10 Z" fill="var(--accent-gold-light)"/>
-      </marker>
-      <g id="tech-bg">
-        <rect width="800" height="600" fill="var(--navy)"/>
-        <rect width="800" height="600" fill="url(#tech-grid)"/>
-      </g>
-    </defs>
-  </svg>
 
   <!-- ===== SOLUTION ===== -->
   <section class="solution" id="solution">
@@ -956,13 +955,44 @@
       <h2 class="section-heading light fade-in" data-delay="1" data-i18n="pilot.heading">申請免費試點</h2>
       <p class="contact-desc fade-in" data-delay="2" data-i18n="pilot.desc">留下公司資訊，我們將與您聯繫安排試點導入。</p>
       <form class="contact-form pilot-form fade-in" data-delay="3" id="pilotForm">
-        <div class="form-group">
-          <label for="pilotCompany" data-i18n="pilot.company">公司名稱 Company</label>
-          <input type="text" id="pilotCompany" name="company" required placeholder="您的公司名稱" data-i18n-placeholder="pilot.company.placeholder">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="pilotName" data-i18n="contact.name">姓名 Name</label>
+            <input type="text" id="pilotName" name="name" required autocomplete="name" placeholder="您的姓名" data-i18n-placeholder="contact.name.placeholder">
+          </div>
+          <div class="form-group">
+            <label for="pilotCompany" data-i18n="pilot.company">公司名稱 Company</label>
+            <input type="text" id="pilotCompany" name="company" required autocomplete="organization" placeholder="您的公司名稱" data-i18n-placeholder="pilot.company.placeholder">
+          </div>
         </div>
-        <div class="form-group">
-          <label for="pilotEmail" data-i18n="contact.email">Email</label>
-          <input type="email" id="pilotEmail" name="email" required placeholder="you@example.com" data-i18n-placeholder="contact.email.placeholder">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="pilotEmail" data-i18n="contact.email">Email</label>
+            <input type="email" id="pilotEmail" name="email" required autocomplete="email" placeholder="you@example.com" data-i18n-placeholder="contact.email.placeholder">
+          </div>
+          <div class="form-group">
+            <label for="pilotPhone" data-i18n="pilot.phone">電話 Phone（選填）</label>
+            <input type="tel" id="pilotPhone" name="phone" autocomplete="tel" placeholder="+886 912 345 678" data-i18n-placeholder="pilot.phone.placeholder">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="pilotCountry" data-i18n="pilot.country">國家/地區 Country</label>
+            <input type="text" id="pilotCountry" name="country" required autocomplete="country-name" placeholder="例如：台灣" data-i18n-placeholder="pilot.country.placeholder">
+          </div>
+          <div class="form-group">
+            <label for="pilotRole" data-i18n="contact.role">身份 Role</label>
+            <select id="pilotRole" name="role" required>
+              <option value="" disabled selected data-i18n="contact.role.placeholder">請選擇 Select</option>
+              <option value="contractor" data-i18n="contact.role.contractor">營造廠 Contractor</option>
+              <option value="fabricator" data-i18n="contact.role.fabricator">鋼筋加工廠 Rebar Fabricator</option>
+              <option value="engineer" data-i18n="contact.role.engineer">結構技師事務所 Structural Engineer</option>
+              <option value="developer" data-i18n="contact.role.developer">開發商業主 Developer / Owner</option>
+              <option value="government" data-i18n="contact.role.government">政府機構 Government</option>
+              <option value="investor" data-i18n="contact.role.investor">投資人 Investor</option>
+              <option value="other" data-i18n="contact.role.other">其他 Other</option>
+            </select>
+          </div>
         </div>
         <div class="form-group">
           <label for="pilotType" data-i18n="pilot.type">施工類型 Construction Type</label>
@@ -974,6 +1004,32 @@
             <option value="public" data-i18n="pilot.type.public">公共工程 Public Works</option>
             <option value="other" data-i18n="pilot.type.other">其他 Other</option>
           </select>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="pilotVolume" data-i18n="pilot.volume">年度鋼筋用量 Annual Rebar Volume</label>
+            <select id="pilotVolume" name="volume" required>
+              <option value="" disabled selected data-i18n="contact.role.placeholder">請選擇 Select</option>
+              <option value="under 500 t" data-i18n="pilot.volume.small">500 噸以下 Under 500 t</option>
+              <option value="500-5,000 t" data-i18n="pilot.volume.mid">500–5,000 噸 500–5,000 t</option>
+              <option value="over 5,000 t" data-i18n="pilot.volume.large">5,000 噸以上 Over 5,000 t</option>
+              <option value="not sure" data-i18n="pilot.volume.unsure">尚不確定 Not sure</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="pilotTimeline" data-i18n="pilot.timeline">希望試點時程 Pilot Timeline</label>
+            <select id="pilotTimeline" name="timeline" required>
+              <option value="" disabled selected data-i18n="contact.role.placeholder">請選擇 Select</option>
+              <option value="within 1 month" data-i18n="pilot.timeline.now">1 個月內 Within 1 month</option>
+              <option value="1-3 months" data-i18n="pilot.timeline.soon">1–3 個月 1–3 months</option>
+              <option value="3-6 months" data-i18n="pilot.timeline.later">3–6 個月 3–6 months</option>
+              <option value="just exploring" data-i18n="pilot.timeline.explore">先了解 Just exploring</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="pilotNotes" data-i18n="pilot.notes">補充說明 Notes（選填）</label>
+          <textarea id="pilotNotes" name="notes" rows="3" placeholder="專案類型、目前痛點、想驗證的項目…" data-i18n-placeholder="pilot.notes.placeholder"></textarea>
         </div>
         <button type="submit" class="form-submit">
           <span data-i18n="pilot.submit">申請免費試點 Apply for Free Pilot</span>

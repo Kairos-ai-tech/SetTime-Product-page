@@ -956,13 +956,44 @@
       <h2 class="section-heading light fade-in" data-delay="1" data-i18n="pilot.heading">申請免費試點</h2>
       <p class="contact-desc fade-in" data-delay="2" data-i18n="pilot.desc">留下公司資訊，我們將與您聯繫安排試點導入。</p>
       <form class="contact-form pilot-form fade-in" data-delay="3" id="pilotForm">
-        <div class="form-group">
-          <label for="pilotCompany" data-i18n="pilot.company">公司名稱 Company</label>
-          <input type="text" id="pilotCompany" name="company" required placeholder="您的公司名稱" data-i18n-placeholder="pilot.company.placeholder">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="pilotName" data-i18n="contact.name">姓名 Name</label>
+            <input type="text" id="pilotName" name="name" required autocomplete="name" placeholder="您的姓名" data-i18n-placeholder="contact.name.placeholder">
+          </div>
+          <div class="form-group">
+            <label for="pilotCompany" data-i18n="pilot.company">公司名稱 Company</label>
+            <input type="text" id="pilotCompany" name="company" required autocomplete="organization" placeholder="您的公司名稱" data-i18n-placeholder="pilot.company.placeholder">
+          </div>
         </div>
-        <div class="form-group">
-          <label for="pilotEmail" data-i18n="contact.email">Email</label>
-          <input type="email" id="pilotEmail" name="email" required placeholder="you@example.com" data-i18n-placeholder="contact.email.placeholder">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="pilotEmail" data-i18n="contact.email">Email</label>
+            <input type="email" id="pilotEmail" name="email" required autocomplete="email" placeholder="you@example.com" data-i18n-placeholder="contact.email.placeholder">
+          </div>
+          <div class="form-group">
+            <label for="pilotPhone" data-i18n="pilot.phone">電話 Phone（選填）</label>
+            <input type="tel" id="pilotPhone" name="phone" autocomplete="tel" placeholder="+886 912 345 678" data-i18n-placeholder="pilot.phone.placeholder">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="pilotCountry" data-i18n="pilot.country">國家/地區 Country</label>
+            <input type="text" id="pilotCountry" name="country" required autocomplete="country-name" placeholder="例如：台灣" data-i18n-placeholder="pilot.country.placeholder">
+          </div>
+          <div class="form-group">
+            <label for="pilotRole" data-i18n="contact.role">身份 Role</label>
+            <select id="pilotRole" name="role" required>
+              <option value="" disabled selected data-i18n="contact.role.placeholder">請選擇 Select</option>
+              <option value="contractor" data-i18n="contact.role.contractor">營造廠 Contractor</option>
+              <option value="fabricator" data-i18n="contact.role.fabricator">鋼筋加工廠 Rebar Fabricator</option>
+              <option value="engineer" data-i18n="contact.role.engineer">結構技師事務所 Structural Engineer</option>
+              <option value="developer" data-i18n="contact.role.developer">開發商業主 Developer / Owner</option>
+              <option value="government" data-i18n="contact.role.government">政府機構 Government</option>
+              <option value="investor" data-i18n="contact.role.investor">投資人 Investor</option>
+              <option value="other" data-i18n="contact.role.other">其他 Other</option>
+            </select>
+          </div>
         </div>
         <div class="form-group">
           <label for="pilotType" data-i18n="pilot.type">施工類型 Construction Type</label>
@@ -974,6 +1005,32 @@
             <option value="public" data-i18n="pilot.type.public">公共工程 Public Works</option>
             <option value="other" data-i18n="pilot.type.other">其他 Other</option>
           </select>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="pilotVolume" data-i18n="pilot.volume">年度鋼筋用量 Annual Rebar Volume</label>
+            <select id="pilotVolume" name="volume" required>
+              <option value="" disabled selected data-i18n="contact.role.placeholder">請選擇 Select</option>
+              <option value="under 500 t" data-i18n="pilot.volume.small">500 噸以下 Under 500 t</option>
+              <option value="500-5,000 t" data-i18n="pilot.volume.mid">500–5,000 噸 500–5,000 t</option>
+              <option value="over 5,000 t" data-i18n="pilot.volume.large">5,000 噸以上 Over 5,000 t</option>
+              <option value="not sure" data-i18n="pilot.volume.unsure">尚不確定 Not sure</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="pilotTimeline" data-i18n="pilot.timeline">希望試點時程 Pilot Timeline</label>
+            <select id="pilotTimeline" name="timeline" required>
+              <option value="" disabled selected data-i18n="contact.role.placeholder">請選擇 Select</option>
+              <option value="within 1 month" data-i18n="pilot.timeline.now">1 個月內 Within 1 month</option>
+              <option value="1-3 months" data-i18n="pilot.timeline.soon">1–3 個月 1–3 months</option>
+              <option value="3-6 months" data-i18n="pilot.timeline.later">3–6 個月 3–6 months</option>
+              <option value="just exploring" data-i18n="pilot.timeline.explore">先了解 Just exploring</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="pilotNotes" data-i18n="pilot.notes">補充說明 Notes（選填）</label>
+          <textarea id="pilotNotes" name="notes" rows="3" placeholder="專案類型、目前痛點、想驗證的項目…" data-i18n-placeholder="pilot.notes.placeholder"></textarea>
         </div>
         <button type="submit" class="form-submit">
           <span data-i18n="pilot.submit">申請免費試點 Apply for Free Pilot</span>

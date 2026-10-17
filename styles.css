@@ -214,8 +214,6 @@ section[id] { scroll-margin-top: calc(var(--navbar-height) + 16px); }
 
 @media (prefers-reduced-motion: reduce) {
   .fade-in { opacity: 1; transform: none; transition: none; }
-  .hero-subtitle-en::after,
-  .hero-badge::before { animation: none; }
   .moat-icon,
   .result-icon { opacity: 1; transform: none; transition: none; }
 }
@@ -1999,6 +1997,29 @@ html.no-3d {
   }
 
   .hero-subtitle { margin-bottom: 4px !important; }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: clamp(1.3rem, 6.2vw, 1.6rem) !important;
+    letter-spacing: 0;
+    margin-bottom: 12px !important;
+  }
+
+  .hero-subtitle {
+    line-height: 1.55;
+    padding-left: 14px;
+  }
+
+  .hero-subtitle-en {
+    padding-left: 14px;
+    margin-bottom: 20px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-subtitle-en::after,
+  .hero-badge::before { animation: none; }
 }
 
 /* ===== Motion layer (effects.js) ===== */

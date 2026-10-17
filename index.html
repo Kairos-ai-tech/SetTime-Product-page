@@ -267,6 +267,78 @@
   </section>
   </div>
 
+  <!-- ===== PROBLEM ===== -->
+  <section class="problem" id="problem">
+    <div class="problem-visual">
+      <!-- TODO: replace with branded rebar / construction site image (steel reinforcement close-up preferred) -->
+      <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=960&q=80" alt="Construction site" data-i18n-alt="alt.problem" class="problem-img fade-in" loading="lazy" decoding="async">
+    </div>
+    <div class="problem-content">
+      <p class="section-label fade-in" data-i18n="problem.label">THE CRISIS 產業缺口</p>
+      <h2 class="section-heading fade-in" data-delay="1" data-i18n="problem.heading">設計與現場脫節<br>鋼筋錯誤太晚才發現</h2>
+      <p class="section-lead fade-in" data-delay="2" data-i18n="problem.lead">施工圖意圖經人工判讀後才到現場，誤差往往在監造抽查或灌漿後才浮現。鋼筋工嚴重短缺、返工成本高昂，且全程缺乏可稽核的竣工紀錄。</p>
+
+      <div class="crisis-grid fade-in" data-delay="3">
+        <div class="crisis-item">
+          <span class="crisis-stat" data-i18n="problem.crisis1.stat">30%</span>
+          <p data-i18n="problem.crisis1.text">工程成本超支來自返工</p>
+        </div>
+        <div class="crisis-item">
+          <span class="crisis-stat" data-i18n="problem.crisis2.stat">45%</span>
+          <p data-i18n="problem.crisis2.text">缺口：鋼筋工人力</p>
+        </div>
+        <div class="crisis-item">
+          <span class="crisis-stat" data-i18n="problem.crisis3.stat">70%</span>
+          <p data-i18n="problem.crisis3.text">缺失於灌漿後才發現</p>
+        </div>
+        <div class="crisis-item">
+          <span class="crisis-stat" data-i18n="problem.crisis4.stat">0</span>
+          <p data-i18n="problem.crisis4.text">傳統工法可稽核竣工資料</p>
+        </div>
+      </div>
+      <p class="crisis-source" data-i18n="problem.stats.source">產業估計數據，非本產品實測結果。</p>
+
+      <blockquote class="crisis-quote fade-in" data-delay="4">
+        <p data-i18n="problem.quote">「圖照著綁了，監造一來說間距不對、保護層不夠。打掉重綁一次，當週進度就沒了。」</p>
+        <cite data-i18n="problem.quote.cite">— 工地主任訪談（說明性引述，非署名客戶）</cite>
+      </blockquote>
+    </div>
+
+    <div class="loss-banner">
+      <div class="loss-banner-inner">
+        <div class="loss-item fade-in">
+          <span class="loss-number" data-count="180">0</span><span class="loss-unit" data-i18n="problem.loss.unit">億</span>
+          <span class="loss-label" data-i18n="problem.loss1.label">鋼筋返工直接成本</span>
+        </div>
+        <div class="loss-item fade-in" data-delay="1">
+          <span class="loss-number" data-count="75">0</span><span class="loss-unit" data-i18n="problem.loss.unit">億</span>
+          <span class="loss-label" data-i18n="problem.loss2.label">工期延誤損失</span>
+        </div>
+        <div class="loss-item fade-in" data-delay="2">
+          <span class="loss-number" data-count="50">0</span><span class="loss-unit" data-i18n="problem.loss.unit">億</span>
+          <span class="loss-label" data-i18n="problem.loss3.label">驗收失敗重做</span>
+        </div>
+      </div>
+      <p class="crisis-source loss-source" data-i18n="problem.stats.source">產業估計數據，非本產品實測結果。</p>
+    </div>
+  </section>
+
+  <!-- Shared defs for the tech-illustration SVGs below (blueprint grid + arrow marker) -->
+  <svg width="0" height="0" aria-hidden="true" style="position: absolute">
+    <defs>
+      <pattern id="tech-grid" width="40" height="40" patternUnits="userSpaceOnUse">
+        <path d="M40 0H0V40" fill="none" stroke="var(--accent-gold-light)" stroke-opacity="0.06"/>
+      </pattern>
+      <marker id="tech-arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+        <path d="M0 0 L10 5 L0 10 Z" fill="var(--accent-gold-light)"/>
+      </marker>
+      <g id="tech-bg">
+        <rect width="800" height="600" fill="var(--navy)"/>
+        <rect width="800" height="600" fill="url(#tech-grid)"/>
+      </g>
+    </defs>
+  </svg>
+
   <!-- ===== DEMO (click a member on the sample plan, the bar schedule follows) ===== -->
   <section class="demo" id="demo">
     <div class="container">
@@ -350,79 +422,6 @@
       </div>
     </div>
   </section>
-
-
-  <!-- ===== PROBLEM ===== -->
-  <section class="problem" id="problem">
-    <div class="problem-visual">
-      <!-- TODO: replace with branded rebar / construction site image (steel reinforcement close-up preferred) -->
-      <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=960&q=80" alt="Construction site" data-i18n-alt="alt.problem" class="problem-img fade-in" loading="lazy" decoding="async">
-    </div>
-    <div class="problem-content">
-      <p class="section-label fade-in" data-i18n="problem.label">THE CRISIS 產業缺口</p>
-      <h2 class="section-heading fade-in" data-delay="1" data-i18n="problem.heading">設計與現場脫節<br>鋼筋錯誤太晚才發現</h2>
-      <p class="section-lead fade-in" data-delay="2" data-i18n="problem.lead">施工圖意圖經人工判讀後才到現場，誤差往往在監造抽查或灌漿後才浮現。鋼筋工嚴重短缺、返工成本高昂，且全程缺乏可稽核的竣工紀錄。</p>
-
-      <div class="crisis-grid fade-in" data-delay="3">
-        <div class="crisis-item">
-          <span class="crisis-stat" data-i18n="problem.crisis1.stat">30%</span>
-          <p data-i18n="problem.crisis1.text">工程成本超支來自返工</p>
-        </div>
-        <div class="crisis-item">
-          <span class="crisis-stat" data-i18n="problem.crisis2.stat">45%</span>
-          <p data-i18n="problem.crisis2.text">缺口：鋼筋工人力</p>
-        </div>
-        <div class="crisis-item">
-          <span class="crisis-stat" data-i18n="problem.crisis3.stat">70%</span>
-          <p data-i18n="problem.crisis3.text">缺失於灌漿後才發現</p>
-        </div>
-        <div class="crisis-item">
-          <span class="crisis-stat" data-i18n="problem.crisis4.stat">0</span>
-          <p data-i18n="problem.crisis4.text">傳統工法可稽核竣工資料</p>
-        </div>
-      </div>
-      <p class="crisis-source" data-i18n="problem.stats.source">產業估計數據，非本產品實測結果。</p>
-
-      <blockquote class="crisis-quote fade-in" data-delay="4">
-        <p data-i18n="problem.quote">「圖照著綁了，監造一來說間距不對、保護層不夠。打掉重綁一次，當週進度就沒了。」</p>
-        <cite data-i18n="problem.quote.cite">— 工地主任訪談（說明性引述，非署名客戶）</cite>
-      </blockquote>
-    </div>
-
-    <div class="loss-banner">
-      <div class="loss-banner-inner">
-        <div class="loss-item fade-in">
-          <span class="loss-number" data-count="180">0</span><span class="loss-unit" data-i18n="problem.loss.unit">億</span>
-          <span class="loss-label" data-i18n="problem.loss1.label">鋼筋返工直接成本</span>
-        </div>
-        <div class="loss-item fade-in" data-delay="1">
-          <span class="loss-number" data-count="75">0</span><span class="loss-unit" data-i18n="problem.loss.unit">億</span>
-          <span class="loss-label" data-i18n="problem.loss2.label">工期延誤損失</span>
-        </div>
-        <div class="loss-item fade-in" data-delay="2">
-          <span class="loss-number" data-count="50">0</span><span class="loss-unit" data-i18n="problem.loss.unit">億</span>
-          <span class="loss-label" data-i18n="problem.loss3.label">驗收失敗重做</span>
-        </div>
-      </div>
-      <p class="crisis-source loss-source" data-i18n="problem.stats.source">產業估計數據，非本產品實測結果。</p>
-    </div>
-  </section>
-
-  <!-- Shared defs for the tech-illustration SVGs below (blueprint grid + arrow marker) -->
-  <svg width="0" height="0" aria-hidden="true" style="position: absolute">
-    <defs>
-      <pattern id="tech-grid" width="40" height="40" patternUnits="userSpaceOnUse">
-        <path d="M40 0H0V40" fill="none" stroke="var(--accent-gold-light)" stroke-opacity="0.06"/>
-      </pattern>
-      <marker id="tech-arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
-        <path d="M0 0 L10 5 L0 10 Z" fill="var(--accent-gold-light)"/>
-      </marker>
-      <g id="tech-bg">
-        <rect width="800" height="600" fill="var(--navy)"/>
-        <rect width="800" height="600" fill="url(#tech-grid)"/>
-      </g>
-    </defs>
-  </svg>
 
   <!-- ===== SOLUTION ===== -->
   <section class="solution" id="solution">

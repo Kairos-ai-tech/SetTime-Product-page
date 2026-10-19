@@ -1752,6 +1752,39 @@ html.no-3d {
   margin-top: 40px;
 }
 
+/* Off-screen rather than display:none, so naive bots still see and fill it */
+.form-honeypot {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.form-submit:disabled {
+  opacity: 0.6;
+  cursor: progress;
+  transform: none;
+  box-shadow: none;
+}
+
+.form-status {
+  margin-top: 16px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.form-status.is-fallback {
+  color: var(--accent-gold-light);
+}
+
+.form-status-link {
+  color: inherit;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
 /* ===== FOOTER ===== */
 .footer {
   background: var(--navy);

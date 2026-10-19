@@ -1031,10 +1031,16 @@
           <label for="pilotNotes" data-i18n="pilot.notes">補充說明 Notes（選填）</label>
           <textarea id="pilotNotes" name="notes" rows="3" placeholder="專案類型、目前痛點、想驗證的項目…" data-i18n-placeholder="pilot.notes.placeholder"></textarea>
         </div>
+        <!-- Honeypot: hidden from people, filled in by bots. script.js drops any submission where it's non-empty, and FormSubmit's _honey does the same server-side. -->
+        <div class="form-honeypot" aria-hidden="true">
+          <label for="pilotHoney">Leave this field empty</label>
+          <input type="text" id="pilotHoney" name="_honey" tabindex="-1" autocomplete="off">
+        </div>
         <button type="submit" class="form-submit">
           <span data-i18n="pilot.submit">申請免費試點 Apply for Free Pilot</span>
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </button>
+        <p class="form-status" id="pilotStatus" role="status" aria-live="polite" hidden><span id="pilotStatusText"></span> <a id="pilotMailtoLink" class="form-status-link" hidden></a></p>
       </form>
     </div>
   </section>

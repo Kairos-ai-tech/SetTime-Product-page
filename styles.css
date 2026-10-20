@@ -2502,13 +2502,3 @@ html.lenis, html.lenis body { height: auto; }
   object-fit: contain;
   background: #000;
 }
-
-.video-placeholder {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 16px;
-  color: rgba(255, 255, 255, 0.7);
-}

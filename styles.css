@@ -2477,3 +2477,38 @@ html.lenis, html.lenis body { height: auto; }
   font-size: 0.82rem;
 }
 
+
+
+/* ===== PRODUCT VIDEO ===== */
+.video {
+  padding: clamp(80px, 12vh, 140px) 0;
+  background: var(--cream-glass);
+}
+
+.video-frame {
+  max-width: 960px;
+  margin: 48px auto 0;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--r-lg);
+  border: 1px solid var(--hairline-strong);
+  background: var(--navy-deep);
+  overflow: hidden;
+}
+
+.video-frame video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: #000;
+}
+
+.video-placeholder {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  color: rgba(255, 255, 255, 0.7);
+}

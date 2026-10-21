@@ -2059,6 +2059,22 @@ html.no-3d,
   }
 }
 
+@media (max-width: 380px) {
+  .nav-right { gap: 6px; }
+
+  .nav-toggle { padding: 4px; }
+
+  .lang-select {
+    max-width: 104px;
+    padding-right: 22px;
+    background-position: right 8px center;
+  }
+}
+
+@media (max-width: 330px) {
+  .lang-select { max-width: 92px; }
+}
+
 /* .hero is a fixed height:100vh sticky pin (hero3d.js scrubs the 3D scene
    to scroll progress over it) — it can't grow to fit content, so on short
    viewports hero-content's width-driven type scale can push the CTA button
@@ -2510,7 +2526,7 @@ html.lenis, html.lenis body { height: auto; }
 }
 
 .cta-pill:focus-visible {
-  outline: 2px solid var(--navy);
+  outline: 2px solid var(--heading);
   outline-offset: 3px;
 }
 

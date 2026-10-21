@@ -952,6 +952,18 @@ html.no-3d {
   transform: scale(1.04);
 }
 
+.tech-flow .flow-gear { transform-box: fill-box; transform-origin: center; }
+.tech-flow .flow-arrow { stroke-dasharray: 6 8; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .tech-flow.playing .flow-gear { animation: flow-spin 6s linear infinite; }
+  .tech-flow.playing .flow-arrow { animation: flow-dash 0.8s linear infinite; }
+  .tech-flow.playing .flow-cell { animation: flow-cell 2.4s ease-in-out infinite; }
+}
+@keyframes flow-spin { to { transform: rotate(360deg); } }
+@keyframes flow-dash { to { stroke-dashoffset: -14; } }
+@keyframes flow-cell { 0%, 100% { fill-opacity: 0.18; } 50% { fill-opacity: 0.8; } }
+
 .tech-number {
   position: absolute;
   top: 24px;

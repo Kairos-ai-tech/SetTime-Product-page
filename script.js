@@ -47,6 +47,16 @@ document.addEventListener('DOMContentLoaded', function () {
     observer.observe(el);
   });
 
+  const flow = document.querySelector('.tech-flow');
+  if (flow) {
+    new IntersectionObserver(
+      function (entries) {
+        flow.classList.toggle('playing', entries[0].isIntersecting);
+      },
+      { threshold: 0.4 }
+    ).observe(flow);
+  }
+
   // ===== Animated number counters =====
   const counterElements = document.querySelectorAll('[data-count]');
 

@@ -229,9 +229,9 @@
         </button>
       </div>
       <ul class="nav-links" id="navLinks">
-        <li><a href="#demo" data-i18n="nav.demo">實際操作</a></li>
-        <li><a href="#solution" data-i18n="nav.tech">技術</a></li>
         <li><a href="#product" data-i18n="nav.product">產品</a></li>
+        <li><a href="#solution" data-i18n="nav.tech">技術</a></li>
+        <li><a href="#demo" data-i18n="nav.demo">實際操作</a></li>
         <li><a href="#process" data-i18n="nav.process">流程</a></li>
         <li><a href="#faq" data-i18n="nav.faq">常見問題</a></li>
         <li><a href="#pilot" class="nav-cta" data-i18n="nav.pilot">免費試點</a></li>
@@ -339,85 +339,92 @@
     </defs>
   </svg>
 
-  <!-- ===== DEMO (click a member on the sample plan, the bar schedule follows) ===== -->
-  <section class="demo" id="demo">
+  <!-- ===== PRODUCT (live today) ===== -->
+  <section class="product" id="product">
     <div class="container">
-      <p class="section-label fade-in" data-i18n="demo.label">SEE IT WORK 實際操作</p>
-      <h2 class="section-heading fade-in" data-delay="1" data-i18n="demo.heading">同一份施工圖<br>平面立起成 3D</h2>
-      <p class="section-lead fade-in" data-delay="2" data-i18n="demo.lead">點圖上的柱、梁、板，或點表格列，看圖與計料如何互相定位。切到 3D，同一份鋼筋會從平面圖立起來；拖動間距規，梁中段箍筋即時重排。</p>
+      <p class="section-label fade-in" data-i18n="product.label">MODULE LIVE TODAY 現行落地模組</p>
+      <h2 class="section-heading fade-in" data-delay="1" data-i18n="product.heading">不只是願景<br>鋼筋估算已在產線運作</h2>
+      <p class="section-lead fade-in" data-delay="2" data-i18n="product.lead">施工圖解析引擎已作為獨立模組上線：AutoCAD 結構圖 → 施工圖 → 計料表，全流程自動化，並原生對接客戶既有巨集匯入流程。</p>
+      <p class="product-tagline fade-in" data-delay="3" data-i18n="product.tagline">SetTime — 凝固之前，一次到位</p>
+    </div>
 
-      <div class="demo-grid fade-in" data-delay="3">
-        <figure class="demo-drawing" data-view="2d">
-          <div class="rm-toolbar">
-            <div class="rm-toggle" role="group" aria-label="檢視模式" data-i18n-aria-label="demo.view.group">
-              <button type="button" data-view-btn="2d" aria-pressed="true" data-i18n="demo.view.2d">平面 2D</button>
-              <button type="button" data-view-btn="3d" aria-pressed="false" data-i18n="demo.view.3d">立體 3D</button>
-            </div>
-            <span class="rm-hint rm-hint-2d" data-i18n="demo.hint.2d">點構件查看計料</span>
-            <span class="rm-hint rm-hint-3d" data-i18n="demo.hint.3d">拖曳畫面旋轉</span>
-          </div>
-          <svg class="demo-svg rm-svg" viewBox="0 0 640 470" role="group" aria-labelledby="demo-svg-title">
-            <title id="demo-svg-title" data-i18n="demo.drawing.aria">示意結構模型：柱 C1、梁 B1、板 S1，可在平面與立體之間切換</title>
-            <defs>
-              <marker id="rm-dot" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" refX="4" refY="4"><circle cx="4" cy="4" r="2.6" fill="var(--accent-green-light)"/></marker>
-            </defs>
-            <rect width="640" height="470" fill="url(#tech-grid)"/>
-            <g class="rm-dims" stroke="var(--gold)" stroke-width="1" fill="none">
-              <path class="rm-dim-path"/>
-              <text class="demo-dim-text" data-dim="h" text-anchor="middle">6000</text>
-              <text class="demo-dim-text" data-dim="v" text-anchor="middle">4200</text>
+    <div class="tech-showcase">
+      <article class="tech-panel fade-in" data-delay="3">
+        <div class="tech-panel-img">
+          <svg class="tech-illustration tech-flow" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice" role="img" aria-labelledby="tech-illust-product">
+            <title id="tech-illust-product" data-i18n="alt.product">示意圖：圖檔轉換為鋼筋計料表</title>
+            <use href="#tech-bg" xlink:href="#tech-bg"/>
+            <rect x="90" y="210" width="150" height="180" rx="6" fill="var(--navy-deep)" stroke="var(--illust-hairline)" stroke-opacity="0.12"/>
+            <g stroke="var(--cream)" stroke-opacity="0.6" stroke-width="1.5">
+              <line x1="112" y1="240" x2="208" y2="240"/>
+              <line x1="112" y1="264" x2="190" y2="264"/>
+              <line x1="112" y1="288" x2="208" y2="288"/>
+              <line x1="112" y1="312" x2="170" y2="312"/>
             </g>
-            <g class="rm-units"></g>
-            <g class="rm-pins">
-              <g class="rm-pin" data-member="s1" tabindex="0" role="button" aria-pressed="false" data-i18n-aria-label="demo.m.s1"><circle r="12"/><text y="5" text-anchor="middle">3</text></g>
-              <g class="rm-pin" data-member="b1" tabindex="0" role="button" aria-pressed="false" data-i18n-aria-label="demo.m.b1"><circle r="12"/><text y="5" text-anchor="middle">2</text></g>
-              <g class="rm-pin" data-member="c1" tabindex="0" role="button" aria-pressed="false" data-i18n-aria-label="demo.m.c1"><circle r="12"/><text y="5" text-anchor="middle">1</text></g>
+            <text x="165" y="372" fill="var(--illust-label)" font-size="12" text-anchor="middle">DWG</text>
+            <path class="flow-arrow" d="M255 300 H345" stroke="var(--accent-gold-light)" stroke-width="2" marker-end="url(#tech-arrow)"/>
+            <g transform="translate(400,300)"><g class="flow-gear" fill="none" stroke="var(--gold)" stroke-width="3">
+              <circle r="46"/>
+              <circle r="14" fill="var(--gold)" stroke="none"/>
+              <line x1="0" y1="-58" x2="0" y2="-70"/>
+              <line x1="0" y1="58" x2="0" y2="70"/>
+              <line x1="-58" y1="0" x2="-70" y2="0"/>
+              <line x1="58" y1="0" x2="70" y2="0"/>
+              <line x1="41" y1="-41" x2="49" y2="-49"/>
+              <line x1="-41" y1="-41" x2="-49" y2="-49"/>
+              <line x1="41" y1="41" x2="49" y2="49"/>
+              <line x1="-41" y1="41" x2="-49" y2="49"/>
+            </g></g>
+            <path class="flow-arrow" d="M455 300 H545" stroke="var(--accent-gold-light)" stroke-width="2" marker-end="url(#tech-arrow)"/>
+            <rect x="560" y="210" width="150" height="180" rx="6" fill="var(--navy-deep)" stroke="var(--gold)" stroke-opacity="0.35"/>
+            <g stroke="var(--illust-hairline)" stroke-opacity="0.1">
+              <line x1="560" y1="252" x2="710" y2="252"/>
+              <line x1="560" y1="288" x2="710" y2="288"/>
+              <line x1="560" y1="324" x2="710" y2="324"/>
+              <line x1="618" y1="210" x2="618" y2="390"/>
+              <line x1="662" y1="210" x2="662" y2="390"/>
             </g>
+            <rect class="flow-cell" x="618" y="252" width="44" height="36" fill="var(--gold)" fill-opacity="0.18"/>
+            <text x="635" y="372" fill="var(--accent-gold-light)" font-size="12" text-anchor="middle" font-weight="600">.xlsm</text>
           </svg>
-          <label class="rm-gauge">
-            <span data-i18n="demo.gauge.label">梁中段箍筋間距</span>
-            <input type="range" min="100" max="300" step="10" value="150">
-            <output>@150 mm</output>
-          </label>
-          <figcaption class="demo-sample">
-            <span data-i18n="demo.sample">示意資料，非真實案場。單位：mm。</span>
-            <span class="rm-legend" data-i18n="demo.legend.ar">綠色標記：依圖面放樣的 AR 定位點（開發中）</span>
-          </figcaption>
-        </figure>
+          <span class="tech-number">✓</span>
+        </div>
+        <div class="tech-panel-content">
+          <h3 data-i18n="product.panel.title">鋼筋估算自動化系統</h3>
+          <p class="tech-en" data-i18n="product.panel.en">Rebar Estimation Automation System</p>
+          <p data-i18n="product.panel.desc">AutoCAD 2021 外掛加上跨平台桌面版，將結構施工圖直接轉為加工圖與計料表 (.xlsm)。樑柱辨識準確率達合約驗收門檻，輸出免二次轉檔即可匯入客戶既有巨集系統。</p>
+          <div class="tech-metrics">
+            <span class="correct" data-i18n="product.m1">樑柱辨識達驗收門檻</span>
+            <span data-i18n="product.m2">施工圖 → 計料表 全自動</span>
+            <span data-i18n="product.m3">GTA / CCM 巨集原生相容</span>
+            <span data-i18n="product.m4">Style Guide 可調規則引擎</span>
+          </div>
+          <div class="tech-tags"><span>AutoCAD 2021</span><span>.NET</span><span>Avalonia Desktop</span></div>
+        </div>
+      </article>
+    </div>
 
-        <div class="demo-schedule">
-          <div class="demo-table-wrap">
-            <table class="demo-table">
-              <thead>
-                <tr>
-                  <th data-i18n="demo.th.mark">編號</th>
-                  <th data-i18n="demo.th.bar">鋼筋</th>
-                  <th class="num" data-i18n="demo.th.qty">數量</th>
-                  <th class="num" data-i18n="demo.th.cut">下料長 mm</th>
-                  <th class="num" data-i18n="demo.th.weight">重量 kg</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr data-member="c1"><td><button type="button" class="demo-mark" aria-pressed="false">C1-1</button></td><td>D25</td><td class="num">8</td><td class="num">4150</td><td class="num">132</td></tr>
-                <tr data-member="b1"><td><button type="button" class="demo-mark" aria-pressed="false">B1-1</button></td><td>D22</td><td class="num">3</td><td class="num">6400</td><td class="num">58</td></tr>
-                <tr data-member="b1"><td><button type="button" class="demo-mark" aria-pressed="false">B1-2</button></td><td>D22</td><td class="num">4</td><td class="num">6400</td><td class="num">78</td></tr>
-                <tr data-member="b1"><td><button type="button" class="demo-mark" aria-pressed="false">B1-3</button></td><td>D10</td><td class="num" data-stirrup-qty>40</td><td class="num">1900</td><td class="num" data-stirrup-kg>47</td></tr>
-                <tr data-member="s1"><td><button type="button" class="demo-mark" aria-pressed="false">S1-1</button></td><td>D13</td><td class="num">27</td><td class="num">4200</td><td class="num">118</td></tr>
-              </tbody>
-              <tfoot>
-                <tr><th colspan="4" scope="row" data-i18n="demo.total">合計</th><td class="num" data-total>433</td></tr>
-              </tfoot>
-            </table>
-          </div>
-          <div class="demo-detail">
-            <p data-detail="c1" data-i18n="demo.d.c1">柱 C1：8-D25 主筋，下料長含搭接 4150 mm；箍筋另列。</p>
-            <p data-detail="b1" data-i18n="demo.d.b1">梁 B1：上層 3-D22、下層 4-D22，箍筋 D10 兩端加密 @100、中段依間距規排列，錨定長度已計入。</p>
-            <p data-detail="s1" data-i18n="demo.d.s1">板 S1：D13 @200，短向 27 支、單支 4200 mm。</p>
-          </div>
-          <a href="#pilot" class="cta-pill">
-            <span data-i18n="demo.cta">用您的施工圖試試</span>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
+    <div class="container">
+      <div class="moats">
+        <div class="moat fade-in" data-delay="4">
+          <div class="moat-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h8l4 4v14a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Z"/><path d="M14 3v4h4"/><path d="M8 12h5M8 15h3"/><circle cx="16.3" cy="16.3" r="2.4"/><path d="M18.2 18.2 19.6 19.6"/></svg></div>
+          <h3 data-i18n="product.moat1.title">施工圖辨識</h3>
+          <p data-i18n="product.moat1.desc">自動判讀樑、柱配置與尺寸標註，比對 Style Guide 規則</p>
+        </div>
+        <div class="moat fade-in" data-delay="5">
+          <div class="moat-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20.5 5 16 15.5 5.5l3 3L8 19l-4 1.5Z"/><path d="M13.5 7 16.5 10"/></svg></div>
+          <h3 data-i18n="product.moat2.title">加工圖自動生成</h3>
+          <p data-i18n="product.moat2.desc">依辨識結果產出可送加工廠的施工圖 (.dwg / DXF)</p>
+        </div>
+        <div class="moat fade-in" data-delay="6">
+          <div class="moat-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="1.5"/><path d="M3 9h18M9 4v12"/><path d="M12 16.5v4.5m0 0-2.2-2.2M12 21l2.2-2.2"/></svg></div>
+          <h3 data-i18n="product.moat3.title">計料表匯出</h3>
+          <p data-i18n="product.moat3.desc">產出符合客戶既有巨集格式的 .xlsm 計料表，免重工轉檔</p>
+        </div>
+        <div class="moat fade-in" data-delay="7">
+          <div class="moat-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h4m-4 6h4m-4 6h4"/><path d="M11 6h9M11 12h9M11 18h9"/></svg></div>
+          <h3 data-i18n="product.moat4.title">工作流與品管追蹤</h3>
+          <p data-i18n="product.moat4.desc">逐元件狀態追蹤，收斂為可交付的最終品管紀錄</p>
         </div>
       </div>
     </div>
@@ -586,92 +593,85 @@
     </div>
   </section>
 
-  <!-- ===== PRODUCT (live today) ===== -->
-  <section class="product" id="product">
+  <!-- ===== DEMO (click a member on the sample plan, the bar schedule follows) ===== -->
+  <section class="demo" id="demo">
     <div class="container">
-      <p class="section-label fade-in" data-i18n="product.label">MODULE LIVE TODAY 現行落地模組</p>
-      <h2 class="section-heading fade-in" data-delay="1" data-i18n="product.heading">不只是願景<br>鋼筋估算已在產線運作</h2>
-      <p class="section-lead fade-in" data-delay="2" data-i18n="product.lead">施工圖解析引擎已作為獨立模組上線：AutoCAD 結構圖 → 施工圖 → 計料表，全流程自動化，並原生對接客戶既有巨集匯入流程。</p>
-      <p class="product-tagline fade-in" data-delay="3" data-i18n="product.tagline">SetTime — 凝固之前，一次到位</p>
-    </div>
+      <p class="section-label fade-in" data-i18n="demo.label">SEE IT WORK 實際操作</p>
+      <h2 class="section-heading fade-in" data-delay="1" data-i18n="demo.heading">同一份施工圖<br>平面立起成 3D</h2>
+      <p class="section-lead fade-in" data-delay="2" data-i18n="demo.lead">點圖上的柱、梁、板，或點表格列，看圖與計料如何互相定位。切到 3D，同一份鋼筋會從平面圖立起來；拖動間距規，梁中段箍筋即時重排。</p>
 
-    <div class="tech-showcase">
-      <article class="tech-panel fade-in" data-delay="3">
-        <div class="tech-panel-img">
-          <svg class="tech-illustration" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice" role="img" aria-labelledby="tech-illust-product">
-            <title id="tech-illust-product" data-i18n="alt.product">示意圖：圖檔轉換為鋼筋計料表</title>
-            <use href="#tech-bg" xlink:href="#tech-bg"/>
-            <rect x="90" y="210" width="150" height="180" rx="6" fill="var(--navy-deep)" stroke="var(--illust-hairline)" stroke-opacity="0.12"/>
-            <g stroke="var(--cream)" stroke-opacity="0.6" stroke-width="1.5">
-              <line x1="112" y1="240" x2="208" y2="240"/>
-              <line x1="112" y1="264" x2="190" y2="264"/>
-              <line x1="112" y1="288" x2="208" y2="288"/>
-              <line x1="112" y1="312" x2="170" y2="312"/>
-            </g>
-            <text x="165" y="372" fill="var(--illust-label)" font-size="12" text-anchor="middle">DWG</text>
-            <path d="M255 300 H345" stroke="var(--accent-gold-light)" stroke-width="2" marker-end="url(#tech-arrow)"/>
-            <g transform="translate(400,300)" fill="none" stroke="var(--gold)" stroke-width="3">
-              <circle r="46"/>
-              <circle r="14" fill="var(--gold)" stroke="none"/>
-              <line x1="0" y1="-58" x2="0" y2="-70"/>
-              <line x1="0" y1="58" x2="0" y2="70"/>
-              <line x1="-58" y1="0" x2="-70" y2="0"/>
-              <line x1="58" y1="0" x2="70" y2="0"/>
-              <line x1="41" y1="-41" x2="49" y2="-49"/>
-              <line x1="-41" y1="-41" x2="-49" y2="-49"/>
-              <line x1="41" y1="41" x2="49" y2="49"/>
-              <line x1="-41" y1="41" x2="-49" y2="49"/>
-            </g>
-            <path d="M455 300 H545" stroke="var(--accent-gold-light)" stroke-width="2" marker-end="url(#tech-arrow)"/>
-            <rect x="560" y="210" width="150" height="180" rx="6" fill="var(--navy-deep)" stroke="var(--gold)" stroke-opacity="0.35"/>
-            <g stroke="var(--illust-hairline)" stroke-opacity="0.1">
-              <line x1="560" y1="252" x2="710" y2="252"/>
-              <line x1="560" y1="288" x2="710" y2="288"/>
-              <line x1="560" y1="324" x2="710" y2="324"/>
-              <line x1="618" y1="210" x2="618" y2="390"/>
-              <line x1="662" y1="210" x2="662" y2="390"/>
-            </g>
-            <rect x="618" y="252" width="44" height="36" fill="var(--gold)" fill-opacity="0.18"/>
-            <text x="635" y="372" fill="var(--accent-gold-light)" font-size="12" text-anchor="middle" font-weight="600">.xlsm</text>
-          </svg>
-          <span class="tech-number">✓</span>
-        </div>
-        <div class="tech-panel-content">
-          <h3 data-i18n="product.panel.title">鋼筋估算自動化系統</h3>
-          <p class="tech-en" data-i18n="product.panel.en">Rebar Estimation Automation System</p>
-          <p data-i18n="product.panel.desc">AutoCAD 2021 外掛加上跨平台桌面版，將結構施工圖直接轉為加工圖與計料表 (.xlsm)。樑柱辨識準確率達合約驗收門檻，輸出免二次轉檔即可匯入客戶既有巨集系統。</p>
-          <div class="tech-metrics">
-            <span class="correct" data-i18n="product.m1">樑柱辨識達驗收門檻</span>
-            <span data-i18n="product.m2">施工圖 → 計料表 全自動</span>
-            <span data-i18n="product.m3">GTA / CCM 巨集原生相容</span>
-            <span data-i18n="product.m4">Style Guide 可調規則引擎</span>
+      <div class="demo-grid fade-in" data-delay="3">
+        <figure class="demo-drawing" data-view="2d">
+          <div class="rm-toolbar">
+            <div class="rm-toggle" role="group" aria-label="檢視模式" data-i18n-aria-label="demo.view.group">
+              <button type="button" data-view-btn="2d" aria-pressed="true" data-i18n="demo.view.2d">平面 2D</button>
+              <button type="button" data-view-btn="3d" aria-pressed="false" data-i18n="demo.view.3d">立體 3D</button>
+            </div>
+            <span class="rm-hint rm-hint-2d" data-i18n="demo.hint.2d">點構件查看計料</span>
+            <span class="rm-hint rm-hint-3d" data-i18n="demo.hint.3d">拖曳畫面旋轉</span>
           </div>
-          <div class="tech-tags"><span>AutoCAD 2021</span><span>.NET</span><span>Avalonia Desktop</span></div>
-        </div>
-      </article>
-    </div>
+          <svg class="demo-svg rm-svg" viewBox="0 0 640 470" role="group" aria-labelledby="demo-svg-title">
+            <title id="demo-svg-title" data-i18n="demo.drawing.aria">示意結構模型：柱 C1、梁 B1、板 S1，可在平面與立體之間切換</title>
+            <defs>
+              <marker id="rm-dot" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" refX="4" refY="4"><circle cx="4" cy="4" r="2.6" fill="var(--accent-green-light)"/></marker>
+            </defs>
+            <rect width="640" height="470" fill="url(#tech-grid)"/>
+            <g class="rm-dims" stroke="var(--gold)" stroke-width="1" fill="none">
+              <path class="rm-dim-path"/>
+              <text class="demo-dim-text" data-dim="h" text-anchor="middle">6000</text>
+              <text class="demo-dim-text" data-dim="v" text-anchor="middle">4200</text>
+            </g>
+            <g class="rm-units"></g>
+            <g class="rm-pins">
+              <g class="rm-pin" data-member="s1" tabindex="0" role="button" aria-pressed="false" data-i18n-aria-label="demo.m.s1"><circle r="12"/><text y="5" text-anchor="middle">3</text></g>
+              <g class="rm-pin" data-member="b1" tabindex="0" role="button" aria-pressed="false" data-i18n-aria-label="demo.m.b1"><circle r="12"/><text y="5" text-anchor="middle">2</text></g>
+              <g class="rm-pin" data-member="c1" tabindex="0" role="button" aria-pressed="false" data-i18n-aria-label="demo.m.c1"><circle r="12"/><text y="5" text-anchor="middle">1</text></g>
+            </g>
+          </svg>
+          <label class="rm-gauge">
+            <span data-i18n="demo.gauge.label">梁中段箍筋間距</span>
+            <input type="range" min="100" max="300" step="10" value="150">
+            <output>@150 mm</output>
+          </label>
+          <figcaption class="demo-sample">
+            <span data-i18n="demo.sample">示意資料，非真實案場。單位：mm。</span>
+            <span class="rm-legend" data-i18n="demo.legend.ar">綠色標記：依圖面放樣的 AR 定位點（開發中）</span>
+          </figcaption>
+        </figure>
 
-    <div class="container">
-      <div class="moats">
-        <div class="moat fade-in" data-delay="4">
-          <div class="moat-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h8l4 4v14a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Z"/><path d="M14 3v4h4"/><path d="M8 12h5M8 15h3"/><circle cx="16.3" cy="16.3" r="2.4"/><path d="M18.2 18.2 19.6 19.6"/></svg></div>
-          <h3 data-i18n="product.moat1.title">施工圖辨識</h3>
-          <p data-i18n="product.moat1.desc">自動判讀樑、柱配置與尺寸標註，比對 Style Guide 規則</p>
-        </div>
-        <div class="moat fade-in" data-delay="5">
-          <div class="moat-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20.5 5 16 15.5 5.5l3 3L8 19l-4 1.5Z"/><path d="M13.5 7 16.5 10"/></svg></div>
-          <h3 data-i18n="product.moat2.title">加工圖自動生成</h3>
-          <p data-i18n="product.moat2.desc">依辨識結果產出可送加工廠的施工圖 (.dwg / DXF)</p>
-        </div>
-        <div class="moat fade-in" data-delay="6">
-          <div class="moat-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="1.5"/><path d="M3 9h18M9 4v12"/><path d="M12 16.5v4.5m0 0-2.2-2.2M12 21l2.2-2.2"/></svg></div>
-          <h3 data-i18n="product.moat3.title">計料表匯出</h3>
-          <p data-i18n="product.moat3.desc">產出符合客戶既有巨集格式的 .xlsm 計料表，免重工轉檔</p>
-        </div>
-        <div class="moat fade-in" data-delay="7">
-          <div class="moat-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h4m-4 6h4m-4 6h4"/><path d="M11 6h9M11 12h9M11 18h9"/></svg></div>
-          <h3 data-i18n="product.moat4.title">工作流與品管追蹤</h3>
-          <p data-i18n="product.moat4.desc">逐元件狀態追蹤，收斂為可交付的最終品管紀錄</p>
+        <div class="demo-schedule">
+          <div class="demo-table-wrap">
+            <table class="demo-table">
+              <thead>
+                <tr>
+                  <th data-i18n="demo.th.mark">編號</th>
+                  <th data-i18n="demo.th.bar">鋼筋</th>
+                  <th class="num" data-i18n="demo.th.qty">數量</th>
+                  <th class="num" data-i18n="demo.th.cut">下料長 mm</th>
+                  <th class="num" data-i18n="demo.th.weight">重量 kg</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr data-member="c1"><td><button type="button" class="demo-mark" aria-pressed="false">C1-1</button></td><td>D25</td><td class="num">8</td><td class="num">4150</td><td class="num">132</td></tr>
+                <tr data-member="b1"><td><button type="button" class="demo-mark" aria-pressed="false">B1-1</button></td><td>D22</td><td class="num">3</td><td class="num">6400</td><td class="num">58</td></tr>
+                <tr data-member="b1"><td><button type="button" class="demo-mark" aria-pressed="false">B1-2</button></td><td>D22</td><td class="num">4</td><td class="num">6400</td><td class="num">78</td></tr>
+                <tr data-member="b1"><td><button type="button" class="demo-mark" aria-pressed="false">B1-3</button></td><td>D10</td><td class="num" data-stirrup-qty>40</td><td class="num">1900</td><td class="num" data-stirrup-kg>47</td></tr>
+                <tr data-member="s1"><td><button type="button" class="demo-mark" aria-pressed="false">S1-1</button></td><td>D13</td><td class="num">27</td><td class="num">4200</td><td class="num">118</td></tr>
+              </tbody>
+              <tfoot>
+                <tr><th colspan="4" scope="row" data-i18n="demo.total">合計</th><td class="num" data-total>433</td></tr>
+              </tfoot>
+            </table>
+          </div>
+          <div class="demo-detail">
+            <p data-detail="c1" data-i18n="demo.d.c1">柱 C1：8-D25 主筋，下料長含搭接 4150 mm；箍筋另列。</p>
+            <p data-detail="b1" data-i18n="demo.d.b1">梁 B1：上層 3-D22、下層 4-D22，箍筋 D10 兩端加密 @100、中段依間距規排列，錨定長度已計入。</p>
+            <p data-detail="s1" data-i18n="demo.d.s1">板 S1：D13 @200，短向 27 支、單支 4200 mm。</p>
+          </div>
+          <a href="#pilot" class="cta-pill">
+            <span data-i18n="demo.cta">用您的施工圖試試</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
         </div>
       </div>
     </div>

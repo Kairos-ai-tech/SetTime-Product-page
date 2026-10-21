@@ -47,6 +47,21 @@ document.addEventListener('DOMContentLoaded', function () {
     observer.observe(el);
   });
 
+  const demoVideo = document.querySelector('#video video');
+  if (demoVideo && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    new IntersectionObserver(
+      function (entries) {
+        if (entries[0].isIntersecting) {
+          const p = demoVideo.play();
+          if (p) p.catch(function () {});
+        } else {
+          demoVideo.pause();
+        }
+      },
+      { threshold: 0.5 }
+    ).observe(demoVideo);
+  }
+
   // ===== Animated number counters =====
   const counterElements = document.querySelectorAll('[data-count]');
 

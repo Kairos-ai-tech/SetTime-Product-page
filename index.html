@@ -92,10 +92,11 @@
         "name": "SetTime | AI Rebar Estimation Software — Structural Drawings to Shop Drawings & Bar Schedules",
         "description": "SetTime 鋼筋估算自動化已上線：結構施工圖轉加工圖與計料表（.xlsm），支援 AutoCAD 2021 外掛與桌面版。AR 現場指導與 AI 竣工驗證開發中。",
         "inLanguage": "zh-Hant",
-        "dateModified": "2026-09-24",
+        "dateModified": "2026-10-21",
         "isPartOf": { "@id": "https://settime.kairosaitech.com/#website" },
         "about": { "@id": "https://settime.kairosaitech.com/#software" },
         "mainEntity": { "@id": "https://settime.kairosaitech.com/#software" },
+        "video": { "@id": "https://settime.kairosaitech.com/#video" },
         "publisher": { "@id": "https://www.kairosaitech.com/#organization" },
         "primaryImageOfPage": {
           "@type": "ImageObject",
@@ -103,6 +104,21 @@
           "width": 1200,
           "height": 630
         }
+      },
+      {
+        "@type": "VideoObject",
+        "@id": "https://settime.kairosaitech.com/#video",
+        "name": "See SetTime in action: structural drawing to rebar bar schedule and shop drawings",
+        "description": "Product walkthrough of SetTime: upload a structural drawing, get the rebar bar schedule (.xlsm) and shop drawings in about a minute.",
+        "thumbnailUrl": "https://settime.kairosaitech.com/assets/demo-poster.jpg",
+        "contentUrl": "https://settime.kairosaitech.com/assets/demo.mp4",
+        "uploadDate": "2026-10-20",
+        "duration": "PT1M7S",
+        "encodingFormat": "video/mp4",
+        "inLanguage": "en",
+        "isPartOf": { "@id": "https://settime.kairosaitech.com/#webpage" },
+        "about": { "@id": "https://settime.kairosaitech.com/#software" },
+        "publisher": { "@id": "https://www.kairosaitech.com/#organization" }
       },
       {
         "@type": "SoftwareApplication",
@@ -339,6 +355,18 @@
     </defs>
   </svg>
 
+  <!-- ===== PRODUCT VIDEO ===== -->
+  <section class="video" id="video">
+    <div class="container">
+      <p class="section-label fade-in" data-i18n="video.label">PRODUCT VIDEO 產品影片</p>
+      <h2 class="section-heading fade-in" data-delay="1" data-i18n="video.heading">看 SetTime 如何運作</h2>
+      <p class="section-lead fade-in" data-delay="2" data-i18n="video.lead">從結構施工圖到鋼筋計料與加工圖，約一分鐘看完整個流程。</p>
+      <div class="video-frame fade-in" data-delay="3">
+        <video controls muted playsinline preload="metadata" poster="assets/demo-poster.jpg" data-i18n-aria-label="video.aria" aria-label="看 SetTime 如何運作"><source src="assets/demo.mp4" type="video/mp4"></video>
+      </div>
+    </div>
+  </section>
+
   <!-- ===== DEMO (click a member on the sample plan, the bar schedule follows) ===== -->
   <section class="demo" id="demo">
     <div class="container">
@@ -419,18 +447,6 @@
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== PRODUCT VIDEO ===== -->
-  <section class="video" id="video">
-    <div class="container">
-      <p class="section-label fade-in" data-i18n="video.label">PRODUCT VIDEO 產品影片</p>
-      <h2 class="section-heading fade-in" data-delay="1" data-i18n="video.heading">看 SetTime 如何運作</h2>
-      <p class="section-lead fade-in" data-delay="2" data-i18n="video.lead">從結構施工圖到鋼筋計料與加工圖，約一分鐘看完整個流程。</p>
-      <div class="video-frame fade-in" data-delay="3">
-        <video controls playsinline preload="metadata" poster="assets/demo-poster.jpg" data-i18n-aria-label="video.aria" aria-label="看 SetTime 如何運作"><source src="assets/demo.mp4" type="video/mp4"></video>
       </div>
     </div>
   </section>

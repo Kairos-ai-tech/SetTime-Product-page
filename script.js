@@ -47,6 +47,33 @@ document.addEventListener('DOMContentLoaded', function () {
     observer.observe(el);
   });
 
+  const demoVideo = document.querySelector('#video video');
+  if (demoVideo && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    let userPaused = false;
+    let autoPaused = false;
+    demoVideo.addEventListener('play', function () {
+      userPaused = false;
+    });
+    demoVideo.addEventListener('pause', function () {
+      userPaused = !autoPaused && !demoVideo.ended;
+      autoPaused = false;
+    });
+    new IntersectionObserver(
+      function (entries) {
+        const ratio = entries[entries.length - 1].intersectionRatio;
+        if (ratio >= 0.98) {
+          if (userPaused || demoVideo.ended || !demoVideo.paused) return;
+          const p = demoVideo.play();
+          if (p) p.catch(function () {});
+        } else if (ratio < 0.5 && !demoVideo.paused) {
+          autoPaused = true;
+          demoVideo.pause();
+        }
+      },
+      { threshold: [0, 0.5, 0.98], rootMargin: '-68px 0px 0px 0px' }
+    ).observe(demoVideo);
+  }
+
   // ===== Animated number counters =====
   const counterElements = document.querySelectorAll('[data-count]');
 

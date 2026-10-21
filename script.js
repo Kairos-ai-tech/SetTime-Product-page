@@ -74,6 +74,24 @@ document.addEventListener('DOMContentLoaded', function () {
     ).observe(demoVideo);
   }
 
+  const themeToggle = document.getElementById('themeToggle');
+  if (themeToggle) {
+    const root = document.documentElement;
+    const themeMeta = document.querySelector('meta[name="theme-color"]');
+    const syncTheme = function () {
+      const dark = root.getAttribute('data-theme') === 'dark';
+      themeToggle.setAttribute('aria-pressed', String(dark));
+      if (themeMeta) themeMeta.setAttribute('content', dark ? '#0B1A2D' : '#FBFAF7');
+    };
+    syncTheme();
+    themeToggle.addEventListener('click', function () {
+      const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      try { localStorage.setItem('theme', next); } catch (e) {}
+      syncTheme();
+    });
+  }
+
   // ===== Animated number counters =====
   const counterElements = document.querySelectorAll('[data-count]');
 

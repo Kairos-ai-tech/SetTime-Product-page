@@ -45,6 +45,9 @@
   --text-subtle: #66707F;
   --hairline: rgba(11, 26, 45, 0.08);
   --hairline-strong: rgba(11, 26, 45, 0.14);
+  --heading: var(--navy);
+  --panel-alt: #F4F1EC;
+  color-scheme: light;
 
   /* type */
   --font-display: var(--font-tech);
@@ -75,6 +78,30 @@
   --sy: 50%;
   --mag-x: 0px;
   --mag-y: 0px;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #0A1626;
+  --surface: #12243A;
+  --panel-alt: #0F2033;
+  --bg-glass: rgba(10, 22, 38, 0.93);
+  --cream-glass: rgba(15, 32, 51, 0.93);
+  --text: #E8EDF3;
+  --heading: #F4F1EC;
+  --text-muted: #A9B5C3;
+  --text-subtle: #8FA0B3;
+  --hairline: rgba(255, 255, 255, 0.1);
+  --hairline-strong: rgba(255, 255, 255, 0.18);
+  --navy-soft: rgba(255, 255, 255, 0.04);
+  --gold-soft: rgba(221, 142, 31, 0.14);
+  --gold-deep: #F2C066;
+  --accent-red: #F87171;
+  --accent-green: #4ADE80;
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.35);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 24px 48px -12px rgba(0, 0, 0, 0.55);
 }
 
 /* ===== Reset ===== */
@@ -177,7 +204,7 @@ section[id] { scroll-margin-top: calc(var(--navbar-height) + 16px); }
   line-height: 1.18;
   letter-spacing: 0.01em;
   text-transform: uppercase;
-  color: var(--navy);
+  color: var(--heading);
   margin-bottom: 20px;
   text-wrap: balance;
 }
@@ -376,6 +403,35 @@ section[id] { scroll-margin-top: calc(var(--navbar-height) + 16px); }
   border-color: rgba(255, 255, 255, 0.22);
 }
 
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  background-color: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: var(--r-full);
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.theme-toggle:hover {
+  background-color: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.22);
+}
+
+.theme-toggle:focus-visible {
+  outline: 2px solid var(--accent-gold-light);
+  outline-offset: 2px;
+}
+
+.theme-toggle .icon-sun { display: none; }
+:root[data-theme="dark"] .theme-toggle .icon-sun { display: block; }
+:root[data-theme="dark"] .theme-toggle .icon-moon { display: none; }
+
 .nav-toggle {
   display: none;
   background: none;
@@ -459,9 +515,10 @@ html.canvas-ready .hero-static {
 
 /* No canvas behind the glass surfaces in this case — fall back to fully
    opaque so sections don't wash out against the plain body background. */
-html.no-3d {
+html.no-3d,
+:root[data-theme="dark"].no-3d {
   --bg-glass: var(--bg);
-  --cream-glass: var(--cream);
+  --cream-glass: var(--panel-alt);
   --navy-glass: var(--navy);
   --navy-mid-glass: var(--navy-mid);
 }
@@ -815,7 +872,7 @@ html.no-3d {
   font-family: var(--font-display);
   font-size: 1rem;
   line-height: 1.7;
-  color: var(--navy);
+  color: var(--heading);
   font-weight: 500;
 }
 
@@ -934,7 +991,7 @@ html.no-3d {
 .tech-panel-img {
   position: relative;
   overflow: hidden;
-  background: var(--cream);
+  background: var(--panel-alt);
 }
 
 .tech-illustration text {
@@ -981,7 +1038,7 @@ html.no-3d {
   font-family: var(--font-display);
   font-size: clamp(1.35rem, 2.2vw, 1.75rem);
   font-weight: 700;
-  color: var(--navy);
+  color: var(--heading);
   margin-bottom: 4px;
   letter-spacing: -0.015em;
 }
@@ -1178,7 +1235,7 @@ html.no-3d {
   font-family: var(--font-display);
   font-size: 1.2rem;
   font-weight: 700;
-  color: var(--navy);
+  color: var(--heading);
   margin-bottom: 2px;
   letter-spacing: -0.01em;
 }
@@ -1439,7 +1496,7 @@ html.no-3d {
   font-family: var(--font-display);
   font-size: 1.05rem;
   font-weight: 700;
-  color: var(--navy);
+  color: var(--heading);
   margin-bottom: 8px;
   letter-spacing: -0.01em;
 }
@@ -1525,7 +1582,7 @@ html.no-3d {
 /* ===== FAQ ===== */
 .faq {
   padding: clamp(80px, 12vh, 140px) 0;
-  background: var(--cream);
+  background: var(--panel-alt);
 }
 
 .faq-updated {
@@ -1555,7 +1612,7 @@ html.no-3d {
   font-family: var(--font-display);
   font-weight: 700;
   font-size: 1rem;
-  color: var(--navy);
+  color: var(--heading);
   cursor: pointer;
   list-style: none;
   display: flex;
@@ -2002,6 +2059,22 @@ html.no-3d {
   }
 }
 
+@media (max-width: 380px) {
+  .nav-right { gap: 6px; }
+
+  .nav-toggle { padding: 4px; }
+
+  .lang-select {
+    max-width: 104px;
+    padding-right: 22px;
+    background-position: right 8px center;
+  }
+}
+
+@media (max-width: 330px) {
+  .lang-select { max-width: 92px; }
+}
+
 /* .hero is a fixed height:100vh sticky pin (hero3d.js scrubs the 3D scene
    to scroll progress over it) — it can't grow to fit content, so on short
    viewports hero-content's width-driven type scale can push the CTA button
@@ -2363,7 +2436,7 @@ html.lenis, html.lenis body { height: auto; }
   font-weight: 600;
   letter-spacing: 0.06em;
   color: var(--text-subtle);
-  background: var(--cream);
+  background: var(--panel-alt);
 }
 
 .demo-table .num {
@@ -2399,7 +2472,7 @@ html.lenis, html.lenis body { height: auto; }
 .demo-mark {
   font: inherit;
   font-weight: 600;
-  color: var(--navy);
+  color: var(--heading);
   background: none;
   border: 0;
   padding: 2px 4px;
@@ -2453,7 +2526,7 @@ html.lenis, html.lenis body { height: auto; }
 }
 
 .cta-pill:focus-visible {
-  outline: 2px solid var(--navy);
+  outline: 2px solid var(--heading);
   outline-offset: 3px;
 }
 

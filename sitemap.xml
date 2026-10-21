@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
   <url>
     <loc>https://settime.kairosaitech.com/</loc>
-    <lastmod>2026-09-24</lastmod>
+    <lastmod>2026-10-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://settime.kairosaitech.com/"/>
@@ -18,5 +19,14 @@
     <image:image>
       <image:loc>https://settime.kairosaitech.com/assets/kairos-logo-512.png</image:loc>
     </image:image>
+    <video:video>
+      <video:thumbnail_loc>https://settime.kairosaitech.com/assets/demo-poster.jpg</video:thumbnail_loc>
+      <video:title>See SetTime in action: structural drawing to rebar bar schedule</video:title>
+      <video:description>Product walkthrough of SetTime: upload a structural drawing, get the rebar bar schedule (.xlsm) and shop drawings in about a minute.</video:description>
+      <video:content_loc>https://settime.kairosaitech.com/assets/demo.mp4</video:content_loc>
+      <video:duration>67</video:duration>
+      <video:publication_date>2026-10-20</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
   </url>
 </urlset>

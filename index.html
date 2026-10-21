@@ -104,7 +104,7 @@
         "name": "SetTime | AI Rebar Estimation Software — Structural Drawings to Shop Drawings & Bar Schedules",
         "description": "SetTime 鋼筋估算自動化已上線：結構施工圖轉加工圖與計料表（.xlsm），支援 AutoCAD 2021 外掛與桌面版。AR 現場指導與 AI 竣工驗證開發中。",
         "inLanguage": "zh-Hant",
-        "dateModified": "2026-10-21",
+        "dateModified": "2026-10-22",
         "isPartOf": { "@id": "https://settime.kairosaitech.com/#website" },
         "about": { "@id": "https://settime.kairosaitech.com/#software" },
         "mainEntity": { "@id": "https://settime.kairosaitech.com/#software" },
@@ -116,6 +116,42 @@
           "width": 1200,
           "height": 630
         }
+      },
+      {
+        "@type": "HowTo",
+        "@id": "https://settime.kairosaitech.com/#howto",
+        "name": "如何用 SetTime 把結構施工圖轉成鋼筋計料表",
+        "description": "上傳結構施工圖，審閱 SetTime 標出的缺漏，取得可直接估價的計料表 (.xlsm)。",
+        "inLanguage": "zh-Hant",
+        "isPartOf": { "@id": "https://settime.kairosaitech.com/#webpage" },
+        "about": { "@id": "https://settime.kairosaitech.com/#software" },
+        "tool": { "@id": "https://settime.kairosaitech.com/#software" },
+        "step": [
+          {
+            "@type": "HowToStep",
+            "position": 1,
+            "name": "上傳施工圖",
+            "text": "在專案中上傳結構施工圖（.dwg、.dxf 或 .pdf），並選擇適用的 Style Guide 規則。辨識會自動開始，處理進度每 10 秒更新一次。",
+            "url": "https://settime.kairosaitech.com/#howto",
+            "image": "https://settime.kairosaitech.com/assets/howto-1-upload.jpg"
+          },
+          {
+            "@type": "HowToStep",
+            "position": 2,
+            "name": "審閱標示的缺漏",
+            "text": "SetTime 會統計辨識到的梁、柱與樓層，並標出每一處缺漏，例如缺少標註而改用 Style Guide 預設值的地方。使用前由人員確認。",
+            "url": "https://settime.kairosaitech.com/#howto",
+            "image": "https://settime.kairosaitech.com/assets/howto-2-review.jpg"
+          },
+          {
+            "@type": "HowToStep",
+            "position": 3,
+            "name": "取得計料表",
+            "text": "依鋼筋號數彙整數量與重量，輸出可直接估價的 .xlsm 計料表，免二次轉檔即可匯入既有巨集工具。",
+            "url": "https://settime.kairosaitech.com/#howto",
+            "image": "https://settime.kairosaitech.com/assets/howto-3-materials.jpg"
+          }
+        ]
       },
       {
         "@type": "VideoObject",
@@ -379,6 +415,54 @@
       <p class="section-lead fade-in" data-delay="2" data-i18n="video.lead">從結構施工圖到鋼筋計料與加工圖，約一分鐘看完整個流程。</p>
       <div class="video-frame fade-in" data-delay="3">
         <video controls muted playsinline preload="metadata" poster="assets/demo-poster.jpg" data-i18n-aria-label="video.aria" aria-label="看 SetTime 如何運作"><source src="assets/demo.mp4" type="video/mp4"></video>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== HOW TO USE ===== -->
+  <section class="howto" id="howto">
+    <div class="container">
+      <p class="section-label fade-in" data-i18n="howto.label">HOW TO USE 使用步驟</p>
+      <h2 class="section-heading fade-in" data-delay="1" data-i18n="howto.heading">三步驟<br>從施工圖到計料表</h2>
+      <p class="section-lead fade-in" data-delay="2" data-i18n="howto.lead">上傳施工圖，審閱 SetTime 標出的缺漏，取得可直接估價的計料表。</p>
+      <ol class="howto-steps">
+        <li class="howto-step fade-in" data-delay="3">
+          <div class="howto-head">
+            <span class="howto-num" aria-hidden="true">1</span>
+            <h3 data-i18n="howto.s1.title">上傳施工圖</h3>
+          </div>
+          <figure class="howto-shot">
+            <img src="assets/howto-1-upload.jpg" width="900" height="675" alt="SetTime「您的圖檔」頁面：已上傳的施工圖正在處理中（範例資料）" data-i18n-alt="howto.s1.alt" loading="lazy" decoding="async">
+          </figure>
+          <p data-i18n="howto.s1.desc">在專案中上傳結構施工圖（.dwg、.dxf 或 .pdf），並選擇適用的 Style Guide 規則。辨識會自動開始，處理進度每 10 秒更新一次。</p>
+        </li>
+        <li class="howto-step fade-in" data-delay="4">
+          <div class="howto-head">
+            <span class="howto-num" aria-hidden="true">2</span>
+            <h3 data-i18n="howto.s2.title">審閱標示的缺漏</h3>
+          </div>
+          <figure class="howto-shot">
+            <img src="assets/howto-2-review.jpg" width="900" height="675" alt="SetTime 審閱畫面：梁、柱、樓層與問題數量（範例資料）" data-i18n-alt="howto.s2.alt" loading="lazy" decoding="async">
+          </figure>
+          <p data-i18n="howto.s2.desc">SetTime 會統計辨識到的梁、柱與樓層，並標出每一處缺漏，例如缺少標註而改用 Style Guide 預設值的地方。使用前由人員確認。</p>
+        </li>
+        <li class="howto-step fade-in" data-delay="5">
+          <div class="howto-head">
+            <span class="howto-num" aria-hidden="true">3</span>
+            <h3 data-i18n="howto.s3.title">取得計料表</h3>
+          </div>
+          <figure class="howto-shot">
+            <img src="assets/howto-3-materials.jpg" width="900" height="675" alt="SetTime 計料表：依鋼筋號數列出數量與重量（範例資料）" data-i18n-alt="howto.s3.alt" loading="lazy" decoding="async">
+          </figure>
+          <p data-i18n="howto.s3.desc">依鋼筋號數彙整數量與重量，輸出可直接估價的 .xlsm 計料表，免二次轉檔即可匯入既有巨集工具。</p>
+        </li>
+      </ol>
+      <p class="howto-note fade-in" data-i18n="howto.note">畫面為範例資料。</p>
+      <div class="section-cta fade-in">
+        <a href="#pilot" class="cta-pill">
+          <span data-i18n="cta.pilot">申請免費試點</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
       </div>
     </div>
   </section>

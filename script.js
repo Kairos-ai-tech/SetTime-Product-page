@@ -214,12 +214,8 @@ document.addEventListener('DOMContentLoaded', function () {
       ['姓名 Name', field('pilotName')],
       ['公司名稱 Company', company],
       ['Email', email],
-      ['電話 Phone', field('pilotPhone')],
       ['國家/地區 Country', field('pilotCountry')],
       ['身份 Role', field('pilotRole')],
-      ['施工類型 Construction Type', field('pilotType')],
-      ['年度鋼筋用量 Annual Rebar Volume', field('pilotVolume')],
-      ['希望試點時程 Pilot Timeline', field('pilotTimeline')],
     ];
     const bodyLines = fields
       .map((f) => f[0] + ': ' + f[1])

@@ -51,14 +51,15 @@ document.addEventListener('DOMContentLoaded', function () {
   if (demoVideo && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     new IntersectionObserver(
       function (entries) {
-        if (entries[0].isIntersecting) {
+        const ratio = entries[0].intersectionRatio;
+        if (ratio >= 0.98) {
           const p = demoVideo.play();
           if (p) p.catch(function () {});
-        } else {
+        } else if (ratio < 0.5) {
           demoVideo.pause();
         }
       },
-      { threshold: 0.5 }
+      { threshold: [0, 0.5, 0.98] }
     ).observe(demoVideo);
   }
 

@@ -2550,10 +2550,6 @@ html.lenis, html.lenis body { height: auto; }
   font-size: 0.82rem;
 }
 
-
-
-/* ===== PRODUCT VIDEO ===== */
-
 .howto {
   padding: clamp(80px, 12vh, 140px) 0;
   background: var(--bg-glass);
@@ -2643,12 +2639,14 @@ html.lenis, html.lenis body { height: auto; }
 .howto-note {
   margin-top: 20px;
   font-size: 0.8rem;
-  color: var(--text-subtle);
+  color: var(--text-muted);
 }
 
 @media (max-width: 900px) {
   .howto-steps { grid-template-columns: 1fr; }
 }
+
+/* ===== PRODUCT VIDEO ===== */
 
 .video {
   padding: clamp(80px, 12vh, 140px) 0;

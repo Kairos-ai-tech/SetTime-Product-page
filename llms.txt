@@ -26,7 +26,7 @@ Last updated: 2026-10-22
 - [Rebar Estimation Automation System](https://settime.kairosaitech.com/#product): Shipping today. An AutoCAD 2021 plugin plus a cross-platform desktop app that converts structural drawings directly into shop drawings and a material-list workbook (.xlsm), importing natively into a fabricator's existing macro tooling, with beam/column recognition meeting acceptance thresholds.
 - [AR field guidance + AI verification](https://settime.kairosaitech.com/#solution): In development. 3D rebar layout overlaid on formwork (green = correct placement, red = deviation), and computer-vision comparison of as-built vs. as-designed rebar before the pour.
 - [Law & compliance / audit trail](https://settime.kairosaitech.com/#compliance): In development. Every pipeline action will be written to a SHA-256 hash-chained, append-only, UTC-timestamped log with monotonic sequence numbers — tamper-evident (detects alteration), not a compliance certification. Built for large-contractor and government-tender audit review; actual compliance obligations depend on applicable law and contract terms, and the page carries a legal disclaimer to that effect.
-- [Free pilot program](https://settime.kairosaitech.com/#pilot): Construction companies, rebar fabricators, and structural engineering firms can apply for a free pilot: send one structural drawing and get a material list back within 24 hours.
+- [Free pilot program](https://settime.kairosaitech.com/#pilot): Construction companies, rebar fabricators, and structural engineering firms can apply for a free pilot: send one structural drawing and get a material list back within 24 hours of receiving it.
 
 ## FAQ
 
@@ -34,7 +34,7 @@ Last updated: 2026-10-22
 - What can SetTime do today? The Rebar Estimation Automation System is shipping now (see Product above); AR field guidance, AI as-built verification, and the law/compliance audit trail are in development.
 - Does the audit trail guarantee legal compliance? No — and this feature is still in development. It is a technical tamper-evidence mechanism (SHA-256 hash chain); it does not certify compliance with any specific law, regulation, or tender requirement. Actual compliance depends on applicable law and contract terms — this is not legal advice.
 - Who is SetTime for? Construction companies, rebar fabricators, structural engineering firms, and public agencies that need an auditable as-built record.
-- How do I apply for the free pilot? Fill in the free pilot form at https://settime.kairosaitech.com/#pilot with name, company, email, country, and role. Send one structural drawing and SetTime returns the material list within 24 hours.
+- How do I apply for the free pilot? Fill in the free pilot form at https://settime.kairosaitech.com/#pilot with name, company, email, country, and role. Send one structural drawing and SetTime returns the material list within 24 hours of receiving it.
 - Who builds SetTime? Kairos.ai (https://www.kairosaitech.com), focused on Taiwan's construction market and rebar work today, with plans to extend into adjacent trades like CNC machining, mold making, and welding.
 
 ## Company

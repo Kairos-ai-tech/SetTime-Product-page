@@ -2775,3 +2775,7 @@ html.lenis, html.lenis body { height: auto; }
   color: var(--gold-deep);
   white-space: nowrap;
 }
+
+.crisis-extra {
+  opacity: 1;
+}

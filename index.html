@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="SetTime 鋼筋估算自動化已上線：結構施工圖轉加工圖與計料表（.xlsm），支援 AutoCAD 2021 外掛與桌面版。AR 現場指導與 AI 竣工驗證開發中。由 Kairos.ai 開發，申請免費試點。">
+  <meta name="description" content="SetTime 鋼筋估算自動化已上線：結構施工圖轉加工圖與計料表（.xlsm），支援 AutoCAD 2021 外掛與桌面版。AR 現場指導與 AI 竣工驗證開發中。由 Kairos.ai 開發，傳一張圖，24 小時內免費計料。">
   <meta name="keywords" content="SetTime, SetTime 鋼筋, SetTime 鋼筋估算自動化, Kairos.ai, 鋼筋估算軟體, 鋼筋計料, 鋼筋加工圖, 鋼筋計料表, AI 鋼筋估算, 鋼筋施工, AR 營造, 智慧工地, 鋼筋自動化, 施工圖自動解析, 竣工驗證, 稽核鏈, SetTime rebar estimation software, rebar takeoff automation, rebar shop drawings, bar bending schedule, AutoCAD rebar plugin, construction execution, rebar verification, AR construction, as-built verification, audit trail">
   <meta name="author" content="Kairos.ai">
   <meta name="application-name" content="SetTime">
@@ -139,7 +139,7 @@
             "@type": "HowToStep",
             "position": 2,
             "name": "審閱標示的缺漏",
-            "text": "SetTime 會統計辨識到的梁、柱與樓層，並標出每一處缺漏，例如缺少標註而改用 Style Guide 預設值的地方。使用前由人員確認。",
+            "text": "SetTime 會統計辨識到的梁、柱與樓層，並標出每一處缺漏，例如缺少標註而改用 Style Guide 預設值的地方。使用前由您確認。",
             "url": "https://settime.kairosaitech.com/#howto",
             "image": "https://settime.kairosaitech.com/assets/howto-2-review.jpg"
           },
@@ -234,7 +234,7 @@
             "name": "如何申請免費試點？",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "在下方「免費試點」表單留下姓名、公司名稱、Email、國家/地區與身份，我們將主動與您聯繫安排導入。"
+              "text": "在下方「免費試點」表單留下姓名、公司名稱、Email、國家/地區與身份，我們將主動與您聯繫安排導入。傳一份結構施工圖給我們，收到後 24 小時內回傳計料表。"
             }
           },
           {
@@ -322,11 +322,17 @@
       <p class="hero-subtitle-en fade-in" data-delay="2" data-i18n="hero.subtitle-en">From structural drawing to shop-ready rebar.</p>
       <div class="hero-actions fade-in" data-delay="3">
         <a href="#pilot" class="hero-cta">
-          <span data-i18n="cta.pilot">申請免費試點</span>
+          <span data-i18n="cta.pilot">傳一張圖，24 小時內免費計料</span>
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
         <a href="#demo" class="hero-cta-ghost" data-i18n="hero.cta.demo">看實際操作</a>
       </div>
+      <ul class="hero-trust fade-in" data-delay="4">
+        <li data-i18n="hero.trust1">24 小時內回傳計料表</li>
+        <li data-i18n="hero.trust2">每項標記皆提交由您覆核</li>
+        <li data-i18n="hero.trust3">AutoCAD 外掛 + 桌面版</li>
+        <li data-i18n="hero.trust4">輸出 .xlsm，相容既有巨集工具</li>
+      </ul>
     </div>
     <div class="scroll-hint" aria-hidden="true">
       <span>SCROLL</span>
@@ -365,6 +371,7 @@
         </div>
       </div>
       <p class="crisis-source" data-i18n="problem.stats.source">產業估計數據，非本產品實測結果。</p>
+      <p class="crisis-source crisis-extra" data-i18n="problem.workforce">產業數據：每年約 17,000 名估算師退休，接班人更少（引自 theTakeoff.AI，未經 SetTime 驗證）。</p>
 
       <blockquote class="crisis-quote fade-in" data-delay="4">
         <p data-i18n="problem.quote">「圖照著綁了，監造一來說間距不對、保護層不夠。打掉重綁一次，當週進度就沒了。」</p>
@@ -444,7 +451,7 @@
           <figure class="howto-shot">
             <img src="assets/howto-2-review.jpg" width="900" height="675" alt="SetTime 審閱畫面：梁、柱、樓層與問題數量（範例資料）" data-i18n-alt="howto.s2.alt" loading="lazy" decoding="async">
           </figure>
-          <p data-i18n="howto.s2.desc">SetTime 會統計辨識到的梁、柱與樓層，並標出每一處缺漏，例如缺少標註而改用 Style Guide 預設值的地方。使用前由人員確認。</p>
+          <p data-i18n="howto.s2.desc">SetTime 會統計辨識到的梁、柱與樓層，並標出每一處缺漏，例如缺少標註而改用 Style Guide 預設值的地方。使用前由您確認。</p>
         </li>
         <li class="howto-step fade-in" data-delay="5">
           <div class="howto-head">
@@ -460,7 +467,7 @@
       <p class="howto-note fade-in" data-i18n="howto.note">畫面為範例資料。</p>
       <div class="section-cta fade-in">
         <a href="#pilot" class="cta-pill">
-          <span data-i18n="cta.pilot">申請免費試點</span>
+          <span data-i18n="cta.pilot">傳一張圖，24 小時內免費計料</span>
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
       </div>
@@ -537,6 +544,7 @@
               </tfoot>
             </table>
           </div>
+          <p class="demo-flag"><span class="demo-flag-tag" data-i18n="demo.flag.tag">待確認</span><span data-i18n="demo.flag.text">示例：若圖面缺少 fc′ 標註，SetTime 會採用 Style Guide 預設值並標記，供您下單前確認。</span></p>
           <div class="demo-detail">
             <p data-detail="c1" data-i18n="demo.d.c1">柱 C1：8-D25 主筋，下料長含搭接 4150 mm；箍筋另列。</p>
             <p data-detail="b1" data-i18n="demo.d.b1">梁 B1：上層 3-D22、下層 4-D22，箍筋 D10 兩端加密 @100、中段依間距規排列，錨定長度已計入。</p>
@@ -708,7 +716,7 @@
     </div>
     <div class="container section-cta fade-in">
       <a href="#pilot" class="cta-pill">
-        <span data-i18n="cta.pilot">申請免費試點</span>
+        <span data-i18n="cta.pilot">傳一張圖，24 小時內免費計料</span>
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
     </div>
@@ -886,7 +894,7 @@
     </div>
     <div class="container section-cta fade-in">
       <a href="#pilot" class="cta-pill">
-        <span data-i18n="cta.pilot">申請免費試點</span>
+        <span data-i18n="cta.pilot">傳一張圖，24 小時內免費計料</span>
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
     </div>
@@ -950,6 +958,16 @@
             <span class="result-new" data-i18n="results.r4.new">目標 ≤ 2%</span>
           </p>
         </div>
+      </div>
+
+      <div class="results-math fade-in" data-delay="2">
+        <h3 data-i18n="results.math.title">算給您看：試算與假設</h3>
+        <p class="results-math-note" data-i18n="results.math.assume">示意試算，非實測結果。假設每月 20 份圖面、人工每份 10 小時（取 8–12 小時中間值）、目標每份 1 小時、每小時全額成本 NT$600。</p>
+        <dl class="results-math-grid">
+          <div><dt data-i18n="results.math.l1">每月省下工時</dt><dd data-i18n="results.math.v1">180 小時</dd></div>
+          <div><dt data-i18n="results.math.l2">每年省下工時</dt><dd data-i18n="results.math.v2">2,160 小時</dd></div>
+          <div><dt data-i18n="results.math.l3">每年節省人力成本</dt><dd data-i18n="results.math.v3">NT$ 130 萬</dd></div>
+        </dl>
       </div>
     </div>
   </section>
@@ -1028,7 +1046,7 @@
     </div>
     <div class="container section-cta fade-in">
       <a href="#pilot" class="cta-pill">
-        <span data-i18n="cta.pilot">申請免費試點</span>
+        <span data-i18n="cta.pilot">傳一張圖，24 小時內免費計料</span>
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
     </div>
@@ -1056,7 +1074,7 @@
         </details>
         <details class="faq-item fade-in" data-delay="5">
           <summary data-i18n="faq.q4.q">如何申請免費試點？</summary>
-          <p data-i18n="faq.q4.a">在下方「免費試點」表單留下姓名、公司名稱、Email、國家/地區與身份，我們將主動與您聯繫安排導入。</p>
+          <p data-i18n="faq.q4.a">在下方「免費試點」表單留下姓名、公司名稱、Email、國家/地區與身份，我們將主動與您聯繫安排導入。傳一份結構施工圖給我們，收到後 24 小時內回傳計料表。</p>
         </details>
         <details class="faq-item fade-in" data-delay="6">
           <summary data-i18n="faq.q5.q">SetTime 由誰開發？</summary>
@@ -1070,7 +1088,7 @@
     </div>
     <div class="container section-cta fade-in">
       <a href="#pilot" class="cta-pill">
-        <span data-i18n="cta.pilot">申請免費試點</span>
+        <span data-i18n="cta.pilot">傳一張圖，24 小時內免費計料</span>
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
     </div>
@@ -1080,8 +1098,8 @@
   <section class="pilot" id="pilot">
     <div class="pilot-inner">
       <p class="section-label light fade-in" data-i18n="pilot.label">FREE PILOT 免費試點</p>
-      <h2 class="section-heading light fade-in" data-delay="1" data-i18n="pilot.heading">申請免費試點</h2>
-      <p class="contact-desc fade-in" data-delay="2" data-i18n="pilot.desc">留下公司資訊，我們將與您聯繫安排試點導入。</p>
+      <h2 class="section-heading light fade-in" data-delay="1" data-i18n="pilot.heading">傳一張圖，24 小時內收到計料表</h2>
+      <p class="contact-desc fade-in" data-delay="2" data-i18n="pilot.desc">留下公司資訊，我們會回覆如何傳送您的一份結構施工圖，收到後 24 小時內回傳計料表。</p>
       <form class="contact-form pilot-form fade-in" data-delay="3" id="pilotForm">
         <div class="form-row">
           <div class="form-group">

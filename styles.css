@@ -2699,6 +2699,7 @@ html.lenis, html.lenis body { height: auto; }
 
 .crisis-extra {
   margin-top: 8px;
+  opacity: 1;
 }
 
 .results-math {
@@ -2774,8 +2775,4 @@ html.lenis, html.lenis body { height: auto; }
   text-transform: uppercase;
   color: var(--gold-deep);
   white-space: nowrap;
-}
-
-.crisis-extra {
-  opacity: 1;
 }

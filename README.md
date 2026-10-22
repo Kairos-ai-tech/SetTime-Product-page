@@ -142,7 +142,7 @@ building AI systems from 0 to 1.
 We welcome contractors, fabricators, structural engineers, developers,
 government agencies, and investors interested in SetTime to get in touch.
 
-- Free pilot program: apply via the [product page](https://settime.kairosaitech.com/#pilot)
+- Free pilot program: apply via the [product page](https://settime.kairosaitech.com/#pilot). Send one structural drawing, get the material list back within 24 hours
   with name, company, email, country, and role.
 - Email: kairos.ai.tech@gmail.com
 - Website: [Kairos.ai](https://www.kairosaitech.com)

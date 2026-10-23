@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="SetTime 鋼筋估算自動化已上線：結構施工圖轉加工圖與計料表（.xlsm），支援 AutoCAD 2021 外掛與桌面版。AR 現場指導與 AI 竣工驗證開發中。由 Kairos.ai 開發，傳一張圖，24 小時內免費計料。">
-  <meta name="keywords" content="SetTime, SetTime 鋼筋, SetTime 鋼筋估算自動化, Kairos.ai, 鋼筋估算軟體, 鋼筋計料, 鋼筋加工圖, 鋼筋計料表, AI 鋼筋估算, 鋼筋施工, AR 營造, 智慧工地, 鋼筋自動化, 施工圖自動解析, 竣工驗證, 稽核鏈, SetTime rebar estimation software, rebar takeoff automation, rebar shop drawings, bar bending schedule, AutoCAD rebar plugin, construction execution, rebar verification, AR construction, as-built verification, audit trail">
+  <meta name="description" content="SetTime 鋼筋估算自動化已上線：讀取結構圖上的鋼筋，轉成數量與加工料單（.xlsm）。AR 現場指導與 AI 竣工驗證開發中。由 Kairos.ai 開發，傳一張圖，24 小時內免費計料。">
+  <meta name="keywords" content="SetTime, SetTime 鋼筋, SetTime 鋼筋估算自動化, Kairos.ai, 鋼筋估算軟體, 鋼筋計料, 鋼筋加工圖, 鋼筋計料表, AI 鋼筋估算, 鋼筋施工, AR 營造, 智慧工地, 鋼筋自動化, 施工圖自動解析, 竣工驗證, 稽核鏈, SetTime rebar estimation software, rebar takeoff automation, rebar shop drawings, bar bending schedule, construction execution, rebar verification, AR construction, as-built verification, audit trail">
   <meta name="author" content="Kairos.ai">
   <meta name="application-name" content="SetTime">
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
@@ -21,7 +21,7 @@
   </script>
   <meta property="og:site_name" content="SetTime by Kairos.ai">
   <meta property="og:title" content="SetTime | AI Rebar Estimation">
-  <meta property="og:description" content="結構施工圖轉加工圖與計料表（.xlsm），AutoCAD 2021 外掛與桌面版已上線。AR 現場指導與 AI 竣工驗證開發中。Shipping: estimation automation. In development: AR guidance and AI verification.">
+  <meta property="og:description" content="讀取結構圖上的鋼筋，轉成數量與加工料單（.xlsm），已上線。AR 現場指導與 AI 竣工驗證開發中。Shipping: estimation automation. In development: AR guidance and AI verification.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://settime.kairosaitech.com/">
   <meta property="og:locale" content="zh_TW">
@@ -32,7 +32,7 @@
   <meta property="og:image:alt" content="SetTime logo — AI rebar estimation automation by Kairos.ai">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="SetTime | AI Rebar Estimation">
-  <meta name="twitter:description" content="結構施工圖轉加工圖與計料表（.xlsm），AutoCAD 2021 外掛與桌面版已上線。AR 現場指導與 AI 竣工驗證開發中。Shipping: estimation automation. In development: AR guidance and AI verification.">
+  <meta name="twitter:description" content="讀取結構圖上的鋼筋，轉成數量與加工料單（.xlsm），已上線。AR 現場指導與 AI 竣工驗證開發中。Shipping: estimation automation. In development: AR guidance and AI verification.">
   <meta name="twitter:image" content="https://settime.kairosaitech.com/assets/settime-og-card.jpg">
   <meta name="twitter:image:alt" content="SetTime logo — AI rebar estimation automation by Kairos.ai">
   <link rel="canonical" href="https://settime.kairosaitech.com/">
@@ -100,9 +100,9 @@
         "@id": "https://settime.kairosaitech.com/#webpage",
         "url": "https://settime.kairosaitech.com/",
         "name": "SetTime | AI Rebar Estimation Software — Structural Drawings to Shop Drawings & Bar Schedules",
-        "description": "SetTime 鋼筋估算自動化已上線：結構施工圖轉加工圖與計料表（.xlsm），支援 AutoCAD 2021 外掛與桌面版。AR 現場指導與 AI 竣工驗證開發中。",
+        "description": "SetTime 鋼筋估算自動化已上線：讀取結構圖上的鋼筋，轉成數量與加工料單（.xlsm）。AR 現場指導與 AI 竣工驗證開發中。",
         "inLanguage": "zh-Hant",
-        "dateModified": "2026-10-22",
+        "dateModified": "2026-10-23",
         "isPartOf": { "@id": "https://settime.kairosaitech.com/#website" },
         "about": { "@id": "https://settime.kairosaitech.com/#software" },
         "mainEntity": { "@id": "https://settime.kairosaitech.com/#software" },
@@ -129,7 +129,7 @@
             "@type": "HowToStep",
             "position": 1,
             "name": "上傳施工圖",
-            "text": "在專案中上傳結構施工圖（.dwg、.dxf 或 .pdf），系統依您的 Style Guide 規則自動開始辨識，處理進度每 10 秒更新一次。",
+            "text": "在專案中上傳結構施工圖（.dwg 或 .dxf），系統依您的 Style Guide 規則自動開始辨識，處理進度每 10 秒更新一次。",
             "url": "https://settime.kairosaitech.com/#howto",
             "image": "https://settime.kairosaitech.com/assets/howto-1-upload.jpg"
           },
@@ -173,11 +173,10 @@
         "alternateName": ["SetTime Rebar Estimation Automation System", "SetTime 鋼筋估算自動化系統"],
         "applicationCategory": "BusinessApplication",
         "applicationSubCategory": "Construction rebar estimation and shop-drawing automation",
-        "operatingSystem": "Windows (AutoCAD 2021 plugin); cross-platform desktop app",
-        "softwareRequirements": "AutoCAD 2021 (for the plugin)",
+        "operatingSystem": "Cross-platform desktop app",
         "url": "https://settime.kairosaitech.com/",
         "image": "https://settime.kairosaitech.com/assets/settime-og-card.jpg",
-        "description": "SetTime is Kairos.ai's rebar estimation automation software, shipping today: an AutoCAD 2021 plugin plus a cross-platform desktop app that converts structural drawings directly into shop drawings and a material-list workbook (.xlsm), importing natively into a fabricator's existing macro tooling. AR field guidance and computer-vision as-built verification are in development on the same product roadmap.",
+        "description": "SetTime is Kairos.ai's rebar estimation automation software, shipping today. It reads the rebar on your structural drawings and turns it into quantities and bar-bending schedules (shop drawings and an .xlsm material list), importing natively into a fabricator's existing macro tooling. AR field guidance and computer-vision as-built verification are in development on the same product roadmap.",
         "featureList": [
           "Structural drawing recognition (beams and columns)",
           "Automatic rebar shop-drawing generation",
@@ -216,7 +215,7 @@
             "name": "SetTime 現在可以使用哪些功能？",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "鋼筋估算自動化系統已上線：AutoCAD 2021 外掛與跨平台桌面版，將結構施工圖直接轉換為加工圖與計料表 (.xlsm)，可直接匯入加工廠既有巨集工具，樑柱辨識準確率達合約驗收門檻。AR 現場指導、AI 竣工驗證與法遵稽核鏈正在開發中。"
+              "text": "鋼筋估算自動化系統已上線：讀取結構圖上的鋼筋，將結構施工圖直接轉換為加工圖與計料表 (.xlsm)，可直接匯入加工廠既有巨集工具，樑柱辨識準確率達合約驗收門檻。AR 現場指導、AI 竣工驗證與法遵稽核鏈正在開發中。"
             }
           },
           {
@@ -316,7 +315,7 @@
       <div class="hero-badge fade-in" data-i18n="hero.badge">AI 鋼筋估算自動化平台</div>
       <p class="hero-slogan fade-in" data-delay="1" data-i18n="product.tagline">SetTime — 凝固之前，一次到位</p>
       <h1 class="hero-title fade-in" data-delay="1" data-i18n="hero.title">結構施工圖<br>自動轉成鋼筋計料與加工圖</h1>
-      <p class="hero-subtitle fade-in" data-delay="2" data-i18n="hero.subtitle">已上線：估算自動化（AutoCAD 外掛 + 桌面版）。規劃中：AR 綁紮指導、AI 竣工比對與可稽核紀錄。</p>
+      <p class="hero-subtitle fade-in" data-delay="2" data-i18n="hero.subtitle">已上線：鋼筋估算自動化（讀取結構圖，產出數量與加工料單）。規劃中：AR 綁紮指導、AI 竣工比對與可稽核紀錄。</p>
       <p class="hero-subtitle-en fade-in" data-delay="2" data-i18n="hero.subtitle-en">From structural drawing to shop-ready rebar.</p>
       <div class="hero-actions fade-in" data-delay="3">
         <a href="#pilot" class="hero-cta">
@@ -328,7 +327,7 @@
       <ul class="hero-trust fade-in" data-delay="4">
         <li data-i18n="hero.trust1">24 小時內回傳計料表</li>
         <li data-i18n="hero.trust2">每項標記皆提交由您覆核</li>
-        <li data-i18n="hero.trust3">AutoCAD 外掛 + 桌面版</li>
+        <li data-i18n="hero.trust3">讀圖算鋼筋 + 加工料單</li>
         <li data-i18n="hero.trust4">輸出 .xlsm，相容既有巨集工具</li>
       </ul>
     </div>
@@ -440,7 +439,7 @@
           <figure class="howto-shot">
             <img src="assets/howto-1-upload.jpg" width="900" height="675" alt="SetTime「您的圖檔」頁面：已上傳的施工圖正在處理中（範例資料）" data-i18n-alt="howto.s1.alt" loading="lazy" decoding="async">
           </figure>
-          <p data-i18n="howto.s1.desc">在專案中上傳結構施工圖（.dwg、.dxf 或 .pdf），系統依您的 Style Guide 規則自動開始辨識，處理進度每 10 秒更新一次。</p>
+          <p data-i18n="howto.s1.desc">在專案中上傳結構施工圖（.dwg 或 .dxf），系統依您的 Style Guide 規則自動開始辨識，處理進度每 10 秒更新一次。</p>
         </li>
         <li class="howto-step fade-in" data-delay="4">
           <div class="howto-head">
@@ -726,7 +725,7 @@
     <div class="container">
       <p class="section-label fade-in" data-i18n="product.label">MODULE LIVE TODAY 現行落地模組</p>
       <h2 class="section-heading fade-in" data-delay="1" data-i18n="product.heading">不只是願景<br>鋼筋估算已在產線運作</h2>
-      <p class="section-lead fade-in" data-delay="2" data-i18n="product.lead">施工圖解析引擎已作為獨立模組上線：AutoCAD 結構圖 → 施工圖 → 計料表，全流程自動化，並原生對接客戶既有巨集匯入流程。</p>
+      <p class="section-lead fade-in" data-delay="2" data-i18n="product.lead">施工圖解析引擎已作為獨立模組上線：結構圖 → 施工圖 → 計料表，全流程自動化，並原生對接客戶既有巨集匯入流程。</p>
       <p class="product-tagline fade-in" data-delay="3" data-i18n="product.tagline">SetTime — 凝固之前，一次到位</p>
     </div>
 
@@ -774,14 +773,14 @@
         <div class="tech-panel-content">
           <h3 data-i18n="product.panel.title">鋼筋估算自動化系統</h3>
           <p class="tech-en" data-i18n="product.panel.en">Rebar Estimation Automation System</p>
-          <p data-i18n="product.panel.desc">AutoCAD 2021 外掛加上跨平台桌面版，將結構施工圖直接轉為加工圖與計料表 (.xlsm)。樑柱辨識準確率達合約驗收門檻，輸出免二次轉檔即可匯入客戶既有巨集系統。</p>
+          <p data-i18n="product.panel.desc">SetTime 讀取結構圖上的鋼筋，將結構施工圖直接轉為加工圖與計料表 (.xlsm)。樑柱辨識準確率達合約驗收門檻，輸出免二次轉檔即可匯入客戶既有巨集系統。</p>
           <div class="tech-metrics">
             <span class="correct" data-i18n="product.m1">樑柱辨識達驗收門檻</span>
             <span data-i18n="product.m2">施工圖 → 計料表 全自動</span>
             <span data-i18n="product.m3">GTA / CCM 巨集原生相容</span>
             <span data-i18n="product.m4">Style Guide 可調規則引擎</span>
           </div>
-          <div class="tech-tags"><span>AutoCAD 2021</span><span>.NET</span><span>Avalonia Desktop</span></div>
+          <div class="tech-tags"><span>.NET</span><span>Avalonia Desktop</span></div>
         </div>
       </article>
     </div>
@@ -1065,7 +1064,7 @@
         </details>
         <details class="faq-item fade-in" data-delay="3">
           <summary data-i18n="faq.q2.q">SetTime 現在可以使用哪些功能？</summary>
-          <p data-i18n="faq.q2.a">鋼筋估算自動化系統已上線：AutoCAD 2021 外掛與跨平台桌面版，將結構施工圖直接轉換為加工圖與計料表 (.xlsm)，可直接匯入加工廠既有巨集工具，樑柱辨識準確率達合約驗收門檻。AR 現場指導、AI 竣工驗證與法遵稽核鏈正在開發中。</p>
+          <p data-i18n="faq.q2.a">鋼筋估算自動化系統已上線：讀取結構圖上的鋼筋，將結構施工圖直接轉換為加工圖與計料表 (.xlsm)，可直接匯入加工廠既有巨集工具，樑柱辨識準確率達合約驗收門檻。AR 現場指導、AI 竣工驗證與法遵稽核鏈正在開發中。</p>
         </details>
         <details class="faq-item fade-in" data-delay="4">
           <summary data-i18n="faq.q3.q">誰適合使用 SetTime？</summary>

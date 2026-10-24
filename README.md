@@ -15,6 +15,12 @@ construction market (營造/鋼筋施工).
 
 ---
 
+## Security & Privacy Note
+
+This repository contains only the public product landing page (static HTML/CSS/JS). It does **not** process or store customer drawings. The live SetTime service (portal + desktop + API) lives in the private `rebar-estimation` repository and follows its own security policy (`SECURITY.md` there).
+
+Do not submit real customer drawings or personal data to this public repo.
+
 ## The Pipeline
 
 ```

@@ -16,6 +16,7 @@ Last updated: 2026-10-23
 - Market: Taiwan construction (rebar/structural work) today.
 - Contact: kairos.ai.tech@gmail.com
 - Free pilot: https://settime.kairosaitech.com/#pilot
+- Web portal: https://settime.app.kairosaitech.com (SetTime web portal)
 - Languages: the same page is published as separate URLs per language — zh-Hant https://settime.kairosaitech.com/ (default), English https://settime.kairosaitech.com/en/, 日本語 /ja/, Español /es/, Français /fr/, Deutsch /de/, Italiano /it/, Português /pt/ (all under https://settime.kairosaitech.com). Prefer the URL in the reader's language when citing.
 - Former name: the project was previously called "AI學徒 iTech"; the current and only product name is SetTime.
 

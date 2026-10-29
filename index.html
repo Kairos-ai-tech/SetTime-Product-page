@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="SetTime 鋼筋估算自動化已上線：結構施工圖轉加工圖與計料表（.xlsm），支援 AutoCAD 2021 外掛與桌面版。AR 現場指導與 AI 竣工驗證開發中。由 Kairos.ai 開發，傳一張圖，24 小時內免費計料。">
-  <meta name="keywords" content="SetTime, SetTime 鋼筋, SetTime 鋼筋估算自動化, Kairos.ai, 鋼筋估算軟體, 鋼筋計料, 鋼筋加工圖, 鋼筋計料表, AI 鋼筋估算, 鋼筋施工, AR 營造, 智慧工地, 鋼筋自動化, 施工圖自動解析, 竣工驗證, 稽核鏈, SetTime rebar estimation software, rebar takeoff automation, rebar shop drawings, bar bending schedule, AutoCAD rebar plugin, construction execution, rebar verification, AR construction, as-built verification, audit trail">
+  <meta name="description" content="SetTime 取代外包鋼筋算量：結構施工圖進，樑柱的料單（.xlsm）與加工圖（.dwg/DXF）出，支援 AutoCAD 2021 外掛與桌面版。圖面整理、板與牆、3D 檢查開發中。由 Kairos.ai 開發，傳一張圖，24 小時內免費計料。">
+  <meta name="keywords" content="SetTime, SetTime 鋼筋, SetTime 鋼筋算量, Kairos.ai, 鋼筋估算軟體, 鋼筋計料, 鋼筋加工圖, 鋼筋計料表, AI 鋼筋估算, 外包算量, 鋼筋料單, 施工圖自動解析, 3D 模型檢查, 稽核鏈, SetTime rebar takeoff software, rebar takeoff automation, outsourced rebar takeoff, rebar shop drawings, bar bending schedule, BBS, AutoCAD rebar plugin, 3D rebar check, audit trail">
   <meta name="author" content="Kairos.ai">
   <meta name="application-name" content="SetTime">
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
@@ -21,7 +21,7 @@
   </script>
   <meta property="og:site_name" content="SetTime by Kairos.ai">
   <meta property="og:title" content="SetTime | AI Rebar Estimation">
-  <meta property="og:description" content="結構施工圖轉加工圖與計料表（.xlsm），AutoCAD 2021 外掛與桌面版已上線。AR 現場指導與 AI 竣工驗證開發中。Shipping: estimation automation. In development: AR guidance and AI verification.">
+  <meta property="og:description" content="結構施工圖進，樑柱的料單（.xlsm）與加工圖（.dwg/DXF）出。AutoCAD 2021 外掛與桌面版已上線；圖面整理、板與牆、3D 檢查開發中。Shipping: takeoff, bar schedule and shop drawings for beams and columns. In development: drawing prep, slabs and walls, 3D check.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://settime.kairosaitech.com/">
   <meta property="og:locale" content="zh_TW">
@@ -31,7 +31,7 @@
   <meta property="og:image:alt" content="SetTime: structural drawings to rebar material lists, shown with a sample material list table">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="SetTime | AI Rebar Estimation">
-  <meta name="twitter:description" content="結構施工圖轉加工圖與計料表（.xlsm），AutoCAD 2021 外掛與桌面版已上線。AR 現場指導與 AI 竣工驗證開發中。Shipping: estimation automation. In development: AR guidance and AI verification.">
+  <meta name="twitter:description" content="結構施工圖進，樑柱的料單（.xlsm）與加工圖（.dwg/DXF）出。AutoCAD 2021 外掛與桌面版已上線；圖面整理、板與牆、3D 檢查開發中。Shipping: takeoff, bar schedule and shop drawings for beams and columns. In development: drawing prep, slabs and walls, 3D check.">
   <meta name="twitter:image" content="https://settime.kairosaitech.com/assets/settime-og-card.jpg">
   <meta name="twitter:image:alt" content="SetTime: structural drawings to rebar material lists, shown with a sample material list table">
   <link rel="canonical" href="https://settime.kairosaitech.com/">
@@ -106,9 +106,9 @@
         "@id": "https://settime.kairosaitech.com/#webpage",
         "url": "https://settime.kairosaitech.com/",
         "name": "SetTime | AI Rebar Estimation Software — Structural Drawings to Shop Drawings & Bar Schedules",
-        "description": "SetTime 鋼筋估算自動化已上線：結構施工圖轉加工圖與計料表（.xlsm），支援 AutoCAD 2021 外掛與桌面版。AR 現場指導與 AI 竣工驗證開發中。",
+        "description": "SetTime 取代外包鋼筋算量：結構施工圖進，樑柱的料單（.xlsm）與加工圖（.dwg/DXF）出，支援 AutoCAD 2021 外掛與桌面版。圖面整理、板與牆、3D 檢查開發中。由 Kairos.ai 開發，傳一張圖，24 小時內免費計料。",
         "inLanguage": "zh-Hant",
-        "dateModified": "2026-10-23",
+        "dateModified": "2026-10-30",
         "isPartOf": { "@id": "https://settime.kairosaitech.com/#website" },
         "about": { "@id": "https://settime.kairosaitech.com/#software" },
         "mainEntity": { "@id": "https://settime.kairosaitech.com/#software" },
@@ -183,21 +183,24 @@
         "softwareRequirements": "AutoCAD 2021 (for the plugin)",
         "url": "https://settime.kairosaitech.com/",
         "image": "https://settime.kairosaitech.com/assets/settime-og-card.jpg",
-        "description": "SetTime is Kairos.ai's rebar estimation automation software, shipping today: an AutoCAD 2021 plugin plus a cross-platform desktop app that converts structural drawings directly into shop drawings and a material-list workbook (.xlsm), importing natively into a fabricator's existing macro tooling. AR field guidance and computer-vision as-built verification are in development on the same product roadmap.",
+        "description": "SetTime is Kairos.ai's rebar takeoff software, built to replace the outsourced estimating team. Shipping today for beams and columns: an AutoCAD 2021 plugin plus a cross-platform desktop app that converts structural drawings into a bar schedule (.xlsm) and annotated shop drawings (.dwg / DXF), importing natively into a fabricator's existing macro tooling. Drawing preparation, slabs and walls, a 3D model check and BVBS output are in development.",
         "featureList": [
           "Structural drawing recognition (beams and columns)",
-          "Automatic rebar shop-drawing generation",
-          "Material-list / cut-list export to .xlsm for existing fabricator macro tooling",
-          "Workflow and quality-control tracking",
-          "In development: AR field guidance for rebar placement",
-          "In development: AI as-built vs. as-designed verification",
+          "Takeoff and bar bending schedule export to .xlsm for existing fabricator macro tooling",
+          "Annotated rebar shop-drawing generation (.dwg / DXF)",
+          "Per-value source trace and review flags",
+          "In development: drawing preparation and annotation",
+          "In development: slabs, walls and foundations",
+          "In development: bend angles and hook types",
+          "In development: 3D model check (cover, lap, anchorage, clashes)",
+          "In development: BVBS machine output",
           "In development: SHA-256 hash-chained audit trail"
         ],
         "audience": {
           "@type": "BusinessAudience",
-          "audienceType": "Construction companies, rebar fabricators, structural engineering firms, public agencies"
+          "audienceType": "Rebar fabricators, detailing firms, contractors, estimators"
         },
-        "areaServed": "TW",
+        "areaServed": ["US", "TW", "Europe"],
         "inLanguage": ["zh-Hant", "en", "ja", "es", "fr", "de", "it", "pt"],
         "brand": { "@id": "https://settime.kairosaitech.com/#brand" },
         "publisher": { "@id": "https://www.kairosaitech.com/#organization" },
@@ -214,7 +217,7 @@
             "name": "SetTime 是什麼？",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "SetTime 是 Kairos.ai 的營造／鋼筋產品。目前已上線的是鋼筋估算自動化：把結構施工圖轉成加工圖與計料資料，供估算與加工流程使用。AR 現場指導與 AI 竣工驗證是同一產品路線圖上的後續模組，開發中。"
+              "text": "SetTime 是 Kairos.ai 的鋼筋算量軟體，目標是取代外包估算團隊：圖面進、料單與標註加工圖出。目前已上線樑與柱；圖面整理、板與牆、3D 檢查與 BVBS 輸出開發中。"
             }
           },
           {
@@ -222,7 +225,7 @@
             "name": "SetTime 現在可以使用哪些功能？",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "鋼筋估算自動化系統已上線：AutoCAD 2021 外掛與跨平台桌面版，將結構施工圖直接轉換為加工圖與計料表 (.xlsm)，可直接匯入加工廠既有巨集工具，樑柱辨識準確率達合約驗收門檻。AR 現場指導、AI 竣工驗證與法遵稽核鏈正在開發中。"
+              "text": "已上線：AutoCAD 2021 外掛加上跨平台桌面版，把樑柱圖面轉成料單（.xlsm）與加工圖（.dwg / DXF），每個數值標明來源、缺口標出供覆核。開發中：圖面整理與標註、板、牆與基礎、彎鉤角度與型式、3D 模型檢查、BVBS 輸出與竄改可偵測的稽核鏈。"
             }
           },
           {
@@ -230,7 +233,7 @@
             "name": "誰適合使用 SetTime？",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "營造廠、鋼筋加工廠、結構技師事務所，以及需要可稽核竣工紀錄的政府機構。"
+              "text": "目前向外包買算量的鋼筋加工廠、繪圖公司、營造廠與估算人員。我們先從美國與歐洲的加工廠與繪圖師切入，並以台灣 CNS 圖面驗證引擎。"
             }
           },
           {
@@ -246,7 +249,7 @@
             "name": "SetTime 由誰開發？",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "SetTime 由 Kairos.ai 開發，聚焦台灣營造市場的鋼筋施工場景，未來將延伸至 CNC 加工、模具、焊接等相鄰產業。"
+              "text": "SetTime 由 Kairos.ai 開發。我們先以台灣圖面驗證引擎，並與美國、歐洲的加工廠與繪圖師接觸，未來將延伸至 CNC 加工、模具、焊接等相鄰產業。"
             }
           },
           {
@@ -320,10 +323,10 @@
       <div class="hero-overlay"></div>
     </div>
     <div class="hero-content">
-      <div class="hero-badge fade-in" data-i18n="hero.badge">AI 鋼筋估算自動化平台</div>
+      <div class="hero-badge fade-in" data-i18n="hero.badge">取代外包估算團隊的鋼筋算量平台</div>
       <p class="hero-slogan fade-in" data-delay="1" data-i18n="product.tagline">SetTime — 凝固之前，一次到位</p>
-      <h1 class="hero-title fade-in" data-delay="1" data-i18n="hero.title">結構施工圖<br>自動轉成鋼筋計料與加工圖</h1>
-      <p class="hero-subtitle fade-in" data-delay="2" data-i18n="hero.subtitle">已上線：估算自動化（AutoCAD 外掛 + 桌面版）。規劃中：AR 綁紮指導、AI 竣工比對與可稽核紀錄。</p>
+      <h1 class="hero-title fade-in" data-delay="1" data-i18n="hero.title">結構施工圖進，<br>計料表與加工圖出</h1>
+      <p class="hero-subtitle fade-in" data-delay="2" data-i18n="hero.subtitle">取代外包算量。已上線：樑柱的料單與加工圖。開發中：圖面整理、板與牆、3D 檢查。</p>
       <p class="hero-subtitle-en fade-in" data-delay="2" data-i18n="hero.subtitle-en">From structural drawing to shop-ready rebar.</p>
       <div class="hero-actions fade-in" data-delay="3">
         <a href="#pilot" class="hero-cta">
@@ -341,7 +344,7 @@
         <li data-i18n="hero.trust1">24 小時內回傳計料表</li>
         <li data-i18n="hero.trust2">每項標記皆提交由您覆核</li>
         <li data-i18n="hero.trust3">AutoCAD 外掛 + 桌面版</li>
-        <li data-i18n="hero.trust4">輸出 .xlsm，相容既有巨集工具</li>
+        <li data-i18n="hero.trust4">.xlsm 料單 + .dwg/DXF 加工圖</li>
       </ul>
     </div>
     <div class="scroll-hint" aria-hidden="true">
@@ -355,57 +358,55 @@
   <section class="problem" id="problem">
     <div class="problem-visual">
       <!-- TODO: replace with branded rebar / construction site image (steel reinforcement close-up preferred) -->
-      <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=960&q=80" alt="Construction site" data-i18n-alt="alt.problem" class="problem-img fade-in" loading="lazy" decoding="async">
+      <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=960&q=80" alt="工地現場" data-i18n-alt="alt.problem" class="problem-img fade-in" loading="lazy" decoding="async">
     </div>
     <div class="problem-content">
-      <p class="section-label fade-in" data-i18n="problem.label">THE CRISIS 產業缺口</p>
-      <h2 class="section-heading fade-in" data-delay="1" data-i18n="problem.heading">設計與現場脫節<br>鋼筋錯誤太晚才發現</h2>
-      <p class="section-lead fade-in" data-delay="2" data-i18n="problem.lead">施工圖意圖經人工判讀後才到現場，誤差往往在監造抽查或灌漿後才浮現。鋼筋工嚴重短缺、返工成本高昂，且全程缺乏可稽核的竣工紀錄。</p>
+      <p class="section-label fade-in" data-i18n="problem.label">THE GAP 產業缺口</p>
+      <h2 class="section-heading fade-in" data-delay="1" data-i18n="problem.heading">鋼筋算量<br>還靠外包團隊慢慢算</h2>
+      <p class="section-lead fade-in" data-delay="2" data-i18n="problem.lead">鋼筋下料之前，得有人整理圖面、逐一點算構件、編出料單並檢查。現在這些多半外包、動輒數天，檢查還得靠人。</p>
 
       <div class="crisis-grid fade-in" data-delay="3">
         <div class="crisis-item">
-          <span class="crisis-stat" data-i18n="problem.crisis1.stat">30%</span>
-          <p data-i18n="problem.crisis1.text">工程成本超支來自返工</p>
+          <span class="crisis-stat" data-i18n="problem.crisis1.stat">16,900</span>
+          <p data-i18n="problem.crisis1.text">美國每年的估算師職缺，人數卻沒有淨成長（BLS）</p>
         </div>
         <div class="crisis-item">
-          <span class="crisis-stat" data-i18n="problem.crisis2.stat">45%</span>
-          <p data-i18n="problem.crisis2.text">缺口：鋼筋工人力</p>
+          <span class="crisis-stat" data-i18n="problem.crisis2.stat">+24% / +4%</span>
+          <p data-i18n="problem.crisis2.text">五年間投標量 vs. 估算師人數（312 位美國工業估算師調查）</p>
         </div>
         <div class="crisis-item">
-          <span class="crisis-stat" data-i18n="problem.crisis3.stat">70%</span>
-          <p data-i18n="problem.crisis3.text">缺失於灌漿後才發現</p>
+          <span class="crisis-stat" data-i18n="problem.crisis3.stat">24–72 h</span>
+          <p data-i18n="problem.crisis3.text">AI 加人工覆核的外包算量服務，常見交件時間</p>
         </div>
         <div class="crisis-item">
-          <span class="crisis-stat" data-i18n="problem.crisis4.stat">0</span>
-          <p data-i18n="problem.crisis4.text">傳統工法可稽核竣工資料</p>
+          <span class="crisis-stat" data-i18n="problem.crisis4.stat">US$100–500</span>
+          <p data-i18n="problem.crisis4.text">商用 AI 加人工算量服務的公開價格（每份圖面）</p>
         </div>
       </div>
-      <p class="crisis-source" data-i18n="problem.stats.source">產業估計數據，非本產品實測結果。</p>
-      <p class="crisis-source crisis-extra" data-i18n="problem.workforce">全球產業數據：每年約 17,000 名估算師退休，接班人更少（資料來源：theTakeoff.AI）。</p>
+      <p class="crisis-source" data-i18n="problem.stats.source">第三方與廠商公開數據，非本產品實測結果。估算師調查涵蓋美國工業範疇。</p>
 
       <blockquote class="crisis-quote fade-in" data-delay="4">
-        <p data-i18n="problem.quote">「圖照著綁了，監造一來說間距不對、保護層不夠。打掉重綁一次，當週進度就沒了。」</p>
-        <cite data-i18n="problem.quote.cite">— 工地主任訪談（說明性引述，非署名客戶）</cite>
+        <p data-i18n="problem.quote">西班牙一家鋼筋加工廠公開徵求 AI：從客戶圖面抽出所有鋼筋構件、產生料單，並接上自家 ERP。</p>
+        <cite data-i18n="problem.quote.cite">— 轉述自 Mafesa 公開創新挑戰（2026 年 7 月）</cite>
       </blockquote>
     </div>
 
     <div class="loss-banner">
       <div class="loss-banner-inner">
         <div class="loss-item fade-in">
-          <span class="loss-number" data-count="600">0</span><span class="loss-unit" data-i18n="problem.loss.unit">百萬美元</span>
-          <span class="loss-label" data-i18n="problem.loss1.label">鋼筋返工直接成本</span>
+          <span class="loss-number" data-count="9">0</span><span class="loss-unit" data-i18n="problem.loss1.unit">百萬噸</span>
+          <span class="loss-label" data-i18n="problem.loss1.label">美國每年使用的鋼筋量（CRSI）</span>
         </div>
         <div class="loss-item fade-in" data-delay="1">
-          <span class="loss-number" data-count="250">0</span><span class="loss-unit" data-i18n="problem.loss.unit">百萬美元</span>
-          <span class="loss-label" data-i18n="problem.loss2.label">工期延誤損失</span>
+          <span class="loss-number" data-count="38">0</span><span class="loss-unit" data-i18n="problem.loss2.unit">百萬美元</span>
+          <span class="loss-label" data-i18n="problem.loss2.label">每年上限：以離岸報價（每噸 US$2.3–4.2）外包算量</span>
         </div>
         <div class="loss-item fade-in" data-delay="2">
-          <span class="loss-number" data-count="167">0</span><span class="loss-unit" data-i18n="problem.loss.unit">百萬美元</span>
-          <span class="loss-label" data-i18n="problem.loss3.label">驗收失敗重做</span>
+          <span class="loss-number" data-count="235">0</span><span class="loss-unit" data-i18n="problem.loss3.unit">百萬美元</span>
+          <span class="loss-label" data-i18n="problem.loss3.label">每年上限：以澳洲外包費率（約每噸 US$19.5–26）計算</span>
         </div>
       </div>
-      <p class="crisis-source loss-source" data-i18n="problem.stats.source">產業估計數據，非本產品實測結果。</p>
-      <p class="crisis-source loss-source" data-i18n="problem.loss.fx">金額原為新台幣，按 1 美元 ≈ 30 新台幣換算。</p>
+      <p class="crisis-source loss-source" data-i18n="problem.loss.fx">示意試算：美國用量乘以公開的每噸費率。並非所有噸數都外包，故為上限，不是市場規模。 CRSI 的用量有 800 萬與 900 萬噸兩種寫法，此處取 900 萬。</p>
     </div>
   </section>
 
@@ -505,7 +506,6 @@
           <svg class="demo-svg rm-svg" viewBox="0 0 640 470" role="group" aria-labelledby="demo-svg-title">
             <title id="demo-svg-title" data-i18n="demo.drawing.aria">示意結構模型：柱 C1、梁 B1、板 S1，可在平面與立體之間切換</title>
             <defs>
-              <marker id="rm-dot" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" refX="4" refY="4"><circle cx="4" cy="4" r="2.6" fill="var(--accent-green-light)"/></marker>
             </defs>
             <rect width="640" height="470" fill="url(#tech-grid)"/>
             <g class="rm-dims" stroke="var(--gold)" stroke-width="1" fill="none">
@@ -526,8 +526,7 @@
             <output>@150 mm</output>
           </label>
           <figcaption class="demo-sample">
-            <span data-i18n="demo.sample">示意資料，非真實案場。單位：mm。</span>
-            <span class="rm-legend" data-i18n="demo.legend.ar">綠色標記：依圖面放樣的 AR 定位點（開發中）</span>
+            <span data-i18n="demo.sample">範例資料，非真實專案。單位：mm。目前產品讀取樑與柱，板僅供示意。</span>
           </figcaption>
         </figure>
 
@@ -575,7 +574,7 @@
     <div class="container">
       <p class="section-label fade-in" data-i18n="solution.label">OUR TECHNOLOGY 核心技術</p>
       <h2 class="section-heading fade-in" data-delay="1" data-i18n="solution.heading">端到端施工執行管線</h2>
-      <p class="section-lead fade-in" data-delay="2" data-i18n="solution.lead">以結構施工圖為唯一真值：估算自動化已上線，AR 現場指導與 AI 竣工驗證規劃中</p>
+      <p class="section-lead fade-in" data-delay="2" data-i18n="solution.lead">從結構施工圖到料單與標註加工圖，每個缺口都標出供您覆核。樑柱的算量與加工圖已上線；圖面整理與 3D 檢查開發中。</p>
     </div>
 
     <div class="tech-showcase">
@@ -617,15 +616,15 @@
           <span class="tech-number">01</span>
         </div>
         <div class="tech-panel-content">
-          <h3 data-i18n="solution.t1.title">施工圖自動解析</h3>
-          <p class="tech-en" data-i18n="solution.t1.en">Automated Drawing Parsing</p>
+          <h3 data-i18n="solution.t1.title">算量與料單</h3>
+          <p class="tech-en" data-i18n="solution.t1.en">Takeoff &amp; Bar Schedule</p>
           <span class="panel-status live" data-i18n="status.live">已上線</span>
-          <p data-i18n="solution.t1.desc">結構施工圖 → 鋼筋計料表、下料表、加工表。自動生成可直接送交加工廠的數位資料。</p>
+          <p data-i18n="solution.t1.desc">從結構施工圖讀出樑與柱，依構件與樓層逐根點算鋼筋，產出送交加工廠的料單與標註加工圖。</p>
           <div class="tech-metrics">
             <span data-i18n="solution.t1.m1">Bar Mark：B1 / B2 / B3</span>
             <span data-i18n="solution.t1.m2">直徑：#3 ~ #11</span>
-            <span data-i18n="solution.t1.m3">長度：1,250 ± 5 mm</span>
-            <span data-i18n="solution.t1.m4">彎折：90° / 135° 鉤</span>
+            <span data-i18n="solution.t1.m3">依號數與樓層彙整重量</span>
+            <span data-i18n="solution.t1.m4">彎鉤角度與型式：開發中</span>
           </div>
           <div class="tech-tags"><span>Document AI</span></div>
         </div>
@@ -634,7 +633,7 @@
       <article class="tech-panel reverse fade-in" data-delay="3">
         <div class="tech-panel-img">
           <svg class="tech-illustration" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice" role="img" aria-labelledby="tech-illust-t2">
-            <title id="tech-illust-t2" data-i18n="alt.solution.t2">示意圖：AR 疊加指導現場鋼筋施工</title>
+            <title id="tech-illust-t2" data-i18n="alt.solution.t2">示意圖：鋼筋籠斷面，一根鋼筋因保護層不足被標示</title>
             <use href="#tech-bg" xlink:href="#tech-bg"/>
             <circle cx="400" cy="300" r="140" fill="none" stroke="var(--illust-hairline)" stroke-opacity="0.15" stroke-dasharray="4 6"/>
             <circle cx="540" cy="300" r="14" fill="none" stroke="var(--accent-gold-light)" stroke-width="1" stroke-opacity="0.4"/>
@@ -665,24 +664,24 @@
           <span class="tech-number">02</span>
         </div>
         <div class="tech-panel-content">
-          <h3 data-i18n="solution.t2.title">AR 現場指導</h3>
-          <p class="tech-en" data-i18n="solution.t2.en">AR Field Guidance</p>
+          <h3 data-i18n="solution.t2.title">3D 模型檢查</h3>
+          <p class="tech-en" data-i18n="solution.t2.en">3D Model Check</p>
           <span class="panel-status dev" data-i18n="status.dev">開發中</span>
-          <p data-i18n="solution.t2.desc">於模板上疊加 3D 鋼筋配置，逐根標示間距、搭接長度、鉤型方向，工班照圖即裝。</p>
+          <p data-i18n="solution.t2.desc">依料單建立 3D 鋼筋模型，檢查保護層、搭接、錨定與碰撞，並把模型數量與算量核對。</p>
           <div class="tech-metrics">
-            <span class="correct" data-i18n="solution.t2.m1">✓ 綠色 = 位置正確</span>
-            <span class="incorrect" data-i18n="solution.t2.m2">✗ 紅色 = 偏差需修正</span>
-            <span data-i18n="solution.t2.m3">→ 間距 / 保護層提示</span>
-            <span data-i18n="solution.t2.m4">🏷 QR 確認鋼筋身份</span>
+            <span class="correct" data-i18n="solution.t2.m1">✓ 檢查保護層、搭接與錨定</span>
+            <span class="incorrect" data-i18n="solution.t2.m2">✗ 保護層不足會標示，不會猜測</span>
+            <span data-i18n="solution.t2.m3">→ 鋼筋間碰撞檢查</span>
+            <span data-i18n="solution.t2.m4">≡ 模型與算量數量核對</span>
           </div>
-          <div class="tech-tags"><span>ARKit</span><span>RealityKit</span></div>
+          <div class="tech-tags"><span>3D model</span><span>Clash check</span></div>
         </div>
       </article>
 
       <article class="tech-panel fade-in" data-delay="3">
         <div class="tech-panel-img">
           <svg class="tech-illustration" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice" role="img" aria-labelledby="tech-illust-t3">
-            <title id="tech-illust-t3" data-i18n="alt.solution.t3">示意圖：AI 比對竣工與設計狀態</title>
+            <title id="tech-illust-t3" data-i18n="alt.solution.t3">示意圖：來源追溯面板，標示每個數值為讀取、計算或預設</title>
             <defs>
               <linearGradient id="scan-t3" x1="0" y1="0" x2="1" y2="0">
                 <stop offset="0%" stop-color="var(--accent-gold-light)" stop-opacity="0"/>
@@ -700,28 +699,28 @@
             </g>
             <rect x="0" y="248" width="800" height="6" fill="url(#scan-t3)"/>
             <rect x="220" y="150" width="360" height="230" rx="10" fill="var(--navy-deep)" fill-opacity="0.9" stroke="var(--illust-hairline)" stroke-opacity="0.08"/>
-            <text x="248" y="184" fill="var(--illust-label)" font-size="11" letter-spacing="0.08em">AS-BUILT VERIFICATION</text>
+            <text x="248" y="184" fill="var(--illust-label)" font-size="11" letter-spacing="0.08em">SOURCE TRACE</text>
             <circle cx="252" cy="214" r="5" fill="var(--accent-green-light)"/>
-            <text x="532" y="219" fill="var(--accent-green-light)" font-size="13" text-anchor="end" font-weight="600">96%</text>
+            <text x="532" y="219" fill="var(--accent-green-light)" font-size="13" text-anchor="end" font-weight="600">READ</text>
             <circle cx="252" cy="254" r="5" fill="var(--accent-green-light)"/>
-            <text x="532" y="259" fill="var(--accent-green-light)" font-size="13" text-anchor="end" font-weight="600">92%</text>
+            <text x="532" y="259" fill="var(--accent-green-light)" font-size="13" text-anchor="end" font-weight="600">COMPUTED</text>
             <circle cx="252" cy="294" r="5" fill="var(--accent-red-light)"/>
-            <text x="532" y="299" fill="var(--accent-red-light)" font-size="13" text-anchor="end" font-weight="600">-8mm</text>
+            <text x="532" y="299" fill="var(--accent-red-light)" font-size="13" text-anchor="end" font-weight="600">DEFAULT</text>
             <line x1="248" y1="326" x2="552" y2="326" stroke="var(--illust-hairline)" stroke-opacity="0.08"/>
           </svg>
           <span class="tech-number">03</span>
         </div>
         <div class="tech-panel-content">
-          <h3 data-i18n="solution.t3.title">AI 即時驗證</h3>
-          <p class="tech-en" data-i18n="solution.t3.en">Real-time AI Verification</p>
-          <span class="panel-status dev" data-i18n="status.dev">開發中</span>
-          <p data-i18n="solution.t3.desc">電腦視覺比對 as-built 與 as-designed，逐項判定通過 / 不通過，產出可簽章竣工快照。</p>
+          <h3 data-i18n="solution.t3.title">來源追溯與覆核提示</h3>
+          <p class="tech-en" data-i18n="solution.t3.en">Source Trace &amp; Review Flags</p>
+          <span class="panel-status live" data-i18n="status.live">已上線</span>
+          <p data-i18n="solution.t3.desc">每個數值都標明是從圖面讀取、計算、換算或採用預設；凡退回預設值的項目都會標出，交由人確認。</p>
           <div class="tech-metrics">
-            <span class="correct" data-i18n="solution.t3.m1">間距：通過 (信心 96%)</span>
-            <span class="correct" data-i18n="solution.t3.m2">搭接長度：通過 (信心 92%)</span>
-            <span class="incorrect" data-i18n="solution.t3.m3">保護層：偏差 -8 mm</span>
+            <span class="correct" data-i18n="solution.t3.m1">從圖面讀取</span>
+            <span class="correct" data-i18n="solution.t3.m2">依規則計算</span>
+            <span class="incorrect" data-i18n="solution.t3.m3">採預設值：請確認</span>
           </div>
-          <div class="tech-tags"><span>PyTorch</span><span>Open3D</span></div>
+          <div class="tech-tags"><span>Source trace</span><span>Review flags</span></div>
         </div>
       </article>
     </div>
@@ -737,8 +736,8 @@
   <section class="product" id="product">
     <div class="container">
       <p class="section-label fade-in" data-i18n="product.label">MODULE LIVE TODAY 現行落地模組</p>
-      <h2 class="section-heading fade-in" data-delay="1" data-i18n="product.heading">不只是願景<br>鋼筋估算已在產線運作</h2>
-      <p class="section-lead fade-in" data-delay="2" data-i18n="product.lead">施工圖解析引擎已作為獨立模組上線：AutoCAD 結構圖 → 施工圖 → 計料表，全流程自動化，並原生對接客戶既有巨集匯入流程。</p>
+      <h2 class="section-heading fade-in" data-delay="1" data-i18n="product.heading">不只是願景<br>算量與加工圖已在運作</h2>
+      <p class="section-lead fade-in" data-delay="2" data-i18n="product.lead">算量引擎已作為獨立模組上線：AutoCAD 結構圖 → 料單與加工圖，並原生對接既有巨集流程。目前支援樑與柱，板、牆與基礎是下一步。</p>
       <p class="product-tagline fade-in" data-delay="3" data-i18n="product.tagline">SetTime — 凝固之前，一次到位</p>
     </div>
 
@@ -788,7 +787,7 @@
           <p class="tech-en" data-i18n="product.panel.en">Rebar Estimation Automation System</p>
           <p data-i18n="product.panel.desc">AutoCAD 2021 外掛加上跨平台桌面版，將結構施工圖直接轉為加工圖與計料表 (.xlsm)。樑柱辨識準確率達合約驗收門檻，輸出免二次轉檔即可匯入客戶既有巨集系統。</p>
           <div class="tech-metrics">
-            <span class="correct" data-i18n="product.m1">樑柱辨識達驗收門檻</span>
+            <span class="correct" data-i18n="product.m1">目前支援樑與柱；板、牆、基礎為下一步</span>
             <span data-i18n="product.m2">施工圖 → 計料表 全自動</span>
             <span data-i18n="product.m3">GTA / CCM 巨集原生相容</span>
             <span data-i18n="product.m4">Style Guide 可調規則引擎</span>
@@ -813,12 +812,12 @@
         <div class="moat fade-in" data-delay="6">
           <div class="moat-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="1.5"/><path d="M3 9h18M9 4v12"/><path d="M12 16.5v4.5m0 0-2.2-2.2M12 21l2.2-2.2"/></svg></div>
           <h3 data-i18n="product.moat3.title">計料表匯出</h3>
-          <p data-i18n="product.moat3.desc">產出符合客戶既有巨集格式的 .xlsm 計料表，免重工轉檔</p>
+          <p data-i18n="product.moat3.desc">含編號、長度與重量的料單，輸出符合客戶既有巨集格式的 .xlsm；供加工機台使用的 BVBS 輸出規劃中。</p>
         </div>
         <div class="moat fade-in" data-delay="7">
           <div class="moat-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h4m-4 6h4m-4 6h4"/><path d="M11 6h9M11 12h9M11 18h9"/></svg></div>
-          <h3 data-i18n="product.moat4.title">工作流與品管追蹤</h3>
-          <p data-i18n="product.moat4.desc">逐元件狀態追蹤，收斂為可交付的最終品管紀錄</p>
+          <h3 data-i18n="product.moat4.title">來源追溯與覆核提示</h3>
+          <p data-i18n="product.moat4.desc">每個數值標明讀取、計算、換算或預設，每個缺口都標出供覆核</p>
         </div>
       </div>
     </div>
@@ -830,7 +829,7 @@
       <p class="section-label fade-in" data-i18n="compliance.label">LAW &amp; COMPLIANCE 法遵與稽核</p>
       <h2 class="section-heading fade-in" data-delay="1" data-i18n="compliance.heading">每一筆紀錄，完整留存供稽核與法律程序查閱</h2>
       <span class="panel-status dev fade-in" data-delay="2" data-i18n="status.dev">開發中</span>
-      <p class="section-lead fade-in" data-delay="2" data-i18n="compliance.lead">從圖紙解析到現場驗證，每個動作將寫入竄改可偵測的稽核鏈（開發中），支援大型營造集團與政府標案的稽核審查需求。</p>
+      <p class="section-lead fade-in" data-delay="2" data-i18n="compliance.lead">從圖紙解析到交付的料單，每個動作將寫入竄改可偵測的稽核鏈（開發中），支援大型營造集團與政府標案的稽核審查需求。</p>
 
       <div class="moats">
         <div class="moat fade-in" data-delay="3">
@@ -863,7 +862,7 @@
   <section class="process" id="process">
     <div class="container">
       <p class="section-label fade-in" data-i18n="process.label">HOW IT WORKS 執行流程</p>
-      <h2 class="section-heading fade-in" data-delay="1" data-i18n="process.heading">從施工圖到簽章竣工</h2>
+      <h2 class="section-heading fade-in" data-delay="1" data-i18n="process.heading">從施工圖到可送加工的料單</h2>
     </div>
 
     <div class="timeline">
@@ -871,35 +870,37 @@
       <div class="timeline-step fade-in" data-delay="2">
         <div class="timeline-marker">1</div>
         <div class="timeline-content">
-          <h3 data-i18n="process.s1.title">施工圖匯入</h3>
-          <p class="timeline-en" data-i18n="process.s1.en">Import Drawing</p>
-          <p data-i18n="process.s1.desc">上傳結構施工圖，自動生成計料表與下料表</p>
+          <h3 data-i18n="process.s1.title">圖面整理與標註</h3>
+          <p class="timeline-en" data-i18n="process.s1.en">Prepare &amp; Annotate</p>
+          <span class="panel-status dev" data-i18n="status.dev">開發中</span>
+          <p data-i18n="process.s1.desc">分類圖紙、設定比例、讀圖例與表格、標記構件</p>
         </div>
       </div>
       <div class="timeline-step fade-in" data-delay="3">
         <div class="timeline-marker">2</div>
         <div class="timeline-content">
-          <h3 data-i18n="process.s2.title">加工配送</h3>
-          <p class="timeline-en" data-i18n="process.s2.en">Fabricate &amp; Deliver</p>
-          <p data-i18n="process.s2.desc">驅動加工廠機具；QR 標籤與依澆置區配送規劃中</p>
+          <h3 data-i18n="process.s2.title">算量與料單</h3>
+          <p class="timeline-en" data-i18n="process.s2.en">Takeoff &amp; Bar Schedule</p>
+          <span class="panel-status live" data-i18n="status.live">已上線</span>
+          <p data-i18n="process.s2.desc">依構件與樓層點算鋼筋，產出料單（.xlsm）</p>
         </div>
       </div>
       <div class="timeline-step fade-in" data-delay="4">
         <div class="timeline-marker">3</div>
         <div class="timeline-content">
-          <h3 data-i18n="process.s3.title">AR 指導綁紮</h3>
-          <p class="timeline-en" data-i18n="process.s3.en">AR-Guided Placement</p>
-          <span class="panel-status dev" data-i18n="status.dev">開發中</span>
-          <p data-i18n="process.s3.desc">工班透過平板看 3D 疊圖，依規範即時就位綁紮</p>
+          <h3 data-i18n="process.s3.title">標註加工圖</h3>
+          <p class="timeline-en" data-i18n="process.s3.en">Annotated Shop Drawings</p>
+          <span class="panel-status live" data-i18n="status.live">已上線</span>
+          <p data-i18n="process.s3.desc">在圖面上標出鋼筋編號與註記（.dwg / DXF）</p>
         </div>
       </div>
       <div class="timeline-step fade-in" data-delay="5">
         <div class="timeline-marker">4</div>
         <div class="timeline-content">
-          <h3 data-i18n="process.s4.title">驗證與竣工紀錄</h3>
-          <p class="timeline-en" data-i18n="process.s4.en">Verify &amp; Snapshot</p>
+          <h3 data-i18n="process.s4.title">3D 模型檢查</h3>
+          <p class="timeline-en" data-i18n="process.s4.en">3D Check</p>
           <span class="panel-status dev" data-i18n="status.dev">開發中</span>
-          <p data-i18n="process.s4.desc">灌漿前 CV 驗證，產出可簽章的稽核級竣工紀錄</p>
+          <p data-i18n="process.s4.desc">檢查保護層、搭接與碰撞，並核對數量</p>
         </div>
       </div>
     </div>
@@ -931,10 +932,10 @@
       <div class="results-grid">
         <div class="result-card fade-in" data-delay="2">
           <div class="result-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12a8 8 0 1 1-2.6-5.9"/><path d="M20 4v5h-5"/></svg></div>
-          <span class="result-metric" data-i18n="results.r1.metric">目標 ≤ 5%</span>
-          <h3 data-i18n="results.r1.title">鋼筋返工率</h3>
+          <span class="result-metric" data-i18n="results.r1.metric">目標誤差 ≤ 5%</span>
+          <h3 data-i18n="results.r1.title">與人工算量的重量差</h3>
           <p class="result-compare">
-            <span class="result-old" data-i18n="results.r1.old">業界 15-25%</span>
+            <span class="result-old" data-i18n="results.r1.old">盲測規劃中</span>
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             <span class="result-new" data-i18n="results.r1.new">目標 ≤ 5%</span>
           </p>
@@ -952,9 +953,9 @@
         <div class="result-card fade-in" data-delay="4">
           <div class="result-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/><path d="M8.5 14.5 11 17l4.5-5"/></svg></div>
           <span class="result-metric" data-i18n="results.r3.metric">目標 同日</span>
-          <h3 data-i18n="results.r3.title">驗收週期</h3>
+          <h3 data-i18n="results.r3.title">算量交件時間</h3>
           <p class="result-compare">
-            <span class="result-old" data-i18n="results.r3.old">原 3-5 天</span>
+            <span class="result-old" data-i18n="results.r3.old">外包現況：1–3 天</span>
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             <span class="result-new" data-i18n="results.r3.new">目標 同日完成</span>
           </p>
@@ -962,9 +963,9 @@
         <div class="result-card fade-in" data-delay="5">
           <div class="result-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></div>
           <span class="result-metric" data-i18n="results.r4.metric">目標 ≤ 2%</span>
-          <h3 data-i18n="results.r4.title">鋼筋廢料率</h3>
+          <h3 data-i18n="results.r4.title">漏項率</h3>
           <p class="result-compare">
-            <span class="result-old" data-i18n="results.r4.old">原 5-8%</span>
+            <span class="result-old" data-i18n="results.r4.old">同一場測試一併計算</span>
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             <span class="result-new" data-i18n="results.r4.new">目標 ≤ 2%</span>
           </p>
@@ -973,11 +974,11 @@
 
       <div class="results-math fade-in" data-delay="2">
         <h3 data-i18n="results.math.title">算給您看：試算與假設</h3>
-        <p class="results-math-note" data-i18n="results.math.assume">示意試算，非實測結果。假設每月 20 份圖面、人工每份 10 小時（取 8–12 小時中間值）、目標每份 1 小時、每小時全額成本 US$20。</p>
+        <p class="results-math-note" data-i18n="results.math.assume">示意試算，非實測結果。假設每月 20 份圖面，人工每份 10 小時（取 8–12 小時中間值），使用 SetTime 含您的覆核約 2 小時，每小時 US$37（美國估算師薪資中位數，未含福利）。</p>
         <dl class="results-math-grid">
-          <div><dt data-i18n="results.math.l1">每月省下工時</dt><dd data-i18n="results.math.v1">180 小時</dd></div>
-          <div><dt data-i18n="results.math.l2">每年省下工時</dt><dd data-i18n="results.math.v2">2,160 小時</dd></div>
-          <div><dt data-i18n="results.math.l3">每年節省人力成本</dt><dd data-i18n="results.math.v3">US$ 43,200</dd></div>
+          <div><dt data-i18n="results.math.l1">每月省下工時</dt><dd data-i18n="results.math.v1">160 小時</dd></div>
+          <div><dt data-i18n="results.math.l2">每年省下工時</dt><dd data-i18n="results.math.v2">1,920 小時</dd></div>
+          <div><dt data-i18n="results.math.l3">每年節省人力成本</dt><dd data-i18n="results.math.v3">US$ 71,040</dd></div>
         </dl>
       </div>
     </div>
@@ -1005,28 +1006,28 @@
           </thead>
           <tbody>
             <tr>
-              <td data-i18n="advantage.r1.method">2D 施工圖人工判讀</td>
-              <td data-i18n="advantage.r1.pro">現行流程熟悉</td>
-              <td data-i18n="advantage.r1.con">易誤讀，無現場驗證</td>
-              <td><span class="edge-badge" data-i18n="advantage.r1.edge">自動解析 + AR 對位（開發中）</span></td>
+              <td data-i18n="advantage.r1.method">離岸外包算量</td>
+              <td data-i18n="advantage.r1.pro">每噸費率低</td>
+              <td data-i18n="advantage.r1.con">交件要數天，檢查靠人</td>
+              <td><span class="edge-badge" data-i18n="advantage.r1.edge">一張圖 24 小時回傳，每項標記皆列出</span></td>
             </tr>
             <tr>
-              <td data-i18n="advantage.r2.method">BIM 檢視 (Navisworks)</td>
-              <td data-i18n="advantage.r2.pro">3D 可視化</td>
-              <td data-i18n="advantage.r2.con">辦公室工具，無現場指導</td>
-              <td><span class="edge-badge" data-i18n="advantage.r2.edge">AR 帶進工地（開發中）</span></td>
+              <td data-i18n="advantage.r2.method">AI 算量加人工覆核</td>
+              <td data-i18n="advantage.r2.pro">初稿很快</td>
+              <td data-i18n="advantage.r2.con">以數量為主，未載明料單與加工圖</td>
+              <td><span class="edge-badge" data-i18n="advantage.r2.edge">算量、料單與加工圖一次完成</span></td>
             </tr>
             <tr>
-              <td data-i18n="advantage.r3.method">人工監造抽查</td>
-              <td data-i18n="advantage.r3.pro">經驗判斷</td>
-              <td data-i18n="advantage.r3.con">抽樣有限，灌漿後才發現</td>
-              <td><span class="edge-badge" data-i18n="advantage.r3.edge">連續 AI 驗證（開發中）</span></td>
+              <td data-i18n="advantage.r3.method">需人操作的 CAD 外掛</td>
+              <td data-i18n="advantage.r3.pro">在地繪圖師熟悉</td>
+              <td data-i18n="advantage.r3.con">需要 CAD 席位與受訓人員</td>
+              <td><span class="edge-badge" data-i18n="advantage.r3.edge">免 CAD 席位：上傳圖面，覆核標記</span></td>
             </tr>
             <tr>
-              <td data-i18n="advantage.r4.method">傳統人工估算</td>
-              <td data-i18n="advantage.r4.pro">符合既有作業習慣</td>
-              <td data-i18n="advantage.r4.con">耗時、易遺漏、版本失控</td>
-              <td><span class="edge-badge" data-i18n="advantage.r4.edge">圖紙即估算，秒級出表</span></td>
+              <td data-i18n="advantage.r4.method">3D BIM 配筋軟體</td>
+              <td data-i18n="advantage.r4.pro">細部完整，支援機台格式</td>
+              <td data-i18n="advantage.r4.con">需要先建 3D 模型</td>
+              <td><span class="edge-badge" data-i18n="advantage.r4.edge">從您現有的 2D 圖面開始</span></td>
             </tr>
           </tbody>
         </table>
@@ -1035,18 +1036,18 @@
       <div class="moats">
         <div class="moat fade-in" data-delay="3">
           <div class="moat-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5.5" rx="7" ry="2.5"/><path d="M5 5.5v6c0 1.4 3.1 2.5 7 2.5s7-1.1 7-2.5v-6"/><path d="M5 11.5v6c0 1.4 3.1 2.5 7 2.5s7-1.1 7-2.5v-6"/></svg></div>
-          <h3 data-i18n="advantage.moat1.title">竣工資料庫</h3>
-          <p data-i18n="advantage.moat1.desc">每一個案場累積 as-built 資料，模型越用越準（開發中），形成台灣專屬資料護城河</p>
+          <h3 data-i18n="advantage.moat1.title">每個數字可追溯</h3>
+          <p data-i18n="advantage.moat1.desc">數值依來源標記、缺口一併標出，覆核者能看出哪些是讀到的、哪些是假設</p>
         </div>
         <div class="moat fade-in" data-delay="4">
-          <div class="moat-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.7-6.2 10-6.2S22 12 22 12s-3.7 6.2-10 6.2S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg></div>
-          <h3 data-i18n="advantage.moat2.title">本地 CV 模型</h3>
-          <p data-i18n="advantage.moat2.desc">以台灣工地實拍訓練的鋼筋驗證模型，對國產鋼筋規格與工法最敏感（開發中）</p>
+          <div class="moat-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h9M17 7h3M4 17h3M11 17h9"/><circle cx="15" cy="7" r="2"/><circle cx="9" cy="17" r="2"/></svg></div>
+          <h3 data-i18n="advantage.moat2.title">可調整的規則</h3>
+          <p data-i18n="advantage.moat2.desc">Style Guide 規則引擎讓算量貼合您的圖面慣例與規範</p>
         </div>
         <div class="moat fade-in" data-delay="5">
-          <div class="moat-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V9l7-5 7 5v12"/><path d="M9.5 21v-6h5v6"/></svg></div>
-          <h3 data-i18n="advantage.moat3.title">公共工程關係</h3>
-          <p data-i18n="advantage.moat3.desc">支援公共工程稽核審查需求（開發中），主動參與制定智慧工地竣工紀錄標準</p>
+          <div class="moat-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="12" height="12" rx="1.5"/><path d="M15 12h6m-3-3 3 3-3 3"/></svg></div>
+          <h3 data-i18n="advantage.moat3.title">機台可用的輸出</h3>
+          <p data-i18n="advantage.moat3.desc">加工廠能直接使用的料單與加工圖；BVBS 機台檔規劃中</p>
         </div>
         <div class="moat fade-in" data-delay="6">
           <div class="moat-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6.5" r="2.2"/><circle cx="18" cy="6.5" r="2.2"/><circle cx="12" cy="18" r="2.2"/><path d="M7.7 7.9 10.4 16.2M16.3 7.9 13.6 16.2M8.2 6.5h7.6"/></svg></div>
@@ -1073,15 +1074,15 @@
       <div class="faq-list">
         <details class="faq-item fade-in" data-delay="2">
           <summary data-i18n="faq.q1.q">SetTime 是什麼？</summary>
-          <p data-i18n="faq.q1.a">SetTime 是 Kairos.ai 的營造／鋼筋產品。目前已上線的是鋼筋估算自動化：把結構施工圖轉成加工圖與計料資料，供估算與加工流程使用。AR 現場指導與 AI 竣工驗證是同一產品路線圖上的後續模組，開發中。</p>
+          <p data-i18n="faq.q1.a">SetTime 是 Kairos.ai 的鋼筋算量軟體，目標是取代外包估算團隊：圖面進、料單與標註加工圖出。目前已上線樑與柱；圖面整理、板與牆、3D 檢查與 BVBS 輸出開發中。</p>
         </details>
         <details class="faq-item fade-in" data-delay="3">
           <summary data-i18n="faq.q2.q">SetTime 現在可以使用哪些功能？</summary>
-          <p data-i18n="faq.q2.a">鋼筋估算自動化系統已上線：AutoCAD 2021 外掛與跨平台桌面版，將結構施工圖直接轉換為加工圖與計料表 (.xlsm)，可直接匯入加工廠既有巨集工具，樑柱辨識準確率達合約驗收門檻。AR 現場指導、AI 竣工驗證與法遵稽核鏈正在開發中。</p>
+          <p data-i18n="faq.q2.a">已上線：AutoCAD 2021 外掛加上跨平台桌面版，把樑柱圖面轉成料單（.xlsm）與加工圖（.dwg / DXF），每個數值標明來源、缺口標出供覆核。開發中：圖面整理與標註、板、牆與基礎、彎鉤角度與型式、3D 模型檢查、BVBS 輸出與竄改可偵測的稽核鏈。</p>
         </details>
         <details class="faq-item fade-in" data-delay="4">
           <summary data-i18n="faq.q3.q">誰適合使用 SetTime？</summary>
-          <p data-i18n="faq.q3.a">營造廠、鋼筋加工廠、結構技師事務所，以及需要可稽核竣工紀錄的政府機構。</p>
+          <p data-i18n="faq.q3.a">目前向外包買算量的鋼筋加工廠、繪圖公司、營造廠與估算人員。我們先從美國與歐洲的加工廠與繪圖師切入，並以台灣 CNS 圖面驗證引擎。</p>
         </details>
         <details class="faq-item fade-in" data-delay="5">
           <summary data-i18n="faq.q4.q">如何申請免費試點？</summary>
@@ -1089,7 +1090,7 @@
         </details>
         <details class="faq-item fade-in" data-delay="6">
           <summary data-i18n="faq.q5.q">SetTime 由誰開發？</summary>
-          <p data-i18n="faq.q5.a">SetTime 由 Kairos.ai 開發，聚焦台灣營造市場的鋼筋施工場景，未來將延伸至 CNC 加工、模具、焊接等相鄰產業。</p>
+          <p data-i18n="faq.q5.a">SetTime 由 Kairos.ai 開發。我們先以台灣圖面驗證引擎，並與美國、歐洲的加工廠與繪圖師接觸，未來將延伸至 CNC 加工、模具、焊接等相鄰產業。</p>
         </details>
         <details class="faq-item fade-in" data-delay="7">
           <summary data-i18n="faq.q6.q">稽核鏈能保證符合法規要求嗎？</summary>

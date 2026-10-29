@@ -1022,12 +1022,14 @@ html.no-3d,
   padding: 0 clamp(20px, 4vw, 48px);
   display: flex;
   justify-content: center;
-  gap: clamp(40px, 8vw, 96px);
+  gap: clamp(24px, 4vw, 56px);
   flex-wrap: wrap;
   position: relative;
 }
 
 .loss-item {
+  flex: 1 1 220px;
+  max-width: 320px;
   text-align: center;
 }
 
@@ -2165,7 +2167,13 @@ html.no-3d,
 
   .loss-banner-inner {
     flex-direction: column;
+    align-items: center;
     gap: 28px;
+  }
+
+  .loss-item {
+    flex: none;
+    max-width: none;
   }
 
   .hero-title {
@@ -2428,15 +2436,6 @@ html.lenis, html.lenis body { height: auto; }
 .rm-d10 { stroke-width: 1.2; }
 .rm-slab { opacity: 0.38; }
 
-.rm-ar { pointer-events: none; }
-
-.rm-ar-pin {
-  fill: none;
-  stroke: var(--accent-green-light);
-  stroke-width: 1.2;
-  marker-end: url(#rm-dot);
-}
-
 .rm-pin {
   cursor: pointer;
   outline: none;
@@ -2495,10 +2494,6 @@ html.lenis, html.lenis body { height: auto; }
   justify-content: center;
   gap: 4px 16px;
 }
-
-.demo-drawing[data-view="2d"] .rm-legend { display: none; }
-
-.rm-legend { color: var(--accent-green-light); }
 
 @media (prefers-reduced-motion: reduce) {
   .rm-toggle button, .rm-face, .rm-bar { transition: none; }

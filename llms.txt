@@ -1,8 +1,8 @@
 # SetTime
 
-Last updated: 2026-10-23
+Last updated: 2026-10-30
 
-> SetTime is AI rebar estimation automation software built by Kairos.ai (https://www.kairosaitech.com). Shipping today: it turns a structural drawing into rebar shop drawings and a material-list workbook (.xlsm) via an AutoCAD 2021 plugin and a cross-platform desktop app. AR field guidance and AI as-built verification are later modules on the same roadmap, in development. Built for the Taiwanese construction market (營造/鋼筋施工).
+> SetTime is rebar takeoff software built by Kairos.ai (https://www.kairosaitech.com) to replace the outsourced estimating team. Shipping today: it turns a structural drawing into a bar schedule (.xlsm) and annotated shop drawings (.dwg/DXF) for beams and columns, via an AutoCAD 2021 plugin and a cross-platform desktop app, with every value tagged by source and every gap flagged for review. In development: drawing preparation, slabs, walls and foundations, bend types, a 3D model check and BVBS machine output. First customers: rebar fabricators and detailing firms in the US and Europe that buy outsourced takeoff today; the engine is proven on Taiwanese drawings.
 
 ## Key facts
 
@@ -10,10 +10,10 @@ Last updated: 2026-10-23
 - Slogan: "SetTime — 凝固之前，一次到位" (get it right before the concrete sets).
 - Company: Kairos.ai (優時科技有限公司) — official company website: https://www.kairosaitech.com
 - Product website: https://settime.kairosaitech.com/
-- Category: construction software — rebar estimation / takeoff, shop-drawing and bar-list automation.
-- Status: rebar estimation automation is shipping; AR field guidance, AI as-built verification, and the audit trail are in development.
-- Platforms: AutoCAD 2021 plugin + cross-platform desktop app; output is a .xlsm material-list workbook that imports into a fabricator's existing macro tooling.
-- Market: Taiwan construction (rebar/structural work) today.
+- Category: construction software — rebar takeoff, bar-schedule and shop-drawing automation.
+- Status: takeoff, bar schedule and shop drawings for beams and columns are shipping; drawing prep, slabs/walls/foundations, bend and hook types, the 3D check, BVBS output and the audit trail are in development. AR field guidance and photo-based as-built verification are not on the current roadmap.
+- Platforms: AutoCAD 2021 plugin + cross-platform desktop app; output is a .xlsm bar schedule that imports into a fabricator's existing macro tooling, plus .dwg/DXF shop drawings.
+- Market: fabricators and detailers that outsource rebar takeoff, starting with the US and Europe; Taiwan construction is the proving ground for the engine.
 - Contact: kairos.ai.tech@gmail.com
 - Free pilot: https://settime.kairosaitech.com/#pilot
 - Web portal: https://settime.app.kairosaitech.com (SetTime web portal)
@@ -25,19 +25,19 @@ Last updated: 2026-10-23
 - [Product video](https://settime.kairosaitech.com/#video): About one minute (1:07). Walks through the full workflow from uploading a structural drawing to the rebar bar schedule (.xlsm) and shop drawings. File: https://settime.kairosaitech.com/assets/demo.mp4
 - [How to use](https://settime.kairosaitech.com/#howto): Three steps. 1) Upload a structural drawing (.dwg, .dxf or .pdf) to a project; SetTime applies your Style Guide rules and starts recognition on its own, and the status refreshes every 10 seconds. 2) Review what SetTime flags: it counts the beams, columns and floors it found and flags every gap (for example a missing annotation where a Style Guide default was used); you review it before anything is used. 3) Get the material list: rebar summed by size with quantities and weight, exported as an .xlsm material list ready to price and to import into existing macros. Screens on the page show sample data.
 - [Interactive demo](https://settime.kairosaitech.com/#demo): A sample plan (slab, 2 beams, 4 columns) shown in 2D plan and 3D isometric; selecting a member shows its bar schedule, and a stirrup-spacing gauge re-spaces the stirrups live.
-- [Rebar Estimation Automation System](https://settime.kairosaitech.com/#product): Shipping today. An AutoCAD 2021 plugin plus a cross-platform desktop app that converts structural drawings directly into shop drawings and a material-list workbook (.xlsm), importing natively into a fabricator's existing macro tooling, with beam/column recognition meeting acceptance thresholds.
-- [AR field guidance + AI verification](https://settime.kairosaitech.com/#solution): In development. 3D rebar layout overlaid on formwork (green = correct placement, red = deviation), and computer-vision comparison of as-built vs. as-designed rebar before the pour.
+- [Takeoff, bar schedule and shop drawings](https://settime.kairosaitech.com/#product): Shipping today for beams and columns. An AutoCAD 2021 plugin plus a cross-platform desktop app that converts structural drawings directly into a bar schedule (.xlsm) and annotated shop drawings (.dwg/DXF), importing natively into a fabricator's existing macro tooling. Slabs, walls and foundations are next.
+- [Drawing prep and 3D model check](https://settime.kairosaitech.com/#solution): In development. Drawing preparation (sheet sorting, scale, legends, member tagging) and a 3D rebar model that checks cover, lap, anchorage and clashes and reconciles its quantities against the takeoff.
 - [Law & compliance / audit trail](https://settime.kairosaitech.com/#compliance): In development. Every pipeline action will be written to a SHA-256 hash-chained, append-only, UTC-timestamped log with monotonic sequence numbers — tamper-evident (detects alteration), not a compliance certification. Built for large-contractor and government-tender audit review; actual compliance obligations depend on applicable law and contract terms, and the page carries a legal disclaimer to that effect.
 - [Free pilot program](https://settime.kairosaitech.com/#pilot): Construction companies, rebar fabricators, and structural engineering firms can apply for a free pilot: send one structural drawing and get a material list back within 24 hours of receiving it.
 
 ## FAQ
 
-- What is SetTime? SetTime is Kairos.ai's construction/rebar product. What's shipping today is rebar estimation automation: it turns structural drawings into shop drawings and material-list data for estimation and fabrication. AR field guidance and AI as-built verification are later modules on the same product roadmap, in development.
-- What can SetTime do today? The Rebar Estimation Automation System is shipping now (see Product above); AR field guidance, AI as-built verification, and the law/compliance audit trail are in development.
+- What is SetTime? SetTime is Kairos.ai's rebar takeoff software, built to replace the outsourced estimating team: drawing in, bar schedule and annotated shop drawings out. Shipping today for beams and columns; drawing prep, slabs and walls, a 3D check and BVBS output are in development.
+- What can SetTime do today? It reads beams and columns from a structural drawing and writes the bar schedule (.xlsm) and shop drawings (.dwg/DXF), tagging each value as read, computed, converted or defaulted and flagging every gap for a person to review. Slabs, walls, foundations, bend types, the 3D check, BVBS output and the audit trail are in development.
 - Does the audit trail guarantee legal compliance? No — and this feature is still in development. It is a technical tamper-evidence mechanism (SHA-256 hash chain); it does not certify compliance with any specific law, regulation, or tender requirement. Actual compliance depends on applicable law and contract terms — this is not legal advice.
-- Who is SetTime for? Construction companies, rebar fabricators, structural engineering firms, and public agencies that need an auditable as-built record.
+- Who is SetTime for? Rebar fabricators, detailing firms, contractors and estimators who buy outsourced takeoff today, starting with the US and Europe.
 - How do I apply for the free pilot? Fill in the free pilot form at https://settime.kairosaitech.com/#pilot with name, company, email, country, and role. Send one structural drawing and SetTime returns the material list within 24 hours of receiving it.
-- Who builds SetTime? Kairos.ai (https://www.kairosaitech.com), focused on Taiwan's construction market and rebar work today, with plans to extend into adjacent trades like CNC machining, mold making, and welding.
+- Who builds SetTime? Kairos.ai (https://www.kairosaitech.com). The engine is proven on Taiwanese CNS drawings first, with fabricators and detailers in the US and Europe as the first customers, and plans to extend into adjacent trades like CNC machining, mold making and welding.
 
 ## Company
 
@@ -47,5 +47,5 @@ Last updated: 2026-10-23
 ## Notes
 
 - The product page supports 8 languages (繁體中文 default, plus English, 日本語, Español, Français, Deutsch, Italiano, and Português switchers) — content above reflects the English version.
-- Target market: Taiwan construction — CNC machining, mold making, welding, auto repair, plumbing, and sheet metal shops are adjacent verticals in the broader roadmap, but rebar/structural construction is the current focus.
-- Pilot-program percentages on the page (rework reduction, time savings, etc.) are targets being validated, not measured results.
+- Target market: rebar fabricators and detailers that outsource takeoff, starting with the US and Europe; Taiwan is the proving ground. CNC machining, mold making, welding, auto repair, plumbing, and sheet metal shops are adjacent verticals in the broader roadmap.
+- The market figures on the page (US estimator openings, bid-volume growth, turnaround and price of competing services, US rebar tonnage) come from third-party and vendor publications, not from this product. The time-saving example is an illustration based on assumptions stated on the page, and the weight-accuracy target is a target, not a measured result.

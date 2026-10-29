@@ -20,17 +20,15 @@ SetTime (formerly AI學徒 iTech) — a product page / strategy documentation pr
 | Layer | Technologies |
 |-------|-------------|
 | Drawing automation | AutoCAD 2021 plugin, .NET, Avalonia (cross-platform desktop) |
-| AR field guidance | ARKit, RealityKit |
-| Computer vision | PyTorch, Open3D |
 | Product page | Vanilla HTML/CSS/JS, Three.js, GSAP + ScrollTrigger, Lenis, Vanta |
 
 ## Key Domain Concepts
 
-- **結構施工圖數位化**: The structural drawing is the single source of truth — parsed once into bar-schedule/cut-list/bend-list data that drives every downstream step (fabrication, AR guidance, verification)
-- **AR即時指導**: Real-time AR overlay of the 3D rebar layout on formwork during field placement (green = correct position, red = deviation)
-- **AI 竣工驗證**: Computer-vision comparison of as-built vs. as-designed rebar, producing a pass/fail per requirement and a signed pre-pour snapshot
+- **結構施工圖數位化**: The structural drawing is the single source of truth — parsed once into bar-schedule/cut-list/bend-list data that drives every downstream step (shop drawings, 3D check, machine output)
+- **取代外包算量 (replace outsourced takeoff)**: Current product axis (strategy of 30 Oct 2026). Drawing in, bar schedule (.xlsm) and annotated shop drawings (.dwg/DXF) out; every value tagged read/computed/converted/default and every gap flagged for review. Shipping for beams and columns only; drawing prep, slabs/walls/foundations, bend types, 3D check and BVBS are in development. AR field guidance and photo-based as-built verification are dropped from the roadmap, so do not reintroduce them on the page
+- **Market figures**: Stats on the page (16,900 US estimator openings, +24%/+4% bids vs headcount, 24–72 h and US$100–500 competitor turnaround/price, 9 Mt US rebar, US$37/h) come from third-party or vendor sources and are footnoted as such; the hours/dollars example is an illustration, not a measured result. Do not publish pricing
 - **稽核鏈 (audit trail)**: SHA-256 hash-chained, append-only, timestamped record of pipeline actions, built for government/enterprise compliance review
-- Current focus: rebar/structural construction in Taiwan. Roadmap targets adjacent trades: CNC machining, mold making, welding, auto repair, plumbing, sheet metal
+- Current focus: rebar takeoff for fabricators and detailers in the US and Europe, with Taiwan (CNS drawings) as the proving ground. Roadmap targets adjacent trades: CNC machining, mold making, welding, auto repair, plumbing, sheet metal
 
 ## Language
 

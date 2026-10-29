@@ -117,7 +117,7 @@ metal.
   繁體中文, English, 日本語, Español, Français, Deutsch, Italiano, Português).
 - `llms.txt` — a machine-readable summary of the product for AI answer
   engines (AEO/GEO).
-- `sitemap.xml`, `robots.txt` — standard SEO crawl configuration, with
+- `sitemap.xml`, `sitemap.txt`, `robots.txt` — standard SEO crawl configuration, with
   explicit allow-rules for AI crawlers (GPTBot, ClaudeBot, PerplexityBot,
   etc.).
 

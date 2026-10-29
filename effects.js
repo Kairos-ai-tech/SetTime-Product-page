@@ -150,7 +150,7 @@
   // Drives CSS vars consumed by the `translate` property, so it composes
   // with the buttons' own hover `transform` instead of fighting it.
   function initMagnet() {
-    document.querySelectorAll('.hero-cta, .form-submit, .nav-cta').forEach(function (el) {
+    document.querySelectorAll('.hero-cta, .form-submit, .nav-cta, .portal-btn').forEach(function (el) {
       const pos = { x: 0, y: 0 };
       const apply = function () {
         el.style.setProperty('--mag-x', pos.x + 'px');

@@ -42,10 +42,9 @@
 //    custom property, including the inline-SVG color tokens that have no
 //    other runtime signal when broken (they just silently fall back to
 //    the CSS-wide initial value).
-// 9. index.html's <link rel="alternate" hreflang="..."> tags must be just
-//    DEFAULT_LANG + x-default (the page is one URL with client-side
-//    language switching, not real per-language documents, so hreflang only
-//    self-references it). The JSON-LD @graph's WebSite.inLanguage array
+// 9. index.html's <link rel="alternate" hreflang="..."> tags must list every
+//    locale (run through toHtmlLang()) plus x-default — each locale has its
+//    own prerendered page from scripts/build-locales.mjs. The JSON-LD @graph's WebSite.inLanguage array
 //    still must list exactly translations' locales (run through
 //    toHtmlLang(), same as document.documentElement.lang) — a hand-
 //    maintained locale list (structured data) nothing else keeps in sync.
@@ -101,7 +100,7 @@ const sandbox = {
     querySelectorAll: () => fakeElements,
     createElement: () => ({ setAttribute: () => {}, appendChild: () => {} }),
     createTextNode: () => ({}),
-    documentElement: {},
+    documentElement: { getAttribute: () => null },
   },
   localStorage: (() => {
     const store = {};
@@ -256,12 +255,9 @@ if (undefinedProps.length) {
 // --- 9. hreflang <link> tags and JSON-LD inLanguage match translations ---
 const expectedHtmlLangs = locales.map((l) => sandbox.toHtmlLang(l));
 
-// The page is a single URL with client-side JS language switching, not
-// separate per-language documents — so hreflang only self-references the
-// one real document (zh-Hant, the DEFAULT_LANG) plus x-default, rather than
-// one entry per UI locale pointing at the same URL (which Google can't
-// verify as distinct language versions and may ignore the whole set).
-const expectedHreflangs = [sandbox.toHtmlLang(sandbox.DEFAULT_LANG)];
+// Every locale has its own prerendered document (scripts/build-locales.mjs),
+// so hreflang lists one entry per locale plus x-default.
+const expectedHreflangs = expectedHtmlLangs;
 
 // Attribute order within the tag isn't fixed by HTML, so match the whole
 // <link> tag first and require rel="alternate" and hreflang="..." to both

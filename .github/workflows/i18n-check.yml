@@ -15,3 +15,4 @@ jobs:
         with:
           node-version: '20'
       - run: node scripts/check-i18n-keys.js
+      - run: node scripts/build-locales.mjs --check

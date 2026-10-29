@@ -197,7 +197,7 @@
         window.THREE = Object.assign({}, mod);
         return new Promise(function (resolve, reject) {
           const s = document.createElement('script');
-          s.src = 'vendor/vanta.net.min.js';
+          s.src = '/vendor/vanta.net.min.js';
           s.onload = function () { const m = window._vantaEffect; resolve(m && m.default ? m.default : m); };
           s.onerror = reject;
           document.head.appendChild(s);

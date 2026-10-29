@@ -2333,6 +2333,12 @@ function safeStorageRemove(key) {
 }
 
 function initLanguage() {
+  var pinned = document.documentElement.getAttribute("data-pinned-lang");
+  if (pinned && isKnownLocale(pinned)) {
+    setLanguage(pinned);
+    return;
+  }
+
   // LEGACY_LANG_STORAGE_KEY was the storage key pre-rebrand — read it as a
   // fallback so a returning visitor's saved choice isn't silently lost,
   // then migrate it to the new key. Checked with isKnownLocale (not plain

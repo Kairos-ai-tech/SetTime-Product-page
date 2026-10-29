@@ -43,6 +43,7 @@ Disallow: /README.md
 Allow: /
 
 Sitemap: https://settime.kairosaitech.com/sitemap.xml
+Sitemap: https://settime.kairosaitech.com/sitemap.txt
 
 # llms.txt: machine-readable product summary for AI answer engines (AEO/GEO)
 # https://settime.kairosaitech.com/llms.txt

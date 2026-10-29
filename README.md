@@ -117,7 +117,9 @@ metal.
   繁體中文, English, 日本語, Español, Français, Deutsch, Italiano, Português).
 - `llms.txt` — a machine-readable summary of the product for AI answer
   engines (AEO/GEO).
-- `sitemap.xml`, `robots.txt` — standard SEO crawl configuration, with
+- `en/`, `ja/`, `es/`, `fr/`, `de/`, `it/`, `pt/` — generated per-language pages (hreflang targets). Do not edit by hand: change `index.html` or `i18n.js`, then run `node scripts/build-locales.mjs`; CI runs it with `--check`. The same script keeps the hreflang block, `sitemap.xml` and `sitemap.txt` in sync.
+- `scripts/og-card.html` — source for `assets/settime-og-card.jpg` (screenshot at 1200×630).
+- `sitemap.xml`, `sitemap.txt`, `robots.txt` — standard SEO crawl configuration, with
   explicit allow-rules for AI crawlers (GPTBot, ClaudeBot, PerplexityBot,
   etc.).
 

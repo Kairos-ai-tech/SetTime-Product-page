@@ -1,0 +1,1303 @@
+<!DOCTYPE html>
+<html lang="es" data-pinned-lang="es" class="no-3d">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="La automatización de estimación de armaduras de SetTime ya está disponible: convierte planos estructurales en planos de taller y una lista de materiales (.xlsm), con plugin de AutoCAD 2021 y app de escritorio. Guía AR en obra y verificación IA en desarrollo. Hecho por Kairos.ai. Envíe un plano y reciba un cómputo gratis en 24 horas.">
+  <meta name="keywords" content="SetTime, SetTime 鋼筋, SetTime 鋼筋估算自動化, Kairos.ai, 鋼筋估算軟體, 鋼筋計料, 鋼筋加工圖, 鋼筋計料表, AI 鋼筋估算, 鋼筋施工, AR 營造, 智慧工地, 鋼筋自動化, 施工圖自動解析, 竣工驗證, 稽核鏈, SetTime rebar estimation software, rebar takeoff automation, rebar shop drawings, bar bending schedule, AutoCAD rebar plugin, construction execution, rebar verification, AR construction, as-built verification, audit trail">
+  <meta name="author" content="Kairos.ai">
+  <meta name="application-name" content="SetTime">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="theme-color" content="#FBFAF7">
+  <script>
+    (function () {
+      var t;
+      try { t = localStorage.getItem('theme'); } catch (e) {}
+      if (t !== 'light' && t !== 'dark') t = 'dark';
+      document.documentElement.setAttribute('data-theme', t);
+      var m = document.querySelector('meta[name="theme-color"]');
+      if (m && t === 'dark') m.setAttribute('content', '#0B1A2D');
+    })();
+  </script>
+  <meta property="og:site_name" content="SetTime by Kairos.ai">
+  <meta property="og:title" content="SetTime | Estimación de armaduras con IA">
+  <meta property="og:description" content="La automatización de estimación de armaduras de SetTime ya está disponible: convierte planos estructurales en planos de taller y una lista de materiales (.xlsm), con plugin de AutoCAD 2021 y app de escritorio. Guía AR en obra y verificación IA en desarrollo. Hecho por Kairos.ai. Envíe un plano y reciba un cómputo gratis en 24 horas.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://settime.kairosaitech.com/es/">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:image" content="https://settime.kairosaitech.com/assets/settime-og-card.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="SetTime: structural drawings to rebar material lists, shown with a sample material list table">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="SetTime | Estimación de armaduras con IA">
+  <meta name="twitter:description" content="La automatización de estimación de armaduras de SetTime ya está disponible: convierte planos estructurales en planos de taller y una lista de materiales (.xlsm), con plugin de AutoCAD 2021 y app de escritorio. Guía AR en obra y verificación IA en desarrollo. Hecho por Kairos.ai. Envíe un plano y reciba un cómputo gratis en 24 horas.">
+  <meta name="twitter:image" content="https://settime.kairosaitech.com/assets/settime-og-card.jpg">
+  <meta name="twitter:image:alt" content="SetTime: structural drawings to rebar material lists, shown with a sample material list table">
+  <link rel="canonical" href="https://settime.kairosaitech.com/es/">
+  <link rel="alternate" hreflang="zh-Hant" href="https://settime.kairosaitech.com/">
+  <link rel="alternate" hreflang="en" href="https://settime.kairosaitech.com/en/">
+  <link rel="alternate" hreflang="ja" href="https://settime.kairosaitech.com/ja/">
+  <link rel="alternate" hreflang="es" href="https://settime.kairosaitech.com/es/">
+  <link rel="alternate" hreflang="fr" href="https://settime.kairosaitech.com/fr/">
+  <link rel="alternate" hreflang="de" href="https://settime.kairosaitech.com/de/">
+  <link rel="alternate" hreflang="it" href="https://settime.kairosaitech.com/it/">
+  <link rel="alternate" hreflang="pt" href="https://settime.kairosaitech.com/pt/">
+  <link rel="alternate" hreflang="x-default" href="https://settime.kairosaitech.com/">
+  <!-- Machine-readable product summary for AI answer engines / LLM crawlers. -->
+  <link rel="alternate" type="text/plain" href="https://settime.kairosaitech.com/llms.txt" title="SetTime llms.txt">
+  <link rel="icon" type="image/png" href="/assets/settime-favicon.png">
+  <link rel="apple-touch-icon" href="/assets/settime-favicon.png">
+  <title>SetTime | Estimación de armaduras con IA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;700&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+TC:wght@700&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <!-- Vendored, not CDN-loaded: no runtime dependency on a third-party host. -->
+  <script type="importmap">
+    { "imports": { "three": "/vendor/three.module.min.js" } }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://www.kairosaitech.com/#organization",
+        "name": "Kairos.ai",
+        "alternateName": [
+          "優時科技",
+          "優時科技有限公司"
+        ],
+        "url": "https://www.kairosaitech.com",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://settime.kairosaitech.com/assets/kairos-logo-512.png",
+          "width": 512,
+          "height": 512
+        },
+        "email": "kairos.ai.tech@gmail.com",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "sales",
+          "email": "kairos.ai.tech@gmail.com",
+          "areaServed": "TW",
+          "availableLanguage": [
+            "zh-Hant",
+            "en"
+          ]
+        },
+        "brand": {
+          "@id": "https://settime.kairosaitech.com/es/#brand"
+        },
+        "owns": {
+          "@id": "https://settime.kairosaitech.com/es/#software"
+        }
+      },
+      {
+        "@type": "Brand",
+        "@id": "https://settime.kairosaitech.com/es/#brand",
+        "name": "SetTime",
+        "url": "https://settime.kairosaitech.com/",
+        "logo": "https://settime.kairosaitech.com/assets/settime-logo-og.png",
+        "slogan": "SetTime — Justo antes de que fragüe"
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://settime.kairosaitech.com/es/#website",
+        "url": "https://settime.kairosaitech.com/",
+        "name": "SetTime",
+        "alternateName": "SetTime by Kairos.ai",
+        "inLanguage": [
+          "es",
+          "en",
+          "ja",
+          "es",
+          "fr",
+          "de",
+          "it",
+          "pt"
+        ],
+        "publisher": {
+          "@id": "https://www.kairosaitech.com/#organization"
+        }
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://settime.kairosaitech.com/es/#webpage",
+        "url": "https://settime.kairosaitech.com/es/",
+        "name": "SetTime | AI Rebar Estimation Software — Structural Drawings to Shop Drawings & Bar Schedules",
+        "description": "La automatización de estimación de armaduras de SetTime ya está disponible: convierte planos estructurales en planos de taller y una lista de materiales (.xlsm), con plugin de AutoCAD 2021 y app de escritorio. Guía AR en obra y verificación IA en desarrollo. Hecho por Kairos.ai. Envíe un plano y reciba un cómputo gratis en 24 horas.",
+        "inLanguage": "es",
+        "dateModified": "2026-10-23",
+        "isPartOf": {
+          "@id": "https://settime.kairosaitech.com/es/#website"
+        },
+        "about": {
+          "@id": "https://settime.kairosaitech.com/es/#software"
+        },
+        "mainEntity": {
+          "@id": "https://settime.kairosaitech.com/es/#software"
+        },
+        "video": {
+          "@id": "https://settime.kairosaitech.com/es/#video"
+        },
+        "publisher": {
+          "@id": "https://www.kairosaitech.com/#organization"
+        },
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          "url": "https://settime.kairosaitech.com/assets/settime-og-card.jpg",
+          "width": 1200,
+          "height": 630
+        }
+      },
+      {
+        "@type": "HowTo",
+        "@id": "https://settime.kairosaitech.com/es/#howto",
+        "name": "Tres pasos, del plano a la lista de materiales",
+        "description": "Sube un plano estructural, revisa lo que SetTime señala y obtén una lista de materiales lista para presupuestar.",
+        "inLanguage": "es",
+        "isPartOf": {
+          "@id": "https://settime.kairosaitech.com/es/#webpage"
+        },
+        "about": {
+          "@id": "https://settime.kairosaitech.com/es/#software"
+        },
+        "tool": {
+          "@id": "https://settime.kairosaitech.com/es/#software"
+        },
+        "step": [
+          {
+            "@type": "HowToStep",
+            "position": 1,
+            "name": "Sube tu plano",
+            "text": "Añade un plano estructural (.dwg, .dxf o .pdf) a un proyecto. SetTime aplica tus reglas de Style Guide, inicia el reconocimiento por sí solo y el estado se actualiza cada 10 segundos.",
+            "url": "https://settime.kairosaitech.com/es/#howto",
+            "image": "https://settime.kairosaitech.com/assets/howto-1-upload.jpg"
+          },
+          {
+            "@type": "HowToStep",
+            "position": 2,
+            "name": "Revisa lo señalado",
+            "text": "SetTime cuenta las vigas, columnas y plantas que encontró y señala cada vacío, por ejemplo una anotación ausente en la que usó un valor por defecto del Style Guide. Tú lo revisas antes de usarlo.",
+            "url": "https://settime.kairosaitech.com/es/#howto",
+            "image": "https://settime.kairosaitech.com/assets/howto-2-review.jpg"
+          },
+          {
+            "@type": "HowToStep",
+            "position": 3,
+            "name": "Obtén la lista de materiales",
+            "text": "La armadura se suma por diámetro, con cantidades y peso, y se exporta como lista de materiales .xlsm lista para presupuestar e importar en herramientas de macros existentes.",
+            "url": "https://settime.kairosaitech.com/es/#howto",
+            "image": "https://settime.kairosaitech.com/assets/howto-3-materials.jpg"
+          }
+        ]
+      },
+      {
+        "@type": "VideoObject",
+        "@id": "https://settime.kairosaitech.com/es/#video",
+        "name": "See SetTime in action: structural drawing to rebar bar schedule and shop drawings",
+        "description": "Product walkthrough of SetTime: upload a structural drawing, get the rebar bar schedule (.xlsm) and shop drawings in about a minute.",
+        "thumbnailUrl": "https://settime.kairosaitech.com/assets/demo-poster.jpg",
+        "contentUrl": "https://settime.kairosaitech.com/assets/demo.mp4",
+        "uploadDate": "2026-10-20",
+        "duration": "PT1M7S",
+        "encodingFormat": "video/mp4",
+        "inLanguage": "en",
+        "isPartOf": {
+          "@id": "https://settime.kairosaitech.com/es/#webpage"
+        },
+        "about": {
+          "@id": "https://settime.kairosaitech.com/es/#software"
+        },
+        "publisher": {
+          "@id": "https://www.kairosaitech.com/#organization"
+        }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://settime.kairosaitech.com/es/#software",
+        "name": "SetTime",
+        "alternateName": [
+          "SetTime Rebar Estimation Automation System",
+          "SetTime 鋼筋估算自動化系統"
+        ],
+        "applicationCategory": "BusinessApplication",
+        "applicationSubCategory": "Construction rebar estimation and shop-drawing automation",
+        "operatingSystem": "Windows (AutoCAD 2021 plugin); cross-platform desktop app",
+        "softwareRequirements": "AutoCAD 2021 (for the plugin)",
+        "url": "https://settime.kairosaitech.com/",
+        "image": "https://settime.kairosaitech.com/assets/settime-og-card.jpg",
+        "description": "SetTime is Kairos.ai's rebar estimation automation software, shipping today: an AutoCAD 2021 plugin plus a cross-platform desktop app that converts structural drawings directly into shop drawings and a material-list workbook (.xlsm), importing natively into a fabricator's existing macro tooling. AR field guidance and computer-vision as-built verification are in development on the same product roadmap.",
+        "featureList": [
+          "Structural drawing recognition (beams and columns)",
+          "Automatic rebar shop-drawing generation",
+          "Material-list / cut-list export to .xlsm for existing fabricator macro tooling",
+          "Workflow and quality-control tracking",
+          "In development: AR field guidance for rebar placement",
+          "In development: AI as-built vs. as-designed verification",
+          "In development: SHA-256 hash-chained audit trail"
+        ],
+        "audience": {
+          "@type": "BusinessAudience",
+          "audienceType": "Construction companies, rebar fabricators, structural engineering firms, public agencies"
+        },
+        "areaServed": "TW",
+        "inLanguage": [
+          "es",
+          "en",
+          "ja",
+          "es",
+          "fr",
+          "de",
+          "it",
+          "pt"
+        ],
+        "brand": {
+          "@id": "https://settime.kairosaitech.com/es/#brand"
+        },
+        "publisher": {
+          "@id": "https://www.kairosaitech.com/#organization"
+        },
+        "author": {
+          "@id": "https://www.kairosaitech.com/#organization"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://settime.kairosaitech.com/es/#faq",
+        "isPartOf": {
+          "@id": "https://settime.kairosaitech.com/es/#webpage"
+        },
+        "inLanguage": "es",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "¿Qué es SetTime?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "SetTime es el producto de construcción/armadura de Kairos.ai. Lo que ya está disponible es la automatización de estimación de armadura: convierte planos estructurales en planos de taller y datos de listas de materiales para estimación y fabricación. La guía de RA en campo y la verificación as-built con IA son módulos posteriores en la misma hoja de ruta, en desarrollo."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Qué puede hacer SetTime hoy?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "El Sistema de Automatización de Estimación de Armadura ya está disponible: un plugin para AutoCAD 2021 y una app de escritorio multiplataforma que convierte planos estructurales directamente en planos de taller y una lista de materiales (.xlsm), compatible con las herramientas de macros del fabricante, con reconocimiento de vigas/columnas que cumple el umbral de aceptación. La guía de RA en campo, la verificación as-built con IA y la cadena de auditoría de cumplimiento legal están en desarrollo."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Para quién es SetTime?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Empresas constructoras, fabricantes de armadura, ingenierías estructurales y entidades públicas que necesitan un registro as-built auditable."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Cómo solicito el piloto gratuito?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Completa el formulario de piloto gratuito con tu nombre, empresa, email, país y rol — nos pondremos en contacto para coordinar la implementación. Envíanos un plano estructural y te devolveremos tu lista de materiales en 24 horas desde que lo recibamos."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Quién desarrolla SetTime?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "SetTime es desarrollado por Kairos.ai, enfocado hoy en el mercado de construcción de Taiwán y el trabajo de armadura, con planes de expansión a sectores afines como mecanizado CNC, moldes y soldadura."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿La cadena de auditoría garantiza el cumplimiento legal?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No, y esta función todavía está en desarrollo. La cadena de auditoría es un mecanismo técnico de detección de manipulaciones (cadena de hash SHA-256) que detecta alteraciones o eliminaciones; no es una certificación de cumplimiento con ninguna ley, normativa o requisito de contratación pública específicos. Las obligaciones reales de cumplimiento dependen de la legislación aplicable y de los términos contractuales; consulte con su propio asesor legal. Nada en esta página constituye asesoramiento legal."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <!-- Page-wide 3D backdrop: fixed behind every section, driven by hero3d.js.
+       Falls back to the .hero-static blueprint grid (hero-only) via the
+       .no-3d class on <html> when WebGL/JS/reduced-motion rules it out. -->
+  <canvas id="hero-canvas" class="hero-canvas" aria-hidden="true"></canvas>
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="/" class="nav-logo" aria-label="SetTime home">
+        <img class="logo-mark" src="/assets/settime-logo-64.jpg" alt="" width="32" height="32">
+        <span class="logo-text">SetTime</span>
+      </a>
+      <div class="nav-right">
+        <button class="theme-toggle" id="themeToggle" type="button" aria-pressed="false" aria-label="Cambiar modo oscuro / claro" data-i18n-aria-label="aria.themeToggle">
+          <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
+          <svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        </button>
+        <div class="lang-switcher">
+          <!-- With JS enabled, populateLangSelect() in i18n.js replaces this list at
+               load, built off LANG_LABELS + translations — that's the only place
+               to touch for JS users. This static list is a separate, hand-maintained
+               no-JS fallback: update it too if a language should also work without JS. -->
+          <select id="langSelect" class="lang-select" aria-label="Idioma" data-i18n-aria-label="aria.langSelect">
+            <option value="zh-TW">中文</option>
+            <option value="en">English</option>
+            <option value="ja">日本語</option>
+            <option value="es">Español</option>
+            <option value="fr">Français</option>
+            <option value="de">Deutsch</option>
+            <option value="it">Italiano</option>
+            <option value="pt">Português</option>
+          </select>
+        </div>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+          <span class="hamburger"></span>
+        </button>
+      </div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#demo" data-i18n="nav.demo">Demo</a></li>
+        <li><a href="#solution" data-i18n="nav.tech">Tecnología</a></li>
+        <li><a href="#product" data-i18n="nav.product">Producto</a></li>
+        <li><a href="#process" data-i18n="nav.process">Proceso</a></li>
+        <li><a href="#faq" data-i18n="nav.faq">Preguntas frecuentes</a></li>
+        <li><a href="#pilot" class="nav-cta" data-i18n="nav.pilot">Piloto Gratuito</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ===== HERO (scroll-scrubbed 3D: camera flies toward a rebar cage) ===== -->
+  <div class="hero-track">
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <div class="hero-static" aria-hidden="true"></div>
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-badge fade-in" data-i18n="hero.badge">Plataforma de Automatización de Estimación de Armadura con IA</div>
+      <p class="hero-slogan fade-in" data-delay="1" data-i18n="product.tagline">SetTime — Justo antes de que fragüe</p>
+      <h1 class="hero-title fade-in" data-delay="1" data-i18n="hero.title">Planos Estructurales, Convertidos<br>en Listas de Armadura y Planos de Taller</h1>
+      <p class="hero-subtitle fade-in" data-delay="2" data-i18n="hero.subtitle">Disponible: automatización de estimación (plugin AutoCAD + escritorio). En desarrollo: guía de RA en obra, verificación con IA y registros auditables.</p>
+      <p class="hero-subtitle-en fade-in" data-delay="2" data-i18n="hero.subtitle-en">From structural drawing to shop-ready rebar.</p>
+      <div class="hero-actions fade-in" data-delay="3">
+        <a href="#pilot" class="hero-cta">
+          <span data-i18n="cta.pilot">Recibe gratis tu lista de materiales en 24 h</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#demo" class="hero-cta-ghost" data-i18n="hero.cta.demo">Véalo en acción</a>
+      </div>
+      <ul class="hero-trust fade-in" data-delay="4">
+        <li data-i18n="hero.trust1">Lista de materiales en 24 horas</li>
+        <li data-i18n="hero.trust2">Cada alerta se muestra para tu revisión</li>
+        <li data-i18n="hero.trust3">Complemento de AutoCAD + app de escritorio</li>
+        <li data-i18n="hero.trust4">Exporta .xlsm para herramientas de macros existentes</li>
+      </ul>
+    </div>
+    <div class="scroll-hint" aria-hidden="true">
+      <span>SCROLL</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+  </div>
+
+  <!-- ===== PROBLEM ===== -->
+  <section class="problem" id="problem">
+    <div class="problem-visual">
+      <!-- TODO: replace with branded rebar / construction site image (steel reinforcement close-up preferred) -->
+      <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=960&q=80" alt="Obra en construcción" data-i18n-alt="alt.problem" class="problem-img fade-in" loading="lazy" decoding="async">
+    </div>
+    <div class="problem-content">
+      <p class="section-label fade-in" data-i18n="problem.label">LA CRISIS</p>
+      <h2 class="section-heading fade-in" data-delay="1" data-i18n="problem.heading">La Intención de Diseño y la Ejecución<br>en Obra Están Desconectadas</h2>
+      <p class="section-lead fade-in" data-delay="2" data-i18n="problem.lead">Los planos estructurales se interpretan a mano antes de llegar a la losa. Los errores solo aparecen en la inspección — o después del vertido. Faltan armadores calificados, el retrabajo es costoso y no existe un registro as-built auditable.</p>
+
+      <div class="crisis-grid fade-in" data-delay="3">
+        <div class="crisis-item">
+          <span class="crisis-stat" data-i18n="problem.crisis1.stat">30%</span>
+          <p data-i18n="problem.crisis1.text">de los sobrecostos provienen del retrabajo</p>
+        </div>
+        <div class="crisis-item">
+          <span class="crisis-stat" data-i18n="problem.crisis2.stat">45%</span>
+          <p data-i18n="problem.crisis2.text">de déficit de armadores calificados</p>
+        </div>
+        <div class="crisis-item">
+          <span class="crisis-stat" data-i18n="problem.crisis3.stat">70%</span>
+          <p data-i18n="problem.crisis3.text">de los defectos se detectan después del vertido</p>
+        </div>
+        <div class="crisis-item">
+          <span class="crisis-stat" data-i18n="problem.crisis4.stat">0</span>
+          <p data-i18n="problem.crisis4.text">registros as-built auditables hoy</p>
+        </div>
+      </div>
+      <p class="crisis-source" data-i18n="problem.stats.source">Estimaciones del sector, no resultados medidos por este producto.</p>
+      <p class="crisis-source crisis-extra" data-i18n="problem.workforce">Dato mundial del sector: se jubilan unos 17.000 estimadores al año, con aún menos relevo (fuente: theTakeoff.AI).</p>
+
+      <blockquote class="crisis-quote fade-in" data-delay="4">
+        <p data-i18n="problem.quote">"Atamos la armadura según el plano. Llegó el inspector y dijo que la separación estaba mal y el recubrimiento era insuficiente. Cortar y volver a atar — se perdió la semana."</p>
+        <cite data-i18n="problem.quote.cite">— Entrevista a un jefe de obra (ilustrativa, no es una cita atribuida a un cliente)</cite>
+      </blockquote>
+    </div>
+
+    <div class="loss-banner">
+      <div class="loss-banner-inner">
+        <div class="loss-item fade-in">
+          <span class="loss-number" data-count="600">0</span><span class="loss-unit" data-i18n="problem.loss.unit" style="display:none"></span>
+          <span class="loss-label" data-i18n="problem.loss1.label">Costo directo de retrabajo de armadura (millones de US$)</span>
+        </div>
+        <div class="loss-item fade-in" data-delay="1">
+          <span class="loss-number" data-count="250">0</span><span class="loss-unit" data-i18n="problem.loss.unit" style="display:none"></span>
+          <span class="loss-label" data-i18n="problem.loss2.label">Pérdidas por retraso de obra (millones de US$)</span>
+        </div>
+        <div class="loss-item fade-in" data-delay="2">
+          <span class="loss-number" data-count="167">0</span><span class="loss-unit" data-i18n="problem.loss.unit" style="display:none"></span>
+          <span class="loss-label" data-i18n="problem.loss3.label">Rehacer por fallo de inspección (millones de US$)</span>
+        </div>
+      </div>
+      <p class="crisis-source loss-source" data-i18n="problem.stats.source">Estimaciones del sector, no resultados medidos por este producto.</p>
+      <p class="crisis-source loss-source" data-i18n="problem.loss.fx">Importes convertidos desde TWD a unos 30 TWD por USD.</p>
+    </div>
+  </section>
+
+  <!-- Shared defs for the tech-illustration SVGs below (blueprint grid + arrow marker) -->
+  <svg width="0" height="0" aria-hidden="true" style="position: absolute">
+    <defs>
+      <pattern id="tech-grid" width="40" height="40" patternUnits="userSpaceOnUse">
+        <path d="M40 0H0V40" fill="none" stroke="var(--accent-gold-light)" stroke-opacity="0.06"/>
+      </pattern>
+      <marker id="tech-arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+        <path d="M0 0 L10 5 L0 10 Z" fill="var(--accent-gold-light)"/>
+      </marker>
+      <g id="tech-bg">
+        <rect width="800" height="600" fill="var(--navy)"/>
+        <rect width="800" height="600" fill="url(#tech-grid)"/>
+      </g>
+    </defs>
+  </svg>
+
+  <!-- ===== PRODUCT VIDEO ===== -->
+  <section class="video" id="video">
+    <div class="container">
+      <p class="section-label fade-in" data-i18n="video.label">VÍDEO DEL PRODUCTO</p>
+      <h2 class="section-heading fade-in" data-delay="1" data-i18n="video.heading">Mira SetTime en acción</h2>
+      <p class="section-lead fade-in" data-delay="2" data-i18n="video.lead">Del plano estructural a la armadura lista para taller: el flujo completo en cerca de un minuto.</p>
+      <div class="video-frame fade-in" data-delay="3">
+        <video controls muted playsinline preload="metadata" poster="/assets/demo-poster.jpg" data-i18n-aria-label="video.aria" aria-label="Mira SetTime en acción"><source src="/assets/demo.mp4" type="video/mp4"></video>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== HOW TO USE ===== -->
+  <section class="howto" id="howto">
+    <div class="container">
+      <p class="section-label fade-in" data-i18n="howto.label">CÓMO SE USA</p>
+      <h2 class="section-heading fade-in" data-delay="1" data-i18n="howto.heading">Tres pasos,<br>del plano a la lista de materiales</h2>
+      <p class="section-lead fade-in" data-delay="2" data-i18n="howto.lead">Sube un plano estructural, revisa lo que SetTime señala y obtén una lista de materiales lista para presupuestar.</p>
+      <ol class="howto-steps" role="list">
+        <li class="howto-step fade-in" data-delay="3">
+          <div class="howto-head">
+            <span class="howto-num" aria-hidden="true">1</span>
+            <h3 data-i18n="howto.s1.title">Sube tu plano</h3>
+          </div>
+          <figure class="howto-shot">
+            <img src="/assets/howto-1-upload.jpg" width="900" height="675" alt="Página «Your drawings» de SetTime con un plano subido en procesamiento (datos de ejemplo)" data-i18n-alt="howto.s1.alt" loading="lazy" decoding="async">
+          </figure>
+          <p data-i18n="howto.s1.desc">Añade un plano estructural (.dwg, .dxf o .pdf) a un proyecto. SetTime aplica tus reglas de Style Guide, inicia el reconocimiento por sí solo y el estado se actualiza cada 10 segundos.</p>
+        </li>
+        <li class="howto-step fade-in" data-delay="4">
+          <div class="howto-head">
+            <span class="howto-num" aria-hidden="true">2</span>
+            <h3 data-i18n="howto.s2.title">Revisa lo señalado</h3>
+          </div>
+          <figure class="howto-shot">
+            <img src="/assets/howto-2-review.jpg" width="900" height="675" alt="Panel de revisión de SetTime con el recuento de vigas, columnas, plantas e incidencias (datos de ejemplo)" data-i18n-alt="howto.s2.alt" loading="lazy" decoding="async">
+          </figure>
+          <p data-i18n="howto.s2.desc">SetTime cuenta las vigas, columnas y plantas que encontró y señala cada vacío, por ejemplo una anotación ausente en la que usó un valor por defecto del Style Guide. Tú lo revisas antes de usarlo.</p>
+        </li>
+        <li class="howto-step fade-in" data-delay="5">
+          <div class="howto-head">
+            <span class="howto-num" aria-hidden="true">3</span>
+            <h3 data-i18n="howto.s3.title">Obtén la lista de materiales</h3>
+          </div>
+          <figure class="howto-shot">
+            <img src="/assets/howto-3-materials.jpg" width="900" height="675" alt="Lista de materiales de SetTime: armadura por diámetro con cantidades y pesos (datos de ejemplo)" data-i18n-alt="howto.s3.alt" loading="lazy" decoding="async">
+          </figure>
+          <p data-i18n="howto.s3.desc">La armadura se suma por diámetro, con cantidades y peso, y se exporta como lista de materiales .xlsm lista para presupuestar e importar en herramientas de macros existentes.</p>
+        </li>
+      </ol>
+      <p class="howto-note fade-in" data-i18n="howto.note">Las pantallas muestran datos de ejemplo.</p>
+      <div class="section-cta fade-in">
+        <a href="#pilot" class="cta-pill">
+          <span data-i18n="cta.pilot">Recibe gratis tu lista de materiales en 24 h</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== DEMO (click a member on the sample plan, the bar schedule follows) ===== -->
+  <section class="demo" id="demo">
+    <div class="container">
+      <p class="section-label fade-in" data-i18n="demo.label">EN ACCIÓN</p>
+      <h2 class="section-heading fade-in" data-delay="1" data-i18n="demo.heading">Un solo plano,<br>levantado en 3D</h2>
+      <p class="section-lead fade-in" data-delay="2" data-i18n="demo.lead">Haga clic en una columna, viga o losa del plano, o en una fila de la tabla, para ver cómo se ubican entre sí el plano y la lista. Cambie a 3D y las mismas barras se levantan desde la planta; mueva el calibre y los estribos de la zona central de la viga se redistribuyen al instante.</p>
+
+      <div class="demo-grid fade-in" data-delay="3">
+        <figure class="demo-drawing" data-view="2d">
+          <div class="rm-toolbar">
+            <div class="rm-toggle" role="group" aria-label="Modo de vista" data-i18n-aria-label="demo.view.group">
+              <button type="button" data-view-btn="2d" aria-pressed="true" data-i18n="demo.view.2d">Planta 2D</button>
+              <button type="button" data-view-btn="3d" aria-pressed="false" data-i18n="demo.view.3d">3D</button>
+            </div>
+            <span class="rm-hint rm-hint-2d" data-i18n="demo.hint.2d">Pulse un elemento para ver sus barras</span>
+            <span class="rm-hint rm-hint-3d" data-i18n="demo.hint.3d">Arrastre para girar</span>
+          </div>
+          <svg class="demo-svg rm-svg" viewBox="0 0 640 470" role="group" aria-labelledby="demo-svg-title">
+            <title id="demo-svg-title" data-i18n="demo.drawing.aria">Modelo estructural de ejemplo: columna C1, viga B1, losa S1, alternable entre planta y 3D</title>
+            <defs>
+              <marker id="rm-dot" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" refX="4" refY="4"><circle cx="4" cy="4" r="2.6" fill="var(--accent-green-light)"/></marker>
+            </defs>
+            <rect width="640" height="470" fill="url(#tech-grid)"/>
+            <g class="rm-dims" stroke="var(--gold)" stroke-width="1" fill="none">
+              <path class="rm-dim-path"/>
+              <text class="demo-dim-text" data-dim="h" text-anchor="middle">6000</text>
+              <text class="demo-dim-text" data-dim="v" text-anchor="middle">4200</text>
+            </g>
+            <g class="rm-units"></g>
+            <g class="rm-pins">
+              <g class="rm-pin" data-member="s1" tabindex="0" role="button" aria-pressed="false" data-i18n-aria-label="demo.m.s1" aria-label="Losa S1 (150 de espesor)"><circle r="12"/><text y="5" text-anchor="middle">3</text></g>
+              <g class="rm-pin" data-member="b1" tabindex="0" role="button" aria-pressed="false" data-i18n-aria-label="demo.m.b1" aria-label="Viga B1 (300×600)"><circle r="12"/><text y="5" text-anchor="middle">2</text></g>
+              <g class="rm-pin" data-member="c1" tabindex="0" role="button" aria-pressed="false" data-i18n-aria-label="demo.m.c1" aria-label="Columna C1 (500×500)"><circle r="12"/><text y="5" text-anchor="middle">1</text></g>
+            </g>
+          </svg>
+          <label class="rm-gauge">
+            <span data-i18n="demo.gauge.label">Separación de estribos en la zona central</span>
+            <input type="range" min="100" max="300" step="10" value="150">
+            <output>@150 mm</output>
+          </label>
+          <figcaption class="demo-sample">
+            <span data-i18n="demo.sample">Datos de ejemplo, no un proyecto real. Unidades: mm.</span>
+            <span class="rm-legend" data-i18n="demo.legend.ar">Marcas verdes: puntos de replanteo AR tomados del plano (en desarrollo)</span>
+          </figcaption>
+        </figure>
+
+        <div class="demo-schedule">
+          <div class="demo-table-wrap">
+            <table class="demo-table">
+              <thead>
+                <tr>
+                  <th data-i18n="demo.th.mark">Marca</th>
+                  <th data-i18n="demo.th.bar">Barra</th>
+                  <th class="num" data-i18n="demo.th.qty">Cant.</th>
+                  <th class="num" data-i18n="demo.th.cut">Long. corte mm</th>
+                  <th class="num" data-i18n="demo.th.weight">Peso kg</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr data-member="c1"><td><button type="button" class="demo-mark" aria-pressed="false">C1-1</button></td><td>D25</td><td class="num">8</td><td class="num">4150</td><td class="num">132</td></tr>
+                <tr data-member="b1"><td><button type="button" class="demo-mark" aria-pressed="false">B1-1</button></td><td>D22</td><td class="num">3</td><td class="num">6400</td><td class="num">58</td></tr>
+                <tr data-member="b1"><td><button type="button" class="demo-mark" aria-pressed="false">B1-2</button></td><td>D22</td><td class="num">4</td><td class="num">6400</td><td class="num">78</td></tr>
+                <tr data-member="b1"><td><button type="button" class="demo-mark" aria-pressed="false">B1-3</button></td><td>D10</td><td class="num" data-stirrup-qty>40</td><td class="num">1900</td><td class="num" data-stirrup-kg>47</td></tr>
+                <tr data-member="s1"><td><button type="button" class="demo-mark" aria-pressed="false">S1-1</button></td><td>D13</td><td class="num">27</td><td class="num">4200</td><td class="num">118</td></tr>
+              </tbody>
+              <tfoot>
+                <tr><th colspan="4" scope="row" data-i18n="demo.total">Total</th><td class="num" data-total>433</td></tr>
+              </tfoot>
+            </table>
+          </div>
+          <p class="demo-flag"><span class="demo-flag-tag" data-i18n="demo.flag.tag">Por confirmar</span><span data-i18n="demo.flag.text">Ejemplo: si un plano no indica fc′, SetTime usa el valor por defecto del Style Guide y lo señala para que lo confirmes antes de pedir.</span></p>
+          <div class="demo-detail">
+            <p data-detail="c1" data-i18n="demo.d.c1">Columna C1: 8-D25 barras longitudinales, longitud de corte 4150 mm incluido el empalme por traslapo; estribos aparte.</p>
+            <p data-detail="b1" data-i18n="demo.d.b1">Viga B1: 3-D22 arriba, 4-D22 abajo, estribos D10 a @100 en los extremos y según el calibre en el centro, longitud de anclaje incluida.</p>
+            <p data-detail="s1" data-i18n="demo.d.s1">Losa S1: D13 @200, 27 barras en la dirección corta, 4200 mm cada una.</p>
+          </div>
+          <a href="#pilot" class="cta-pill">
+            <span data-i18n="demo.cta">Pruébelo con sus planos</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SOLUTION ===== -->
+  <section class="solution" id="solution">
+    <div class="container">
+      <p class="section-label fade-in" data-i18n="solution.label">NUESTRA TECNOLOGÍA</p>
+      <h2 class="section-heading fade-in" data-delay="1" data-i18n="solution.heading">Pipeline de Ejecución de Extremo a Extremo</h2>
+      <p class="section-lead fade-in" data-delay="2" data-i18n="solution.lead">El plano estructural es la fuente de verdad: la automatización de estimación ya está disponible. La guía de RA y la verificación con IA están en desarrollo.</p>
+    </div>
+
+    <div class="tech-showcase">
+      <article class="tech-panel fade-in" data-delay="3">
+        <div class="tech-panel-img">
+          <svg class="tech-illustration" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice" role="img" aria-labelledby="tech-illust-t1">
+            <title id="tech-illust-t1" data-i18n="alt.solution.t1">Diagrama: plano estructural analizado en una lista de despiece de armadura</title>
+            <use href="#tech-bg" xlink:href="#tech-bg"/>
+            <g stroke="var(--cream)" stroke-width="1.5" fill="none" opacity="0.85">
+              <rect x="90" y="160" width="180" height="280"/>
+              <line x1="90" y1="160" x2="60" y2="130"/>
+              <line x1="270" y1="160" x2="300" y2="130"/>
+              <line x1="60" y1="130" x2="300" y2="130"/>
+            </g>
+            <g fill="var(--accent-gold-light)">
+              <circle cx="120" cy="200" r="5"/>
+              <circle cx="180" cy="200" r="5"/>
+              <circle cx="240" cy="200" r="5"/>
+              <circle cx="120" cy="400" r="5"/>
+              <circle cx="180" cy="400" r="5"/>
+              <circle cx="240" cy="400" r="5"/>
+            </g>
+            <g stroke="var(--gold)" stroke-width="1">
+              <line x1="90" y1="460" x2="270" y2="460"/>
+              <line x1="90" y1="452" x2="90" y2="468"/>
+              <line x1="270" y1="452" x2="270" y2="468"/>
+            </g>
+            <text x="180" y="484" fill="var(--accent-gold-light)" font-size="14" text-anchor="middle">450mm</text>
+            <path d="M330 300 H430" stroke="var(--accent-gold-light)" stroke-width="2" marker-end="url(#tech-arrow)"/>
+            <rect x="460" y="180" width="260" height="240" rx="8" fill="var(--navy-deep)" stroke="var(--gold)" stroke-opacity="0.3"/>
+            <text x="484" y="216" fill="var(--cream)" font-size="13" font-weight="600">Bar Mark B1</text>
+            <line x1="484" y1="230" x2="696" y2="230" stroke="var(--illust-hairline)" stroke-opacity="0.08"/>
+            <text x="484" y="256" fill="var(--illust-label)" font-size="12">Φ13</text>
+            <text x="484" y="282" fill="var(--illust-label)" font-size="12">1,250 ± 5 mm</text>
+            <text x="484" y="308" fill="var(--illust-label)" font-size="12">90°</text>
+            <rect x="484" y="330" width="70" height="24" rx="12" fill="var(--gold)" fill-opacity="0.15" stroke="var(--gold)" stroke-opacity="0.4"/>
+            <path d="M494 342 l6 6 12 -13" fill="none" stroke="var(--accent-gold-light)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span class="tech-number">01</span>
+        </div>
+        <div class="tech-panel-content">
+          <h3 data-i18n="solution.t1.title">Análisis Automático de Planos</h3>
+          <p class="tech-en" data-i18n="solution.t1.en" style="display:none"></p>
+          <span class="panel-status live" data-i18n="status.live">Disponible</span>
+          <p data-i18n="solution.t1.desc">Plano estructural → lista de despiece, lista de corte, lista de doblado. Genera datos listos para producción que alimentan directamente la maquinaria del taller.</p>
+          <div class="tech-metrics">
+            <span data-i18n="solution.t1.m1">Bar Mark: B1 / B2 / B3</span>
+            <span data-i18n="solution.t1.m2">Diámetro: #3 ~ #11</span>
+            <span data-i18n="solution.t1.m3">Longitud: 1.250 ± 5 mm</span>
+            <span data-i18n="solution.t1.m4">Doblado: gancho de 90° / 135°</span>
+          </div>
+          <div class="tech-tags"><span>Document AI</span></div>
+        </div>
+      </article>
+
+      <article class="tech-panel reverse fade-in" data-delay="3">
+        <div class="tech-panel-img">
+          <svg class="tech-illustration" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice" role="img" aria-labelledby="tech-illust-t2">
+            <title id="tech-illust-t2" data-i18n="alt.solution.t2">Diagrama: guía AR para la colocación de armadura en obra</title>
+            <use href="#tech-bg" xlink:href="#tech-bg"/>
+            <circle cx="400" cy="300" r="140" fill="none" stroke="var(--illust-hairline)" stroke-opacity="0.15" stroke-dasharray="4 6"/>
+            <circle cx="540" cy="300" r="14" fill="none" stroke="var(--accent-gold-light)" stroke-width="1" stroke-opacity="0.4"/>
+            <circle cx="357" cy="437" r="14" fill="none" stroke="var(--accent-gold-light)" stroke-width="1" stroke-opacity="0.4"/>
+            <g fill="var(--accent-gold-light)">
+              <circle cx="540" cy="300" r="8"/>
+              <circle cx="513" cy="382" r="8"/>
+              <circle cx="443" cy="437" r="8"/>
+              <circle cx="357" cy="437" r="8"/>
+              <circle cx="287" cy="382" r="8"/>
+              <circle cx="260" cy="300" r="8"/>
+              <circle cx="287" cy="218" r="8"/>
+              <circle cx="357" cy="163" r="8"/>
+              <circle cx="443" cy="163" r="8"/>
+            </g>
+            <circle cx="513" cy="218" r="9" fill="var(--accent-red-light)"/>
+            <circle cx="513" cy="218" r="16" fill="none" stroke="var(--accent-red-light)" stroke-width="1.5" stroke-opacity="0.6"/>
+            <g stroke="var(--accent-gold-light)" stroke-width="2" fill="none" opacity="0.7">
+              <path d="M170 170 v40 M170 170 h40"/>
+              <path d="M630 170 v40 M630 170 h-40"/>
+              <path d="M170 430 v-40 M170 430 h40"/>
+              <path d="M630 430 v-40 M630 430 h-40"/>
+            </g>
+            <line x1="513" y1="218" x2="570" y2="150" stroke="var(--accent-red-light)" stroke-width="1.5"/>
+            <rect x="570" y="108" width="150" height="48" rx="6" fill="var(--navy-deep)" stroke="var(--accent-red-light)" stroke-opacity="0.5"/>
+            <text x="586" y="128" fill="var(--accent-red-light)" font-size="11" font-weight="600">-8mm</text>
+          </svg>
+          <span class="tech-number">02</span>
+        </div>
+        <div class="tech-panel-content">
+          <h3 data-i18n="solution.t2.title">Guía de Campo con RA</h3>
+          <p class="tech-en" data-i18n="solution.t2.en" style="display:none"></p>
+          <span class="panel-status dev" data-i18n="status.dev">En desarrollo</span>
+          <p data-i18n="solution.t2.desc">La disposición 3D de la armadura se superpone sobre el encofrado real. Separación, longitud de solape y orientación del gancho por cada barra — la cuadrilla coloca según el plano.</p>
+          <div class="tech-metrics">
+            <span class="correct" data-i18n="solution.t2.m1">✓ Verde = colocación correcta</span>
+            <span class="incorrect" data-i18n="solution.t2.m2">✗ Rojo = desviación, corregir</span>
+            <span data-i18n="solution.t2.m3">→ Avisos de separación / recubrimiento</span>
+            <span data-i18n="solution.t2.m4">🏷 El código QR confirma la identidad de la barra</span>
+          </div>
+          <div class="tech-tags"><span>ARKit</span><span>RealityKit</span></div>
+        </div>
+      </article>
+
+      <article class="tech-panel fade-in" data-delay="3">
+        <div class="tech-panel-img">
+          <svg class="tech-illustration" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice" role="img" aria-labelledby="tech-illust-t3">
+            <title id="tech-illust-t3" data-i18n="alt.solution.t3">Diagrama: verificación por IA comparando lo construido con lo diseñado</title>
+            <defs>
+              <linearGradient id="scan-t3" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="var(--accent-gold-light)" stop-opacity="0"/>
+                <stop offset="50%" stop-color="var(--accent-gold-light)" stop-opacity="0.9"/>
+                <stop offset="100%" stop-color="var(--accent-gold-light)" stop-opacity="0"/>
+              </linearGradient>
+            </defs>
+            <use href="#tech-bg" xlink:href="#tech-bg"/>
+            <g stroke="var(--cream)" stroke-opacity="0.1" stroke-width="1.5">
+              <line x1="260" y1="120" x2="260" y2="480"/>
+              <line x1="330" y1="120" x2="330" y2="480"/>
+              <line x1="400" y1="120" x2="400" y2="480"/>
+              <line x1="470" y1="120" x2="470" y2="480"/>
+              <line x1="540" y1="120" x2="540" y2="480"/>
+            </g>
+            <rect x="0" y="248" width="800" height="6" fill="url(#scan-t3)"/>
+            <rect x="220" y="150" width="360" height="230" rx="10" fill="var(--navy-deep)" fill-opacity="0.9" stroke="var(--illust-hairline)" stroke-opacity="0.08"/>
+            <text x="248" y="184" fill="var(--illust-label)" font-size="11" letter-spacing="0.08em">AS-BUILT VERIFICATION</text>
+            <circle cx="252" cy="214" r="5" fill="var(--accent-green-light)"/>
+            <text x="532" y="219" fill="var(--accent-green-light)" font-size="13" text-anchor="end" font-weight="600">96%</text>
+            <circle cx="252" cy="254" r="5" fill="var(--accent-green-light)"/>
+            <text x="532" y="259" fill="var(--accent-green-light)" font-size="13" text-anchor="end" font-weight="600">92%</text>
+            <circle cx="252" cy="294" r="5" fill="var(--accent-red-light)"/>
+            <text x="532" y="299" fill="var(--accent-red-light)" font-size="13" text-anchor="end" font-weight="600">-8mm</text>
+            <line x1="248" y1="326" x2="552" y2="326" stroke="var(--illust-hairline)" stroke-opacity="0.08"/>
+          </svg>
+          <span class="tech-number">03</span>
+        </div>
+        <div class="tech-panel-content">
+          <h3 data-i18n="solution.t3.title">Verificación con IA en Tiempo Real</h3>
+          <p class="tech-en" data-i18n="solution.t3.en" style="display:none"></p>
+          <span class="panel-status dev" data-i18n="status.dev">En desarrollo</span>
+          <p data-i18n="solution.t3.desc">La visión artificial compara as-built con as-designed, marca cada desviación y genera una instantánea firmada antes del vertido.</p>
+          <div class="tech-metrics">
+            <span class="correct" data-i18n="solution.t3.m1">Separación: aprobado (conf. 96%)</span>
+            <span class="correct" data-i18n="solution.t3.m2">Longitud de solape: aprobado (conf. 92%)</span>
+            <span class="incorrect" data-i18n="solution.t3.m3">Recubrimiento: desviación de -8 mm</span>
+          </div>
+          <div class="tech-tags"><span>PyTorch</span><span>Open3D</span></div>
+        </div>
+      </article>
+    </div>
+    <div class="container section-cta fade-in">
+      <a href="#pilot" class="cta-pill">
+        <span data-i18n="cta.pilot">Recibe gratis tu lista de materiales en 24 h</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- ===== PRODUCT (live today) ===== -->
+  <section class="product" id="product">
+    <div class="container">
+      <p class="section-label fade-in" data-i18n="product.label">MÓDULO YA EN PRODUCCIÓN</p>
+      <h2 class="section-heading fade-in" data-delay="1" data-i18n="product.heading">No Es Solo una Visión<br>la Estimación de Armadura Ya Está Funcionando</h2>
+      <p class="section-lead fade-in" data-delay="2" data-i18n="product.lead">El motor de análisis de planos ya opera como módulo independiente: plano estructural de AutoCAD → plano de taller → lista de materiales, totalmente automatizado, con importación nativa al flujo de macros existente del cliente.</p>
+      <p class="product-tagline fade-in" data-delay="3" data-i18n="product.tagline">SetTime — Justo antes de que fragüe</p>
+    </div>
+
+    <div class="tech-showcase">
+      <article class="tech-panel fade-in" data-delay="3">
+        <div class="tech-panel-img">
+          <svg class="tech-illustration" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice" role="img" aria-labelledby="tech-illust-product">
+            <title id="tech-illust-product" data-i18n="alt.product">Diagrama: archivo de plano convertido en lista de materiales de armadura</title>
+            <use href="#tech-bg" xlink:href="#tech-bg"/>
+            <rect x="90" y="210" width="150" height="180" rx="6" fill="var(--navy-deep)" stroke="var(--illust-hairline)" stroke-opacity="0.12"/>
+            <g stroke="var(--cream)" stroke-opacity="0.6" stroke-width="1.5">
+              <line x1="112" y1="240" x2="208" y2="240"/>
+              <line x1="112" y1="264" x2="190" y2="264"/>
+              <line x1="112" y1="288" x2="208" y2="288"/>
+              <line x1="112" y1="312" x2="170" y2="312"/>
+            </g>
+            <text x="165" y="372" fill="var(--illust-label)" font-size="12" text-anchor="middle">DWG</text>
+            <path d="M255 300 H345" stroke="var(--accent-gold-light)" stroke-width="2" marker-end="url(#tech-arrow)"/>
+            <g transform="translate(400,300)" fill="none" stroke="var(--gold)" stroke-width="3">
+              <circle r="46"/>
+              <circle r="14" fill="var(--gold)" stroke="none"/>
+              <line x1="0" y1="-58" x2="0" y2="-70"/>
+              <line x1="0" y1="58" x2="0" y2="70"/>
+              <line x1="-58" y1="0" x2="-70" y2="0"/>
+              <line x1="58" y1="0" x2="70" y2="0"/>
+              <line x1="41" y1="-41" x2="49" y2="-49"/>
+              <line x1="-41" y1="-41" x2="-49" y2="-49"/>
+              <line x1="41" y1="41" x2="49" y2="49"/>
+              <line x1="-41" y1="41" x2="-49" y2="49"/>
+            </g>
+            <path d="M455 300 H545" stroke="var(--accent-gold-light)" stroke-width="2" marker-end="url(#tech-arrow)"/>
+            <rect x="560" y="210" width="150" height="180" rx="6" fill="var(--navy-deep)" stroke="var(--gold)" stroke-opacity="0.35"/>
+            <g stroke="var(--illust-hairline)" stroke-opacity="0.1">
+              <line x1="560" y1="252" x2="710" y2="252"/>
+              <line x1="560" y1="288" x2="710" y2="288"/>
+              <line x1="560" y1="324" x2="710" y2="324"/>
+              <line x1="618" y1="210" x2="618" y2="390"/>
+              <line x1="662" y1="210" x2="662" y2="390"/>
+            </g>
+            <rect x="618" y="252" width="44" height="36" fill="var(--gold)" fill-opacity="0.18"/>
+            <text x="635" y="372" fill="var(--accent-gold-light)" font-size="12" text-anchor="middle" font-weight="600">.xlsm</text>
+          </svg>
+          <span class="tech-number">✓</span>
+        </div>
+        <div class="tech-panel-content">
+          <h3 data-i18n="product.panel.title">Sistema de Automatización de Estimación de Armadura</h3>
+          <p class="tech-en" data-i18n="product.panel.en" style="display:none"></p>
+          <p data-i18n="product.panel.desc">Un plugin de AutoCAD 2021 más una app de escritorio multiplataforma convierten los planos estructurales directamente en planos de taller y un libro de lista de materiales (.xlsm). El reconocimiento de vigas/columnas supera el umbral de precisión contractual, y la salida se importa de forma nativa a las macros del cliente — sin necesidad de retooling.</p>
+          <div class="tech-metrics">
+            <span class="correct" data-i18n="product.m1">Reconocimiento de vigas/columnas cumple el umbral de aceptación</span>
+            <span data-i18n="product.m2">Plano → lista de materiales, totalmente automático</span>
+            <span data-i18n="product.m3">Compatibilidad nativa con macros GTA / CCM</span>
+            <span data-i18n="product.m4">Motor de reglas configurable (Style Guide)</span>
+          </div>
+          <div class="tech-tags"><span>AutoCAD 2021</span><span>.NET</span><span>Avalonia Desktop</span></div>
+        </div>
+      </article>
+    </div>
+
+    <div class="container">
+      <div class="moats">
+        <div class="moat fade-in" data-delay="4">
+          <div class="moat-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h8l4 4v14a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Z"/><path d="M14 3v4h4"/><path d="M8 12h5M8 15h3"/><circle cx="16.3" cy="16.3" r="2.4"/><path d="M18.2 18.2 19.6 19.6"/></svg></div>
+          <h3 data-i18n="product.moat1.title">Reconocimiento de Planos</h3>
+          <p data-i18n="product.moat1.desc">Lee automáticamente la disposición de vigas/columnas y las anotaciones de cotas según las reglas del Style Guide</p>
+        </div>
+        <div class="moat fade-in" data-delay="5">
+          <div class="moat-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20.5 5 16 15.5 5.5l3 3L8 19l-4 1.5Z"/><path d="M13.5 7 16.5 10"/></svg></div>
+          <h3 data-i18n="product.moat2.title">Generación de Planos de Taller</h3>
+          <p data-i18n="product.moat2.desc">Genera planos de taller listos para fabricación (.dwg / DXF) a partir del reconocimiento</p>
+        </div>
+        <div class="moat fade-in" data-delay="6">
+          <div class="moat-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="1.5"/><path d="M3 9h18M9 4v12"/><path d="M12 16.5v4.5m0 0-2.2-2.2M12 21l2.2-2.2"/></svg></div>
+          <h3 data-i18n="product.moat3.title">Exportación de Lista de Materiales</h3>
+          <p data-i18n="product.moat3.desc">Genera una lista de materiales .xlsm en el formato de macro existente del cliente — sin reintroducir datos a mano</p>
+        </div>
+        <div class="moat fade-in" data-delay="7">
+          <div class="moat-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h4m-4 6h4m-4 6h4"/><path d="M11 6h9M11 12h9M11 18h9"/></svg></div>
+          <h3 data-i18n="product.moat4.title">Flujo de Trabajo y Control de Calidad</h3>
+          <p data-i18n="product.moat4.desc">El seguimiento de estado por elemento se consolida en un registro final de control de calidad entregable</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== COMPLIANCE / AUDIT TRAIL ===== -->
+  <section class="compliance" id="compliance">
+    <div class="container">
+      <p class="section-label fade-in" data-i18n="compliance.label">LEGAL Y CUMPLIMIENTO</p>
+      <h2 class="section-heading fade-in" data-delay="1" data-i18n="compliance.heading">Cada Registro, Conservado Íntegramente para Auditorías y Procesos Legales</h2>
+      <span class="panel-status dev fade-in" data-delay="2" data-i18n="status.dev">En desarrollo</span>
+      <p class="section-lead fade-in" data-delay="2" data-i18n="compliance.lead">Desde el análisis de planos hasta la verificación en obra, cada acción se escribirá en una cadena de auditoría con integridad verificable (en desarrollo), diseñada para respaldar las necesidades de revisión de auditoría de grandes constructoras y licitaciones públicas.</p>
+
+      <div class="moats">
+        <div class="moat fade-in" data-delay="3">
+          <div class="moat-line"></div>
+          <h3 data-i18n="compliance.moat1.title">Cadena de Hash con Integridad Verificable</h3>
+          <p data-i18n="compliance.moat1.desc">Cada registro se encadenará mediante SHA-256 al anterior; cualquier edición o eliminación se detectará al instante (en desarrollo)</p>
+        </div>
+        <div class="moat fade-in" data-delay="4">
+          <div class="moat-line"></div>
+          <h3 data-i18n="compliance.moat2.title">Marca de Tiempo Precisa</h3>
+          <p data-i18n="compliance.moat2.desc">Marcas de tiempo UTC con números de secuencia monótonos que impedirán retrodatación, huecos o reordenamiento (en desarrollo)</p>
+        </div>
+        <div class="moat fade-in" data-delay="5">
+          <div class="moat-line"></div>
+          <h3 data-i18n="compliance.moat3.title">Registro de Auditoría de Solo Adición</h3>
+          <p data-i18n="compliance.moat3.desc">Los registros solo podrán añadirse, nunca editarse ni eliminarse; exportable para litigios y revisión regulatoria (en desarrollo)</p>
+        </div>
+        <div class="moat fade-in" data-delay="6">
+          <div class="moat-line"></div>
+          <h3 data-i18n="compliance.moat4.title">Arquitectura de Retención a Largo Plazo</h3>
+          <p data-i18n="compliance.moat4.desc">Los registros con versión de esquema seguirán siendo verificables en periodos de retención de varios años (en desarrollo)</p>
+        </div>
+      </div>
+
+      <p class="compliance-disclaimer fade-in" data-delay="7" data-i18n="compliance.disclaimer">La cadena de auditoría es un mecanismo técnico de detección de manipulaciones, no una certificación de cumplimiento con ninguna ley, normativa o requisito de contratación pública específicos. Las obligaciones reales de cumplimiento dependen de la legislación aplicable y de los términos contractuales; consulte con su propio asesor legal. Nada en esta página constituye asesoramiento legal.</p>
+    </div>
+  </section>
+
+  <!-- ===== PROCESS ===== -->
+  <section class="process" id="process">
+    <div class="container">
+      <p class="section-label fade-in" data-i18n="process.label">CÓMO FUNCIONA</p>
+      <h2 class="section-heading fade-in" data-delay="1" data-i18n="process.heading">Del Plano al As-Built Firmado</h2>
+    </div>
+
+    <div class="timeline">
+      <div class="timeline-line" aria-hidden="true"></div>
+      <div class="timeline-step fade-in" data-delay="2">
+        <div class="timeline-marker">1</div>
+        <div class="timeline-content">
+          <h3 data-i18n="process.s1.title">Importar Plano</h3>
+          <p class="timeline-en" data-i18n="process.s1.en" style="display:none"></p>
+          <p data-i18n="process.s1.desc">Sube el plano estructural; la lista de despiece se genera automáticamente</p>
+        </div>
+      </div>
+      <div class="timeline-step fade-in" data-delay="3">
+        <div class="timeline-marker">2</div>
+        <div class="timeline-content">
+          <h3 data-i18n="process.s2.title">Fabricar y Entregar</h3>
+          <p class="timeline-en" data-i18n="process.s2.en" style="display:none"></p>
+          <p data-i18n="process.s2.desc">Controla la maquinaria del taller; el etiquetado QR y la entrega por zona de vertido están planificados</p>
+        </div>
+      </div>
+      <div class="timeline-step fade-in" data-delay="4">
+        <div class="timeline-marker">3</div>
+        <div class="timeline-content">
+          <h3 data-i18n="process.s3.title">Colocación Guiada por RA</h3>
+          <p class="timeline-en" data-i18n="process.s3.en" style="display:none"></p>
+          <span class="panel-status dev" data-i18n="status.dev">En desarrollo</span>
+          <p data-i18n="process.s3.desc">La cuadrilla ve la superposición 3D en una tableta y ata la armadura según especificación</p>
+        </div>
+      </div>
+      <div class="timeline-step fade-in" data-delay="5">
+        <div class="timeline-marker">4</div>
+        <div class="timeline-content">
+          <h3 data-i18n="process.s4.title">Verificar y Registrar</h3>
+          <p class="timeline-en" data-i18n="process.s4.en" style="display:none"></p>
+          <span class="panel-status dev" data-i18n="status.dev">En desarrollo</span>
+          <p data-i18n="process.s4.desc">Verificación por visión artificial antes del vertido; registro firmado listo para inspección</p>
+        </div>
+      </div>
+    </div>
+    <div class="container section-cta fade-in">
+      <a href="#pilot" class="cta-pill">
+        <span data-i18n="cta.pilot">Recibe gratis tu lista de materiales en 24 h</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- ===== RESULTS ===== -->
+  <section class="results" id="results">
+    <div class="results-bg">
+      <div class="results-static" aria-hidden="true"></div>
+      <div class="results-overlay"></div>
+      <svg class="results-illustration" viewBox="0 0 240 240" aria-hidden="true">
+        <circle cx="120" cy="120" r="110" fill="none" stroke="currentColor" stroke-width="1"/>
+        <circle cx="120" cy="120" r="78" fill="none" stroke="currentColor" stroke-width="1"/>
+        <circle cx="120" cy="120" r="46" fill="none" stroke="currentColor" stroke-width="1"/>
+        <circle cx="120" cy="120" r="6" fill="currentColor"/>
+        <path d="M120 4v22M120 214v22M4 120h22M214 120h22" stroke="currentColor" stroke-width="1"/>
+      </svg>
+    </div>
+    <div class="container results-inner">
+      <p class="section-label light fade-in" data-i18n="results.label">OBJETIVOS DEL PILOTO</p>
+      <h2 class="section-heading light fade-in" data-delay="1" data-i18n="results.heading">Objetivos del Piloto (Validación en Curso)</h2>
+
+      <div class="results-grid">
+        <div class="result-card fade-in" data-delay="2">
+          <div class="result-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12a8 8 0 1 1-2.6-5.9"/><path d="M20 4v5h-5"/></svg></div>
+          <span class="result-metric" data-i18n="results.r1.metric">Objetivo ≤ 5%</span>
+          <h3 data-i18n="results.r1.title">Tasa de retrabajo de armadura</h3>
+          <p class="result-compare">
+            <span class="result-old" data-i18n="results.r1.old">Industria 15-25%</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            <span class="result-new" data-i18n="results.r1.new">Objetivo ≤ 5%</span>
+          </p>
+        </div>
+        <div class="result-card fade-in" data-delay="3">
+          <div class="result-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l3 2"/><path d="M9 2h6M12 2v3"/></svg></div>
+          <span class="result-metric" data-i18n="results.r2.metric">Objetivo &lt; 1 h</span>
+          <h3 data-i18n="results.r2.title">Horas de estimación</h3>
+          <p class="result-compare">
+            <span class="result-old" data-i18n="results.r2.old">Hoy 8-12 h</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            <span class="result-new" data-i18n="results.r2.new">Objetivo &lt; 1 h</span>
+          </p>
+        </div>
+        <div class="result-card fade-in" data-delay="4">
+          <div class="result-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/><path d="M8.5 14.5 11 17l4.5-5"/></svg></div>
+          <span class="result-metric" data-i18n="results.r3.metric">Objetivo mismo día</span>
+          <h3 data-i18n="results.r3.title">Ciclo de inspección</h3>
+          <p class="result-compare">
+            <span class="result-old" data-i18n="results.r3.old">Hoy 3-5 días</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            <span class="result-new" data-i18n="results.r3.new">Objetivo mismo día</span>
+          </p>
+        </div>
+        <div class="result-card fade-in" data-delay="5">
+          <div class="result-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></div>
+          <span class="result-metric" data-i18n="results.r4.metric">Objetivo ≤ 2%</span>
+          <h3 data-i18n="results.r4.title">Merma de material</h3>
+          <p class="result-compare">
+            <span class="result-old" data-i18n="results.r4.old">Hoy 5-8%</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            <span class="result-new" data-i18n="results.r4.new">Objetivo ≤ 2%</span>
+          </p>
+        </div>
+      </div>
+
+      <div class="results-math fade-in" data-delay="2">
+        <h3 data-i18n="results.math.title">Las cuentas, con sus supuestos</h3>
+        <p class="results-math-note" data-i18n="results.math.assume">Ejemplo ilustrativo, no un resultado medido. Supone 20 juegos de planos al mes, 10 horas cada uno a mano (punto medio de 8–12), el objetivo de 1 hora y US$20 por hora de coste total.</p>
+        <dl class="results-math-grid">
+          <div><dt data-i18n="results.math.l1">Horas recuperadas al mes</dt><dd data-i18n="results.math.v1">180 h</dd></div>
+          <div><dt data-i18n="results.math.l2">Horas recuperadas al año</dt><dd data-i18n="results.math.v2">2.160 h</dd></div>
+          <div><dt data-i18n="results.math.l3">Coste laboral evitado al año</dt><dd data-i18n="results.math.v3">US$ 43.200</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ADVANTAGE ===== -->
+  <section class="advantage" id="advantage">
+    <svg class="advantage-illustration" viewBox="0 0 240 240" aria-hidden="true">
+      <circle cx="90" cy="120" r="70" fill="none" stroke="currentColor" stroke-width="1"/>
+      <circle cx="160" cy="120" r="70" fill="none" stroke="currentColor" stroke-width="1"/>
+    </svg>
+    <div class="container">
+      <p class="section-label fade-in" data-i18n="advantage.label">VENTAJA COMPETITIVA</p>
+      <h2 class="section-heading fade-in" data-delay="1" data-i18n="advantage.heading">Por Qué Elegir SetTime</h2>
+
+      <div class="compare-table-wrap fade-in" data-delay="2">
+        <table class="compare-table">
+          <thead>
+            <tr>
+              <th data-i18n="advantage.th1">Enfoque</th>
+              <th data-i18n="advantage.th2">Ventaja</th>
+              <th data-i18n="advantage.th3">Desventaja</th>
+              <th data-i18n="advantage.th4">Diferencia SetTime</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-i18n="advantage.r1.method">Lectura manual de planos 2D</td>
+              <td data-i18n="advantage.r1.pro">Flujo de trabajo conocido</td>
+              <td data-i18n="advantage.r1.con">Propenso a errores, sin verificación en campo</td>
+              <td><span class="edge-badge" data-i18n="advantage.r1.edge">Análisis automático + alineación RA (en desarrollo)</span></td>
+            </tr>
+            <tr>
+              <td data-i18n="advantage.r2.method">Visores BIM (Navisworks)</td>
+              <td data-i18n="advantage.r2.pro">Visualización 3D</td>
+              <td data-i18n="advantage.r2.con">Herramienta de oficina, no llega a obra</td>
+              <td><span class="edge-badge" data-i18n="advantage.r2.edge">RA llevada a la losa (en desarrollo)</span></td>
+            </tr>
+            <tr>
+              <td data-i18n="advantage.r3.method">Inspección manual por muestreo</td>
+              <td data-i18n="advantage.r3.pro">Juicio de un inspector experimentado</td>
+              <td data-i18n="advantage.r3.con">Muestreo limitado, a menudo tras el vertido</td>
+              <td><span class="edge-badge" data-i18n="advantage.r3.edge">Verificación continua con IA (en desarrollo)</span></td>
+            </tr>
+            <tr>
+              <td data-i18n="advantage.r4.method">Estimación manual</td>
+              <td data-i18n="advantage.r4.pro">Se ajusta a los hábitos existentes</td>
+              <td data-i18n="advantage.r4.con">Lento, propenso a errores, caos de versiones</td>
+              <td><span class="edge-badge" data-i18n="advantage.r4.edge">Del plano a la estimación en segundos</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="moats">
+        <div class="moat fade-in" data-delay="3">
+          <div class="moat-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5.5" rx="7" ry="2.5"/><path d="M5 5.5v6c0 1.4 3.1 2.5 7 2.5s7-1.1 7-2.5v-6"/><path d="M5 11.5v6c0 1.4 3.1 2.5 7 2.5s7-1.1 7-2.5v-6"/></svg></div>
+          <h3 data-i18n="advantage.moat1.title">Red de Datos As-Built</h3>
+          <p data-i18n="advantage.moat1.desc">Cada obra suma datos as-built que afinan el modelo (en desarrollo) — un foso de datos específico de Taiwán</p>
+        </div>
+        <div class="moat fade-in" data-delay="4">
+          <div class="moat-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.7-6.2 10-6.2S22 12 22 12s-3.7 6.2-10 6.2S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg></div>
+          <h3 data-i18n="advantage.moat2.title">Modelos de Visión Locales</h3>
+          <p data-i18n="advantage.moat2.desc">Modelos de verificación entrenados en obras taiwanesas con especificaciones y prácticas locales de armadura (en desarrollo)</p>
+        </div>
+        <div class="moat fade-in" data-delay="5">
+          <div class="moat-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V9l7-5 7 5v12"/><path d="M9.5 21v-6h5v6"/></svg></div>
+          <h3 data-i18n="advantage.moat3.title">Relaciones con Obra Pública</h3>
+          <p data-i18n="advantage.moat3.desc">Respalda las necesidades de revisión de auditoría de obra pública (en desarrollo); ayuda a definir estándares de registro as-built para obras inteligentes</p>
+        </div>
+        <div class="moat fade-in" data-delay="6">
+          <div class="moat-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6.5" r="2.2"/><circle cx="18" cy="6.5" r="2.2"/><circle cx="12" cy="18" r="2.2"/><path d="M7.7 7.9 10.4 16.2M16.3 7.9 13.6 16.2M8.2 6.5h7.6"/></svg></div>
+          <h3 data-i18n="advantage.moat4.title">Red de Fabricantes y Contratistas</h3>
+          <p data-i18n="advantage.moat4.desc">Motor propio de automatización de planos de taller de armadura, conectado directamente con la cadena existente de fabricantes y contratistas</p>
+        </div>
+      </div>
+    </div>
+    <div class="container section-cta fade-in">
+      <a href="#pilot" class="cta-pill">
+        <span data-i18n="cta.pilot">Recibe gratis tu lista de materiales en 24 h</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section class="faq" id="faq">
+    <div class="container">
+      <p class="section-label fade-in" data-i18n="faq.label">FAQ Preguntas frecuentes</p>
+      <h2 class="section-heading fade-in" data-delay="1" data-i18n="faq.heading">Preguntas frecuentes</h2>
+      <p class="faq-updated fade-in" data-delay="1" data-i18n="faq.updated">Última actualización: 2026-09-13</p>
+
+      <div class="faq-list">
+        <details class="faq-item fade-in" data-delay="2">
+          <summary data-i18n="faq.q1.q">¿Qué es SetTime?</summary>
+          <p data-i18n="faq.q1.a">SetTime es el producto de construcción/armadura de Kairos.ai. Lo que ya está disponible es la automatización de estimación de armadura: convierte planos estructurales en planos de taller y datos de listas de materiales para estimación y fabricación. La guía de RA en campo y la verificación as-built con IA son módulos posteriores en la misma hoja de ruta, en desarrollo.</p>
+        </details>
+        <details class="faq-item fade-in" data-delay="3">
+          <summary data-i18n="faq.q2.q">¿Qué puede hacer SetTime hoy?</summary>
+          <p data-i18n="faq.q2.a">El Sistema de Automatización de Estimación de Armadura ya está disponible: un plugin para AutoCAD 2021 y una app de escritorio multiplataforma que convierte planos estructurales directamente en planos de taller y una lista de materiales (.xlsm), compatible con las herramientas de macros del fabricante, con reconocimiento de vigas/columnas que cumple el umbral de aceptación. La guía de RA en campo, la verificación as-built con IA y la cadena de auditoría de cumplimiento legal están en desarrollo.</p>
+        </details>
+        <details class="faq-item fade-in" data-delay="4">
+          <summary data-i18n="faq.q3.q">¿Para quién es SetTime?</summary>
+          <p data-i18n="faq.q3.a">Empresas constructoras, fabricantes de armadura, ingenierías estructurales y entidades públicas que necesitan un registro as-built auditable.</p>
+        </details>
+        <details class="faq-item fade-in" data-delay="5">
+          <summary data-i18n="faq.q4.q">¿Cómo solicito el piloto gratuito?</summary>
+          <p data-i18n="faq.q4.a">Completa el formulario de piloto gratuito con tu nombre, empresa, email, país y rol — nos pondremos en contacto para coordinar la implementación. Envíanos un plano estructural y te devolveremos tu lista de materiales en 24 horas desde que lo recibamos.</p>
+        </details>
+        <details class="faq-item fade-in" data-delay="6">
+          <summary data-i18n="faq.q5.q">¿Quién desarrolla SetTime?</summary>
+          <p data-i18n="faq.q5.a">SetTime es desarrollado por Kairos.ai, enfocado hoy en el mercado de construcción de Taiwán y el trabajo de armadura, con planes de expansión a sectores afines como mecanizado CNC, moldes y soldadura.</p>
+        </details>
+        <details class="faq-item fade-in" data-delay="7">
+          <summary data-i18n="faq.q6.q">¿La cadena de auditoría garantiza el cumplimiento legal?</summary>
+          <p data-i18n="faq.q6.a">No, y esta función todavía está en desarrollo. La cadena de auditoría es un mecanismo técnico de detección de manipulaciones (cadena de hash SHA-256) que detecta alteraciones o eliminaciones; no es una certificación de cumplimiento con ninguna ley, normativa o requisito de contratación pública específicos. Las obligaciones reales de cumplimiento dependen de la legislación aplicable y de los términos contractuales; consulte con su propio asesor legal. Nada en esta página constituye asesoramiento legal.</p>
+        </details>
+      </div>
+    </div>
+    <div class="container section-cta fade-in">
+      <a href="#pilot" class="cta-pill">
+        <span data-i18n="cta.pilot">Recibe gratis tu lista de materiales en 24 h</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- ===== PILOT (free pilot application) ===== -->
+  <section class="pilot" id="pilot">
+    <div class="pilot-inner">
+      <p class="section-label light fade-in" data-i18n="pilot.label">PILOTO GRATUITO</p>
+      <h2 class="section-heading light fade-in" data-delay="1" data-i18n="pilot.heading">Envía un plano y recibe tu lista de materiales en 24 horas</h2>
+      <p class="contact-desc fade-in" data-delay="2" data-i18n="pilot.desc">Déjanos tus datos. Te responderemos cómo compartir un plano estructural y te enviaremos tu lista de materiales en 24 horas desde que lo recibamos.</p>
+      <form class="contact-form pilot-form fade-in" data-delay="3" id="pilotForm">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="pilotName" data-i18n="contact.name">Nombre</label>
+            <input type="text" id="pilotName" name="name" required autocomplete="name" placeholder="Tu nombre" data-i18n-placeholder="contact.name.placeholder">
+          </div>
+          <div class="form-group">
+            <label for="pilotCompany" data-i18n="pilot.company">Empresa</label>
+            <input type="text" id="pilotCompany" name="company" required autocomplete="organization" placeholder="Nombre de tu empresa" data-i18n-placeholder="pilot.company.placeholder">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="pilotEmail" data-i18n="contact.email">Correo electrónico</label>
+            <input type="email" id="pilotEmail" name="email" required autocomplete="email" placeholder="you@example.com" data-i18n-placeholder="contact.email.placeholder">
+          </div>
+          <div class="form-group">
+            <label for="pilotCountry" data-i18n="pilot.country">País</label>
+            <input type="text" id="pilotCountry" name="country" required autocomplete="country-name" placeholder="p. ej., España" data-i18n-placeholder="pilot.country.placeholder">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="pilotRole" data-i18n="contact.role">Rol</label>
+          <select id="pilotRole" name="role" required>
+            <option value="" disabled selected data-i18n="contact.role.placeholder">Selecciona</option>
+            <option value="contractor" data-i18n="contact.role.contractor">Contratista</option>
+            <option value="fabricator" data-i18n="contact.role.fabricator">Taller de Armadura</option>
+            <option value="engineer" data-i18n="contact.role.engineer">Ingeniería Estructural</option>
+            <option value="developer" data-i18n="contact.role.developer">Promotor / Propietario</option>
+            <option value="government" data-i18n="contact.role.government">Entidad Pública</option>
+            <option value="investor" data-i18n="contact.role.investor">Inversor</option>
+            <option value="other" data-i18n="contact.role.other">Otro</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="pilotNotes" data-i18n="pilot.notes">Notas (opcional)</label>
+          <textarea id="pilotNotes" name="notes" rows="3" placeholder="Tipo de proyecto, problemas actuales, qué quieres validar…" data-i18n-placeholder="pilot.notes.placeholder"></textarea>
+        </div>
+        <!-- Honeypot: hidden from people, filled in by bots. script.js drops any submission where it's non-empty, and FormSubmit's _honey does the same server-side. -->
+        <div class="form-honeypot" aria-hidden="true">
+          <label for="pilotHoney">Leave this field empty</label>
+          <input type="text" id="pilotHoney" name="_honey" tabindex="-1" autocomplete="off">
+        </div>
+        <button type="submit" class="form-submit">
+          <span data-i18n="pilot.submit">Solicitar Piloto Gratuito</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+        <p class="form-status" id="pilotStatus" role="status" aria-live="polite" hidden><span id="pilotStatusText"></span> <a id="pilotMailtoLink" class="form-status-link" hidden></a></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section class="contact" id="contact">
+    <div class="contact-inner">
+      <div class="contact-info fade-in">
+        <p class="section-label light" data-i18n="contact.label">CONTÁCTANOS</p>
+        <h2 class="section-heading light" data-i18n="contact.heading">Construyamos Juntos<br>Obras Verificables</h2>
+        <p class="contact-desc" data-i18n="contact.desc">Contratistas, talleres de fabricación, ingenieros estructurales, promotores, entidades públicas, inversores — queremos hablar con cualquiera que le importe hacer bien la ejecución.</p>
+        <p class="contact-desc-en" data-i18n="contact.desc-en" style="display:none"></p>
+      </div>
+      <form class="contact-form fade-in" data-delay="2" id="contactForm">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name" data-i18n="contact.name">Nombre</label>
+            <input type="text" id="name" name="name" required placeholder="Tu nombre" data-i18n-placeholder="contact.name.placeholder">
+          </div>
+          <div class="form-group">
+            <label for="email" data-i18n="contact.email">Correo electrónico</label>
+            <input type="email" id="email" name="email" required placeholder="you@example.com" data-i18n-placeholder="contact.email.placeholder">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="role" data-i18n="contact.role">Rol</label>
+          <select id="role" name="role" required>
+            <option value="" disabled selected data-i18n="contact.role.placeholder">Selecciona</option>
+            <option value="contractor" data-i18n="contact.role.contractor">Contratista</option>
+            <option value="fabricator" data-i18n="contact.role.fabricator">Taller de Armadura</option>
+            <option value="engineer" data-i18n="contact.role.engineer">Ingeniería Estructural</option>
+            <option value="developer" data-i18n="contact.role.developer">Promotor / Propietario</option>
+            <option value="government" data-i18n="contact.role.government">Entidad Pública</option>
+            <option value="investor" data-i18n="contact.role.investor">Inversor</option>
+            <option value="other" data-i18n="contact.role.other">Otro</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="message" data-i18n="contact.message">Mensaje</label>
+          <textarea id="message" name="message" rows="4" maxlength="1200" placeholder="Escribe tu mensaje..." data-i18n-placeholder="contact.message.placeholder"></textarea>
+        </div>
+        <button type="submit" class="form-submit">
+          <span data-i18n="contact.submit">Enviar Mensaje</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <img class="logo-mark" src="/assets/settime-logo-64.jpg" alt="SetTime" width="32" height="32">
+        <a href="https://www.kairosaitech.com" target="_blank" rel="noopener" data-i18n="footer.company">Kairos.ai</a>
+      </div>
+      <div class="footer-contact">
+        <a href="https://www.kairosaitech.com" target="_blank" rel="noopener" class="footer-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          <span>www.kairosaitech.com</span>
+        </a>
+        <a href="mailto:kairos.ai.tech@gmail.com" class="footer-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <span>kairos.ai.tech@gmail.com</span>
+        </a>
+      </div>
+      <div class="footer-ai">
+        <span data-i18n="footer.ai">Resumir con IA:</span>
+        <a href="https://chatgpt.com/?q=Summarize%20https%3A%2F%2Fsettime.kairosaitech.com%2F%20%3A%20what%20SetTime%20does%20for%20rebar%20estimation%2C%20and%20what%20is%20shipping%20versus%20in%20development." target="_blank" rel="noopener" class="footer-link">ChatGPT</a>
+        <a href="https://claude.ai/new?q=Summarize%20https%3A%2F%2Fsettime.kairosaitech.com%2F%20%3A%20what%20SetTime%20does%20for%20rebar%20estimation%2C%20and%20what%20is%20shipping%20versus%20in%20development." target="_blank" rel="noopener" class="footer-link">Claude</a>
+        <a href="https://www.perplexity.ai/search?q=Summarize%20https%3A%2F%2Fsettime.kairosaitech.com%2F%20%3A%20what%20SetTime%20does%20for%20rebar%20estimation%2C%20and%20what%20is%20shipping%20versus%20in%20development." target="_blank" rel="noopener" class="footer-link">Perplexity</a>
+      </div>
+      <p class="footer-rights" data-i18n="footer.rights">© 2026 SetTime. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="/vendor/gsap.min.js" defer></script>
+  <script src="/vendor/ScrollTrigger.min.js" defer></script>
+  <script src="/vendor/lenis.min.js" defer></script>
+  <script src="/i18n.js" defer></script>
+  <script src="/script.js" defer></script>
+  <script src="/effects.js" defer></script>
+  <script src="/demo.js" defer></script>
+  <script type="module" src="/hero3d.js"></script>
+</body>
+</html>

@@ -1,6 +1,6 @@
 # SetTime
 
-Last updated: 2026-10-22
+Last updated: 2026-10-23
 
 > SetTime is AI rebar estimation automation software built by Kairos.ai (https://www.kairosaitech.com). Shipping today: it turns a structural drawing into rebar shop drawings and a material-list workbook (.xlsm) via an AutoCAD 2021 plugin and a cross-platform desktop app. AR field guidance and AI as-built verification are later modules on the same roadmap, in development. Built for the Taiwanese construction market (營造/鋼筋施工).
 
@@ -16,6 +16,7 @@ Last updated: 2026-10-22
 - Market: Taiwan construction (rebar/structural work) today.
 - Contact: kairos.ai.tech@gmail.com
 - Free pilot: https://settime.kairosaitech.com/#pilot
+- Languages: the same page is published as separate URLs per language — zh-Hant https://settime.kairosaitech.com/ (default), English https://settime.kairosaitech.com/en/, 日本語 /ja/, Español /es/, Français /fr/, Deutsch /de/, Italiano /it/, Português /pt/ (all under https://settime.kairosaitech.com). Prefer the URL in the reader's language when citing.
 - Former name: the project was previously called "AI學徒 iTech"; the current and only product name is SetTime.
 
 ## Product

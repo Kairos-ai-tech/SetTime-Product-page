@@ -5,10 +5,17 @@
         xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
   <url>
     <loc>https://settime.kairosaitech.com/</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://settime.kairosaitech.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://settime.kairosaitech.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://settime.kairosaitech.com/ja/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://settime.kairosaitech.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://settime.kairosaitech.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://settime.kairosaitech.com/de/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://settime.kairosaitech.com/it/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://settime.kairosaitech.com/pt/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://settime.kairosaitech.com/"/>
     <image:image>
       <image:loc>https://settime.kairosaitech.com/assets/settime-og-card.jpg</image:loc>
@@ -28,5 +35,110 @@
       <video:publication_date>2026-10-20</video:publication_date>
       <video:family_friendly>yes</video:family_friendly>
     </video:video>
+  </url>
+  <url>
+    <loc>https://settime.kairosaitech.com/en/</loc>
+    <lastmod>2026-10-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://settime.kairosaitech.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://settime.kairosaitech.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://settime.kairosaitech.com/ja/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://settime.kairosaitech.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://settime.kairosaitech.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://settime.kairosaitech.com/de/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://settime.kairosaitech.com/it/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://settime.kairosaitech.com/pt/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://settime.kairosaitech.com/"/>
+  </url>
+  <url>
+    <loc>https://settime.kairosaitech.com/ja/</loc>
+    <lastmod>2026-10-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://settime.kairosaitech.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://settime.kairosaitech.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://settime.kairosaitech.com/ja/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://settime.kairosaitech.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://settime.kairosaitech.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://settime.kairosaitech.com/de/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://settime.kairosaitech.com/it/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://settime.kairosaitech.com/pt/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://settime.kairosaitech.com/"/>
+  </url>
+  <url>
+    <loc>https://settime.kairosaitech.com/es/</loc>
+    <lastmod>2026-10-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://settime.kairosaitech.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://settime.kairosaitech.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://settime.kairosaitech.com/ja/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://settime.kairosaitech.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://settime.kairosaitech.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://settime.kairosaitech.com/de/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://settime.kairosaitech.com/it/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://settime.kairosaitech.com/pt/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://settime.kairosaitech.com/"/>
+  </url>
+  <url>
+    <loc>https://settime.kairosaitech.com/fr/</loc>
+    <lastmod>2026-10-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://settime.kairosaitech.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://settime.kairosaitech.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://settime.kairosaitech.com/ja/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://settime.kairosaitech.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://settime.kairosaitech.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://settime.kairosaitech.com/de/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://settime.kairosaitech.com/it/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://settime.kairosaitech.com/pt/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://settime.kairosaitech.com/"/>
+  </url>
+  <url>
+    <loc>https://settime.kairosaitech.com/de/</loc>
+    <lastmod>2026-10-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://settime.kairosaitech.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://settime.kairosaitech.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://settime.kairosaitech.com/ja/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://settime.kairosaitech.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://settime.kairosaitech.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://settime.kairosaitech.com/de/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://settime.kairosaitech.com/it/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://settime.kairosaitech.com/pt/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://settime.kairosaitech.com/"/>
+  </url>
+  <url>
+    <loc>https://settime.kairosaitech.com/it/</loc>
+    <lastmod>2026-10-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://settime.kairosaitech.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://settime.kairosaitech.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://settime.kairosaitech.com/ja/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://settime.kairosaitech.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://settime.kairosaitech.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://settime.kairosaitech.com/de/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://settime.kairosaitech.com/it/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://settime.kairosaitech.com/pt/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://settime.kairosaitech.com/"/>
+  </url>
+  <url>
+    <loc>https://settime.kairosaitech.com/pt/</loc>
+    <lastmod>2026-10-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://settime.kairosaitech.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://settime.kairosaitech.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://settime.kairosaitech.com/ja/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://settime.kairosaitech.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://settime.kairosaitech.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://settime.kairosaitech.com/de/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://settime.kairosaitech.com/it/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://settime.kairosaitech.com/pt/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://settime.kairosaitech.com/"/>
   </url>
 </urlset>

@@ -30,7 +30,7 @@ const OG_LOCALE = { en: "en_US", ja: "ja_JP", es: "es_ES", fr: "fr_FR", de: "de_
 
 const META = {
   en: {
-    title: "SetTime | AI Rebar Estimation",
+    title: "SetTime | AI Rebar Takeoff",
     description: "SetTime replaces the outsourced rebar takeoff: structural drawings in, bar schedule (.xlsm) and shop drawings (.dwg/DXF) out for beams, columns, slabs and walls, via an AutoCAD 2021 plugin and desktop app. Drawing prep, foundations and a 3D check are in development. Built by Kairos.ai. Send one drawing, get a free takeoff within 24 hours.",
   },
   ja: {
@@ -38,7 +38,7 @@ const META = {
     description: "SetTime は外注の鉄筋積算を置き換えます：構造施工図から、梁・柱・スラブ・壁の加工表（.xlsm）と加工図（.dwg/DXF）を作成。AutoCAD 2021 プラグインとデスクトップ版に対応。図面整理、基礎、3D チェックは開発中。Kairos.ai 開発。図面を 1 枚送るだけで、24 時間以内に無料で積算します。",
   },
   es: {
-    title: "SetTime | Estimación de armaduras con IA",
+    title: "SetTime | Cómputo de armaduras con IA",
     description: "SetTime sustituye el cómputo de armaduras subcontratado: del plano estructural salen la lista (.xlsm) y los planos de taller (.dwg/DXF) de vigas, columnas, losas y muros, con plugin de AutoCAD 2021 y app de escritorio. Preparación de planos, cimentaciones y revisión 3D en desarrollo. Hecho por Kairos.ai. Envíe un plano y reciba un cómputo gratis en 24 horas.",
   },
   fr: {
@@ -54,7 +54,7 @@ const META = {
     description: "SetTime sostituisce il computo armature esternalizzato: dal disegno strutturale ricava distinta (.xlsm) e disegni di officina (.dwg/DXF) di travi, pilastri, solai e pareti, con plugin AutoCAD 2021 e app desktop. Preparazione dei disegni, fondazioni e verifica 3D in sviluppo. Creato da Kairos.ai. Invii un disegno e riceva un computo gratuito entro 24 ore.",
   },
   pt: {
-    title: "SetTime | Estimativa de armaduras com IA",
+    title: "SetTime | Levantamento de armaduras com IA",
     description: "O SetTime substitui o levantamento de armaduras terceirizado: do projeto estrutural saem a lista (.xlsm) e os desenhos de oficina (.dwg/DXF) de vigas, pilares, lajes e paredes, com plugin do AutoCAD 2021 e app desktop. Preparação dos desenhos, fundações e verificação 3D em desenvolvimento. Feito pela Kairos.ai. Envie um projeto e receba um levantamento grátis em 24 horas.",
   },
 };

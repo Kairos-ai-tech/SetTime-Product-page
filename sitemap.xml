@@ -29,9 +29,9 @@
     <video:video>
       <video:thumbnail_loc>https://settime.kairosaitech.com/assets/demo-poster.jpg</video:thumbnail_loc>
       <video:title>See SetTime in action: structural drawing to rebar bar schedule and shop drawings</video:title>
-      <video:description>Product walkthrough of SetTime: upload a structural drawing, get the rebar bar schedule (.xlsm) and shop drawings in about a minute.</video:description>
+      <video:description>Product walkthrough of SetTime: upload a structural drawing, get the rebar bar schedule (.xlsm) and shop drawings in under a minute.</video:description>
       <video:content_loc>https://settime.kairosaitech.com/assets/demo.mp4</video:content_loc>
-      <video:duration>67</video:duration>
+      <video:duration>44</video:duration>
       <video:publication_date>2026-10-20</video:publication_date>
       <video:family_friendly>yes</video:family_friendly>
     </video:video>

@@ -70,7 +70,7 @@ outsourced takeoff today, starting with the US and Europe.
 |---|---|---|---|
 | Offshore outsourced takeoff | Low per-tonne rate | Days to deliver; checking depends on people | One drawing back in 24 hours, every flag listed |
 | AI takeoff with human QA | Fast first draft | Quantities first; bar schedule and shop drawings not listed | Takeoff, bar schedule and shop drawings in one run |
-| CAD add-ons run by an operator | Familiar to local detailers | Needs a CAD seat and a trained operator | No CAD seat: upload a drawing, review the flags |
+| CAD add-ons run by an operator | Familiar to local detailers | Needs a CAD seat and a trained operator | Upload a drawing, review the flags |
 | 3D BIM detailing suites | Deep detailing, machine formats | Needs a 3D model first | Starts from the 2D drawing you already have |
 
 ## What Sets It Apart

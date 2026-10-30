@@ -466,14 +466,14 @@
         </div>
         <div class="loss-item fade-in" data-delay="1">
           <span class="loss-number" data-count="38">0</span><span class="loss-unit" data-i18n="problem.loss2.unit">百万米ドル</span>
-          <span class="loss-label" data-i18n="problem.loss2.label">年間の上限：オフショア単価（1 トンあたり US$2.3〜4.2）で積算を外注した場合</span>
+          <span class="loss-label" data-i18n="problem.loss2.label">公表のオフショア単価（1 トンあたり US$2.3〜4.2）で積算を外注した場合の年間費用</span>
         </div>
         <div class="loss-item fade-in" data-delay="2">
           <span class="loss-number" data-count="235">0</span><span class="loss-unit" data-i18n="problem.loss3.unit">百万米ドル</span>
-          <span class="loss-label" data-i18n="problem.loss3.label">年間の上限：オーストラリアの外注単価（1 トンあたり約 US$19.5〜26）の場合</span>
+          <span class="loss-label" data-i18n="problem.loss3.label">公表のオーストラリア単価（1 トンあたり約 US$19.5〜26、簡易な住宅工事）で計算した場合の年間費用</span>
         </div>
       </div>
-      <p class="crisis-source loss-source" data-i18n="problem.loss.fx">概算：米国の使用量に公表の 1 トン単価を掛けたものです。すべてが外注されるわけではないため、上限であって市場規模ではありません。 CRSI の使用量は 800 万トンと 900 万トンの両方の記載があり、ここでは 900 万トンを使っています。</p>
+      <p class="crisis-source loss-source" data-i18n="problem.loss.fx">概算：米国の使用量に公表の 1 トン単価を掛けたものです。すべてが外注されるわけではなく、複雑な工事は 1 トンあたりの費用も高くなるため、桁の目安であり市場規模ではありません。CRSI の使用量は 800 万トンと 900 万トンの両方の記載があり、ここでは 900 万トンを使っています。</p>
     </div>
   </section>
 
@@ -572,8 +572,6 @@
           </div>
           <svg class="demo-svg rm-svg" viewBox="0 0 640 470" role="group" aria-labelledby="demo-svg-title">
             <title id="demo-svg-title" data-i18n="demo.drawing.aria">サンプル構造モデル：柱 C1、梁 B1、スラブ S1（平面と3Dを切り替え可能）</title>
-            <defs>
-            </defs>
             <rect width="640" height="470" fill="url(#tech-grid)"/>
             <g class="rm-dims" stroke="var(--gold)" stroke-width="1" fill="none">
               <path class="rm-dim-path"/>
@@ -852,10 +850,10 @@
         <div class="tech-panel-content">
           <h3 data-i18n="product.panel.title">鉄筋積算自動化システム</h3>
           <p class="tech-en" data-i18n="product.panel.en">Rebar Estimation Automation System</p>
-          <p data-i18n="product.panel.desc">AutoCAD 2021 プラグインとクロスプラットフォームのデスクトップ版で、構造施工図を施工図と計量表 (.xlsm) に直接変換。梁柱の認識精度は契約上の合格基準を満たし、顧客既存のマクロツールにそのまま取り込み可能。</p>
+          <p data-i18n="product.panel.desc">AutoCAD 2021 プラグインとクロスプラットフォームのデスクトップ版が、梁・柱の図面を加工図と加工表（.xlsm）に直接変換。出力は再設定なしでお客様既存のマクロにそのまま取り込めます。</p>
           <div class="tech-metrics">
             <span class="correct" data-i18n="product.m1">現在は梁と柱。スラブ・壁・基礎は次の段階</span>
-            <span data-i18n="product.m2">施工図 → 計量表 全自動</span>
+            <span data-i18n="product.m2">施工図 → 加工表、不備は確認用に表示</span>
             <span data-i18n="product.m3">GTA / CCM マクロにネイティブ対応</span>
             <span data-i18n="product.m4">調整可能な Style Guide ルールエンジン</span>
           </div>
@@ -879,7 +877,7 @@
         <div class="moat fade-in" data-delay="6">
           <div class="moat-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="1.5"/><path d="M3 9h18M9 4v12"/><path d="M12 16.5v4.5m0 0-2.2-2.2M12 21l2.2-2.2"/></svg></div>
           <h3 data-i18n="product.moat3.title">計量表の出力</h3>
-          <p data-i18n="product.moat3.desc">符号・長さ・重量を含む加工表を、既存のマクロ形式の .xlsm で出力。加工機向けの BVBS 出力は計画中です。</p>
+          <p data-i18n="product.moat3.desc">符号・長さ・重量を含む加工表を、既存のマクロ形式の .xlsm で出力。加工機向けの BVBS 出力は開発中です。</p>
         </div>
         <div class="moat fade-in" data-delay="7">
           <div class="moat-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h4m-4 6h4m-4 6h4"/><path d="M11 6h9M11 12h9M11 18h9"/></svg></div>
@@ -1043,8 +1041,8 @@
         <h3 data-i18n="results.math.title">試算とその前提</h3>
         <p class="results-math-note" data-i18n="results.math.assume">概算例であり、実測結果ではありません。前提：月 20 件の図面、手作業は 1 件 10 時間（8〜12 時間の中間値）、SetTime では確認作業を含め 2 時間、時給 US$37（米国の積算担当の賃金中央値、福利厚生は含まず）。</p>
         <dl class="results-math-grid">
-          <div><dt data-i18n="results.math.l1">月間の削減工数</dt><dd data-i18n="results.math.v1">160 時間</dd></div>
-          <div><dt data-i18n="results.math.l2">年間の削減工数</dt><dd data-i18n="results.math.v2">1,920 時間</dd></div>
+          <div><dt data-i18n="results.math.l1">月間の削減工数</dt><dd data-i18n="results.math.v1">160時間</dd></div>
+          <div><dt data-i18n="results.math.l2">年間の削減工数</dt><dd data-i18n="results.math.v2">1,920時間</dd></div>
           <div><dt data-i18n="results.math.l3">年間の人件費削減</dt><dd data-i18n="results.math.v3">US$ 71,040</dd></div>
         </dl>
       </div>
@@ -1088,7 +1086,7 @@
               <td data-i18n="advantage.r3.method">オペレーター操作の CAD アドオン</td>
               <td data-i18n="advantage.r3.pro">地元の作図者に馴染みがある</td>
               <td data-i18n="advantage.r3.con">CAD ライセンスと訓練済みの担当者が必要</td>
-              <td><span class="edge-badge" data-i18n="advantage.r3.edge">CAD ライセンス不要：図面をアップして確認するだけ</span></td>
+              <td><span class="edge-badge" data-i18n="advantage.r3.edge">図面をアップして、不備を確認するだけ</span></td>
             </tr>
             <tr>
               <td data-i18n="advantage.r4.method">3D BIM 配筋ソフト</td>
@@ -1114,7 +1112,7 @@
         <div class="moat fade-in" data-delay="5">
           <div class="moat-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="12" height="12" rx="1.5"/><path d="M15 12h6m-3-3 3 3-3 3"/></svg></div>
           <h3 data-i18n="advantage.moat3.title">加工機に渡せる出力</h3>
-          <p data-i18n="advantage.moat3.desc">加工業者がそのまま使える加工表と加工図。BVBS 機械ファイルは計画中</p>
+          <p data-i18n="advantage.moat3.desc">加工業者がそのまま使える加工表と加工図。BVBS 機械ファイルは開発中</p>
         </div>
         <div class="moat fade-in" data-delay="6">
           <div class="moat-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6.5" r="2.2"/><circle cx="18" cy="6.5" r="2.2"/><circle cx="12" cy="18" r="2.2"/><path d="M7.7 7.9 10.4 16.2M16.3 7.9 13.6 16.2M8.2 6.5h7.6"/></svg></div>
@@ -1136,7 +1134,7 @@
     <div class="container">
       <p class="section-label fade-in" data-i18n="faq.label">FAQ よくある質問</p>
       <h2 class="section-heading fade-in" data-delay="1" data-i18n="faq.heading">よくある質問</h2>
-      <p class="faq-updated fade-in" data-delay="1" data-i18n="faq.updated">最終更新日：2026-09-13</p>
+      <p class="faq-updated fade-in" data-delay="1" data-i18n="faq.updated">最終更新日：2026-10-30</p>
 
       <div class="faq-list">
         <details class="faq-item fade-in" data-delay="2">

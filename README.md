@@ -8,9 +8,9 @@ or contractor no longer has to buy the takeoff from an outsourced team.
 Every value is tagged as read from the drawing, computed, converted or
 defaulted, and every gap is flagged for a person to review.
 
-Built by [Kairos.ai](https://www.kairosaitech.com). First customers:
+Built by [Kairos.ai](https://www.kairosaitech.com). Target customers:
 rebar fabricators and detailing firms in the US and Europe that buy
-outsourced takeoff today. The engine is proven on Taiwanese (CNS) drawings.
+outsourced takeoff today. The engine is being validated on Taiwanese (CNS) drawings.
 
 ---
 
@@ -29,7 +29,7 @@ outsourced takeoff today. The engine is proven on Taiwanese (CNS) drawings.
 4. 3D check               cover, lap, anchorage, clashes, quantity cross-check    (in development)
         │
         ▼
-5. Machine output         BVBS files for bending machines                         (planned)
+5. Machine output         BVBS files for bending machines                         (in development)
 ```
 
 ## Shipping Today
@@ -79,7 +79,7 @@ outsourced takeoff today, starting with the US and Europe.
 - **Rules you can adjust** — a Style Guide rule engine fits your drawing
   conventions and code.
 - **Machine-ready output** — schedule and shop drawings the fabricator can
-  use; BVBS machine files are planned.
+  use; BVBS machine files are in development.
 - **Fabricator/contractor network** — plugs into the existing fabricator and
   contractor supply chain.
 

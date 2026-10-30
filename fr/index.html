@@ -434,7 +434,7 @@
 
       <div class="crisis-grid fade-in" data-delay="3">
         <div class="crisis-item">
-          <span class="crisis-stat" data-i18n="problem.crisis1.stat">16,900</span>
+          <span class="crisis-stat" data-i18n="problem.crisis1.stat">16 900</span>
           <p data-i18n="problem.crisis1.text">postes d'estimateurs à pourvoir chaque année aux États-Unis, sans croissance nette des effectifs (BLS)</p>
         </div>
         <div class="crisis-item">
@@ -466,14 +466,14 @@
         </div>
         <div class="loss-item fade-in" data-delay="1">
           <span class="loss-number" data-count="38">0</span><span class="loss-unit" data-i18n="problem.loss2.unit">millions de US$</span>
-          <span class="loss-label" data-i18n="problem.loss2.label">par an au plus, en externalisant le métré aux tarifs offshore (2,3–4,2 US$/t)</span>
+          <span class="loss-label" data-i18n="problem.loss2.label">par an pour externaliser le métré aux tarifs offshore publiés (2,3–4,2 US$/t)</span>
         </div>
         <div class="loss-item fade-in" data-delay="2">
           <span class="loss-number" data-count="235">0</span><span class="loss-unit" data-i18n="problem.loss3.unit">millions de US$</span>
-          <span class="loss-label" data-i18n="problem.loss3.label">par an au plus, aux tarifs australiens d'externalisation (environ 19,5–26 US$/t)</span>
+          <span class="loss-label" data-i18n="problem.loss3.label">par an à un tarif australien publié (environ 19,5–26 US$/t, travaux résidentiels simples)</span>
         </div>
       </div>
-      <p class="crisis-source loss-source" data-i18n="problem.loss.fx">Calcul illustratif : tonnage américain multiplié par les tarifs publiés par tonne. Tout n'est pas externalisé : ce sont des plafonds, pas la taille du marché. Le CRSI cite à la fois 8 et 9 millions de tonnes ; 9 est retenu ici.</p>
+      <p class="crisis-source loss-source" data-i18n="problem.loss.fx">Calcul illustratif : tonnage américain multiplié par les tarifs publiés par tonne. Tout n'est pas externalisé et les ouvrages complexes coûtent plus cher à la tonne : ce sont des ordres de grandeur, pas la taille du marché. Le CRSI cite à la fois 8 et 9 millions de tonnes ; 9 est retenu ici.</p>
     </div>
   </section>
 
@@ -572,8 +572,6 @@
           </div>
           <svg class="demo-svg rm-svg" viewBox="0 0 640 470" role="group" aria-labelledby="demo-svg-title">
             <title id="demo-svg-title" data-i18n="demo.drawing.aria">Modèle structurel d'exemple : poteau C1, poutre B1, dalle S1, commutable entre plan et 3D</title>
-            <defs>
-            </defs>
             <rect width="640" height="470" fill="url(#tech-grid)"/>
             <g class="rm-dims" stroke="var(--gold)" stroke-width="1" fill="none">
               <path class="rm-dim-path"/>
@@ -852,10 +850,10 @@
         <div class="tech-panel-content">
           <h3 data-i18n="product.panel.title">Système d'Automatisation de l'Estimation d'Armature</h3>
           <p class="tech-en" data-i18n="product.panel.en" style="display:none"></p>
-          <p data-i18n="product.panel.desc">Un plugin AutoCAD 2021 associé à une application de bureau multiplateforme convertit directement les plans de structure en plans d'atelier et en classeur de nomenclature (.xlsm). La reconnaissance poutres/poteaux atteint le seuil de précision contractuel, et la sortie s'importe nativement dans les macros existantes du client — sans nouvel outillage.</p>
+          <p data-i18n="product.panel.desc">Un plugin AutoCAD 2021 et une application de bureau multiplateforme transforment directement les plans de poutres et poteaux en plans d'atelier et en nomenclature (.xlsm). La sortie s'importe nativement dans les macros du client, sans réoutillage.</p>
           <div class="tech-metrics">
             <span class="correct" data-i18n="product.m1">Poutres et poteaux aujourd'hui ; dalles, voiles, fondations ensuite</span>
-            <span data-i18n="product.m2">Plan → nomenclature, entièrement automatique</span>
+            <span data-i18n="product.m2">Plan → nomenclature, écarts signalés pour contrôle</span>
             <span data-i18n="product.m3">Compatibilité native macros GTA / CCM</span>
             <span data-i18n="product.m4">Moteur de règles Style Guide configurable</span>
           </div>
@@ -879,7 +877,7 @@
         <div class="moat fade-in" data-delay="6">
           <div class="moat-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="1.5"/><path d="M3 9h18M9 4v12"/><path d="M12 16.5v4.5m0 0-2.2-2.2M12 21l2.2-2.2"/></svg></div>
           <h3 data-i18n="product.moat3.title">Export de la Nomenclature</h3>
-          <p data-i18n="product.moat3.desc">Nomenclature avec repères, longueurs et poids en .xlsm, au format de macros déjà utilisé par le client. La sortie BVBS pour les machines d'atelier est prévue.</p>
+          <p data-i18n="product.moat3.desc">Nomenclature avec repères, longueurs et poids en .xlsm, au format de macros déjà utilisé par le client. La sortie BVBS pour les machines d'atelier est en développement.</p>
         </div>
         <div class="moat fade-in" data-delay="7">
           <div class="moat-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h4m-4 6h4m-4 6h4"/><path d="M11 6h9M11 12h9M11 18h9"/></svg></div>
@@ -1044,8 +1042,8 @@
         <p class="results-math-note" data-i18n="results.math.assume">Exemple illustratif, pas un résultat mesuré. Hypothèses : 20 jeux de plans par mois, 10 heures chacun à la main (milieu de 8–12) contre 2 heures avec SetTime, contrôle compris, et 37 US$ de l'heure (salaire médian d'un estimateur américain, hors avantages).</p>
         <dl class="results-math-grid">
           <div><dt data-i18n="results.math.l1">Heures récupérées par mois</dt><dd data-i18n="results.math.v1">160 h</dd></div>
-          <div><dt data-i18n="results.math.l2">Heures récupérées par an</dt><dd data-i18n="results.math.v2">1,920 h</dd></div>
-          <div><dt data-i18n="results.math.l3">Coût de main-d'œuvre évité par an</dt><dd data-i18n="results.math.v3">US$ 71,040</dd></div>
+          <div><dt data-i18n="results.math.l2">Heures récupérées par an</dt><dd data-i18n="results.math.v2">1 920 h</dd></div>
+          <div><dt data-i18n="results.math.l3">Coût de main-d'œuvre évité par an</dt><dd data-i18n="results.math.v3">71 040 US$</dd></div>
         </dl>
       </div>
     </div>
@@ -1088,7 +1086,7 @@
               <td data-i18n="advantage.r3.method">Modules CAD pilotés par un opérateur</td>
               <td data-i18n="advantage.r3.pro">Familiers des dessinateurs locaux</td>
               <td data-i18n="advantage.r3.con">Exige un poste CAD et un opérateur formé</td>
-              <td><span class="edge-badge" data-i18n="advantage.r3.edge">Sans poste CAD : déposez le plan, vérifiez les points</span></td>
+              <td><span class="edge-badge" data-i18n="advantage.r3.edge">Déposez le plan, vérifiez les points</span></td>
             </tr>
             <tr>
               <td data-i18n="advantage.r4.method">Suites BIM 3D de détail d'armatures</td>
@@ -1114,7 +1112,7 @@
         <div class="moat fade-in" data-delay="5">
           <div class="moat-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="12" height="12" rx="1.5"/><path d="M15 12h6m-3-3 3 3-3 3"/></svg></div>
           <h3 data-i18n="advantage.moat3.title">Sortie Prête pour la Machine</h3>
-          <p data-i18n="advantage.moat3.desc">Nomenclature et plans d'atelier exploitables par le façonnier ; fichiers machine BVBS prévus</p>
+          <p data-i18n="advantage.moat3.desc">Nomenclature et plans d'atelier exploitables par le façonnier ; fichiers machine BVBS en développement</p>
         </div>
         <div class="moat fade-in" data-delay="6">
           <div class="moat-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6.5" r="2.2"/><circle cx="18" cy="6.5" r="2.2"/><circle cx="12" cy="18" r="2.2"/><path d="M7.7 7.9 10.4 16.2M16.3 7.9 13.6 16.2M8.2 6.5h7.6"/></svg></div>
@@ -1136,7 +1134,7 @@
     <div class="container">
       <p class="section-label fade-in" data-i18n="faq.label">FAQ Questions fréquentes</p>
       <h2 class="section-heading fade-in" data-delay="1" data-i18n="faq.heading">Questions fréquentes</h2>
-      <p class="faq-updated fade-in" data-delay="1" data-i18n="faq.updated">Dernière mise à jour : 2026-09-13</p>
+      <p class="faq-updated fade-in" data-delay="1" data-i18n="faq.updated">Dernière mise à jour : 2026-10-30</p>
 
       <div class="faq-list">
         <details class="faq-item fade-in" data-delay="2">

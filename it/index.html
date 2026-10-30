@@ -434,7 +434,7 @@
 
       <div class="crisis-grid fade-in" data-delay="3">
         <div class="crisis-item">
-          <span class="crisis-stat" data-i18n="problem.crisis1.stat">16,900</span>
+          <span class="crisis-stat" data-i18n="problem.crisis1.stat">16.900</span>
           <p data-i18n="problem.crisis1.text">posti di stimatore da coprire ogni anno negli USA, senza crescita netta degli organici (BLS)</p>
         </div>
         <div class="crisis-item">
@@ -466,14 +466,14 @@
         </div>
         <div class="loss-item fade-in" data-delay="1">
           <span class="loss-number" data-count="38">0</span><span class="loss-unit" data-i18n="problem.loss2.unit">milioni di US$</span>
-          <span class="loss-label" data-i18n="problem.loss2.label">all'anno al massimo, esternalizzando il computo a tariffe offshore (2,3–4,2 US$/t)</span>
+          <span class="loss-label" data-i18n="problem.loss2.label">all'anno per esternalizzare il computo alle tariffe offshore pubblicate (2,3–4,2 US$/t)</span>
         </div>
         <div class="loss-item fade-in" data-delay="2">
           <span class="loss-number" data-count="235">0</span><span class="loss-unit" data-i18n="problem.loss3.unit">milioni di US$</span>
-          <span class="loss-label" data-i18n="problem.loss3.label">all'anno al massimo, a tariffe australiane di esternalizzazione (circa 19,5–26 US$/t)</span>
+          <span class="loss-label" data-i18n="problem.loss3.label">all'anno a una tariffa australiana pubblicata (circa 19,5–26 US$/t, edilizia residenziale semplice)</span>
         </div>
       </div>
-      <p class="crisis-source loss-source" data-i18n="problem.loss.fx">Calcolo illustrativo: tonnellaggio USA per tariffe pubblicate per tonnellata. Non tutto è esternalizzato: sono massimali, non la dimensione del mercato. Il CRSI riporta sia 8 sia 9 milioni di tonnellate; qui si usa 9.</p>
+      <p class="crisis-source loss-source" data-i18n="problem.loss.fx">Calcolo illustrativo: tonnellaggio USA per tariffe pubblicate per tonnellata. Non tutto è esternalizzato e le opere complesse costano di più a tonnellata: sono ordini di grandezza, non la dimensione del mercato. Il CRSI riporta sia 8 sia 9 milioni di tonnellate; qui si usa 9.</p>
     </div>
   </section>
 
@@ -572,8 +572,6 @@
           </div>
           <svg class="demo-svg rm-svg" viewBox="0 0 640 470" role="group" aria-labelledby="demo-svg-title">
             <title id="demo-svg-title" data-i18n="demo.drawing.aria">Modello strutturale di esempio: pilastro C1, trave B1, soletta S1, commutabile tra pianta e 3D</title>
-            <defs>
-            </defs>
             <rect width="640" height="470" fill="url(#tech-grid)"/>
             <g class="rm-dims" stroke="var(--gold)" stroke-width="1" fill="none">
               <path class="rm-dim-path"/>
@@ -852,10 +850,10 @@
         <div class="tech-panel-content">
           <h3 data-i18n="product.panel.title">Sistema di Automazione del Computo Armature</h3>
           <p class="tech-en" data-i18n="product.panel.en" style="display:none"></p>
-          <p data-i18n="product.panel.desc">Un plugin per AutoCAD 2021 più un'app desktop multipiattaforma trasformano i disegni strutturali direttamente in disegni di officina e in un file di distinta materiali (.xlsm). Il riconoscimento di travi/pilastri supera la soglia di accuratezza contrattuale, e l'output si importa nativamente nelle macro esistenti del cliente — senza bisogno di nuovi strumenti.</p>
+          <p data-i18n="product.panel.desc">Un plugin AutoCAD 2021 e un'app desktop multipiattaforma trasformano direttamente i disegni di travi e pilastri in disegni di officina e in una distinta (.xlsm). L'output si importa in modo nativo nelle macro del cliente, senza riconfigurare nulla.</p>
           <div class="tech-metrics">
             <span class="correct" data-i18n="product.m1">Oggi travi e pilastri; poi solai, pareti, fondazioni</span>
-            <span data-i18n="product.m2">Disegno → distinta materiali, completamente automatico</span>
+            <span data-i18n="product.m2">Disegno → distinta, lacune segnalate per la verifica</span>
             <span data-i18n="product.m3">Compatibilità nativa con macro GTA / CCM</span>
             <span data-i18n="product.m4">Motore di regole Style Guide configurabile</span>
           </div>
@@ -879,7 +877,7 @@
         <div class="moat fade-in" data-delay="6">
           <div class="moat-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="1.5"/><path d="M3 9h18M9 4v12"/><path d="M12 16.5v4.5m0 0-2.2-2.2M12 21l2.2-2.2"/></svg></div>
           <h3 data-i18n="product.moat3.title">Esportazione della Distinta Materiali</h3>
-          <p data-i18n="product.moat3.desc">Distinta con posizioni, lunghezze e pesi in .xlsm, nel formato macro già usato dal cliente. L'output BVBS per le macchine di lavorazione è previsto.</p>
+          <p data-i18n="product.moat3.desc">Distinta con posizioni, lunghezze e pesi in .xlsm, nel formato macro già usato dal cliente. L'output BVBS per le macchine di lavorazione è in sviluppo.</p>
         </div>
         <div class="moat fade-in" data-delay="7">
           <div class="moat-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h4m-4 6h4m-4 6h4"/><path d="M11 6h9M11 12h9M11 18h9"/></svg></div>
@@ -1044,8 +1042,8 @@
         <p class="results-math-note" data-i18n="results.math.assume">Esempio illustrativo, non un risultato misurato. Ipotesi: 20 set di disegni al mese, 10 ore ciascuno a mano (punto medio di 8–12) contro 2 ore con SetTime, verifica inclusa, e 37 US$ l'ora (salario mediano di uno stimatore USA, benefit esclusi).</p>
         <dl class="results-math-grid">
           <div><dt data-i18n="results.math.l1">Ore recuperate al mese</dt><dd data-i18n="results.math.v1">160 h</dd></div>
-          <div><dt data-i18n="results.math.l2">Ore recuperate all'anno</dt><dd data-i18n="results.math.v2">1,920 h</dd></div>
-          <div><dt data-i18n="results.math.l3">Costo del lavoro evitato all'anno</dt><dd data-i18n="results.math.v3">US$ 71,040</dd></div>
+          <div><dt data-i18n="results.math.l2">Ore recuperate all'anno</dt><dd data-i18n="results.math.v2">1.920 h</dd></div>
+          <div><dt data-i18n="results.math.l3">Costo del lavoro evitato all'anno</dt><dd data-i18n="results.math.v3">US$ 71.040</dd></div>
         </dl>
       </div>
     </div>
@@ -1088,7 +1086,7 @@
               <td data-i18n="advantage.r3.method">Add-on CAD usati da un operatore</td>
               <td data-i18n="advantage.r3.pro">Familiari ai disegnatori locali</td>
               <td data-i18n="advantage.r3.con">Servono una postazione CAD e un operatore formato</td>
-              <td><span class="edge-badge" data-i18n="advantage.r3.edge">Senza postazione CAD: carichi il disegno e verifichi le segnalazioni</span></td>
+              <td><span class="edge-badge" data-i18n="advantage.r3.edge">Carichi il disegno e verifichi le segnalazioni</span></td>
             </tr>
             <tr>
               <td data-i18n="advantage.r4.method">Suite BIM 3D per armature</td>
@@ -1114,7 +1112,7 @@
         <div class="moat fade-in" data-delay="5">
           <div class="moat-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="12" height="12" rx="1.5"/><path d="M15 12h6m-3-3 3 3-3 3"/></svg></div>
           <h3 data-i18n="advantage.moat3.title">Output Pronto per la Macchina</h3>
-          <p data-i18n="advantage.moat3.desc">Distinta e disegni di officina utilizzabili dal fabbricante; file macchina BVBS previsti</p>
+          <p data-i18n="advantage.moat3.desc">Distinta e disegni di officina utilizzabili dal fabbricante; file macchina BVBS in sviluppo</p>
         </div>
         <div class="moat fade-in" data-delay="6">
           <div class="moat-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6.5" r="2.2"/><circle cx="18" cy="6.5" r="2.2"/><circle cx="12" cy="18" r="2.2"/><path d="M7.7 7.9 10.4 16.2M16.3 7.9 13.6 16.2M8.2 6.5h7.6"/></svg></div>
@@ -1136,7 +1134,7 @@
     <div class="container">
       <p class="section-label fade-in" data-i18n="faq.label">FAQ Domande frequenti</p>
       <h2 class="section-heading fade-in" data-delay="1" data-i18n="faq.heading">Domande frequenti</h2>
-      <p class="faq-updated fade-in" data-delay="1" data-i18n="faq.updated">Ultimo aggiornamento: 2026-09-13</p>
+      <p class="faq-updated fade-in" data-delay="1" data-i18n="faq.updated">Ultimo aggiornamento: 2026-10-30</p>
 
       <div class="faq-list">
         <details class="faq-item fade-in" data-delay="2">

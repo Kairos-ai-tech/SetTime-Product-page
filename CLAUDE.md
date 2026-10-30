@@ -19,7 +19,7 @@ SetTime (formerly AI學徒 iTech) — a product page / strategy documentation pr
 
 | Layer | Technologies |
 |-------|-------------|
-| Drawing automation | AutoCAD 2021 plugin, .NET, Avalonia (cross-platform desktop) |
+| Drawing automation | .NET, Avalonia (cross-platform desktop), web portal; reads .dwg / .dxf. SetTime is not an AutoCAD plugin, so never describe it as one |
 | Product page | Vanilla HTML/CSS/JS, Three.js, GSAP + ScrollTrigger, Lenis, Vanta |
 
 ## Key Domain Concepts

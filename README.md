@@ -34,8 +34,8 @@ outsourced takeoff today. The engine is being validated on Taiwanese (CNS) drawi
 
 ## Shipping Today
 
-An AutoCAD 2021 plugin plus a cross-platform desktop app (Avalonia) that
-converts beam, column, slab and wall drawings into a bar schedule (`.xlsm`) and
+A cross-platform desktop app (Avalonia) and a web portal that
+convert beam, column, slab and wall drawings into a bar schedule (`.xlsm`) and
 annotated shop drawings (`.dwg` / DXF), importing natively into a
 fabricator's existing macro tooling. A tunable Style Guide rules engine
 adapts the takeoff to firm-specific drafting conventions, and a source trace
@@ -102,7 +102,7 @@ metal.
 
 | Layer | Technologies |
 |-------|-------------|
-| Takeoff and drawing automation | AutoCAD 2021 plugin, .NET, Avalonia (cross-platform desktop) |
+| Takeoff and drawing automation | .NET, Avalonia (cross-platform desktop), web portal; reads .dwg / .dxf |
 | Web / product page | Vanilla HTML/CSS/JS, Three.js (rebar-cage backdrop, page-wide) |
 | Audit trail | SHA-256 hash chaining, append-only JSONL storage |
 

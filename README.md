@@ -1,100 +1,100 @@
 # SetTime
 
-**AI Rebar Estimation Automation, Shipping Today — AR + AI Verification On the Roadmap**
+**Rebar takeoff that replaces the outsourced estimating team — structural drawing in, bar schedule and shop drawings out**
 
-SetTime treats the structural drawing as the single source of truth for a
-construction site. Shipping today: it automatically parses drawings into
-rebar shop drawings and a material-list workbook, ready for fabrication. In
-development on the same roadmap: AR guidance so field crews place rebar to
-spec, and computer vision that verifies as-built against as-designed before
-the pour, producing an auditable record for review by government inspectors
-and general contractors.
+SetTime reads the structural drawing and writes the bar schedule and
+annotated shop drawings that a fabricator needs, so a fabricator, detailer
+or contractor no longer has to buy the takeoff from an outsourced team.
+Every value is tagged as read from the drawing, computed, converted or
+defaulted, and every gap is flagged for a person to review.
 
-Built by [Kairos.ai](https://www.kairosaitech.com) for Taiwan's
-construction market (營造/鋼筋施工).
+Built by [Kairos.ai](https://www.kairosaitech.com). Target customers:
+rebar fabricators and detailing firms in the US and Europe that buy
+outsourced takeoff today. The engine is being validated on Taiwanese (CNS) drawings.
 
 ---
 
 ## The Pipeline
 
 ```
-Structural drawing (single source of truth)
+1. Drawing prep           sort sheets, scale, legends/tables, tag members        (in development)
         │
         ▼
-AI drawing parsing ──► bar schedule / cut list / bend list
+2. Takeoff + bar schedule count bars by member and floor → .xlsm schedule         (shipping: beams, columns)
         │
         ▼
-Fabrication ──► shop drawings + material list (QR-tagging and pour-zone delivery: in development)
+3. Shop drawings          bar marks and notes on the drawing → .dwg / DXF         (shipping: beams, columns)
         │
         ▼
-AR-guided field placement ──► 3D overlay on formwork (green = correct, red = deviation)
+4. 3D check               cover, lap, anchorage, clashes, quantity cross-check    (in development)
         │
         ▼
-CV as-built verification ──► pass/fail per requirement, signed pre-pour snapshot
-        │
-        ▼
-Tamper-evident audit trail ──► hash-chained, timestamped, exportable record
+5. Machine output         BVBS files for bending machines                         (in development)
 ```
 
 ## Shipping Today
 
-**Rebar Estimation Automation System** — an AutoCAD 2021 plugin plus a
-cross-platform desktop app (Avalonia) that converts structural drawings
-directly into shop drawings and a material-list workbook (`.xlsm`), importing
-natively into a fabricator's existing macro tooling (GTA/CCM). Beam/column
-recognition meets contract acceptance thresholds, with a tunable Style Guide
-rules engine for firm-specific drafting conventions.
+An AutoCAD 2021 plugin plus a cross-platform desktop app (Avalonia) that
+converts beam and column drawings into a bar schedule (`.xlsm`) and
+annotated shop drawings (`.dwg` / DXF), importing natively into a
+fabricator's existing macro tooling. A tunable Style Guide rules engine
+adapts the takeoff to firm-specific drafting conventions, and a source trace
+marks each value as read, computed, converted or defaulted.
 
 ## In Development
 
-- **AR field guidance** — a 3D rebar layout overlaid on formwork through a
-  tablet or headset; crews place to spec against live spacing, lap-length,
-  and hook-orientation cues (ARKit/RealityKit).
-- **AI as-built verification** — computer vision compares placed rebar
-  against the design, flags deviations, and produces a signed pre-pour
-  snapshot (PyTorch/Open3D).
-- **Tamper-evident audit trail** — every action in the pipeline is written
-  to a SHA-256 hash-chained, append-only, UTC-timestamped record with
-  monotonic sequence numbers, built for large contractor groups and
-  government-tender audit review. This detects tampering after the fact
-  (tamper-*evident*); it is not a certification of compliance with any
-  specific law, regulation, or tender requirement — actual compliance
-  obligations depend on applicable law and contract terms, and the product
-  page carries a legal disclaimer to that effect.
+- **Drawing preparation and annotation** — sheet sorting, scale, legend and
+  table reading, member tagging.
+- **Slabs, walls and foundations**, plus bend angles and hook types.
+- **3D model check** — a 3D bar model built from the schedule that checks
+  cover, lap, anchorage and clashes and reconciles its quantities against
+  the takeoff.
+- **BVBS output** for bending machines.
+- **Tamper-evident audit trail** — every action is written to a SHA-256
+  hash-chained, append-only, UTC-timestamped record, built for large
+  contractor groups and public-tender audit review. It detects tampering
+  after the fact (tamper-*evident*); it is not a certification of compliance
+  with any specific law, regulation, or tender requirement.
+
+Not on the current roadmap: AR field guidance and photo-based as-built
+verification.
 
 ## Who It's For
 
-Construction companies, rebar fabricators, structural engineering firms,
-and public agencies that need an auditable as-built record — plus
-developers/owners and investors evaluating the platform.
+Rebar fabricators, detailing firms, contractors and estimators who buy
+outsourced takeoff today, starting with the US and Europe.
 
 ## Why Not the Alternatives
 
 | Current method | Upside | Gap | SetTime |
 |---|---|---|---|
-| Manual 2D drawing reading | Familiar workflow | Easy to misread, no field verification | Automated parsing + AR alignment (in development) |
-| BIM viewers (Navisworks) | 3D visualization | Office tool, no field guidance | Brings AR into the field (in development) |
-| Manual site inspection | Experience-based judgment | Limited sampling, caught after the pour | Continuous AI verification (in development) |
-| Manual estimation | Matches existing process | Slow, error-prone, version drift | Drawing-to-estimate in seconds |
+| Offshore outsourced takeoff | Low per-tonne rate | Days to deliver; checking depends on people | One drawing back in 24 hours, every flag listed |
+| AI takeoff with human QA | Fast first draft | Quantities first; bar schedule and shop drawings not listed | Takeoff, bar schedule and shop drawings in one run |
+| CAD add-ons run by an operator | Familiar to local detailers | Needs a CAD seat and a trained operator | Upload a drawing, review the flags |
+| 3D BIM detailing suites | Deep detailing, machine formats | Needs a 3D model first | Starts from the 2D drawing you already have |
 
-## Moats
+## What Sets It Apart
 
-- **As-built database** — every job site adds as-built data; the model
-  (in development) improves with use, building a Taiwan-specific data
-  advantage.
-- **Local CV model** (in development) — trained on real Taiwanese job-site
-  footage, tuned to domestic rebar specs and field practice.
-- **Public-works relationships** — built to support public-project audit
-  review (in development), with a hand in shaping smart-construction as-built
-  standards.
-- **Fabricator/contractor network** — an in-house shop-drawing automation
-  engine that plugs directly into the existing fabricator and contractor
-  supply chain.
+- **Every number traceable** — values are tagged by source and gaps flagged.
+- **Rules you can adjust** — a Style Guide rule engine fits your drawing
+  conventions and code.
+- **Machine-ready output** — schedule and shop drawings the fabricator can
+  use; BVBS machine files are in development.
+- **Fabricator/contractor network** — plugs into the existing fabricator and
+  contractor supply chain.
+
+## Market Figures on the Page
+
+The figures on the landing page (US estimator openings, bid-volume growth,
+turnaround and price of competing services, US rebar tonnage) come from
+third-party and vendor publications, not from this product. The
+time-saving example is an illustration with its assumptions stated on the
+page, and the weight-accuracy target is a target, not a measured result.
 
 ## Roadmap
 
 Rebar/structural construction is the current focus. The underlying
-drawing-to-execution approach is built to extend into adjacent trades:
+drawing-to-schedule approach is built to extend into adjacent trades:
 CNC machining, mold making, welding, auto repair, plumbing, and sheet
 metal.
 
@@ -102,10 +102,8 @@ metal.
 
 | Layer | Technologies |
 |-------|-------------|
-| Drawing automation | AutoCAD 2021 plugin, .NET, Avalonia (cross-platform desktop) |
-| AR field guidance | ARKit, RealityKit |
-| Computer vision | PyTorch, Open3D |
-| Web / product page | Vanilla HTML/CSS/JS, Three.js + WebXR (rebar-cage backdrop, page-wide) |
+| Takeoff and drawing automation | AutoCAD 2021 plugin, .NET, Avalonia (cross-platform desktop) |
+| Web / product page | Vanilla HTML/CSS/JS, Three.js (rebar-cage backdrop, page-wide) |
 | Audit trail | SHA-256 hash chaining, append-only JSONL storage |
 
 ## Repository Contents

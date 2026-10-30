@@ -5,7 +5,7 @@
         xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
   <url>
     <loc>https://settime.kairosaitech.com/</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://settime.kairosaitech.com/"/>
@@ -38,7 +38,7 @@
   </url>
   <url>
     <loc>https://settime.kairosaitech.com/en/</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://settime.kairosaitech.com/"/>
@@ -53,7 +53,7 @@
   </url>
   <url>
     <loc>https://settime.kairosaitech.com/ja/</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://settime.kairosaitech.com/"/>
@@ -68,7 +68,7 @@
   </url>
   <url>
     <loc>https://settime.kairosaitech.com/es/</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://settime.kairosaitech.com/"/>
@@ -83,7 +83,7 @@
   </url>
   <url>
     <loc>https://settime.kairosaitech.com/fr/</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://settime.kairosaitech.com/"/>
@@ -98,7 +98,7 @@
   </url>
   <url>
     <loc>https://settime.kairosaitech.com/de/</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://settime.kairosaitech.com/"/>
@@ -113,7 +113,7 @@
   </url>
   <url>
     <loc>https://settime.kairosaitech.com/it/</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://settime.kairosaitech.com/"/>
@@ -128,7 +128,7 @@
   </url>
   <url>
     <loc>https://settime.kairosaitech.com/pt/</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://settime.kairosaitech.com/"/>

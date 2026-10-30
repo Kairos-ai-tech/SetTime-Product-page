@@ -62,7 +62,7 @@
     var faces = FACES.map(function (_, i) {
       return node('path', { class: 'rm-face' + (i === 1 ? ' rm-top' : '') }, g);
     });
-    var u = { member: member, g: g, box: box, from: from, span: span, faces: faces, bars: [], stirrups: [], pins: [], grow: 1 };
+    var u = { member: member, g: g, box: box, from: from, span: span, faces: faces, bars: [], stirrups: [], grow: 1 };
     units.push(u);
     return u;
   }
@@ -91,7 +91,6 @@
       var yt = bm.y0 + 4 + j * 8;
       addBar(u, [[64, yt, BEAM_H - 5], [576, yt, BEAM_H - 5]], false, 'rm-d22');
     }
-    u.ar = node('g', { class: 'rm-ar' }, u.g);
     return u;
   });
 
@@ -101,7 +100,6 @@
     for (j = 0; j < poolSize; j++) {
       var st = addBar(u, [[0, bm.y0 + 2, 2], [0, bm.y1 - 2, 2], [0, bm.y1 - 2, BEAM_H - 2], [0, bm.y0 + 2, BEAM_H - 2]], true, 'rm-d10');
       u.stirrups.push(st);
-      u.pins.push({ node: node('path', { class: 'rm-ar-pin' }, u.ar), x: 0, y: (bm.y0 + bm.y1) / 2 });
     }
   });
 
@@ -140,10 +138,8 @@
       u.stirrups.forEach(function (st, k) {
         var on = k < xs.length;
         st.node.style.display = on ? '' : 'none';
-        u.pins[k].node.style.display = on ? '' : 'none';
         if (on) {
           st.pts.forEach(function (p) { p[0] = xs[k]; });
-          u.pins[k].x = xs[k];
         }
       });
     });
@@ -215,8 +211,6 @@
       dimV.setAttribute('transform', 'rotate(-90 ' + fmt(pv[0]) + ' ' + fmt(pv[1]) + ')');
     }
 
-    var arOpacity = clamp((t - 0.75) / 0.25);
-
     units.forEach(function (u) {
       var b = u.box, zs = u.grow;
       var corners = [];
@@ -238,16 +232,6 @@
         if (bar.node.style.display === 'none') return;
         bar.node.setAttribute('d', path(bar.pts, zs, bar.close));
       });
-      if (u.ar) {
-        u.ar.style.opacity = arOpacity;
-        u.ar.style.display = arOpacity > 0 ? '' : 'none';
-        if (arOpacity > 0) {
-          u.pins.forEach(function (p) {
-            if (p.node.style.display === 'none') return;
-            p.node.setAttribute('d', path([[p.x, p.y, BEAM_H], [p.x, p.y, BEAM_H + 8]], zs, false));
-          });
-        }
-      }
       var cxw = (b.x0 + b.x1) / 2 - CX, cyw = (b.y0 + b.y1) / 2 - CY, czw = (b.z1 * zs) / 2;
       u.key = (cxw * sa + cyw * ca) * ce + czw * se;
     });

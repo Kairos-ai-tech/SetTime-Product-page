@@ -31,31 +31,31 @@ const OG_LOCALE = { en: "en_US", ja: "ja_JP", es: "es_ES", fr: "fr_FR", de: "de_
 const META = {
   en: {
     title: "SetTime | AI Rebar Estimation",
-    description: "SetTime rebar estimation automation is live: turn structural drawings into shop drawings and a material list (.xlsm), via an AutoCAD 2021 plugin and desktop app. AR field guidance and AI as-built verification are in development. Built by Kairos.ai. Send one drawing, get a free takeoff within 24 hours.",
+    description: "SetTime replaces the outsourced rebar takeoff: structural drawings in, bar schedule (.xlsm) and shop drawings (.dwg/DXF) out for beams and columns, via an AutoCAD 2021 plugin and desktop app. Drawing prep, slabs and walls, and a 3D check are in development. Built by Kairos.ai. Send one drawing, get a free takeoff within 24 hours.",
   },
   ja: {
     title: "SetTime | AI 鉄筋積算",
-    description: "SetTime 鉄筋積算の自動化が稼働中：構造施工図から加工図と数量表（.xlsm）を作成。AutoCAD 2021 プラグインとデスクトップ版に対応。AR 現場ガイドと AI 竣工検証は開発中。Kairos.ai 開発。図面を 1 枚送るだけで、24 時間以内に無料で数量表をお返しします。",
+    description: "SetTime は外注の鉄筋積算を置き換えます：構造施工図から、梁・柱の加工表（.xlsm）と加工図（.dwg/DXF）を作成。AutoCAD 2021 プラグインとデスクトップ版に対応。図面整理、スラブ・壁、3D チェックは開発中。Kairos.ai 開発。図面を 1 枚送るだけで、24 時間以内に無料で積算します。",
   },
   es: {
     title: "SetTime | Estimación de armaduras con IA",
-    description: "La automatización de estimación de armaduras de SetTime ya está disponible: convierte planos estructurales en planos de taller y una lista de materiales (.xlsm), con plugin de AutoCAD 2021 y app de escritorio. Guía AR en obra y verificación IA en desarrollo. Hecho por Kairos.ai. Envíe un plano y reciba un cómputo gratis en 24 horas.",
+    description: "SetTime sustituye el cómputo de armaduras subcontratado: del plano estructural salen la lista (.xlsm) y los planos de taller (.dwg/DXF) de vigas y columnas, con plugin de AutoCAD 2021 y app de escritorio. Preparación de planos, losas y muros y revisión 3D en desarrollo. Hecho por Kairos.ai. Envíe un plano y reciba un cómputo gratis en 24 horas.",
   },
   fr: {
     title: "SetTime | Métré d'armatures par IA",
-    description: "L'automatisation du métré d'armatures SetTime est disponible : transformez les plans de structure en plans d'atelier et en nomenclature (.xlsm), via un plugin AutoCAD 2021 et une application de bureau. Guidage AR sur chantier et vérification IA en développement. Créé par Kairos.ai. Envoyez un plan, recevez un métré gratuit sous 24 heures.",
+    description: "SetTime remplace le métré d'armatures externalisé : du plan structurel, il tire la nomenclature (.xlsm) et les plans d'atelier (.dwg/DXF) des poutres et poteaux, via un plugin AutoCAD 2021 et une application de bureau. Préparation des plans, dalles et voiles et contrôle 3D en développement. Créé par Kairos.ai. Envoyez un plan, recevez un métré gratuit sous 24 heures.",
   },
   de: {
     title: "SetTime | KI-Bewehrungsermittlung",
-    description: "Die Bewehrungsermittlung von SetTime ist live: Aus Konstruktionsplänen entstehen Werkstattpläne und eine Materialliste (.xlsm), per AutoCAD-2021-Plugin und Desktop-App. AR-Baustellenführung und KI-Bestandsprüfung sind in Entwicklung. Von Kairos.ai. Einen Plan senden, in 24 Stunden kostenlos eine Mengenermittlung erhalten.",
+    description: "SetTime ersetzt die ausgelagerte Bewehrungsermittlung: Aus dem Konstruktionsplan entstehen Bewehrungsliste (.xlsm) und Werkstattzeichnungen (.dwg/DXF) für Balken und Stützen, per AutoCAD-2021-Plugin und Desktop-App. Planaufbereitung, Decken und Wände sowie 3D-Prüfung in Entwicklung. Von Kairos.ai. Einen Plan senden, in 24 Stunden kostenlos eine Mengenermittlung erhalten.",
   },
   it: {
     title: "SetTime | Computo armature con IA",
-    description: "L'automazione del computo armature di SetTime è disponibile: trasforma i disegni strutturali in disegni esecutivi e in un elenco materiali (.xlsm), con plugin AutoCAD 2021 e app desktop. Guida AR in cantiere e verifica IA in sviluppo. Creato da Kairos.ai. Invii un disegno e riceva un computo gratuito entro 24 ore.",
+    description: "SetTime sostituisce il computo armature esternalizzato: dal disegno strutturale ricava distinta (.xlsm) e disegni di officina (.dwg/DXF) di travi e pilastri, con plugin AutoCAD 2021 e app desktop. Preparazione dei disegni, solai e pareti e verifica 3D in sviluppo. Creato da Kairos.ai. Invii un disegno e riceva un computo gratuito entro 24 ore.",
   },
   pt: {
     title: "SetTime | Estimativa de armaduras com IA",
-    description: "A automação de estimativa de armaduras do SetTime já está no ar: transforma projetos estruturais em desenhos de fabricação e uma lista de materiais (.xlsm), com plugin do AutoCAD 2021 e app desktop. Orientação AR em obra e verificação por IA em desenvolvimento. Feito pela Kairos.ai. Envie um projeto e receba um levantamento grátis em 24 horas.",
+    description: "O SetTime substitui o levantamento de armaduras terceirizado: do projeto estrutural saem a lista (.xlsm) e os desenhos de oficina (.dwg/DXF) de vigas e pilares, com plugin do AutoCAD 2021 e app desktop. Preparação dos desenhos, lajes e paredes e verificação 3D em desenvolvimento. Feito pela Kairos.ai. Envie um projeto e receba um levantamento grátis em 24 horas.",
   },
 };
 

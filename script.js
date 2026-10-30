@@ -51,6 +51,15 @@ document.addEventListener('DOMContentLoaded', function () {
   if (demoVideo && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     let userPaused = false;
     let autoPaused = false;
+    let autoMuted = false;
+    ['pointerdown', 'keydown'].forEach(function (type) {
+      document.addEventListener(type, function () {
+        if (autoMuted) {
+          autoMuted = false;
+          demoVideo.muted = false;
+        }
+      });
+    });
     demoVideo.addEventListener('play', function () {
       userPaused = false;
     });
@@ -64,7 +73,12 @@ document.addEventListener('DOMContentLoaded', function () {
         if (ratio >= 0.98) {
           if (userPaused || demoVideo.ended || !demoVideo.paused) return;
           const p = demoVideo.play();
-          if (p) p.catch(function () {});
+          if (p) p.catch(function () {
+            autoMuted = true;
+            demoVideo.muted = true;
+            const q = demoVideo.play();
+            if (q) q.catch(function () {});
+          });
         } else if (ratio < 0.5 && !demoVideo.paused) {
           autoPaused = true;
           demoVideo.pause();

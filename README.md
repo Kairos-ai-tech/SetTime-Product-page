@@ -20,10 +20,10 @@ outsourced takeoff today. The engine is being validated on Taiwanese (CNS) drawi
 1. Drawing prep           sort sheets, scale, legends/tables, tag members        (in development)
         │
         ▼
-2. Takeoff + bar schedule count bars by member and floor → .xlsm schedule         (shipping: beams, columns)
+2. Takeoff + bar schedule count bars by member and floor → .xlsm schedule         (shipping: beams, columns, slabs, walls)
         │
         ▼
-3. Shop drawings          bar marks and notes on the drawing → .dwg / DXF         (shipping: beams, columns)
+3. Shop drawings          bar marks and notes on the drawing → .dwg / DXF         (shipping: beams, columns, slabs, walls)
         │
         ▼
 4. 3D check               cover, lap, anchorage, clashes, quantity cross-check    (in development)
@@ -35,7 +35,7 @@ outsourced takeoff today. The engine is being validated on Taiwanese (CNS) drawi
 ## Shipping Today
 
 An AutoCAD 2021 plugin plus a cross-platform desktop app (Avalonia) that
-converts beam and column drawings into a bar schedule (`.xlsm`) and
+converts beam, column, slab and wall drawings into a bar schedule (`.xlsm`) and
 annotated shop drawings (`.dwg` / DXF), importing natively into a
 fabricator's existing macro tooling. A tunable Style Guide rules engine
 adapts the takeoff to firm-specific drafting conventions, and a source trace
@@ -45,7 +45,7 @@ marks each value as read, computed, converted or defaulted.
 
 - **Drawing preparation and annotation** — sheet sorting, scale, legend and
   table reading, member tagging.
-- **Slabs, walls and foundations**, plus bend angles and hook types.
+- **Foundations**, plus bend angles and hook types.
 - **3D model check** — a 3D bar model built from the schedule that checks
   cover, lap, anchorage and clashes and reconciles its quantities against
   the takeoff.

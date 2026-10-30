@@ -29,7 +29,7 @@ outsourced takeoff today. The engine is being validated on Taiwanese (CNS) drawi
 4. 3D check               cover, lap, anchorage, clashes, quantity cross-check    (in development)
         │
         ▼
-5. Machine output         BVBS files for bending machines                         (in development)
+5. Machine output         BVBS files for bending machines                         (planned)
 ```
 
 ## Shipping Today
@@ -49,7 +49,7 @@ marks each value as read, computed, converted or defaulted.
 - **3D model check** — a 3D bar model built from the schedule that checks
   cover, lap, anchorage and clashes and reconciles its quantities against
   the takeoff.
-- **BVBS output** for bending machines.
+- **BVBS output** for bending machines (planned).
 - **Tamper-evident audit trail** — every action is written to a SHA-256
   hash-chained, append-only, UTC-timestamped record, built for large
   contractor groups and public-tender audit review. It detects tampering
@@ -79,7 +79,7 @@ outsourced takeoff today, starting with the US and Europe.
 - **Rules you can adjust** — a Style Guide rule engine fits your drawing
   conventions and code.
 - **Machine-ready output** — schedule and shop drawings the fabricator can
-  use; BVBS machine files are in development.
+  use; BVBS machine files are planned.
 - **Fabricator/contractor network** — plugs into the existing fabricator and
   contractor supply chain.
 

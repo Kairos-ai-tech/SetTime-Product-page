@@ -176,7 +176,7 @@
         "@type": "SoftwareApplication",
         "@id": "https://settime.kairosaitech.com/#software",
         "name": "SetTime",
-        "alternateName": ["SetTime Rebar Estimation Automation System", "SetTime 鋼筋估算自動化系統"],
+        "alternateName": ["SetTime Rebar Takeoff Automation System", "SetTime 鋼筋算量自動化系統"],
         "applicationCategory": "BusinessApplication",
         "applicationSubCategory": "Construction rebar takeoff and shop-drawing automation",
         "operatingSystem": "Windows (AutoCAD 2021 plugin); cross-platform desktop app",
@@ -217,7 +217,7 @@
             "name": "SetTime 是什麼？",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "SetTime 是 Kairos.ai 的鋼筋算量軟體，目標是取代外包估算團隊：圖面進、料單與標註加工圖出。目前已上線樑、柱、板與牆；圖面整理、基礎與 3D 檢查開發中，BVBS 輸出規劃中。"
+              "text": "SetTime 是 Kairos.ai 的鋼筋算量軟體，目標是取代外包撿料團隊：圖面進、料單與標註加工圖出。目前已上線樑、柱、板與牆；圖面整理、基礎與 3D 檢查開發中，BVBS 輸出規劃中。"
             }
           },
           {
@@ -323,10 +323,10 @@
       <div class="hero-overlay"></div>
     </div>
     <div class="hero-content">
-      <div class="hero-badge fade-in" data-i18n="hero.badge">取代外包估算團隊的鋼筋算量平台</div>
+      <div class="hero-badge fade-in" data-i18n="hero.badge">取代外包撿料團隊的鋼筋算量平台</div>
       <p class="hero-slogan fade-in" data-delay="1" data-i18n="product.tagline">SetTime — 凝固之前，一次到位</p>
       <h1 class="hero-title fade-in" data-delay="1" data-i18n="hero.title">結構施工圖進，<br>計料表與加工圖出</h1>
-      <p class="hero-subtitle fade-in" data-delay="2" data-i18n="hero.subtitle">取代外包算量。已上線：樑、柱、板、牆的料單與加工圖。開發中：圖面整理、基礎、3D 檢查。</p>
+      <p class="hero-subtitle fade-in" data-delay="2" data-i18n="hero.subtitle">取代外包算量：上傳結構施工圖，取得鋼筋計料表與標註加工圖（樑、柱、板、牆）。專為鋼筋加工廠與撿料、繪圖團隊打造。</p>
       <p class="hero-subtitle-en fade-in" data-delay="2" data-i18n="hero.subtitle-en">From structural drawing to shop-ready rebar.</p>
       <div class="hero-actions fade-in" data-delay="3">
         <a href="#pilot" class="hero-cta">
@@ -486,6 +486,41 @@
     </div>
   </section>
 
+  <!-- ===== STATUS (what ships today vs in development vs planned) ===== -->
+  <section class="status" id="status">
+    <div class="container">
+      <p class="section-label fade-in" data-i18n="status.label">STATUS 功能現況</p>
+      <h2 class="section-heading fade-in" data-delay="1" data-i18n="status.heading">現在能用什麼，接下來做什麼</h2>
+      <div class="status-grid fade-in" data-delay="2">
+        <div class="status-col">
+          <span class="panel-status live" data-i18n="status.live">已上線</span>
+          <ul>
+            <li data-i18n="status.live.i1">樑、柱、板、牆的鋼筋算量</li>
+            <li data-i18n="status.live.i2">計料表（.xlsm）</li>
+            <li data-i18n="status.live.i3">標註加工圖（.dwg / DXF）</li>
+            <li data-i18n="status.live.i4">數值來源標示與缺口覆核提示</li>
+          </ul>
+        </div>
+        <div class="status-col">
+          <span class="panel-status dev" data-i18n="status.dev">開發中</span>
+          <ul>
+            <li data-i18n="status.dev.i1">圖面整理與標註</li>
+            <li data-i18n="status.dev.i2">基礎</li>
+            <li data-i18n="status.dev.i3">彎鉤角度與型式</li>
+            <li data-i18n="status.dev.i4">3D 模型檢查</li>
+            <li data-i18n="status.dev.i5">竄改可偵測的稽核鏈</li>
+          </ul>
+        </div>
+        <div class="status-col">
+          <span class="panel-status plan" data-i18n="status.planned">規劃中</span>
+          <ul>
+            <li data-i18n="status.planned.i1">BVBS 加工機台檔</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ===== DEMO (click a member on the sample plan, the bar schedule follows) ===== -->
   <section class="demo" id="demo">
     <div class="container">
@@ -571,7 +606,7 @@
   <section class="solution" id="solution">
     <div class="container">
       <p class="section-label fade-in" data-i18n="solution.label">OUR TECHNOLOGY 核心技術</p>
-      <h2 class="section-heading fade-in" data-delay="1" data-i18n="solution.heading">端到端施工執行管線</h2>
+      <h2 class="section-heading fade-in" data-delay="1" data-i18n="solution.heading">施工圖如何變成料單</h2>
       <p class="section-lead fade-in" data-delay="2" data-i18n="solution.lead">從結構施工圖到料單與標註加工圖，每個缺口都標出供您覆核。樑、柱、板、牆的算量與加工圖已上線；圖面整理與 3D 檢查開發中。</p>
     </div>
 
@@ -781,8 +816,8 @@
           <span class="tech-number">✓</span>
         </div>
         <div class="tech-panel-content">
-          <h3 data-i18n="product.panel.title">鋼筋估算自動化系統</h3>
-          <p class="tech-en" data-i18n="product.panel.en">Rebar Estimation Automation System</p>
+          <h3 data-i18n="product.panel.title">鋼筋算量自動化系統</h3>
+          <p class="tech-en" data-i18n="product.panel.en">Rebar Takeoff Automation System</p>
           <p data-i18n="product.panel.desc">AutoCAD 2021 外掛加上跨平台桌面版，將結構施工圖直接轉為加工圖與計料表 (.xlsm)，輸出免二次轉檔即可匯入客戶既有巨集系統。</p>
           <div class="tech-metrics">
             <span class="correct" data-i18n="product.m1">目前支援樑、柱、板與牆；基礎為下一步</span>
@@ -818,41 +853,6 @@
           <p data-i18n="product.moat4.desc">每個數值標明讀取、計算、換算或預設，每個缺口都標出供覆核</p>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- ===== COMPLIANCE / AUDIT TRAIL ===== -->
-  <section class="compliance" id="compliance">
-    <div class="container">
-      <p class="section-label fade-in" data-i18n="compliance.label">LAW &amp; COMPLIANCE 法遵與稽核</p>
-      <h2 class="section-heading fade-in" data-delay="1" data-i18n="compliance.heading">每一筆紀錄，完整留存供稽核與法律程序查閱</h2>
-      <span class="panel-status dev fade-in" data-delay="2" data-i18n="status.dev">開發中</span>
-      <p class="section-lead fade-in" data-delay="2" data-i18n="compliance.lead">從圖紙解析到交付的料單，每個動作將寫入竄改可偵測的稽核鏈（開發中），支援大型營造集團與政府標案的稽核審查需求。</p>
-
-      <div class="moats">
-        <div class="moat fade-in" data-delay="3">
-          <div class="moat-line"></div>
-          <h3 data-i18n="compliance.moat1.title">竄改可偵測鏈式雜湊</h3>
-          <p data-i18n="compliance.moat1.desc">每筆紀錄以 SHA-256 串接前一筆雜湊，任何竄改或刪除將可立即偵測（開發中）</p>
-        </div>
-        <div class="moat fade-in" data-delay="4">
-          <div class="moat-line"></div>
-          <h3 data-i18n="compliance.moat2.title">精確時間戳記</h3>
-          <p data-i18n="compliance.moat2.desc">UTC 時間戳配合連續序號，將杜絕事後補登、跳號或竄改時序（開發中）</p>
-        </div>
-        <div class="moat fade-in" data-delay="5">
-          <div class="moat-line"></div>
-          <h3 data-i18n="compliance.moat3.title">僅可新增稽核紀錄</h3>
-          <p data-i18n="compliance.moat3.desc">僅可新增、不可修改或刪除，未來可完整匯出供法律取證與主管機關查核（開發中）</p>
-        </div>
-        <div class="moat fade-in" data-delay="6">
-          <div class="moat-line"></div>
-          <h3 data-i18n="compliance.moat4.title">長期保存相容架構</h3>
-          <p data-i18n="compliance.moat4.desc">紀錄格式具版本控管，將確保跨年度保存週期仍可完整驗證還原（開發中）</p>
-        </div>
-      </div>
-
-      <p class="compliance-disclaimer fade-in" data-delay="7" data-i18n="compliance.disclaimer">稽核鏈為技術性防竄改機制，不構成對任何特定法規、驗收基準或政府標案要求之合規保證。實際法遵義務依個案適用法規及契約條款而定，建議就個案洽詢法律顧問；本頁面內容不構成法律意見。</p>
     </div>
   </section>
 
@@ -941,7 +941,7 @@
         <div class="result-card fade-in" data-delay="3">
           <div class="result-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l3 2"/><path d="M9 2h6M12 2v3"/></svg></div>
           <span class="result-metric" data-i18n="results.r2.metric">目標 &lt; 1 小時</span>
-          <h3 data-i18n="results.r2.title">估算與下料工時</h3>
+          <h3 data-i18n="results.r2.title">撿料與下料工時</h3>
           <p class="result-compare">
             <span class="result-old" data-i18n="results.r2.old">傳統 8-12 小時</span>
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -1062,6 +1062,41 @@
     </div>
   </section>
 
+  <!-- ===== COMPLIANCE / AUDIT TRAIL ===== -->
+  <section class="compliance" id="compliance">
+    <div class="container">
+      <p class="section-label fade-in" data-i18n="compliance.label">LAW &amp; COMPLIANCE 法遵與稽核</p>
+      <h2 class="section-heading fade-in" data-delay="1" data-i18n="compliance.heading">每一筆紀錄，完整留存供稽核與法律程序查閱</h2>
+      <span class="panel-status dev fade-in" data-delay="2" data-i18n="status.dev">開發中</span>
+      <p class="section-lead fade-in" data-delay="2" data-i18n="compliance.lead">從圖紙解析到交付的料單，每個動作將寫入竄改可偵測的稽核鏈（開發中），支援大型營造集團與政府標案的稽核審查需求。</p>
+
+      <div class="moats">
+        <div class="moat fade-in" data-delay="3">
+          <div class="moat-line"></div>
+          <h3 data-i18n="compliance.moat1.title">竄改可偵測鏈式雜湊</h3>
+          <p data-i18n="compliance.moat1.desc">每筆紀錄以 SHA-256 串接前一筆雜湊，任何竄改或刪除將可立即偵測（開發中）</p>
+        </div>
+        <div class="moat fade-in" data-delay="4">
+          <div class="moat-line"></div>
+          <h3 data-i18n="compliance.moat2.title">精確時間戳記</h3>
+          <p data-i18n="compliance.moat2.desc">UTC 時間戳配合連續序號，將杜絕事後補登、跳號或竄改時序（開發中）</p>
+        </div>
+        <div class="moat fade-in" data-delay="5">
+          <div class="moat-line"></div>
+          <h3 data-i18n="compliance.moat3.title">僅可新增稽核紀錄</h3>
+          <p data-i18n="compliance.moat3.desc">僅可新增、不可修改或刪除，未來可完整匯出供法律取證與主管機關查核（開發中）</p>
+        </div>
+        <div class="moat fade-in" data-delay="6">
+          <div class="moat-line"></div>
+          <h3 data-i18n="compliance.moat4.title">長期保存相容架構</h3>
+          <p data-i18n="compliance.moat4.desc">紀錄格式具版本控管，將確保跨年度保存週期仍可完整驗證還原（開發中）</p>
+        </div>
+      </div>
+
+      <p class="compliance-disclaimer fade-in" data-delay="7" data-i18n="compliance.disclaimer">稽核鏈為技術性防竄改機制，不構成對任何特定法規、驗收基準或政府標案要求之合規保證。實際法遵義務依個案適用法規及契約條款而定，建議就個案洽詢法律顧問；本頁面內容不構成法律意見。</p>
+    </div>
+  </section>
+
   <!-- ===== FAQ ===== -->
   <section class="faq" id="faq">
     <div class="container">
@@ -1072,7 +1107,7 @@
       <div class="faq-list">
         <details class="faq-item fade-in" data-delay="2">
           <summary data-i18n="faq.q1.q">SetTime 是什麼？</summary>
-          <p data-i18n="faq.q1.a">SetTime 是 Kairos.ai 的鋼筋算量軟體，目標是取代外包估算團隊：圖面進、料單與標註加工圖出。目前已上線樑、柱、板與牆；圖面整理、基礎與 3D 檢查開發中，BVBS 輸出規劃中。</p>
+          <p data-i18n="faq.q1.a">SetTime 是 Kairos.ai 的鋼筋算量軟體，目標是取代外包撿料團隊：圖面進、料單與標註加工圖出。目前已上線樑、柱、板與牆；圖面整理、基礎與 3D 檢查開發中，BVBS 輸出規劃中。</p>
         </details>
         <details class="faq-item fade-in" data-delay="3">
           <summary data-i18n="faq.q2.q">SetTime 現在可以使用哪些功能？</summary>

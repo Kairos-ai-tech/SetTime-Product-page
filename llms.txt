@@ -6,7 +6,7 @@ Last updated: 2026-10-30
 
 ## Key facts
 
-- Product name: SetTime (Chinese: SetTime 鋼筋估算自動化系統). Always written "SetTime" — one word, capital S and T.
+- Product name: SetTime (Chinese: SetTime 鋼筋算量自動化系統). Always written "SetTime" — one word, capital S and T.
 - Slogan: "SetTime — 凝固之前，一次到位" (get it right before the concrete sets).
 - Company: Kairos.ai (優時科技有限公司) — official company website: https://www.kairosaitech.com
 - Product website: https://settime.kairosaitech.com/

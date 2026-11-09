@@ -220,8 +220,8 @@
         "@id": "https://settime.kairosaitech.com/pt/#software",
         "name": "SetTime",
         "alternateName": [
-          "SetTime Rebar Estimation Automation System",
-          "SetTime 鋼筋估算自動化系統"
+          "SetTime Rebar Takeoff Automation System",
+          "SetTime 鋼筋算量自動化系統"
         ],
         "applicationCategory": "BusinessApplication",
         "applicationSubCategory": "Construction rebar takeoff and shop-drawing automation",
@@ -393,7 +393,7 @@
       <div class="hero-badge fade-in" data-i18n="hero.badge">Levantamento de armaduras que substitui a equipe terceirizada</div>
       <p class="hero-slogan fade-in" data-delay="1" data-i18n="product.tagline">SetTime — Na hora certa, antes de curar</p>
       <h1 class="hero-title fade-in" data-delay="1" data-i18n="hero.title">Entra o projeto estrutural,<br>saem lista de armação e desenhos de oficina</h1>
-      <p class="hero-subtitle fade-in" data-delay="2" data-i18n="hero.subtitle">Substitua o levantamento terceirizado. Disponível: lista de armação e desenhos de oficina para vigas, pilares, lajes e paredes. Em desenvolvimento: preparação dos desenhos, fundações, verificação 3D.</p>
+      <p class="hero-subtitle fade-in" data-delay="2" data-i18n="hero.subtitle">Substitua o levantamento terceirizado: envie um desenho estrutural e receba a lista de armação e os desenhos de oficina anotados de vigas, pilares, lajes e paredes. Para fabricantes de armaduras e equipes de detalhamento.</p>
       <p class="hero-subtitle-en fade-in" data-delay="2" data-i18n="hero.subtitle-en">From structural drawing to shop-ready rebar.</p>
       <div class="hero-actions fade-in" data-delay="3">
         <a href="#pilot" class="hero-cta">
@@ -553,6 +553,41 @@
     </div>
   </section>
 
+  <!-- ===== STATUS (what ships today vs in development vs planned) ===== -->
+  <section class="status" id="status">
+    <div class="container">
+      <p class="section-label fade-in" data-i18n="status.label">STATUS</p>
+      <h2 class="section-heading fade-in" data-delay="1" data-i18n="status.heading">O que funciona hoje e o que vem a seguir</h2>
+      <div class="status-grid fade-in" data-delay="2">
+        <div class="status-col">
+          <span class="panel-status live" data-i18n="status.live">Disponível</span>
+          <ul>
+            <li data-i18n="status.live.i1">Levantamento de armaduras de vigas, pilares, lajes e paredes</li>
+            <li data-i18n="status.live.i2">Lista de armação (.xlsm)</li>
+            <li data-i18n="status.live.i3">Desenhos de oficina anotados (.dwg / DXF)</li>
+            <li data-i18n="status.live.i4">Cada valor com sua origem, cada lacuna sinalizada para revisão</li>
+          </ul>
+        </div>
+        <div class="status-col">
+          <span class="panel-status dev" data-i18n="status.dev">Em desenvolvimento</span>
+          <ul>
+            <li data-i18n="status.dev.i1">Preparação e anotação dos desenhos</li>
+            <li data-i18n="status.dev.i2">Fundações</li>
+            <li data-i18n="status.dev.i3">Ângulos de gancho e tipos de dobra</li>
+            <li data-i18n="status.dev.i4">Verificação do modelo 3D</li>
+            <li data-i18n="status.dev.i5">Trilha de auditoria à prova de adulteração</li>
+          </ul>
+        </div>
+        <div class="status-col">
+          <span class="panel-status plan" data-i18n="status.planned">Planejado</span>
+          <ul>
+            <li data-i18n="status.planned.i1">Arquivos de máquina BVBS</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ===== DEMO (click a member on the sample plan, the bar schedule follows) ===== -->
   <section class="demo" id="demo">
     <div class="container">
@@ -638,7 +673,7 @@
   <section class="solution" id="solution">
     <div class="container">
       <p class="section-label fade-in" data-i18n="solution.label">NOSSA TECNOLOGIA</p>
-      <h2 class="section-heading fade-in" data-delay="1" data-i18n="solution.heading">Pipeline de Execução de Ponta a Ponta</h2>
+      <h2 class="section-heading fade-in" data-delay="1" data-i18n="solution.heading">Do desenho à lista de armação</h2>
       <p class="section-lead fade-in" data-delay="2" data-i18n="solution.lead">Do projeto estrutural à lista de armação e aos desenhos de oficina anotados, com cada lacuna sinalizada para sua revisão. Levantamento e desenhos de oficina de vigas, pilares, lajes e paredes disponíveis; preparação dos desenhos e verificação 3D em desenvolvimento.</p>
     </div>
 
@@ -848,7 +883,7 @@
           <span class="tech-number">✓</span>
         </div>
         <div class="tech-panel-content">
-          <h3 data-i18n="product.panel.title">Sistema de Automação de Orçamento de Armação</h3>
+          <h3 data-i18n="product.panel.title">Sistema de Automação de Levantamento de Armação</h3>
           <p class="tech-en" data-i18n="product.panel.en" style="display:none"></p>
           <p data-i18n="product.panel.desc">Um plugin do AutoCAD 2021 e um app desktop multiplataforma transformam diretamente projetos estruturais em desenhos de oficina e em uma lista de armação (.xlsm). A saída é importada nativamente nas macros do cliente, sem reconfiguração.</p>
           <div class="tech-metrics">
@@ -885,41 +920,6 @@
           <p data-i18n="product.moat4.desc">Cada valor é marcado como lido, calculado, convertido ou padrão, e cada lacuna é sinalizada para revisão</p>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- ===== COMPLIANCE / AUDIT TRAIL ===== -->
-  <section class="compliance" id="compliance">
-    <div class="container">
-      <p class="section-label fade-in" data-i18n="compliance.label">DIREITO E CONFORMIDADE</p>
-      <h2 class="section-heading fade-in" data-delay="1" data-i18n="compliance.heading">Cada Registro, Preservado Integralmente para Auditorias e Processos Legais</h2>
-      <span class="panel-status dev fade-in" data-delay="2" data-i18n="status.dev">Em desenvolvimento</span>
-      <p class="section-lead fade-in" data-delay="2" data-i18n="compliance.lead">Da análise do desenho à lista entregue, cada ação será gravada em uma cadeia de auditoria à prova de adulteração (em desenvolvimento), pensada para as necessidades de auditoria de grandes construtoras e licitações públicas.</p>
-
-      <div class="moats">
-        <div class="moat fade-in" data-delay="3">
-          <div class="moat-line"></div>
-          <h3 data-i18n="compliance.moat1.title">Cadeia de Hash com Integridade Verificável</h3>
-          <p data-i18n="compliance.moat1.desc">Cada registro será encadeado via SHA-256 ao anterior; qualquer edição ou exclusão será detectada instantaneamente (em desenvolvimento)</p>
-        </div>
-        <div class="moat fade-in" data-delay="4">
-          <div class="moat-line"></div>
-          <h3 data-i18n="compliance.moat2.title">Carimbo de Tempo Preciso</h3>
-          <p data-i18n="compliance.moat2.desc">Carimbos de tempo UTC com números de sequência monótonos que impedirão retrodatação, lacunas ou reordenação (em desenvolvimento)</p>
-        </div>
-        <div class="moat fade-in" data-delay="5">
-          <div class="moat-line"></div>
-          <h3 data-i18n="compliance.moat3.title">Trilha de Auditoria Somente-Adição</h3>
-          <p data-i18n="compliance.moat3.desc">Os registros só poderão ser adicionados, nunca editados ou excluídos — totalmente exportável para litígios e revisão regulatória (em desenvolvimento)</p>
-        </div>
-        <div class="moat fade-in" data-delay="6">
-          <div class="moat-line"></div>
-          <h3 data-i18n="compliance.moat4.title">Arquitetura de Retenção de Longo Prazo</h3>
-          <p data-i18n="compliance.moat4.desc">Registros com versão de esquema permanecerão totalmente verificáveis em janelas de retenção plurianuais (em desenvolvimento)</p>
-        </div>
-      </div>
-
-      <p class="compliance-disclaimer fade-in" data-delay="7" data-i18n="compliance.disclaimer">A cadeia de auditoria é um mecanismo técnico de detecção de adulteração, não uma certificação de conformidade com qualquer lei, regulamento ou requisito de licitação pública específico. As obrigações reais de conformidade dependem da legislação aplicável e dos termos contratuais; consulte seu próprio advogado. Nada nesta página constitui aconselhamento jurídico.</p>
     </div>
   </section>
 
@@ -1008,7 +1008,7 @@
         <div class="result-card fade-in" data-delay="3">
           <div class="result-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l3 2"/><path d="M9 2h6M12 2v3"/></svg></div>
           <span class="result-metric" data-i18n="results.r2.metric">Meta &lt; 1 h</span>
-          <h3 data-i18n="results.r2.title">Horas de orçamento</h3>
+          <h3 data-i18n="results.r2.title">Horas de levantamento</h3>
           <p class="result-compare">
             <span class="result-old" data-i18n="results.r2.old">Hoje 8-12 h</span>
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -1126,6 +1126,41 @@
         <span data-i18n="cta.pilot">Receba sua lista de materiais grátis em 24 h</span>
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
+    </div>
+  </section>
+
+  <!-- ===== COMPLIANCE / AUDIT TRAIL ===== -->
+  <section class="compliance" id="compliance">
+    <div class="container">
+      <p class="section-label fade-in" data-i18n="compliance.label">DIREITO E CONFORMIDADE</p>
+      <h2 class="section-heading fade-in" data-delay="1" data-i18n="compliance.heading">Cada Registro, Preservado Integralmente para Auditorias e Processos Legais</h2>
+      <span class="panel-status dev fade-in" data-delay="2" data-i18n="status.dev">Em desenvolvimento</span>
+      <p class="section-lead fade-in" data-delay="2" data-i18n="compliance.lead">Da análise do desenho à lista entregue, cada ação será gravada em uma cadeia de auditoria à prova de adulteração (em desenvolvimento), pensada para as necessidades de auditoria de grandes construtoras e licitações públicas.</p>
+
+      <div class="moats">
+        <div class="moat fade-in" data-delay="3">
+          <div class="moat-line"></div>
+          <h3 data-i18n="compliance.moat1.title">Cadeia de Hash com Integridade Verificável</h3>
+          <p data-i18n="compliance.moat1.desc">Cada registro será encadeado via SHA-256 ao anterior; qualquer edição ou exclusão será detectada instantaneamente (em desenvolvimento)</p>
+        </div>
+        <div class="moat fade-in" data-delay="4">
+          <div class="moat-line"></div>
+          <h3 data-i18n="compliance.moat2.title">Carimbo de Tempo Preciso</h3>
+          <p data-i18n="compliance.moat2.desc">Carimbos de tempo UTC com números de sequência monótonos que impedirão retrodatação, lacunas ou reordenação (em desenvolvimento)</p>
+        </div>
+        <div class="moat fade-in" data-delay="5">
+          <div class="moat-line"></div>
+          <h3 data-i18n="compliance.moat3.title">Trilha de Auditoria Somente-Adição</h3>
+          <p data-i18n="compliance.moat3.desc">Os registros só poderão ser adicionados, nunca editados ou excluídos — totalmente exportável para litígios e revisão regulatória (em desenvolvimento)</p>
+        </div>
+        <div class="moat fade-in" data-delay="6">
+          <div class="moat-line"></div>
+          <h3 data-i18n="compliance.moat4.title">Arquitetura de Retenção de Longo Prazo</h3>
+          <p data-i18n="compliance.moat4.desc">Registros com versão de esquema permanecerão totalmente verificáveis em janelas de retenção plurianuais (em desenvolvimento)</p>
+        </div>
+      </div>
+
+      <p class="compliance-disclaimer fade-in" data-delay="7" data-i18n="compliance.disclaimer">A cadeia de auditoria é um mecanismo técnico de detecção de adulteração, não uma certificação de conformidade com qualquer lei, regulamento ou requisito de licitação pública específico. As obrigações reais de conformidade dependem da legislação aplicável e dos termos contratuais; consulte seu próprio advogado. Nada nesta página constitui aconselhamento jurídico.</p>
     </div>
   </section>
 

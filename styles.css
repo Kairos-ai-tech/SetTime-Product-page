@@ -2021,6 +2021,7 @@ html.no-3d,
 .footer-nav {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 8px 18px;
   flex-basis: 100%;
   font-size: 0.8rem;

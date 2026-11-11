@@ -2506,6 +2506,13 @@ document.addEventListener("DOMContentLoaded", function () {
   populateLangSelect();
   initLanguage();
 
+  document.addEventListener("click", function (e) {
+    var a = e.target && e.target.closest && e.target.closest(".footer-nav a[hreflang]");
+    if (!a) return;
+    var code = a.getAttribute("hreflang") === "zh-Hant" ? "zh-TW" : a.getAttribute("hreflang");
+    if (isKnownLocale(code)) safeStorageSet(LANG_STORAGE_KEY, code);
+  });
+
   var langSelect = document.getElementById("langSelect");
   if (langSelect) {
     langSelect.addEventListener("change", function () {

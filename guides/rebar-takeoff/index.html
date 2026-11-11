@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rebar takeoff and bar bending schedules: a practical guide | SetTime</title>
+  <meta name="description" content="What a rebar takeoff is, what a bar bending schedule contains, how to convert bar length to weight, where manual takeoff goes wrong, and what to look for in takeoff software.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://settime.kairosaitech.com/guides/rebar-takeoff/">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="SetTime">
+  <meta property="og:title" content="Rebar takeoff and bar bending schedules: a practical guide">
+  <meta property="og:description" content="What a rebar takeoff is, what a bar bending schedule contains, how to convert bar length to weight, and where manual takeoff goes wrong.">
+  <meta property="og:url" content="https://settime.kairosaitech.com/guides/rebar-takeoff/">
+  <meta property="og:image" content="https://settime.kairosaitech.com/assets/settime-og-card.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/png" href="/assets/settime-favicon.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "@id": "https://settime.kairosaitech.com/guides/rebar-takeoff/#article",
+        "headline": "Rebar takeoff and bar bending schedules: a practical guide",
+        "description": "What a rebar takeoff is, what a bar bending schedule contains, how to convert bar length to weight, where manual takeoff goes wrong, and what to look for in takeoff software.",
+        "inLanguage": "en",
+        "datePublished": "2026-11-12T00:00:00+08:00",
+        "dateModified": "2026-11-12T00:00:00+08:00",
+        "image": "https://settime.kairosaitech.com/assets/settime-og-card.jpg",
+        "mainEntityOfPage": "https://settime.kairosaitech.com/guides/rebar-takeoff/",
+        "author": { "@id": "https://www.kairosaitech.com/#organization" },
+        "publisher": { "@id": "https://www.kairosaitech.com/#organization" },
+        "about": { "@id": "https://settime.kairosaitech.com/#software" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "SetTime", "item": "https://settime.kairosaitech.com/en/" },
+          { "@type": "ListItem", "position": 2, "name": "Rebar takeoff guide", "item": "https://settime.kairosaitech.com/guides/rebar-takeoff/" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Is a rebar takeoff the same as a bar bending schedule?",
+            "acceptedAnswer": { "@type": "Answer", "text": "No. The takeoff is the process of counting and measuring every bar from the drawings. The bar bending schedule is the document that results: a table with one row per bar mark that the fabricator cuts and bends from and the contractor orders against." }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I convert rebar length to weight?",
+            "acceptedAnswer": { "@type": "Answer", "text": "For metric bars, weight per metre is approximately the diameter in millimetres squared divided by 162. A 12 mm bar weighs about 0.89 kg per metre, a 20 mm bar about 2.47 kg per metre and a 25 mm bar about 3.86 kg per metre. Multiply by the total length. For US bar sizes use the nominal weight table of the applicable standard." }
+          },
+          {
+            "@type": "Question",
+            "name": "What are the most common mistakes in a manual rebar takeoff?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Missed notes and typical details, wrong drawing scale, plan and section details that disagree, inconsistent lap and anchorage assumptions, bend and hook allowances applied wrongly, and drawing revisions that never reach the takeoff." }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+  <style>
+    :root { --navy: #0B1A2D; --gold: #96590C; --bg: #FBFAF7; --muted: #5B6776; --line: rgba(11,26,45,.14); --panel: #F4F1EC; }
+    @media (prefers-color-scheme: dark) { :root { --navy: #EAF0F7; --gold: #F2C066; --bg: #0B1A2D; --muted: #AAB6C4; --line: rgba(255,255,255,.18); --panel: #15293F; } }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--bg); color: var(--navy); font: 17px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", "DM Sans", sans-serif; }
+    a { color: var(--gold); }
+    header, main, footer { max-width: 760px; margin: 0 auto; padding: 0 16px; }
+    header { padding-top: 20px; padding-bottom: 8px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
+    header a { font-weight: 700; text-decoration: none; color: var(--navy); }
+    nav a { font-weight: 500; margin-left: 16px; font-size: .9rem; color: var(--muted); }
+    h1 { font-size: clamp(1.7rem, 5vw, 2.3rem); line-height: 1.2; margin: 28px 0 12px; }
+    h2 { font-size: 1.35rem; margin: 36px 0 8px; }
+    .lede { color: var(--muted); font-size: 1.08rem; }
+    table { width: 100%; border-collapse: collapse; font-size: .92rem; margin: 12px 0; }
+    th, td { border: 1px solid var(--line); padding: 8px 10px; text-align: left; vertical-align: top; }
+    th { background: var(--panel); }
+    .scroll { overflow-x: auto; }
+    .cta { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 20px; margin: 32px 0; }
+    .cta a.btn { display: inline-block; margin-top: 8px; padding: 10px 18px; border-radius: 8px; background: #DD8E1F; color: #0B1A2D; font-weight: 700; text-decoration: none; }
+    footer { padding-top: 24px; padding-bottom: 40px; color: var(--muted); font-size: .9rem; border-top: 1px solid var(--line); margin-top: 40px; }
+    footer a { margin-right: 14px; }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="/en/">SetTime</a>
+    <nav aria-label="Site">
+      <a href="/en/">Product</a>
+      <a href="/en/#pilot">Free pilot</a>
+      <a href="https://www.kairosaitech.com/">Kairos.ai</a>
+    </nav>
+  </header>
+  <main>
+    <article>
+      <h1>Rebar takeoff and bar bending schedules, explained</h1>
+      <p class="lede">A rebar takeoff turns structural drawings into the list of bars a fabricator cuts and bends and a contractor orders. This guide covers what the takeoff and its bar bending schedule contain, how to turn length into weight, where manual takeoff goes wrong, and what to look for in software.</p>
+
+      <h2>What a rebar takeoff is</h2>
+      <p>The estimator reads plans, sections and details, then counts and measures every bar member by member: beams, columns, slabs, walls and foundations. The result is summarised by bar size and total weight for pricing, and broken down by shape and length for fabrication.</p>
+
+      <h2>What a bar bending schedule contains</h2>
+      <p>The bar bending schedule (BBS, also called a bar schedule or rebar schedule) has one row per bar mark. Typical columns:</p>
+      <div class="scroll">
+        <table>
+          <thead><tr><th>Column</th><th>What it tells the fabricator</th></tr></thead>
+          <tbody>
+            <tr><td>Bar mark</td><td>A unique reference that ties the row to the drawing</td></tr>
+            <tr><td>Member / location</td><td>Which beam, column, slab or wall the bar belongs to</td></tr>
+            <tr><td>Bar size</td><td>Diameter (metric) or bar number (US)</td></tr>
+            <tr><td>Shape code and dimensions</td><td>The bend shape and the length of each leg, for example the shape codes in BS 8666</td></tr>
+            <tr><td>Number of members &times; bars per member</td><td>Total number of bars for the mark</td></tr>
+            <tr><td>Cut length and total length</td><td>Length of one bar before bending, and the total for the mark</td></tr>
+            <tr><td>Weight</td><td>Total length multiplied by the weight per metre</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Many shops feed this data to bending machines through a machine-readable format such as BVBS, which is why the exact output format matters when you choose software.</p>
+
+      <h2>Converting length to weight</h2>
+      <p>For metric bars, weight per metre is approximately <strong>d&sup2; / 162</strong>, where d is the bar diameter in millimetres (steel at 7,850 kg/m&sup3;).</p>
+      <div class="scroll">
+        <table>
+          <thead><tr><th>Diameter</th><th>Weight per metre</th></tr></thead>
+          <tbody>
+            <tr><td>12 mm</td><td>0.89 kg/m</td></tr>
+            <tr><td>16 mm</td><td>1.58 kg/m</td></tr>
+            <tr><td>20 mm</td><td>2.47 kg/m</td></tr>
+            <tr><td>25 mm</td><td>3.86 kg/m</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>US bar sizes (#4, #5 and so on) use nominal weights from the applicable standard, so look them up in the table rather than computing from the size number.</p>
+
+      <h2>Where manual takeoff goes wrong</h2>
+      <ul>
+        <li><strong>Missed notes.</strong> A typical detail or general note that applies to many members but is stated once.</li>
+        <li><strong>Wrong scale.</strong> Measuring from a drawing that was reduced or has more than one scale on a sheet.</li>
+        <li><strong>Plan and section disagree.</strong> Spacing or bar size differs between views and nobody reconciles them.</li>
+        <li><strong>Inconsistent laps and anchorage.</strong> The lap length or hook assumption changes between estimators, or from member to member.</li>
+        <li><strong>Bend allowances.</strong> Cut length is taken as the sum of the outside legs, so bent bars come out long.</li>
+        <li><strong>Revisions.</strong> A new drawing issue arrives and the schedule is not updated everywhere it should be.</li>
+      </ul>
+
+      <h2>What to look for in takeoff software</h2>
+      <ul>
+        <li><strong>Traceability.</strong> You can see where each value came from: read from the drawing, computed, converted or filled in by default.</li>
+        <li><strong>Gaps are flagged, not guessed.</strong> Missing annotations should be raised for a person to review, not silently assumed.</li>
+        <li><strong>Output that fits your shop.</strong> A schedule format and shop drawings your existing tools and detailers can use without retyping.</li>
+        <li><strong>A person stays in the loop.</strong> The estimator reviews and approves the result.</li>
+      </ul>
+
+      <div class="cta">
+        <h2 style="margin-top:0">Where SetTime fits</h2>
+        <p><a href="/en/">SetTime</a> is rebar takeoff software from <a href="https://www.kairosaitech.com/">Kairos.ai</a>. Today it turns a structural drawing into a bar schedule (.xlsm) and annotated shop drawings (.dwg/DXF) for beams, columns, slabs and walls, through an AutoCAD 2021 plugin and a cross-platform desktop app. Every value is tagged as read, computed, converted or defaulted, and every gap is flagged for a person to review. Foundations, bend and hook types, a 3D check and an audit trail are in development, and BVBS output is planned.</p>
+        <p>Want to see it on your own drawing? The free pilot returns a material list within 24 hours of receiving one structural drawing.</p>
+        <a class="btn" href="/en/#pilot">Apply for the free pilot</a>
+      </div>
+
+      <h2>Frequently asked questions</h2>
+      <h3>Is a rebar takeoff the same as a bar bending schedule?</h3>
+      <p>No. The takeoff is the process of counting and measuring every bar from the drawings. The bar bending schedule is the document that results: a table with one row per bar mark that the fabricator cuts and bends from and the contractor orders against.</p>
+      <h3>How do I convert rebar length to weight?</h3>
+      <p>For metric bars, weight per metre is approximately the diameter in millimetres squared divided by 162. A 12 mm bar weighs about 0.89 kg per metre, a 20 mm bar about 2.47 kg per metre and a 25 mm bar about 3.86 kg per metre. Multiply by the total length. For US bar sizes use the nominal weight table of the applicable standard.</p>
+      <h3>What are the most common mistakes in a manual rebar takeoff?</h3>
+      <p>Missed notes and typical details, wrong drawing scale, plan and section details that disagree, inconsistent lap and anchorage assumptions, bend and hook allowances applied wrongly, and drawing revisions that never reach the takeoff.</p>
+    </article>
+  </main>
+  <footer>
+    <a href="/en/">SetTime</a>
+    <a href="/en/#howto">How it works</a>
+    <a href="/en/#pilot">Free pilot</a>
+    <a href="https://www.kairosaitech.com/">Kairos.ai</a>
+    <p>&copy; 2026 Kairos.ai. Weights use the common approximation for steel at 7,850 kg/m&sup3;; always check the applicable standard and your project specification.</p>
+  </footer>
+</body>
+</html>

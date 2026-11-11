@@ -6,3 +6,4 @@ https://settime.kairosaitech.com/fr/
 https://settime.kairosaitech.com/de/
 https://settime.kairosaitech.com/it/
 https://settime.kairosaitech.com/pt/
+https://settime.kairosaitech.com/guides/rebar-takeoff/

@@ -191,8 +191,11 @@ ${hreflangLinks("    ", "xml")}
   </url>
 `
 ).join("");
-out.set("sitemap.xml", sitemap.slice(0, sitemap.indexOf(firstUrl)) + rootBlock + localeBlocks + "</urlset>\n");
-out.set("sitemap.txt", Object.keys(translations).map(urlFor).join("\n") + "\n");
+const pageUrls = new Set([DEFAULT_LANG, ...LOCALES].map((l) => urlFor(l)));
+const extraBlocks = (sitemap.match(/  <url>[\s\S]*?<\/url>\n/g) || []).filter((b) => !pageUrls.has(b.match(/<loc>([^<]+)</)[1]));
+const extraLocs = extraBlocks.map((b) => b.match(/<loc>([^<]+)</)[1]);
+out.set("sitemap.xml", sitemap.slice(0, sitemap.indexOf(firstUrl)) + rootBlock + localeBlocks + extraBlocks.join("") + "</urlset>\n");
+out.set("sitemap.txt", [...Object.keys(translations).map(urlFor), ...extraLocs].join("\n") + "\n");
 
 let stale = 0;
 for (const [file, content] of out) {

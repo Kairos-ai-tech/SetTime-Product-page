@@ -1,6 +1,6 @@
 # SetTime
 
-Last updated: 2026-10-30
+Last updated: 2026-11-12
 
 > SetTime is rebar takeoff software built by Kairos.ai (https://www.kairosaitech.com) to replace the outsourced estimating team. Shipping today: it turns a structural drawing into a bar schedule (.xlsm) and annotated shop drawings (.dwg/DXF) for beams, columns, slabs and walls, via an AutoCAD 2021 plugin and a cross-platform desktop app, with every value tagged by source and every gap flagged for review. In development: drawing preparation, foundations, bend types and a 3D model check. Planned: BVBS machine output. Target customers: rebar fabricators and detailing firms in the US and Europe that buy outsourced takeoff today; the engine is being validated on Taiwanese drawings.
 

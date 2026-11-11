@@ -2018,6 +2018,22 @@ html.no-3d,
   transform: translateY(-1px);
 }
 
+.footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 18px;
+  flex-basis: 100%;
+  font-size: 0.8rem;
+}
+
+.footer-nav a {
+  color: rgba(255, 255, 255, 0.65);
+  transition: color 0.2s;
+}
+
+.footer-nav a:hover { color: var(--accent-gold-light); }
+
 .footer-rights {
   color: rgba(255, 255, 255, 0.62);
   font-size: 0.78rem;

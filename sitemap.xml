@@ -141,4 +141,10 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://settime.kairosaitech.com/pt/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://settime.kairosaitech.com/"/>
   </url>
+  <url>
+    <loc>https://settime.kairosaitech.com/guides/rebar-takeoff/</loc>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>

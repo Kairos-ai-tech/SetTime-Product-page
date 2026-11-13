@@ -19,7 +19,7 @@ SetTime (formerly AI學徒 iTech) — a product page / strategy documentation pr
 
 | Layer | Technologies |
 |-------|-------------|
-| Drawing automation | AutoCAD 2021 plugin, .NET, Avalonia (cross-platform desktop) |
+| Drawing automation | .NET, Avalonia (cross-platform desktop; no AutoCAD license required). AutoCAD plugin: in development |
 | Product page | Vanilla HTML/CSS/JS, Three.js, GSAP + ScrollTrigger, Lenis, Vanta |
 
 ## Key Domain Concepts
@@ -27,6 +27,7 @@ SetTime (formerly AI學徒 iTech) — a product page / strategy documentation pr
 - **結構施工圖數位化**: The structural drawing is the single source of truth — parsed once into bar-schedule/cut-list/bend-list data that drives every downstream step (shop drawings, 3D check, machine output)
 - **取代外包算量 (replace outsourced takeoff)**: Current product axis (strategy of 30 Oct 2026). Drawing in, bar schedule (.xlsm) and annotated shop drawings (.dwg/DXF) out; every value tagged read/computed/converted/default and every gap flagged for review. Shipping for beams, columns, slabs and walls; drawing prep, foundations, bend types and 3D check are in development; BVBS is only planned. AR field guidance and photo-based as-built verification are dropped from the roadmap, so do not reintroduce them on the page
 - **Market figures**: Stats on the page (16,900 US estimator openings, +24%/+4% bids vs headcount, 24–72 h and US$100–500 competitor turnaround/price, 9 Mt US rebar, US$37/h) come from third-party or vendor sources and are footnoted as such; the hours/dollars example is an illustration, not a measured result. Do not publish pricing
+- **AutoCAD**: SetTime works standalone and needs no AutoCAD license (不需 AutoCAD 授權). An AutoCAD plugin is in development (Sean, 13 Nov 2026). Never present the AutoCAD plugin as shipped or available, and never describe SetTime itself as an AutoCAD plugin, in any locale, meta tag, JSON-LD, llms.txt or README. Mention the plugin only under in development, or leave it out. The competitor row `advantage.r3.method` (「需人操作的 CAD 外掛」) describes competitors and stays
 - **稽核鏈 (audit trail)**: SHA-256 hash-chained, append-only, timestamped record of pipeline actions, built for government/enterprise compliance review
 - Current focus: rebar takeoff for fabricators and detailers in the US and Europe, with Taiwan (CNS drawings) as the proving ground. Roadmap targets adjacent trades: CNC machining, mold making, welding, auto repair, plumbing, sheet metal
 

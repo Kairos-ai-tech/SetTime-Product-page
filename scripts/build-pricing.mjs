@@ -79,9 +79,13 @@ function page(lang) {
   }).join("");
 
   const faq = t.faq.items.map(([q, a]) => {
+    // {cancelPath} / {supportEmail}: bracketed placeholders from PLACEHOLDERS, outlined until replaced.
+    const inline = (s) => s.replace(/\{(cancelPath|supportEmail)\}/g, (_, k) => `<span data-placeholder="${k}">${esc(PLACEHOLDERS[k][lang])}</span>`);
     const body = a === "{faqPrivacy}"
       ? `<p data-placeholder="faq-privacy">${faqPrivacy}</p>`
-      : variant("p", a, lang, { defCur });
+      : /\{(cancelPath|supportEmail)\}/.test(a)
+        ? `<p>${inline(esc(a))}</p>`
+        : variant("p", a, lang, { defCur });
     return `
         <details>
           <summary>${esc(q)}</summary>

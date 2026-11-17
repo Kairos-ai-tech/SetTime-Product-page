@@ -5,7 +5,8 @@
 
 // ---------------------------------------------------------------------------
 // PLACEHOLDERS: swap these when People/Legal finish the policies.
-// They are the only unfinished items on the page. Every link and line below is
+// They are the only unfinished items on the page (legal links, FAQ privacy line,
+// cancel path, support email). Every link and line below is
 // rendered from here, so changing a value updates both languages.
 // ---------------------------------------------------------------------------
 export const PLACEHOLDERS = {
@@ -21,6 +22,16 @@ export const PLACEHOLDERS = {
   faqPrivacy: {
     en: "We process your drawings on your behalf to produce your takeoff, and card details are handled by Paddle, not by us. See our {privacy} for how we use, keep and delete your data.",
     zh: "我們受你委託處理圖面，用來產出你的算料結果；信用卡資料由 Paddle 處理，我們不經手。資料如何使用、保存與刪除，請見{privacy}。",
+  },
+  // FAQ "How do I cancel?": where to cancel in the product, and the support address.
+  // Keep the [brackets] visible until the billing settings page and support email exist.
+  cancelPath: {
+    en: "[Billing settings in your account]",
+    zh: "[帳號的帳務設定]",
+  },
+  supportEmail: {
+    en: "[support email]",
+    zh: "[客服信箱]",
   },
 };
 
@@ -102,6 +113,7 @@ export const COPY = {
       label: "Free pilot",
       heading: "Try it on your own drawings first.",
       body: [
+        "Try any plan free for 1 month, full usage, no tonnage cap. Auto-renews into your plan unless you cancel before the trial ends; we'll remind you before the first charge.",
         "Your first month is free. Pick a plan and run SetTime on your real projects for one month at no charge.",
         "When the free month ends, your pilot automatically renews into the plan and billing cycle you chose, and billing starts. To stop, cancel any time before your pilot ends and you won't be charged.",
       ],
@@ -124,6 +136,7 @@ export const COPY = {
         ["What drawing formats do you support?", "Vector PDF is supported today. Tell us what you work with, and we'll let you know what fits."],
         ["Can SetTime connect to our own systems?", "API integration isn't a self-serve feature yet, but we can build a custom integration for your workflow. Contact us to talk it through."],
         ["What happens when my free pilot ends?", "Your pilot renews automatically into the plan and billing cycle you chose, and billing starts. If you don't want to continue, cancel before the pilot ends and you won't be charged."],
+        ["How do I cancel?", "Cancel any time before your free month ends from {cancelPath}, or email us at {supportEmail}. You won't be charged, and you keep access until the trial ends. After that, cancelling stops your next renewal."],
         ["Can I add more seats?", "Yes. On Team and Business, extra seats are {seat} per seat per month."],
         ["Can I switch plans or billing?", "Yes. You can move between plans and between monthly and yearly billing."],
         ["How does billing work?", "Payments are processed securely by Paddle, our reseller. Prices exclude applicable taxes, which are calculated at checkout."],
@@ -192,6 +205,7 @@ export const COPY = {
       label: "免費試用",
       heading: "先用你自己的圖試試看。",
       body: [
+        "任選方案免費試用 1 個月，功能全開，不限噸數。試用結束後自動續訂為你的方案，除非你在試用結束前取消；首次扣款前我們會先提醒你。",
         "第一個月免費。選好方案，用你真實的案子免費跑一個月。",
         "免費期結束後，會自動續訂為你選擇的方案與繳費週期，並開始計費。如不續用，請在試用結束前隨時取消，就不會收取任何費用。",
       ],
@@ -214,6 +228,7 @@ export const COPY = {
         ["支援哪些圖檔格式？", "目前支援向量 PDF。告訴我們你平常用的格式，我們會說明怎麼配合。"],
         ["可以串接我們自己的系統嗎？", "API 串接目前還不是自助功能，但可以依你的流程客製。歡迎聯絡我們討論。"],
         ["免費試用結束後會怎樣？", "會自動續訂為你選擇的方案與繳費週期，並開始計費。如不續用，請在試用結束前取消，就不會收取任何費用。"],
+        ["要怎麼取消？", "免費期結束前，隨時可以在{cancelPath}取消，或寄信到 {supportEmail}。不會收取任何費用，試用結束前都能照常使用。之後取消，則會停止下一期續訂。"],
         ["可以加購席位嗎？", "可以。團隊與企業方案可加購席位，每席每月 {seat}{ntdSuffix}。"],
         ["可以換方案或改繳費方式嗎？", "可以，方案之間、月繳與年繳之間都能調整。"],
         ["怎麼付款？", "付款由我們的經銷商 Paddle 安全處理。台灣價格皆為未稅價，5% 營業稅另計。"],

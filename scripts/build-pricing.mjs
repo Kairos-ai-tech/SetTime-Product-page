@@ -31,7 +31,11 @@ function fill(tpl, lang, plan, cur) {
     seat: PRICES.extraSeat[cur], pilot: PRICES.pilot[cur],
     ntdSuffix: cur === "ntd" ? COPY[lang].ntdSuffix : "",
   };
-  return tpl.replace(/\{(\w+)\}/g, (m, k) => (k in vals && vals[k] !== undefined ? esc(vals[k]) : m));
+  return tpl.replace(/\{(\w+)\}/g, (m, k) => {
+    if (!(k in vals)) return m;
+    if (vals[k] === undefined) throw new Error(`${lang}: no value for ${m} (plan: ${plan ?? "none"}) in "${tpl}"`);
+    return esc(vals[k]);
+  });
 }
 
 // Text (escaped) or trusted markup (the price line), with per-state variants when it has figures.
@@ -128,7 +132,8 @@ function page(lang) {
       ${t.hero.taxNote ? `<p class="tax-note" data-currency-only="ntd"${defCur === "ntd" ? "" : " hidden"}>${esc(t.hero.taxNote)}</p>` : ""}
     </section>
 
-    <section class="plans" aria-label="${esc(t.aria.plans)}">${plans}
+    <section class="plans" aria-labelledby="plans-heading">
+      <h2 class="sr-only" id="plans-heading">${esc(t.aria.plans)}</h2>${plans}
     </section>
 
     <section class="includes">

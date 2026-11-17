@@ -18,7 +18,7 @@ import { fileURLToPath, pathToFileURL } from "node:url";
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const SITE = "https://settime.kairosaitech.com";
 const check = process.argv.includes("--check");
-const { PLACEHOLDERS, PRICES, LINKS, COPY } = await import(pathToFileURL(path.join(root, "pricing/pricing-content.mjs")).href);
+const { PLACEHOLDERS, PRICES, LINKS, COPY, SUPPORT_EMAIL } = await import(pathToFileURL(path.join(root, "pricing/pricing-content.mjs")).href);
 
 const esc = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 // A page offers only the currencies in its toggles.currency.order.
@@ -79,11 +79,11 @@ function page(lang) {
   }).join("");
 
   const faq = t.faq.items.map(([q, a]) => {
-    // {cancelPath} / {supportEmail}: bracketed placeholders from PLACEHOLDERS, outlined until replaced.
-    const inline = (s) => s.replace(/\{(cancelPath|supportEmail)\}/g, (_, k) => `<span data-placeholder="${k}">${esc(PLACEHOLDERS[k][lang])}</span>`);
+    // {supportEmail}: SUPPORT_EMAIL as a mailto: link.
+    const inline = (s) => s.replace(/\{supportEmail\}/g, () => `<a href="mailto:${esc(SUPPORT_EMAIL)}">${esc(SUPPORT_EMAIL)}</a>`);
     const body = a === "{faqPrivacy}"
       ? `<p data-placeholder="faq-privacy">${faqPrivacy}</p>`
-      : /\{(cancelPath|supportEmail)\}/.test(a)
+      : /\{supportEmail\}/.test(a)
         ? `<p>${inline(esc(a))}</p>`
         : variant("p", a, lang, { defCur });
     return `

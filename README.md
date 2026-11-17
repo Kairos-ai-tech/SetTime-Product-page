@@ -116,7 +116,7 @@ metal.
 - `llms.txt` — a machine-readable summary of the product for AI answer
   engines (AEO/GEO).
 - `en/`, `ja/`, `es/`, `fr/`, `de/`, `it/`, `pt/` — generated per-language pages (hreflang targets). Do not edit by hand: change `index.html` or `i18n.js`, then run `node scripts/build-locales.mjs`; CI runs it with `--check`. The same script keeps the hreflang block, `sitemap.xml` and `sitemap.txt` in sync.
-- `pricing/` — draft pricing page in 繁中 (`/pricing/`) and English (`/en/pricing/`), `noindex` and not linked from the site or sitemap until launch. Copy, prices and the legal-link placeholders live in `pricing/pricing-content.mjs`; run `node scripts/build-pricing.mjs` after editing it (CI runs `--check`). No other locale has a pricing page.
+- `pricing/` — draft pricing page in English (`/pricing/`, the default) and 繁中 (`/zh-tw/pricing/`), `noindex` and not linked from the site or sitemap until launch. Copy, prices and the legal-link placeholders live in `pricing/pricing-content.mjs`; run `node scripts/build-pricing.mjs` after editing it (CI runs `--check`). No other locale has a pricing page.
 - `scripts/og-card.html` — source for `assets/settime-og-card.jpg` (screenshot at 1200×630).
 - `sitemap.xml`, `sitemap.txt`, `robots.txt` — standard SEO crawl configuration, with
   explicit allow-rules for AI crawlers (GPTBot, ClaudeBot, PerplexityBot,

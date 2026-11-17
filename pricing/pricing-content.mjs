@@ -1,7 +1,7 @@
-// Source of truth for the /pricing/ (繁中) and /en/pricing/ (English) pages.
+// Source of truth for the /pricing/ (English, the default) and /zh-tw/pricing/ (繁中) pages.
 // Copy is from the approved draft (kairos-seo/page-drafts/2026-11-17-settime-pricing-page.md);
 // do not reword it here. After editing, run: node scripts/build-pricing.mjs
-// (CI runs it with --check). Never hand-edit pricing/index.html or en/pricing/index.html.
+// (CI runs it with --check). Never hand-edit pricing/index.html or zh-tw/pricing/index.html.
 
 // ---------------------------------------------------------------------------
 // PLACEHOLDERS: swap these when People/Legal finish the policies.
@@ -62,13 +62,13 @@ export const LINKS = {
 export const COPY = {
   en: {
     htmlLang: "en",
-    path: "/en/pricing/",
+    path: "/pricing/",
     defaultCurrency: "usd",
     meta: {
       title: "SetTime Pricing | AI Rebar Takeoff Plans",
       description: "SetTime plans from US$249/month billed yearly. Seats plus a shared monthly rebar tonnage. No AutoCAD license needed. Try it free for one month on your own drawings.",
     },
-    nav: { product: "SetTime", otherLang: { label: "繁體中文", href: "/pricing/", lang: "zh-Hant" } },
+    nav: { product: "SetTime", otherLang: { label: "繁體中文", href: "/zh-tw/pricing/", lang: "zh-Hant" } },
     aria: { language: "Language", plans: "Plans", legal: "Legal" }, // screen-reader labels, not visible copy
     hero: {
       heading: "Pricing that scales with your rebar, not your headcount.",
@@ -155,13 +155,13 @@ export const COPY = {
 
   zh: {
     htmlLang: "zh-Hant",
-    path: "/pricing/",
+    path: "/zh-tw/pricing/",
     defaultCurrency: "ntd",
     meta: {
       title: "SetTime 方案與價格｜AI 鋼筋算料",
       description: "SetTime 年繳每月 NT$5,500 起，依席位加每月共用鋼筋噸數計價，無需 AutoCAD 授權。可先免費試用一個月，用你自己的圖驗證。",
     },
-    nav: { product: "SetTime", otherLang: { label: "English", href: "/en/pricing/", lang: "en" } },
+    nav: { product: "SetTime", otherLang: { label: "English", href: "/pricing/", lang: "en" } },
     aria: { language: "語言", plans: "方案", legal: "法律條款" },
     hero: {
       heading: "依鋼筋量計價，不是依人頭。",

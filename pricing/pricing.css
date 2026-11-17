@@ -1,4 +1,4 @@
-/* Pricing page (/pricing/, /en/pricing/). Palette matches guides/rebar-takeoff. */
+/* Pricing page (/pricing/, /zh-tw/pricing/). Palette matches guides/rebar-takeoff. */
 :root { --navy: #0B1A2D; --gold: #96590C; --accent: #DD8E1F; --bg: #FBFAF7; --muted: #5B6776; --line: rgba(11,26,45,.14); --panel: #F4F1EC; --card: #FFFFFF; }
 @media (prefers-color-scheme: dark) { :root { --navy: #EAF0F7; --gold: #F2C066; --bg: #0B1A2D; --muted: #AAB6C4; --line: rgba(255,255,255,.18); --panel: #15293F; --card: #11243A; } }
 * { box-sizing: border-box; }

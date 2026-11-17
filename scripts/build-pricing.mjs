@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // Renders the pricing pages from pricing/pricing-content.mjs:
-//   pricing/index.html     (繁體中文, /pricing/)
-//   en/pricing/index.html  (English, /en/pricing/)
+//   pricing/index.html        (English, /pricing/, the default)
+//   zh-tw/pricing/index.html  (繁體中文, /zh-tw/pricing/)
 //
 //   node scripts/build-pricing.mjs          write files
 //   node scripts/build-pricing.mjs --check  exit 1 if any file is stale (CI)
@@ -107,7 +107,7 @@ function page(lang) {
   <link rel="canonical" href="${url}">
   <link rel="alternate" hreflang="zh-Hant" href="${SITE}${COPY.zh.path}">
   <link rel="alternate" hreflang="en" href="${SITE}${COPY.en.path}">
-  <link rel="alternate" hreflang="x-default" href="${SITE}${COPY.zh.path}">
+  <link rel="alternate" hreflang="x-default" href="${SITE}${COPY.en.path}">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="SetTime">
   <meta property="og:title" content="${esc(t.meta.title)}">
@@ -189,8 +189,8 @@ function page(lang) {
 }
 
 const out = new Map([
-  ["pricing/index.html", page("zh")],
-  ["en/pricing/index.html", page("en")],
+  ["pricing/index.html", page("en")],
+  ["zh-tw/pricing/index.html", page("zh")],
 ]);
 
 let stale = 0;

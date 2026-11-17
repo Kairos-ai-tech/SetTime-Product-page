@@ -147,7 +147,7 @@ function page(lang) {
     <section class="pilot" id="pilot">
       <p class="eyebrow">${esc(t.pilot.label)}</p>
       <h2>${esc(t.pilot.heading)}</h2>
-      ${variant("p", t.pilot.body, lang, { defCur })}
+      ${[].concat(t.pilot.body).map((b) => variant("p", b, lang, { defCur })).join("\n      ")}
       <a class="btn btn--primary" href="${esc(L.pilot)}">${esc(t.pilot.cta)}</a>
     </section>
 

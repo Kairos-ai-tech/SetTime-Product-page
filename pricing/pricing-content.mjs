@@ -55,7 +55,7 @@ export const COPY = {
     defaultCurrency: "usd",
     meta: {
       title: "SetTime Pricing | AI Rebar Takeoff Plans",
-      description: "SetTime plans from US$249/month billed yearly. Seats plus a shared monthly rebar tonnage. No AutoCAD license needed. Try a free one-month pilot on your own drawings.",
+      description: "SetTime plans from US$249/month billed yearly. Seats plus a shared monthly rebar tonnage. No AutoCAD license needed. Try it free for one month on your own drawings.",
     },
     nav: { product: "SetTime", otherLang: { label: "繁體中文", href: "/pricing/", lang: "zh-Hant" } },
     aria: { language: "Language", plans: "Plans", legal: "Legal" }, // screen-reader labels, not visible copy
@@ -101,8 +101,11 @@ export const COPY = {
     pilot: {
       label: "Free pilot",
       heading: "Try it on your own drawings first.",
-      body: "Run SetTime on your real projects for one month, free.",
-      cta: "Book a pilot",
+      body: [
+        "Your first month is free. Pick a plan and run SetTime on your real projects for one month at no charge.",
+        "When the free month ends, your pilot automatically renews into the plan and billing cycle you chose, and billing starts. To stop, cancel any time before your pilot ends and you won't be charged.",
+      ],
+      cta: "Start your free pilot",
     },
     why: {
       heading: "Why teams switch",
@@ -120,6 +123,7 @@ export const COPY = {
         ["Do I need AutoCAD?", "No. SetTime works on its own. No AutoCAD license needed."],
         ["What drawing formats do you support?", "Vector PDF is supported today. Tell us what you work with, and we'll let you know what fits."],
         ["Can SetTime connect to our own systems?", "API integration isn't a self-serve feature yet, but we can build a custom integration for your workflow. Contact us to talk it through."],
+        ["What happens when my free pilot ends?", "Your pilot renews automatically into the plan and billing cycle you chose, and billing starts. If you don't want to continue, cancel before the pilot ends and you won't be charged."],
         ["Can I add more seats?", "Yes. On Team and Business, extra seats are {seat} per seat per month."],
         ["Can I switch plans or billing?", "Yes. You can move between plans and between monthly and yearly billing."],
         ["How does billing work?", "Payments are processed securely by Paddle, our reseller. Prices exclude applicable taxes, which are calculated at checkout."],
@@ -128,8 +132,8 @@ export const COPY = {
     },
     closing: {
       heading: "Bring your toughest drawing.",
-      body: "Book a pilot and see the quantities on your own project.",
-      pilot: "Book a pilot",
+      body: "Start a free one-month pilot and see the quantities on your own project.",
+      pilot: "Start your free pilot",
       contact: "Contact us",
     },
     legal: { terms: "Terms of Service", refund: "Refund Policy", privacy: "Privacy Policy" },
@@ -187,8 +191,11 @@ export const COPY = {
     pilot: {
       label: "免費試用",
       heading: "先用你自己的圖試試看。",
-      body: "免費一個月，用你真實的案子跑 SetTime。",
-      cta: "預約試用",
+      body: [
+        "第一個月免費。選好方案，用你真實的案子免費跑一個月。",
+        "免費期結束後，會自動續訂為你選擇的方案與繳費週期，並開始計費。如不續用，請在試用結束前隨時取消，就不會收取任何費用。",
+      ],
+      cta: "開始免費試用",
     },
     why: {
       heading: "為什麼換成 SetTime",
@@ -206,6 +213,7 @@ export const COPY = {
         ["需要 AutoCAD 嗎？", "不需要。SetTime 獨立運作，無需 AutoCAD 授權。"],
         ["支援哪些圖檔格式？", "目前支援向量 PDF。告訴我們你平常用的格式，我們會說明怎麼配合。"],
         ["可以串接我們自己的系統嗎？", "API 串接目前還不是自助功能，但可以依你的流程客製。歡迎聯絡我們討論。"],
+        ["免費試用結束後會怎樣？", "會自動續訂為你選擇的方案與繳費週期，並開始計費。如不續用，請在試用結束前取消，就不會收取任何費用。"],
         ["可以加購席位嗎？", "可以。團隊與企業方案可加購席位，每席每月 {seat}{ntdSuffix}。"],
         ["可以換方案或改繳費方式嗎？", "可以，方案之間、月繳與年繳之間都能調整。"],
         ["怎麼付款？", "付款由我們的經銷商 Paddle 安全處理。台灣價格皆為未稅價，5% 營業稅另計。"],
@@ -214,8 +222,8 @@ export const COPY = {
     },
     closing: {
       heading: "帶你最難算的那張圖來。",
-      body: "預約試用，在你自己的案子上看結果。",
-      pilot: "預約試用",
+      body: "免費試用一個月，在你自己的案子上看結果。",
+      pilot: "開始免費試用",
       contact: "聯絡我們",
     },
     legal: { terms: "服務條款", refund: "退款政策", privacy: "隱私權政策" },

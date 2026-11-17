@@ -121,7 +121,7 @@ export const COPY = {
         ["Can SetTime connect to our own systems?", "API integration isn't a self-serve feature yet, but we can build a custom integration for your workflow. Contact us to talk it through."],
         ["Can I add more seats?", "Yes. On Team and Business, extra seats are {seat} per seat per month."],
         ["Can I switch plans or billing?", "Yes. You can move between plans and between monthly and yearly billing."],
-        ["How does billing work?", "Payments are processed securely by Paddle, our reseller. Prices exclude applicable taxes, which are calculated at checkout. Taiwan prices exclude the 5% business tax, which is added on top."],
+        ["How does billing work?", "Payments are processed securely by Paddle, our reseller. Prices exclude applicable taxes, which are calculated at checkout."],
         ["Is my drawing data safe?", "{faqPrivacy}"],
       ],
     },

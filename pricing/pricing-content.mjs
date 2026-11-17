@@ -15,11 +15,12 @@ export const PLACEHOLDERS = {
     refund: "#TODO-refund",
     privacy: "#TODO-privacy",
   },
-  // FAQ "Is my drawing data safe?": check against People/Legal's privacy policy once drafted.
+  // FAQ "Is my drawing data safe?": revised 11/17 against People/Legal's privacy policy draft
+  // (not yet published or reviewed by Sean). Re-check once the policy is final.
   // {privacy} is replaced by a link to legal.privacy.
   faqPrivacy: {
-    en: "Your drawings are used to produce your takeoff. See our {privacy} for details.",
-    zh: "你的圖面只用來產出你的算料結果。詳情請見{privacy}。",
+    en: "We process your drawings on your behalf to produce your takeoff, and card details are handled by Paddle, not by us. See our {privacy} for how we use, keep and delete your data.",
+    zh: "我們受你委託處理圖面，用來產出你的算料結果；信用卡資料由 Paddle 處理，我們不經手。資料如何使用、保存與刪除，請見{privacy}。",
   },
 };
 

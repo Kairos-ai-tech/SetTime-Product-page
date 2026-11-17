@@ -22,7 +22,7 @@ const { PLACEHOLDERS, PRICES, LINKS, COPY } = await import(pathToFileURL(path.jo
 
 const esc = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 const STATES = [["usd", "yearly"], ["usd", "monthly"], ["ntd", "yearly"], ["ntd", "monthly"]];
-const hasToken = (s) => /\{(price|monthly|yearly|overage|seat|pilot|ntdSuffix)\}/.test(s);
+const hasToken = (s) => /\{(monthly|yearly|overage|seat|pilot|ntdSuffix)\}/.test(s);
 
 function fill(tpl, lang, plan, cur) {
   const p = plan && PRICES[plan] ? PRICES[plan][cur] : {};
@@ -98,6 +98,7 @@ function page(lang) {
   <link rel="canonical" href="${url}">
   <link rel="alternate" hreflang="zh-Hant" href="${SITE}${COPY.zh.path}">
   <link rel="alternate" hreflang="en" href="${SITE}${COPY.en.path}">
+  <link rel="alternate" hreflang="x-default" href="${SITE}${COPY.zh.path}">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="SetTime">
   <meta property="og:title" content="${esc(t.meta.title)}">
@@ -112,7 +113,7 @@ function page(lang) {
 <body data-default-currency="${defCur}">
   <header class="top">
     <a class="logo" href="${L.home}"><img src="/assets/settime-logo-64.jpg" alt="" width="28" height="28"> ${esc(t.nav.product)}</a>
-    <nav aria-label="Language">
+    <nav aria-label="${esc(t.aria.language)}">
       <a href="${other.href}" hreflang="${other.lang}" lang="${other.lang}">${esc(other.label)}</a>
     </nav>
   </header>
@@ -127,7 +128,7 @@ function page(lang) {
       ${t.hero.taxNote ? `<p class="tax-note" data-currency-only="ntd"${defCur === "ntd" ? "" : " hidden"}>${esc(t.hero.taxNote)}</p>` : ""}
     </section>
 
-    <section class="plans" aria-label="Plans">${plans}
+    <section class="plans" aria-label="${esc(t.aria.plans)}">${plans}
     </section>
 
     <section class="includes">
@@ -165,7 +166,7 @@ function page(lang) {
     </section>
   </main>
   <footer>
-    <nav aria-label="Legal">
+    <nav aria-label="${esc(t.aria.legal)}">
       <a href="${esc(legalHref.terms)}" data-placeholder>${esc(t.legal.terms)}</a> ·
       <a href="${esc(legalHref.refund)}" data-placeholder>${esc(t.legal.refund)}</a> ·
       <a href="${esc(legalHref.privacy)}" data-placeholder>${esc(t.legal.privacy)}</a>

@@ -43,7 +43,7 @@ export const LINKS = {
 };
 
 // ---------------------------------------------------------------------------
-// COPY. Strings with {price}, {monthly}, {yearly}, {overage}, {seat}, {pilot}
+// COPY. Strings with {monthly}, {yearly}, {overage}, {seat}, {pilot}
 // get the figure for the selected currency / billing. "ntdSuffix" is appended
 // only in the NT$ view (未稅 note, as in the copy doc).
 // ---------------------------------------------------------------------------
@@ -57,6 +57,7 @@ export const COPY = {
       description: "SetTime plans from US$249/month billed yearly. Seats plus a shared monthly rebar tonnage. No AutoCAD license needed. Try a paid one-month pilot on your own drawings.",
     },
     nav: { product: "SetTime", otherLang: { label: "繁體中文", href: "/pricing/", lang: "zh-Hant" } },
+    aria: { language: "Language", plans: "Plans", legal: "Legal" }, // screen-reader labels, not visible copy
     hero: {
       heading: "Pricing that scales with your rebar, not your headcount.",
       lead: "Every plan includes a monthly tonnage allowance shared across your team. No AutoCAD license needed.",
@@ -142,6 +143,7 @@ export const COPY = {
       description: "SetTime 年繳每月 NT$5,500 起，依席位加每月共用鋼筋噸數計價，無需 AutoCAD 授權。可先付費試用一個月，用你自己的圖驗證。",
     },
     nav: { product: "SetTime", otherLang: { label: "English", href: "/en/pricing/", lang: "en" } },
+    aria: { language: "語言", plans: "方案", legal: "法律條款" },
     hero: {
       heading: "依鋼筋量計價，不是依人頭。",
       lead: "每個方案都含每月鋼筋噸數，團隊共用。無需 AutoCAD 授權。",

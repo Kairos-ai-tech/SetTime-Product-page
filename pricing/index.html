@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SetTime 方案與價格｜AI 鋼筋算料</title>
-  <meta name="description" content="SetTime 年繳每月 NT$5,500 起，依席位加每月共用鋼筋噸數計價，無需 AutoCAD 授權。可先付費試用一個月，用你自己的圖驗證。">
+  <meta name="description" content="SetTime 年繳每月 NT$5,500 起，依席位加每月共用鋼筋噸數計價，無需 AutoCAD 授權。可先免費試用一個月，用你自己的圖驗證。">
   <!-- DRAFT: keep noindex until the page is approved for launch; then switch to
        "index, follow" in build-pricing.mjs and add both URLs to sitemap.xml. -->
   <meta name="robots" content="noindex, nofollow">
@@ -16,7 +16,7 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="SetTime">
   <meta property="og:title" content="SetTime 方案與價格｜AI 鋼筋算料">
-  <meta property="og:description" content="SetTime 年繳每月 NT$5,500 起，依席位加每月共用鋼筋噸數計價，無需 AutoCAD 授權。可先付費試用一個月，用你自己的圖驗證。">
+  <meta property="og:description" content="SetTime 年繳每月 NT$5,500 起，依席位加每月共用鋼筋噸數計價，無需 AutoCAD 授權。可先免費試用一個月，用你自己的圖驗證。">
   <meta property="og:url" content="https://settime.kairosaitech.com/pricing/">
   <meta property="og:image" content="https://settime.kairosaitech.com/assets/settime-og-card.jpg">
   <meta name="twitter:card" content="summary_large_image">
@@ -24,7 +24,7 @@
   <link rel="stylesheet" href="/pricing/pricing.css">
   <script src="/pricing/pricing.js" defer></script>
 </head>
-<body data-default-currency="ntd">
+<body data-default-currency="ntd" data-currencies="ntd usd">
   <header class="top">
     <a class="logo" href="/"><img src="/assets/settime-logo-64.jpg" alt="" width="28" height="28"> SetTime</a>
     <nav aria-label="語言">
@@ -48,11 +48,11 @@
           
           <h3>個人 Solo</h3>
           <p class="tagline">適合獨立估算人員或小型加工廠。</p>
-          <p class="price" data-variant data-v-usd-yearly="年繳每月 &lt;strong&gt;US$249&lt;/strong&gt;（月繳 US$299）" data-v-usd-monthly="月繳每月 &lt;strong&gt;US$299&lt;/strong&gt;（年繳每月 US$249）" data-v-ntd-yearly="年繳每月 &lt;strong&gt;NT$5,500&lt;/strong&gt;（月繳 NT$6,500）" data-v-ntd-monthly="月繳每月 &lt;strong&gt;NT$6,500&lt;/strong&gt;（年繳每月 NT$5,500）">年繳每月 <strong>NT$5,500</strong>（月繳 NT$6,500）</p>
+          <p class="price" data-variant data-v-ntd-yearly="年繳每月 &lt;strong&gt;NT$5,500&lt;/strong&gt;（月繳 NT$6,500）" data-v-ntd-monthly="月繳每月 &lt;strong&gt;NT$6,500&lt;/strong&gt;（年繳每月 NT$5,500）" data-v-usd-yearly="年繳每月 &lt;strong&gt;US$249&lt;/strong&gt;（月繳 US$299）" data-v-usd-monthly="月繳每月 &lt;strong&gt;US$299&lt;/strong&gt;（年繳每月 US$249）">年繳每月 <strong>NT$5,500</strong>（月繳 NT$6,500）</p>
           <ul>
             <li>1 個席位</li>
             <li>每月含 200 公噸鋼筋</li>
-            <li data-variant data-v-usd-yearly="超量：每公噸 US$1.00" data-v-usd-monthly="超量：每公噸 US$1.00" data-v-ntd-yearly="超量：每公噸 NT$20" data-v-ntd-monthly="超量：每公噸 NT$20">超量：每公噸 NT$20</li>
+            <li data-variant data-v-ntd-yearly="超量：每公噸 NT$20" data-v-ntd-monthly="超量：每公噸 NT$20" data-v-usd-yearly="超量：每公噸 US$1.00" data-v-usd-monthly="超量：每公噸 US$1.00">超量：每公噸 NT$20</li>
           </ul>
           <a class="btn" href="/#contact">選擇個人方案</a>
         </article>
@@ -60,12 +60,12 @@
           <p class="badge">最多人選</p>
           <h3>團隊 Team</h3>
           <p class="tagline">適合每週都在投標估價的團隊。</p>
-          <p class="price" data-variant data-v-usd-yearly="年繳每月 &lt;strong&gt;US$699&lt;/strong&gt;（月繳 US$849）" data-v-usd-monthly="月繳每月 &lt;strong&gt;US$849&lt;/strong&gt;（年繳每月 US$699）" data-v-ntd-yearly="年繳每月 &lt;strong&gt;NT$15,000&lt;/strong&gt;（月繳 NT$18,000）" data-v-ntd-monthly="月繳每月 &lt;strong&gt;NT$18,000&lt;/strong&gt;（年繳每月 NT$15,000）">年繳每月 <strong>NT$15,000</strong>（月繳 NT$18,000）</p>
+          <p class="price" data-variant data-v-ntd-yearly="年繳每月 &lt;strong&gt;NT$15,000&lt;/strong&gt;（月繳 NT$18,000）" data-v-ntd-monthly="月繳每月 &lt;strong&gt;NT$18,000&lt;/strong&gt;（年繳每月 NT$15,000）" data-v-usd-yearly="年繳每月 &lt;strong&gt;US$699&lt;/strong&gt;（月繳 US$849）" data-v-usd-monthly="月繳每月 &lt;strong&gt;US$849&lt;/strong&gt;（年繳每月 US$699）">年繳每月 <strong>NT$15,000</strong>（月繳 NT$18,000）</p>
           <ul>
             <li>最多 3 個席位</li>
             <li>每月含 1,000 公噸鋼筋，團隊共用</li>
-            <li data-variant data-v-usd-yearly="超量：每公噸 US$0.80" data-v-usd-monthly="超量：每公噸 US$0.80" data-v-ntd-yearly="超量：每公噸 NT$15" data-v-ntd-monthly="超量：每公噸 NT$15">超量：每公噸 NT$15</li>
-            <li data-variant data-v-usd-yearly="加購席位：每席每月 US$249" data-v-usd-monthly="加購席位：每席每月 US$249" data-v-ntd-yearly="加購席位：每席每月 NT$5,500（未稅）" data-v-ntd-monthly="加購席位：每席每月 NT$5,500（未稅）">加購席位：每席每月 NT$5,500（未稅）</li>
+            <li data-variant data-v-ntd-yearly="超量：每公噸 NT$15" data-v-ntd-monthly="超量：每公噸 NT$15" data-v-usd-yearly="超量：每公噸 US$0.80" data-v-usd-monthly="超量：每公噸 US$0.80">超量：每公噸 NT$15</li>
+            <li data-variant data-v-ntd-yearly="加購席位：每席每月 NT$5,500（未稅）" data-v-ntd-monthly="加購席位：每席每月 NT$5,500（未稅）" data-v-usd-yearly="加購席位：每席每月 US$249" data-v-usd-monthly="加購席位：每席每月 US$249">加購席位：每席每月 NT$5,500（未稅）</li>
           </ul>
           <a class="btn btn--primary" href="/#contact">選擇團隊方案</a>
         </article>
@@ -73,12 +73,12 @@
           
           <h3>企業 Business</h3>
           <p class="tagline">適合同時跑多個案子的營造廠與加工廠。</p>
-          <p class="price" data-variant data-v-usd-yearly="年繳每月 &lt;strong&gt;US$1,790&lt;/strong&gt;（月繳 US$2,190）" data-v-usd-monthly="月繳每月 &lt;strong&gt;US$2,190&lt;/strong&gt;（年繳每月 US$1,790）" data-v-ntd-yearly="年繳每月 &lt;strong&gt;NT$39,000&lt;/strong&gt;（月繳 NT$47,000）" data-v-ntd-monthly="月繳每月 &lt;strong&gt;NT$47,000&lt;/strong&gt;（年繳每月 NT$39,000）">年繳每月 <strong>NT$39,000</strong>（月繳 NT$47,000）</p>
+          <p class="price" data-variant data-v-ntd-yearly="年繳每月 &lt;strong&gt;NT$39,000&lt;/strong&gt;（月繳 NT$47,000）" data-v-ntd-monthly="月繳每月 &lt;strong&gt;NT$47,000&lt;/strong&gt;（年繳每月 NT$39,000）" data-v-usd-yearly="年繳每月 &lt;strong&gt;US$1,790&lt;/strong&gt;（月繳 US$2,190）" data-v-usd-monthly="月繳每月 &lt;strong&gt;US$2,190&lt;/strong&gt;（年繳每月 US$1,790）">年繳每月 <strong>NT$39,000</strong>（月繳 NT$47,000）</p>
           <ul>
             <li>最多 8 個席位</li>
             <li>每月含 3,000 公噸鋼筋，團隊共用</li>
-            <li data-variant data-v-usd-yearly="超量：每公噸 US$0.60" data-v-usd-monthly="超量：每公噸 US$0.60" data-v-ntd-yearly="超量：每公噸 NT$12" data-v-ntd-monthly="超量：每公噸 NT$12">超量：每公噸 NT$12</li>
-            <li data-variant data-v-usd-yearly="加購席位：每席每月 US$249" data-v-usd-monthly="加購席位：每席每月 US$249" data-v-ntd-yearly="加購席位：每席每月 NT$5,500（未稅）" data-v-ntd-monthly="加購席位：每席每月 NT$5,500（未稅）">加購席位：每席每月 NT$5,500（未稅）</li>
+            <li data-variant data-v-ntd-yearly="超量：每公噸 NT$12" data-v-ntd-monthly="超量：每公噸 NT$12" data-v-usd-yearly="超量：每公噸 US$0.60" data-v-usd-monthly="超量：每公噸 US$0.60">超量：每公噸 NT$12</li>
+            <li data-variant data-v-ntd-yearly="加購席位：每席每月 NT$5,500（未稅）" data-v-ntd-monthly="加購席位：每席每月 NT$5,500（未稅）" data-v-usd-yearly="加購席位：每席每月 US$249" data-v-usd-monthly="加購席位：每席每月 US$249">加購席位：每席每月 NT$5,500（未稅）</li>
           </ul>
           <a class="btn" href="/#contact">選擇企業方案</a>
         </article>
@@ -106,9 +106,9 @@
     </section>
 
     <section class="pilot" id="pilot">
-      <p class="eyebrow">付費試用</p>
+      <p class="eyebrow">免費試用</p>
       <h2>先用你自己的圖試試看。</h2>
-      <p data-variant data-v-usd-yearly="一個月 US$699，用你真實的案子跑 SetTime。簽年約，試用費全額折抵。" data-v-usd-monthly="一個月 US$699，用你真實的案子跑 SetTime。簽年約，試用費全額折抵。" data-v-ntd-yearly="一個月 NT$15,000，用你真實的案子跑 SetTime。簽年約，試用費全額折抵。" data-v-ntd-monthly="一個月 NT$15,000，用你真實的案子跑 SetTime。簽年約，試用費全額折抵。">一個月 NT$15,000，用你真實的案子跑 SetTime。簽年約，試用費全額折抵。</p>
+      <p>免費一個月，用你真實的案子跑 SetTime。</p>
       <a class="btn btn--primary" href="/#pilot">預約試用</a>
     </section>
 
@@ -144,7 +144,7 @@
         </details>
         <details>
           <summary>可以加購席位嗎？</summary>
-          <p data-variant data-v-usd-yearly="可以。團隊與企業方案可加購席位，每席每月 US$249。" data-v-usd-monthly="可以。團隊與企業方案可加購席位，每席每月 US$249。" data-v-ntd-yearly="可以。團隊與企業方案可加購席位，每席每月 NT$5,500（未稅）。" data-v-ntd-monthly="可以。團隊與企業方案可加購席位，每席每月 NT$5,500（未稅）。">可以。團隊與企業方案可加購席位，每席每月 NT$5,500（未稅）。</p>
+          <p data-variant data-v-ntd-yearly="可以。團隊與企業方案可加購席位，每席每月 NT$5,500（未稅）。" data-v-ntd-monthly="可以。團隊與企業方案可加購席位，每席每月 NT$5,500（未稅）。" data-v-usd-yearly="可以。團隊與企業方案可加購席位，每席每月 US$249。" data-v-usd-monthly="可以。團隊與企業方案可加購席位，每席每月 US$249。">可以。團隊與企業方案可加購席位，每席每月 NT$5,500（未稅）。</p>
         </details>
         <details>
           <summary>可以換方案或改繳費方式嗎？</summary>

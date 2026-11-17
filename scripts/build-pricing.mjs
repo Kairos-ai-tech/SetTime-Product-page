@@ -7,7 +7,7 @@
 //   node scripts/build-pricing.mjs --check  exit 1 if any file is stale (CI)
 //
 // Each figure that changes with the currency or billing toggle is written into
-// the page in all four states (data-v-<currency>-<billing>); pricing/pricing.js
+// the page in every currency/billing state that page offers (data-v-<currency>-<billing>); pricing/pricing.js
 // only swaps between them, so the page works without JS in its default state.
 // Copy exists only in English and 繁中, so no other locale gets a pricing page.
 
@@ -21,14 +21,15 @@ const check = process.argv.includes("--check");
 const { PLACEHOLDERS, PRICES, LINKS, COPY } = await import(pathToFileURL(path.join(root, "pricing/pricing-content.mjs")).href);
 
 const esc = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
-const STATES = [["usd", "yearly"], ["usd", "monthly"], ["ntd", "yearly"], ["ntd", "monthly"]];
-const hasToken = (s) => /\{(monthly|yearly|overage|seat|pilot|ntdSuffix)\}/.test(s);
+// A page offers only the currencies in its toggles.currency.order.
+const states = (lang) => COPY[lang].toggles.currency.order.flatMap((cur) => [[cur, "yearly"], [cur, "monthly"]]);
+const hasToken = (s) => /\{(monthly|yearly|overage|seat|ntdSuffix)\}/.test(s);
 
 function fill(tpl, lang, plan, cur) {
   const p = plan && PRICES[plan] ? PRICES[plan][cur] : {};
   const vals = {
     yearly: p.yearly, monthly: p.monthly, overage: p.overage,
-    seat: PRICES.extraSeat[cur], pilot: PRICES.pilot[cur],
+    seat: PRICES.extraSeat[cur],
     ntdSuffix: cur === "ntd" ? COPY[lang].ntdSuffix : "",
   };
   return tpl.replace(/\{(\w+)\}/g, (m, k) => {
@@ -44,7 +45,7 @@ function variant(tag, tpl, lang, { plan = null, cls = "", html = false, billingT
   const render = (cur, bill) => fill(base(billingTpl ? billingTpl[bill] : tpl), lang, plan, cur);
   const c = cls ? ` class="${cls}"` : "";
   if (!billingTpl && !hasToken(tpl)) return `<${tag}${c}>${base(tpl)}</${tag}>`;
-  const attrs = STATES.map(([cur, bill]) => ` data-v-${cur}-${bill}="${esc(render(cur, bill))}"`).join("");
+  const attrs = states(lang).map(([cur, bill]) => ` data-v-${cur}-${bill}="${esc(render(cur, bill))}"`).join("");
   return `<${tag}${c} data-variant${attrs}>${render(defCur, "yearly")}</${tag}>`;
 }
 
@@ -114,7 +115,7 @@ function page(lang) {
   <link rel="stylesheet" href="/pricing/pricing.css">
   <script src="/pricing/pricing.js" defer></script>
 </head>
-<body data-default-currency="${defCur}">
+<body data-default-currency="${defCur}" data-currencies="${t.toggles.currency.order.join(" ")}">
   <header class="top">
     <a class="logo" href="${L.home}"><img src="/assets/settime-logo-64.jpg" alt="" width="28" height="28"> ${esc(t.nav.product)}</a>
     <nav aria-label="${esc(t.aria.language)}">
@@ -127,7 +128,7 @@ function page(lang) {
       <p class="lede">${esc(t.hero.lead)}</p>
       <div class="toggles">
         ${seg("billing", ["yearly", "monthly"], t.toggles.billing, "yearly")}
-        ${seg("currency", t.toggles.currency.order, t.toggles.currency, defCur)}
+        ${t.toggles.currency.order.length > 1 ? seg("currency", t.toggles.currency.order, t.toggles.currency, defCur) : ""}
       </div>
       ${t.hero.taxNote ? `<p class="tax-note" data-currency-only="ntd"${defCur === "ntd" ? "" : " hidden"}>${esc(t.hero.taxNote)}</p>` : ""}
     </section>

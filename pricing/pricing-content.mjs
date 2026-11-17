@@ -32,7 +32,7 @@ export const PRICES = {
   team:     { usd: { yearly: "US$699",   monthly: "US$849",   overage: "US$0.80" }, ntd: { yearly: "NT$15,000", monthly: "NT$18,000", overage: "NT$15" } },
   business: { usd: { yearly: "US$1,790", monthly: "US$2,190", overage: "US$0.60" }, ntd: { yearly: "NT$39,000", monthly: "NT$47,000", overage: "NT$12" } },
   extraSeat: { usd: "US$249", ntd: "NT$5,500" }, // per seat per month, Team and Business only
-  pilot:     { usd: "US$699", ntd: "NT$15,000" }, // one month, credited in full toward an annual plan
+  // The one-month pilot is free, so it has no price here.
 };
 
 // Where the CTAs go: the existing pilot form and contact form on the product page.
@@ -43,7 +43,7 @@ export const LINKS = {
 };
 
 // ---------------------------------------------------------------------------
-// COPY. Strings with {monthly}, {yearly}, {overage}, {seat}, {pilot}
+// COPY. Strings with {monthly}, {yearly}, {overage}, {seat}
 // get the figure for the selected currency / billing. "ntdSuffix" is appended
 // only in the NT$ view (未稅 note, as in the copy doc).
 // ---------------------------------------------------------------------------
@@ -54,7 +54,7 @@ export const COPY = {
     defaultCurrency: "usd",
     meta: {
       title: "SetTime Pricing | AI Rebar Takeoff Plans",
-      description: "SetTime plans from US$249/month billed yearly. Seats plus a shared monthly rebar tonnage. No AutoCAD license needed. Try a paid one-month pilot on your own drawings.",
+      description: "SetTime plans from US$249/month billed yearly. Seats plus a shared monthly rebar tonnage. No AutoCAD license needed. Try a free one-month pilot on your own drawings.",
     },
     nav: { product: "SetTime", otherLang: { label: "繁體中文", href: "/pricing/", lang: "zh-Hant" } },
     aria: { language: "Language", plans: "Plans", legal: "Legal" }, // screen-reader labels, not visible copy
@@ -65,7 +65,8 @@ export const COPY = {
     },
     toggles: {
       billing: { label: "Billing", yearly: "Billed yearly", monthly: "Billed monthly" },
-      currency: { label: "Currency", order: ["usd", "ntd"], usd: "Global (USD)", ntd: "Taiwan (NT$)" },
+      // USD only: the English page has no currency toggle and shows no NT$ prices.
+      currency: { label: "Currency", order: ["usd"], usd: "Global (USD)" },
     },
     price: {
       yearly: "<strong>{yearly}</strong> /month, billed yearly ({monthly} billed monthly)",
@@ -97,9 +98,9 @@ export const COPY = {
       ],
     },
     pilot: {
-      label: "Paid pilot",
+      label: "Free pilot",
       heading: "Try it on your own drawings first.",
-      body: "Run SetTime on your real projects for one month for {pilot}. Sign an annual plan and the full pilot fee is credited toward it.",
+      body: "Run SetTime on your real projects for one month, free.",
       cta: "Book a pilot",
     },
     why: {
@@ -140,7 +141,7 @@ export const COPY = {
     defaultCurrency: "ntd",
     meta: {
       title: "SetTime 方案與價格｜AI 鋼筋算料",
-      description: "SetTime 年繳每月 NT$5,500 起，依席位加每月共用鋼筋噸數計價，無需 AutoCAD 授權。可先付費試用一個月，用你自己的圖驗證。",
+      description: "SetTime 年繳每月 NT$5,500 起，依席位加每月共用鋼筋噸數計價，無需 AutoCAD 授權。可先免費試用一個月，用你自己的圖驗證。",
     },
     nav: { product: "SetTime", otherLang: { label: "English", href: "/en/pricing/", lang: "en" } },
     aria: { language: "語言", plans: "方案", legal: "法律條款" },
@@ -183,9 +184,9 @@ export const COPY = {
       ],
     },
     pilot: {
-      label: "付費試用",
+      label: "免費試用",
       heading: "先用你自己的圖試試看。",
-      body: "一個月 {pilot}，用你真實的案子跑 SetTime。簽年約，試用費全額折抵。",
+      body: "免費一個月，用你真實的案子跑 SetTime。",
       cta: "預約試用",
     },
     why: {

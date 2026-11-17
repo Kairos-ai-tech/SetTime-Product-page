@@ -1,12 +1,13 @@
 // Pricing page toggles: Yearly / Monthly and Global (USD) / Taiwan (NT$).
 // Every figure is pre-rendered by scripts/build-pricing.mjs into
 // data-v-<currency>-<billing> attributes; this only swaps between them.
-// ?currency=usd|ntd and ?billing=yearly|monthly preselect a state.
+// ?currency=usd|ntd (if the page offers it) and ?billing=yearly|monthly preselect a state.
 (function () {
   "use strict";
   var params = new URLSearchParams(location.search);
+  var currencies = document.body.getAttribute("data-currencies").split(" ");
   var state = {
-    currency: params.get("currency") === "usd" || params.get("currency") === "ntd"
+    currency: currencies.indexOf(params.get("currency")) !== -1
       ? params.get("currency") : document.body.getAttribute("data-default-currency"),
     billing: params.get("billing") === "monthly" ? "monthly" : "yearly",
   };

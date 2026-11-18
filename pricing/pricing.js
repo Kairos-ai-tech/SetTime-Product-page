@@ -1,7 +1,9 @@
-// Pricing page toggles: Yearly / Monthly and Global (USD) / Taiwan (NT$).
+// Pricing page toggles: Annual commitment / Monthly and Global (USD) / Taiwan (NT$).
+// Internally the annual state is "yearly" (annual commitment, billed monthly).
 // Every figure is pre-rendered by scripts/build-pricing.mjs into
 // data-v-<currency>-<billing> attributes; this only swaps between them.
-// ?currency=usd|ntd (if the page offers it) and ?billing=yearly|monthly preselect a state.
+// ?currency=usd|ntd (if the page offers it) and ?billing=yearly|annual|monthly preselect a state
+// (anything other than "monthly" means the annual state, so old links keep working).
 (function () {
   "use strict";
   var params = new URLSearchParams(location.search);

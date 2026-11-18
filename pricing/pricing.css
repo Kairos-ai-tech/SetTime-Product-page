@@ -31,6 +31,8 @@ h2 { font-size: 1.4rem; margin: 0 0 12px; }
 .tagline { color: var(--muted); margin: 0 0 14px; font-size: .93rem; min-height: 3em; }
 .price { margin: 0 0 14px; color: var(--muted); font-size: .9rem; }
 .price strong { display: block; color: var(--navy); font-size: 2rem; line-height: 1.2; }
+/* 繁中 price lines put the figure mid-sentence (年約每月 NT$5,500，按月扣款…), so keep it inline. */
+:lang(zh-Hant) .price strong { display: inline; font-size: 1.6rem; }
 .plan ul { list-style: none; padding: 0; margin: 0 0 20px; flex: 1; }
 .plan li { padding: 6px 0 6px 22px; border-top: 1px solid var(--line); position: relative; font-size: .94rem; }
 .plan li::before { content: "✓"; position: absolute; left: 0; color: var(--accent); font-weight: 700; }

@@ -79,11 +79,13 @@ function page(lang) {
   }).join("");
 
   const faq = t.faq.items.map(([q, a]) => {
-    // {supportEmail}: SUPPORT_EMAIL as a mailto: link.
-    const inline = (s) => s.replace(/\{supportEmail\}/g, () => `<a href="mailto:${esc(SUPPORT_EMAIL)}">${esc(SUPPORT_EMAIL)}</a>`);
+    // {supportEmail}: SUPPORT_EMAIL as a mailto: link. {refund}: the Refund Policy placeholder link.
+    const inline = (s) => s
+      .replace(/\{supportEmail\}/g, () => `<a href="mailto:${esc(SUPPORT_EMAIL)}">${esc(SUPPORT_EMAIL)}</a>`)
+      .replace(/\{refund\}/g, () => `<a href="${esc(legalHref.refund)}" data-placeholder>${esc(t.legal.refund)}</a>`);
     const body = a === "{faqPrivacy}"
       ? `<p data-placeholder="faq-privacy">${faqPrivacy}</p>`
-      : /\{supportEmail\}/.test(a)
+      : /\{(supportEmail|refund)\}/.test(a)
         ? `<p>${inline(esc(a))}</p>`
         : variant("p", a, lang, { defCur });
     return `

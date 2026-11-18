@@ -26,7 +26,7 @@ export const PLACEHOLDERS = {
 
 // ---------------------------------------------------------------------------
 // PRICES (provisional, approved 11/17). Taiwan prices exclude the 5% 營業稅.
-// "yearly" is the per-month price when billed yearly.
+// "yearly" is the per-month price on an annual (12-month) commitment, billed monthly.
 // ---------------------------------------------------------------------------
 export const PRICES = {
   solo:     { usd: { yearly: "US$249",   monthly: "US$299",   overage: "US$1.00" }, ntd: { yearly: "NT$5,500",  monthly: "NT$6,500",  overage: "NT$20" } },
@@ -58,7 +58,7 @@ export const COPY = {
     defaultCurrency: "usd",
     meta: {
       title: "SetTime Pricing | AI Rebar Takeoff Plans",
-      description: "SetTime plans from US$249/month billed yearly. Seats plus a shared monthly rebar tonnage. No AutoCAD license needed. Try it free for one month on your own drawings.",
+      description: "SetTime plans from US$249/month on an annual commitment, billed monthly. Seats plus a shared monthly rebar tonnage. No AutoCAD license needed. Try it free for one month on your own drawings.",
     },
     nav: { product: "SetTime", otherLang: { label: "繁體中文", href: "/pricing/", lang: "zh-Hant" } },
     aria: { language: "Language", plans: "Plans", legal: "Legal" }, // screen-reader labels, not visible copy
@@ -68,13 +68,14 @@ export const COPY = {
       taxNote: null,
     },
     toggles: {
-      billing: { label: "Billing", yearly: "Billed yearly", monthly: "Billed monthly" },
+      billing: { label: "Billing", yearly: "Annual commitment", monthly: "Monthly" }, // "yearly" = annual commitment, billed monthly
       // USD only: the English page has no currency toggle and shows no NT$ prices.
       currency: { label: "Currency", order: ["usd"], usd: "Global (USD)" },
     },
     price: {
-      yearly: "<strong>{yearly}</strong> /month, billed yearly ({monthly} billed monthly)",
-      monthly: "<strong>{monthly}</strong> /month, billed monthly ({yearly} billed yearly)",
+      yearly: "<strong>{yearly}</strong> per month, billed monthly on an annual commitment ({monthly} month to month)",
+      // Monthly view: composed from the doc's annual line (the doc only gives the annual-state wording).
+      monthly: "<strong>{monthly}</strong> per month, month to month ({yearly} per month on an annual commitment)",
     },
     popular: "Most popular",
     plans: [
@@ -105,8 +106,8 @@ export const COPY = {
       label: "Free pilot",
       heading: "Try it on your own drawings first.",
       body: [
-        "Try any plan free for 1 month, full usage, no tonnage cap. A card is required to start the trial, and you won't be charged during it. It auto-renews into your plan unless you cancel before the trial ends, and we'll email you a reminder at least 7 days before it ends.",
-        "Your first month is free. Pick a plan and run SetTime on your real projects for one month at no charge.",
+        "Try any plan free for 1 month, full usage, no tonnage cap. One free trial per company. A card is required to start the trial, and you won't be charged during it. It auto-renews into your plan unless you cancel before the trial ends, and we'll email you a reminder at least 7 days before it ends.",
+        "Pick a plan and run SetTime on your real projects for one month at no charge.",
         "When the free month ends, your pilot automatically renews into the plan and billing cycle you chose, and billing starts. To stop, cancel any time before your pilot ends and you won't be charged.",
       ],
       cta: "Start your free pilot",
@@ -128,10 +129,11 @@ export const COPY = {
         ["What drawing formats do you support?", "Vector PDF is supported today. Tell us what you work with, and we'll let you know what fits."],
         ["Can SetTime connect to our own systems?", "API integration isn't a self-serve feature yet, but we can build a custom integration for your workflow. Contact us to talk it through."],
         ["What happens when my free pilot ends?", "Your pilot renews automatically into the plan and billing cycle you chose, and billing starts. If you don't want to continue, cancel before the pilot ends and you won't be charged."],
-        ["How do I cancel?", "Cancel any time before your free month ends from Settings > Billing in your SetTime account, or email us at {supportEmail}. You won't be charged, and you keep access until the trial ends. After that, cancelling stops your next renewal."],
+        ["How do I cancel?", "Cancel any time before your free month ends from Settings > Billing in your SetTime account, or email us at {supportEmail}. You won't be charged, and you keep access until the trial ends. After that, cancelling stops your next renewal. Annual plans run for the full 12 months, and we'll email you a reminder 30 days before an annual plan renews."],
+        ["Can I get a refund?", "Refund requests are accepted within 14 days. See our {refund} for what's covered."],
         ["Can I add more seats?", "Yes. On Team and Business, extra seats are {seat} per seat per month."],
-        ["Can I switch plans or billing?", "Yes. You can move between plans and between monthly and yearly billing."],
-        ["How does billing work?", "Payments are processed securely by Paddle, our reseller. Prices exclude applicable taxes, which are calculated at checkout."],
+        ["Can I switch plans or billing?", "Yes. You can move between plans, and between month to month and an annual commitment."],
+        ["How does billing work?", "Payments are processed securely by Paddle, our reseller. Annual plans are a 12-month commitment billed monthly, not paid upfront. Prices exclude applicable taxes, which are calculated at checkout."],
         ["Is my drawing data safe?", "{faqPrivacy}"],
       ],
     },
@@ -151,7 +153,7 @@ export const COPY = {
     defaultCurrency: "ntd",
     meta: {
       title: "SetTime 方案與價格｜AI 鋼筋算料",
-      description: "SetTime 年繳每月 NT$5,500 起，依席位加每月共用鋼筋噸數計價，無需 AutoCAD 授權。可先免費試用一個月，用你自己的圖驗證。",
+      description: "SetTime 年約每月 NT$5,500 起（按月扣款），依席位加每月共用鋼筋噸數計價，無需 AutoCAD 授權。可先免費試用一個月，用你自己的圖驗證。",
     },
     nav: { product: "SetTime", otherLang: { label: "English", href: "/en/pricing/", lang: "en" } },
     aria: { language: "語言", plans: "方案", legal: "法律條款" },
@@ -161,12 +163,13 @@ export const COPY = {
       taxNote: "價格皆為未稅，5% 營業稅另計。", // shown in the NT$ view only
     },
     toggles: {
-      billing: { label: "繳費方式", yearly: "年繳", monthly: "月繳" },
+      billing: { label: "繳費方式", yearly: "年約", monthly: "月繳" },
       currency: { label: "幣別", order: ["ntd", "usd"], usd: "全球 (USD)", ntd: "台灣 (NT$)" },
     },
     price: {
-      yearly: "年繳每月 <strong>{yearly}</strong>（月繳 {monthly}）",
-      monthly: "月繳每月 <strong>{monthly}</strong>（年繳每月 {yearly}）",
+      yearly: "年約每月 <strong>{yearly}</strong>，按月扣款（不綁約月繳 {monthly}）",
+      // 月繳狀態：依文件的年約句型組成（文件只提供年約狀態的寫法）。
+      monthly: "不綁約月繳 <strong>{monthly}</strong>（年約每月 {yearly}，按月扣款）",
     },
     popular: "最多人選",
     plans: [
@@ -197,8 +200,8 @@ export const COPY = {
       label: "免費試用",
       heading: "先用你自己的圖試試看。",
       body: [
-        "任選方案免費試用 1 個月，功能全開，不限噸數。開始試用需綁定信用卡，試用期間不會扣款。試用結束後自動續訂為你的方案，除非你在試用結束前取消；試用結束前至少 7 天，我們會寄信提醒你。",
-        "第一個月免費。選好方案，用你真實的案子免費跑一個月。",
+        "任選方案免費試用 1 個月，功能全開，不限噸數。每家公司限試用一次。開始試用需綁定信用卡，試用期間不會扣款。試用結束後自動續訂為你的方案，除非你在試用結束前取消；試用結束前至少 7 天，我們會寄信提醒你。",
+        "選好方案，用你真實的案子免費跑一個月。",
         "免費期結束後，會自動續訂為你選擇的方案與繳費週期，並開始計費。如不續用，請在試用結束前隨時取消，就不會收取任何費用。",
       ],
       cta: "開始免費試用",
@@ -220,10 +223,11 @@ export const COPY = {
         ["支援哪些圖檔格式？", "目前支援向量 PDF。告訴我們你平常用的格式，我們會說明怎麼配合。"],
         ["可以串接我們自己的系統嗎？", "API 串接目前還不是自助功能，但可以依你的流程客製。歡迎聯絡我們討論。"],
         ["免費試用結束後會怎樣？", "會自動續訂為你選擇的方案與繳費週期，並開始計費。如不續用，請在試用結束前取消，就不會收取任何費用。"],
-        ["要怎麼取消？", "免費期結束前，隨時可以在 SetTime 帳號的「設定 > 帳務」取消，或寄信到 {supportEmail}。不會收取任何費用，試用結束前都能照常使用。之後取消，則會停止下一期續訂。"],
+        ["要怎麼取消？", "免費期結束前，隨時可以在 SetTime 帳號的「設定 > 帳務」取消，或寄信到 {supportEmail}。不會收取任何費用，試用結束前都能照常使用。之後取消，則會停止下一期續訂。年約方案以 12 個月為一期，續約前 30 天我們會寄信提醒你。"],
+        ["可以退款嗎？", "14 天內可申請退款，適用範圍請見{refund}。"],
         ["可以加購席位嗎？", "可以。團隊與企業方案可加購席位，每席每月 {seat}{ntdSuffix}。"],
-        ["可以換方案或改繳費方式嗎？", "可以，方案之間、月繳與年繳之間都能調整。"],
-        ["怎麼付款？", "付款由我們的經銷商 Paddle 安全處理。台灣價格皆為未稅價，5% 營業稅另計。"],
+        ["可以換方案或改繳費方式嗎？", "可以，方案之間、月繳與年約之間都能調整。"],
+        ["怎麼付款？", "付款由我們的經銷商 Paddle 安全處理。年約為 12 個月合約，按月扣款，不需一次付清。台灣價格皆為未稅價，5% 營業稅另計。"],
         ["圖面資料安全嗎？", "{faqPrivacy}"],
       ],
     },

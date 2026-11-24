@@ -94,7 +94,7 @@
     });
   }
 
-  // ===== Hero: copy fades away as the camera flies into the rebar cage =====
+  // ===== Hero: copy fades away as the camera flies into the building frame =====
   function initHeroScrub() {
     const track = document.querySelector('.hero-track');
     if (!track) return;

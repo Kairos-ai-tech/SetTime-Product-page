@@ -45,11 +45,14 @@ marks each value as read, computed, converted or defaulted.
 
 - **Drawing preparation and annotation** — sheet sorting, scale, legend and
   table reading, member tagging.
+- **Concrete quantities and formwork area** — the same drawing-to-quantities
+  approach applied to concrete volume and formwork contact area.
 - **Foundations**, plus bend angles and hook types.
 - **3D model check** — a 3D bar model built from the schedule that checks
   cover, lap, anchorage and clashes and reconciles its quantities against
   the takeoff.
 - **BVBS output** for bending machines (planned).
+- **MEP and HVAC takeoff** (planned).
 - **Tamper-evident audit trail** — every action is written to a SHA-256
   hash-chained, append-only, UTC-timestamped record, built for large
   contractor groups and public-tender audit review. It detects tampering
@@ -100,13 +103,13 @@ are planned.
 | Layer | Technologies |
 |-------|-------------|
 | Takeoff and drawing automation | AutoCAD 2021 plugin, .NET, Avalonia (cross-platform desktop) |
-| Web / product page | Vanilla HTML/CSS/JS, Three.js (rebar-cage backdrop, page-wide) |
+| Web / product page | Vanilla HTML/CSS/JS, Three.js (building-frame backdrop, page-wide) |
 | Audit trail | SHA-256 hash chaining, append-only JSONL storage |
 
 ## Repository Contents
 
 - `index.html`, `styles.css`, `script.js`, `hero3d.js`, `i18n.js` — the
-  product landing page: static HTML/CSS with a Three.js rebar-cage backdrop
+  product landing page: static HTML/CSS with a Three.js building-frame backdrop
   (scroll-scrubbed flythrough during the hero, then a fixed translucent
   background behind every section) and client-side i18n (8 languages:
   繁體中文, English, 日本語, Español, Français, Deutsch, Italiano, Português).

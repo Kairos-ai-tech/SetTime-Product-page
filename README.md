@@ -56,9 +56,6 @@ marks each value as read, computed, converted or defaulted.
   after the fact (tamper-*evident*); it is not a certification of compliance
   with any specific law, regulation, or tender requirement.
 
-Not on the current roadmap: AR field guidance and photo-based as-built
-verification.
-
 ## Who It's For
 
 Rebar fabricators, detailing firms, contractors and estimators who buy
@@ -93,10 +90,9 @@ page, and the weight-accuracy target is a target, not a measured result.
 
 ## Roadmap
 
-Rebar/structural construction is the current focus. The underlying
-drawing-to-schedule approach is built to extend into adjacent trades:
-CNC machining, mold making, welding, auto repair, plumbing, and sheet
-metal.
+Rebar takeoff is the current focus. The same drawing-to-quantities
+approach is planned to extend to concrete quantities, formwork area and MEP
+(mechanical, electrical, plumbing) takeoff.
 
 ## Tech Stack
 

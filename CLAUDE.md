@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-SetTime (formerly AI學徒 iTech) — a product page / strategy documentation project for an AI + AR construction-execution platform. Business strategy documentation lives alongside a static marketing/product landing page (vanilla HTML/CSS/JS, no build step) for the AI + AR construction-execution product line.
+SetTime (formerly AI學徒 iTech) — a product page / strategy documentation project for an AI construction takeoff platform. Business strategy documentation lives alongside a static marketing/product landing page (vanilla HTML/CSS/JS, no build step) for the AI construction takeoff product line.
 
 ## Repository Contents
 
@@ -26,10 +26,10 @@ SetTime (formerly AI學徒 iTech) — a product page / strategy documentation pr
 ## Key Domain Concepts
 
 - **結構施工圖數位化**: The structural drawing is the single source of truth — parsed once into bar-schedule/cut-list/bend-list data that drives every downstream step (shop drawings, 3D check, machine output)
-- **取代外包算量 (replace outsourced takeoff)**: Current product axis (strategy of 30 Oct 2026). Drawing in, bar schedule (.xlsm) and annotated shop drawings (.dwg/DXF) out; every value tagged read/computed/converted/default and every gap flagged for review. Shipping for beams, columns, slabs and walls; drawing prep, foundations, bend types and 3D check are in development; BVBS is only planned. AR field guidance and photo-based as-built verification are dropped from the roadmap, so do not reintroduce them on the page
+- **取代外包算量 (replace outsourced takeoff)**: Current product axis (strategy of 30 Oct 2026). Drawing in, bar schedule (.xlsm) and annotated shop drawings (.dwg/DXF) out; every value tagged read/computed/converted/default and every gap flagged for review. Shipping for beams, columns, slabs and walls; drawing prep, foundations, bend types and 3D check are in development; BVBS is only planned. AR field guidance and photo-based as-built verification are dropped, so do not reintroduce them anywhere. Concrete quantities, formwork area and MEP takeoff are planned (listed under "規劃中" on the page); do not describe them as shipping or in development
 - **Market figures**: Stats on the page (16,900 US estimator openings, +24%/+4% bids vs headcount, 24–72 h and US$100–500 competitor turnaround/price, 9 Mt US rebar, US$37/h) come from third-party or vendor sources and are footnoted as such; the hours/dollars example is an illustration, not a measured result. Do not put pricing on the product page; prices live only in the draft pricing page (`pricing/`, see below)
 - **稽核鏈 (audit trail)**: SHA-256 hash-chained, append-only, timestamped record of pipeline actions, built for government/enterprise compliance review
-- Current focus: rebar takeoff for fabricators and detailers in the US and Europe, with Taiwan (CNS drawings) as the proving ground. Roadmap targets adjacent trades: CNC machining, mold making, welding, auto repair, plumbing, sheet metal
+- Current focus: rebar takeoff for fabricators and detailers in the US and Europe, with Taiwan (CNS drawings) as the proving ground. Roadmap extends the same engine to concrete, formwork and MEP takeoff
 
 ## Language
 

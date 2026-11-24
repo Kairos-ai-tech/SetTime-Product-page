@@ -90,9 +90,10 @@ page, and the weight-accuracy target is a target, not a measured result.
 
 ## Roadmap
 
-Rebar takeoff is the current focus. The same drawing-to-quantities
-approach is planned to extend to concrete quantities, formwork area and MEP
-(mechanical, electrical, plumbing) takeoff.
+Rebar takeoff is the current focus and the only shipping module. Concrete
+quantities and formwork area are in development, so the page leads with the
+fabricator's whole process (rebar, concrete, formwork); MEP and HVAC takeoff
+are planned.
 
 ## Tech Stack
 

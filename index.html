@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="SetTime 取代外包鋼筋算量：結構施工圖進，樑、柱、板、牆的料單（.xlsm）與加工圖（.dwg/DXF）出，支援 AutoCAD 2021 外掛與桌面版。圖面整理、基礎、3D 檢查開發中。由 Kairos.ai 開發，傳一張圖，24 小時內免費計料。">
+  <meta name="description" content="SetTime 取代外包算量：結構施工圖進，樑、柱、板、牆的鋼筋料單（.xlsm）與加工圖（.dwg/DXF）出，支援 AutoCAD 2021 外掛與桌面版。混凝土與模板算量、圖面整理、基礎、3D 檢查開發中；機電（MEP）與空調（HVAC）規劃中。由 Kairos.ai 開發，傳一張圖，24 小時內免費計料。">
   <meta name="keywords" content="SetTime, SetTime 鋼筋, SetTime 鋼筋算量, Kairos.ai, 鋼筋估算軟體, 鋼筋計料, 鋼筋加工圖, 鋼筋計料表, AI 鋼筋估算, 外包算量, 鋼筋料單, 施工圖自動解析, 3D 模型檢查, 稽核鏈, SetTime rebar takeoff software, rebar takeoff automation, outsourced rebar takeoff, rebar shop drawings, bar bending schedule, BBS, AutoCAD rebar plugin, 3D rebar check, audit trail">
   <meta name="author" content="Kairos.ai">
   <meta name="application-name" content="SetTime">
@@ -20,8 +20,8 @@
     })();
   </script>
   <meta property="og:site_name" content="SetTime by Kairos.ai">
-  <meta property="og:title" content="SetTime | AI Rebar Takeoff">
-  <meta property="og:description" content="結構施工圖進，樑、柱、板、牆的料單（.xlsm）與加工圖（.dwg/DXF）出。AutoCAD 2021 外掛與桌面版已上線；圖面整理、基礎、3D 檢查開發中。Shipping: takeoff, bar schedule and shop drawings for beams, columns, slabs and walls. In development: drawing prep, foundations, 3D check.">
+  <meta property="og:title" content="SetTime | AI Rebar, Concrete & Formwork Takeoff">
+  <meta property="og:description" content="結構施工圖進，樑、柱、板、牆的鋼筋料單（.xlsm）與加工圖（.dwg/DXF）出。AutoCAD 2021 外掛與桌面版已上線；混凝土與模板算量開發中；機電（MEP）與空調（HVAC）規劃中。Shipping: rebar takeoff, bar schedule and shop drawings. In development: concrete and formwork quantities. Planned: MEP and HVAC.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://settime.kairosaitech.com/">
   <meta property="og:locale" content="zh_TW">
@@ -30,8 +30,8 @@
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="SetTime: structural drawings to rebar material lists, shown with a sample material list table">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="SetTime | AI Rebar Takeoff">
-  <meta name="twitter:description" content="結構施工圖進，樑、柱、板、牆的料單（.xlsm）與加工圖（.dwg/DXF）出。AutoCAD 2021 外掛與桌面版已上線；圖面整理、基礎、3D 檢查開發中。Shipping: takeoff, bar schedule and shop drawings for beams, columns, slabs and walls. In development: drawing prep, foundations, 3D check.">
+  <meta name="twitter:title" content="SetTime | AI Rebar, Concrete & Formwork Takeoff">
+  <meta name="twitter:description" content="結構施工圖進，樑、柱、板、牆的鋼筋料單（.xlsm）與加工圖（.dwg/DXF）出。AutoCAD 2021 外掛與桌面版已上線；混凝土與模板算量開發中；機電（MEP）與空調（HVAC）規劃中。Shipping: rebar takeoff, bar schedule and shop drawings. In development: concrete and formwork quantities. Planned: MEP and HVAC.">
   <meta name="twitter:image" content="https://settime.kairosaitech.com/assets/settime-og-card.jpg">
   <meta name="twitter:image:alt" content="SetTime: structural drawings to rebar material lists, shown with a sample material list table">
   <link rel="canonical" href="https://settime.kairosaitech.com/">
@@ -48,7 +48,7 @@
   <link rel="alternate" type="text/plain" href="https://settime.kairosaitech.com/llms.txt" title="SetTime llms.txt">
   <link rel="icon" type="image/png" href="assets/settime-favicon.png">
   <link rel="apple-touch-icon" href="assets/settime-favicon.png">
-  <title>SetTime | AI Rebar Takeoff</title>
+  <title>SetTime | AI Rebar, Concrete & Formwork Takeoff</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;700&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+TC:wght@700&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
@@ -105,8 +105,8 @@
         "@type": "WebPage",
         "@id": "https://settime.kairosaitech.com/#webpage",
         "url": "https://settime.kairosaitech.com/",
-        "name": "SetTime | AI Rebar Takeoff Software — Structural Drawings to Shop Drawings & Bar Schedules",
-        "description": "SetTime 取代外包鋼筋算量：結構施工圖進，樑、柱、板、牆的料單（.xlsm）與加工圖（.dwg/DXF）出，支援 AutoCAD 2021 外掛與桌面版。圖面整理、基礎、3D 檢查開發中。由 Kairos.ai 開發，傳一張圖，24 小時內免費計料。",
+        "name": "SetTime | AI Rebar, Concrete & Formwork Takeoff Software — Structural Drawings to Shop Drawings & Bar Schedules",
+        "description": "SetTime 取代外包算量：結構施工圖進，樑、柱、板、牆的鋼筋料單（.xlsm）與加工圖（.dwg/DXF）出，支援 AutoCAD 2021 外掛與桌面版。混凝土與模板算量、圖面整理、基礎、3D 檢查開發中；機電（MEP）與空調（HVAC）規劃中。由 Kairos.ai 開發，傳一張圖，24 小時內免費計料。",
         "inLanguage": "zh-Hant",
         "dateModified": "2026-10-30",
         "isPartOf": { "@id": "https://settime.kairosaitech.com/#website" },
@@ -194,7 +194,9 @@
           "In development: bend angles and hook types",
           "In development: 3D model check (cover, lap, anchorage, clashes)",
           "Planned: BVBS machine output",
-          "Planned: concrete, formwork and MEP takeoff",
+          "In development: concrete quantities",
+          "In development: formwork area",
+          "Planned: MEP and HVAC takeoff",
           "In development: SHA-256 hash-chained audit trail"
         ],
         "audience": {
@@ -250,7 +252,7 @@
             "name": "SetTime 由誰開發？",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "SetTime 由 Kairos.ai 開發。我們先以台灣圖面驗證引擎，並與美國、歐洲的加工廠與繪圖師接觸，未來將延伸至混凝土、模板與機電（MEP）算量。"
+              "text": "SetTime 由 Kairos.ai 開發。我們先以台灣圖面驗證引擎，並與美國、歐洲的加工廠與繪圖師接觸，混凝土與模板算量開發中，並規劃延伸至機電（MEP）與空調（HVAC）算量。"
             }
           },
           {
@@ -324,11 +326,11 @@
       <div class="hero-overlay"></div>
     </div>
     <div class="hero-content">
-      <div class="hero-badge fade-in" data-i18n="hero.badge">取代外包撿料團隊的鋼筋算量平台</div>
+      <div class="hero-badge fade-in" data-i18n="hero.badge">鋼筋已上線，混凝土與模板開發中</div>
       <p class="hero-slogan fade-in" data-delay="1" data-i18n="product.tagline">SetTime — 凝固之前，一次到位</p>
-      <h1 class="hero-title fade-in" data-delay="1" data-i18n="hero.title">結構施工圖進，<br>計料表與加工圖出</h1>
-      <p class="hero-subtitle fade-in" data-delay="2" data-i18n="hero.subtitle">取代外包算量：上傳結構施工圖，取得鋼筋計料表與標註加工圖（樑、柱、板、牆）。專為鋼筋加工廠與撿料、繪圖團隊打造。</p>
-      <p class="hero-subtitle-en fade-in" data-delay="2" data-i18n="hero.subtitle-en">From structural drawing to shop-ready rebar.</p>
+      <h1 class="hero-title fade-in" data-delay="1" data-i18n="hero.title">從數月到數分鐘：<br>鋼筋、混凝土、模板算量</h1>
+      <p class="hero-subtitle fade-in" data-delay="2" data-i18n="hero.subtitle">取代外包算量：上傳結構施工圖，取得鋼筋計料表與標註加工圖（樑、柱、板、牆）。混凝土與模板算量開發中。專為加工廠與撿料、繪圖團隊打造。</p>
+      <p class="hero-subtitle-en fade-in" data-delay="2" data-i18n="hero.subtitle-en">From structural drawing to fabricator-ready quantities.</p>
       <div class="hero-actions fade-in" data-delay="3">
         <a href="#pilot" class="hero-cta">
           <span data-i18n="cta.pilot">傳一張圖，24 小時內免費計料</span>
@@ -510,15 +512,16 @@
             <li data-i18n="status.dev.i3">彎鉤角度與型式</li>
             <li data-i18n="status.dev.i4">3D 模型檢查</li>
             <li data-i18n="status.dev.i5">竄改可偵測的稽核鏈</li>
+            <li data-i18n="status.dev.i6">混凝土數量</li>
+            <li data-i18n="status.dev.i7">模板面積</li>
           </ul>
         </div>
         <div class="status-col">
           <span class="panel-status plan" data-i18n="status.planned">規劃中</span>
           <ul>
             <li data-i18n="status.planned.i1">BVBS 加工機台檔</li>
-            <li data-i18n="status.planned.i2">混凝土數量</li>
-            <li data-i18n="status.planned.i3">模板面積</li>
-            <li data-i18n="status.planned.i4">機電（MEP）管線算量</li>
+            <li data-i18n="status.planned.i2">機電（MEP）管線算量</li>
+            <li data-i18n="status.planned.i3">空調（HVAC）風管算量</li>
           </ul>
         </div>
       </div>
@@ -1127,7 +1130,7 @@
         </details>
         <details class="faq-item fade-in" data-delay="6">
           <summary data-i18n="faq.q5.q">SetTime 由誰開發？</summary>
-          <p data-i18n="faq.q5.a">SetTime 由 Kairos.ai 開發。我們先以台灣圖面驗證引擎，並與美國、歐洲的加工廠與繪圖師接觸，未來將延伸至混凝土、模板與機電（MEP）算量。</p>
+          <p data-i18n="faq.q5.a">SetTime 由 Kairos.ai 開發。我們先以台灣圖面驗證引擎，並與美國、歐洲的加工廠與繪圖師接觸，混凝土與模板算量開發中，並規劃延伸至機電（MEP）與空調（HVAC）算量。</p>
         </details>
         <details class="faq-item fade-in" data-delay="7">
           <summary data-i18n="faq.q6.q">稽核鏈能保證符合法規要求嗎？</summary>

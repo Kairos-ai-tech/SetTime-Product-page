@@ -11,7 +11,7 @@ Last updated: 2026-11-12
 - Company: Kairos.ai (優時科技有限公司) — official company website: https://www.kairosaitech.com
 - Product website: https://settime.kairosaitech.com/
 - Category: construction software — rebar takeoff, bar-schedule and shop-drawing automation.
-- Status: takeoff, bar schedule and shop drawings for beams, columns, slabs and walls are shipping; drawing prep, foundations, bend and hook types, the 3D check and the audit trail are in development; BVBS output is planned. Concrete quantities, formwork area and MEP takeoff are planned.
+- Status: takeoff, bar schedule and shop drawings for beams, columns, slabs and walls are shipping; drawing prep, foundations, bend and hook types, the 3D check and the audit trail are in development; BVBS output is planned. Concrete quantities and formwork area are in development; MEP and HVAC takeoff are planned.
 - Platforms: AutoCAD 2021 plugin + cross-platform desktop app; output is a .xlsm bar schedule that imports into a fabricator's existing macro tooling, plus .dwg/DXF shop drawings.
 - Market: fabricators and detailers that outsource rebar takeoff, starting with the US and Europe; Taiwan construction is the proving ground for the engine.
 - Contact: kairos.ai.tech@gmail.com
@@ -38,7 +38,7 @@ Last updated: 2026-11-12
 - Does the audit trail guarantee legal compliance? No — and this feature is still in development. It is a technical tamper-evidence mechanism (SHA-256 hash chain); it does not certify compliance with any specific law, regulation, or tender requirement. Actual compliance depends on applicable law and contract terms — this is not legal advice.
 - Who is SetTime for? Rebar fabricators, detailing firms, contractors and estimators who buy outsourced takeoff today, starting with the US and Europe.
 - How do I apply for the free pilot? Fill in the free pilot form at https://settime.kairosaitech.com/#pilot with name, company, email, country, and role. Send one structural drawing and SetTime returns the material list within 24 hours of receiving it.
-- Who builds SetTime? Kairos.ai (https://www.kairosaitech.com). The engine is being validated on Taiwanese CNS drawings first, with fabricators and detailers in the US and Europe as target customers, and plans to extend the same drawing-to-quantities approach to concrete, formwork and MEP takeoff.
+- Who builds SetTime? Kairos.ai (https://www.kairosaitech.com). The engine is being validated on Taiwanese CNS drawings first, with fabricators and detailers in the US and Europe as target customers, and concrete and formwork quantities in development and MEP and HVAC takeoff planned on the same drawing-to-quantities approach.
 
 ## Company
 
@@ -48,5 +48,5 @@ Last updated: 2026-11-12
 ## Notes
 
 - The product page supports 8 languages (繁體中文 default, plus English, 日本語, Español, Français, Deutsch, Italiano, and Português switchers) — content above reflects the English version.
-- Target market: rebar fabricators and detailers that outsource takeoff, starting with the US and Europe; Taiwan is the proving ground. Concrete quantities, formwork area and MEP (mechanical, electrical, plumbing) takeoff are planned extensions of the same drawing-to-quantities approach.
+- Target market: rebar fabricators and detailers that outsource takeoff, starting with the US and Europe; Taiwan is the proving ground. Concrete quantities and formwork area (in development) and MEP and HVAC takeoff (planned) extend the same drawing-to-quantities approach to the rest of the fabricator workflow.
 - The market figures on the page (US estimator openings, bid-volume growth, turnaround and price of competing services, US rebar tonnage) come from third-party and vendor publications, not from this product. The time-saving example is an illustration based on assumptions stated on the page, and the weight-accuracy target is a target, not a measured result.

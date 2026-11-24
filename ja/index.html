@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="SetTime は外注の鉄筋積算を置き換えます：構造施工図から、梁・柱・スラブ・壁の加工表（.xlsm）と加工図（.dwg/DXF）を作成。AutoCAD 2021 プラグインとデスクトップ版に対応。図面整理、基礎、3D チェックは開発中。Kairos.ai 開発。図面を 1 枚送るだけで、24 時間以内に無料で積算します。">
+  <meta name="description" content="SetTime は外注の積算を置き換えます：構造施工図から、梁・柱・スラブ・壁の鉄筋加工表（.xlsm）と加工図（.dwg/DXF）を作成。AutoCAD 2021 プラグインとデスクトップ版に対応。コンクリート・型枠の数量、図面整理、基礎、3D チェックは開発中、設備（MEP）と空調（HVAC）は計画中。Kairos.ai 開発。図面を 1 枚送るだけで、24 時間以内に無料で積算します。">
   <meta name="keywords" content="SetTime, SetTime 鋼筋, SetTime 鋼筋算量, Kairos.ai, 鋼筋估算軟體, 鋼筋計料, 鋼筋加工圖, 鋼筋計料表, AI 鋼筋估算, 外包算量, 鋼筋料單, 施工圖自動解析, 3D 模型檢查, 稽核鏈, SetTime rebar takeoff software, rebar takeoff automation, outsourced rebar takeoff, rebar shop drawings, bar bending schedule, BBS, AutoCAD rebar plugin, 3D rebar check, audit trail">
   <meta name="author" content="Kairos.ai">
   <meta name="application-name" content="SetTime">
@@ -20,8 +20,8 @@
     })();
   </script>
   <meta property="og:site_name" content="SetTime by Kairos.ai">
-  <meta property="og:title" content="SetTime | AI 鉄筋積算">
-  <meta property="og:description" content="SetTime は外注の鉄筋積算を置き換えます：構造施工図から、梁・柱・スラブ・壁の加工表（.xlsm）と加工図（.dwg/DXF）を作成。AutoCAD 2021 プラグインとデスクトップ版に対応。図面整理、基礎、3D チェックは開発中。Kairos.ai 開発。図面を 1 枚送るだけで、24 時間以内に無料で積算します。">
+  <meta property="og:title" content="SetTime | AI 鉄筋・コンクリート・型枠積算">
+  <meta property="og:description" content="SetTime は外注の積算を置き換えます：構造施工図から、梁・柱・スラブ・壁の鉄筋加工表（.xlsm）と加工図（.dwg/DXF）を作成。AutoCAD 2021 プラグインとデスクトップ版に対応。コンクリート・型枠の数量、図面整理、基礎、3D チェックは開発中、設備（MEP）と空調（HVAC）は計画中。Kairos.ai 開発。図面を 1 枚送るだけで、24 時間以内に無料で積算します。">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://settime.kairosaitech.com/ja/">
   <meta property="og:locale" content="ja_JP">
@@ -30,8 +30,8 @@
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="SetTime: structural drawings to rebar material lists, shown with a sample material list table">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="SetTime | AI 鉄筋積算">
-  <meta name="twitter:description" content="SetTime は外注の鉄筋積算を置き換えます：構造施工図から、梁・柱・スラブ・壁の加工表（.xlsm）と加工図（.dwg/DXF）を作成。AutoCAD 2021 プラグインとデスクトップ版に対応。図面整理、基礎、3D チェックは開発中。Kairos.ai 開発。図面を 1 枚送るだけで、24 時間以内に無料で積算します。">
+  <meta name="twitter:title" content="SetTime | AI 鉄筋・コンクリート・型枠積算">
+  <meta name="twitter:description" content="SetTime は外注の積算を置き換えます：構造施工図から、梁・柱・スラブ・壁の鉄筋加工表（.xlsm）と加工図（.dwg/DXF）を作成。AutoCAD 2021 プラグインとデスクトップ版に対応。コンクリート・型枠の数量、図面整理、基礎、3D チェックは開発中、設備（MEP）と空調（HVAC）は計画中。Kairos.ai 開発。図面を 1 枚送るだけで、24 時間以内に無料で積算します。">
   <meta name="twitter:image" content="https://settime.kairosaitech.com/assets/settime-og-card.jpg">
   <meta name="twitter:image:alt" content="SetTime: structural drawings to rebar material lists, shown with a sample material list table">
   <link rel="canonical" href="https://settime.kairosaitech.com/ja/">
@@ -48,7 +48,7 @@
   <link rel="alternate" type="text/plain" href="https://settime.kairosaitech.com/llms.txt" title="SetTime llms.txt">
   <link rel="icon" type="image/png" href="/assets/settime-favicon.png">
   <link rel="apple-touch-icon" href="/assets/settime-favicon.png">
-  <title>SetTime | AI 鉄筋積算</title>
+  <title>SetTime | AI 鉄筋・コンクリート・型枠積算</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;700&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+TC:wght@700&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
@@ -126,8 +126,8 @@
         "@type": "WebPage",
         "@id": "https://settime.kairosaitech.com/ja/#webpage",
         "url": "https://settime.kairosaitech.com/ja/",
-        "name": "SetTime | AI Rebar Takeoff Software — Structural Drawings to Shop Drawings & Bar Schedules",
-        "description": "SetTime は外注の鉄筋積算を置き換えます：構造施工図から、梁・柱・スラブ・壁の加工表（.xlsm）と加工図（.dwg/DXF）を作成。AutoCAD 2021 プラグインとデスクトップ版に対応。図面整理、基礎、3D チェックは開発中。Kairos.ai 開発。図面を 1 枚送るだけで、24 時間以内に無料で積算します。",
+        "name": "SetTime | AI Rebar, Concrete & Formwork Takeoff Software — Structural Drawings to Shop Drawings & Bar Schedules",
+        "description": "SetTime は外注の積算を置き換えます：構造施工図から、梁・柱・スラブ・壁の鉄筋加工表（.xlsm）と加工図（.dwg/DXF）を作成。AutoCAD 2021 プラグインとデスクトップ版に対応。コンクリート・型枠の数量、図面整理、基礎、3D チェックは開発中、設備（MEP）と空調（HVAC）は計画中。Kairos.ai 開発。図面を 1 枚送るだけで、24 時間以内に無料で積算します。",
         "inLanguage": "ja",
         "dateModified": "2026-10-30",
         "isPartOf": {
@@ -240,7 +240,9 @@
           "In development: bend angles and hook types",
           "In development: 3D model check (cover, lap, anchorage, clashes)",
           "Planned: BVBS machine output",
-          "Planned: concrete, formwork and MEP takeoff",
+          "In development: concrete quantities",
+          "In development: formwork area",
+          "Planned: MEP and HVAC takeoff",
           "In development: SHA-256 hash-chained audit trail"
         ],
         "audience": {
@@ -317,7 +319,7 @@
             "name": "SetTimeはどこが開発していますか？",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "SetTime は Kairos.ai が開発しています。まず台湾の図面でエンジンを検証し、米国・欧州の加工会社や作図者と対話を進めています。将来はコンクリート、型枠、設備（MEP）の積算にも広げる予定です。"
+              "text": "SetTime は Kairos.ai が開発しています。まず台湾の図面でエンジンを検証し、米国・欧州の加工会社や作図者と対話を進めています。コンクリートと型枠の数量は開発中で、設備（MEP）と空調（HVAC）の積算も計画しています。"
             }
           },
           {
@@ -391,11 +393,11 @@
       <div class="hero-overlay"></div>
     </div>
     <div class="hero-content">
-      <div class="hero-badge fade-in" data-i18n="hero.badge">外注の積算チームに代わる鉄筋積算</div>
+      <div class="hero-badge fade-in" data-i18n="hero.badge">鉄筋は提供中、コンクリート・型枠は開発中</div>
       <p class="hero-slogan fade-in" data-delay="1" data-i18n="product.tagline">SetTime — 固まる前に、一発で決める</p>
-      <h1 class="hero-title fade-in" data-delay="1" data-i18n="hero.title">構造施工図を入れると、<br>計量表と加工図が出てくる</h1>
-      <p class="hero-subtitle fade-in" data-delay="2" data-i18n="hero.subtitle">外注の積算を置き換えます：構造図をアップロードすると、梁・柱・スラブ・壁の加工表と注記付き加工図を取得。鉄筋加工会社と積算・施工図チーム向け。</p>
-      <p class="hero-subtitle-en fade-in" data-delay="2" data-i18n="hero.subtitle-en">From structural drawing to shop-ready rebar.</p>
+      <h1 class="hero-title fade-in" data-delay="1" data-i18n="hero.title">数か月から数分へ：<br>鉄筋・コンクリート・型枠の積算</h1>
+      <p class="hero-subtitle fade-in" data-delay="2" data-i18n="hero.subtitle">外注の積算を置き換えます：構造図をアップロードすると、梁・柱・スラブ・壁の鉄筋加工表と注記付き加工図を取得。コンクリートと型枠の数量は開発中。加工会社と積算・施工図チーム向け。</p>
+      <p class="hero-subtitle-en fade-in" data-delay="2" data-i18n="hero.subtitle-en">From structural drawing to fabricator-ready quantities.</p>
       <div class="hero-actions fade-in" data-delay="3">
         <a href="#pilot" class="hero-cta">
           <span data-i18n="cta.pilot">24時間以内に無料で計量表を受け取る</span>
@@ -577,15 +579,16 @@
             <li data-i18n="status.dev.i3">フック角度と曲げ形状</li>
             <li data-i18n="status.dev.i4">3D モデルチェック</li>
             <li data-i18n="status.dev.i5">改ざん検知可能な監査証跡</li>
+            <li data-i18n="status.dev.i6">コンクリート数量</li>
+            <li data-i18n="status.dev.i7">型枠面積</li>
           </ul>
         </div>
         <div class="status-col">
           <span class="panel-status plan" data-i18n="status.planned">計画中</span>
           <ul>
             <li data-i18n="status.planned.i1">BVBS 加工機データ</li>
-            <li data-i18n="status.planned.i2">コンクリート数量</li>
-            <li data-i18n="status.planned.i3">型枠面積</li>
-            <li data-i18n="status.planned.i4">設備（MEP）積算</li>
+            <li data-i18n="status.planned.i2">設備（MEP）積算</li>
+            <li data-i18n="status.planned.i3">空調（HVAC）積算</li>
           </ul>
         </div>
       </div>
@@ -1194,7 +1197,7 @@
         </details>
         <details class="faq-item fade-in" data-delay="6">
           <summary data-i18n="faq.q5.q">SetTimeはどこが開発していますか？</summary>
-          <p data-i18n="faq.q5.a">SetTime は Kairos.ai が開発しています。まず台湾の図面でエンジンを検証し、米国・欧州の加工会社や作図者と対話を進めています。将来はコンクリート、型枠、設備（MEP）の積算にも広げる予定です。</p>
+          <p data-i18n="faq.q5.a">SetTime は Kairos.ai が開発しています。まず台湾の図面でエンジンを検証し、米国・欧州の加工会社や作図者と対話を進めています。コンクリートと型枠の数量は開発中で、設備（MEP）と空調（HVAC）の積算も計画しています。</p>
         </details>
         <details class="faq-item fade-in" data-delay="7">
           <summary data-i18n="faq.q6.q">監査チェーンは法令遵守を保証しますか？</summary>

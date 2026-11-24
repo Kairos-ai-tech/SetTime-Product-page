@@ -30,31 +30,31 @@ const OG_LOCALE = { en: "en_US", ja: "ja_JP", es: "es_ES", fr: "fr_FR", de: "de_
 
 const META = {
   en: {
-    title: "SetTime | AI Rebar, Concrete & Formwork Takeoff",
+    title: "SetTime | AI Preconstruction: Rebar, Concrete & Formwork",
     description: "SetTime replaces the outsourced takeoff for fabricators: structural drawings in, rebar bar schedule (.xlsm) and shop drawings (.dwg/DXF) out for beams, columns, slabs and walls, via an AutoCAD 2021 plugin and desktop app. Concrete and formwork quantities, drawing prep, foundations and a 3D check are in development; MEP and HVAC takeoff are planned. Built by Kairos.ai. Send one drawing for a free takeoff within 24 hours.",
   },
   ja: {
-    title: "SetTime | AI 鉄筋・コンクリート・型枠積算",
+    title: "SetTime | AI プレコンストラクション：鉄筋・コンクリート・型枠",
     description: "SetTime は外注の積算を置き換えます：構造施工図から、梁・柱・スラブ・壁の鉄筋加工表（.xlsm）と加工図（.dwg/DXF）を作成。AutoCAD 2021 プラグインとデスクトップ版に対応。コンクリート・型枠の数量、図面整理、基礎、3D チェックは開発中、設備（MEP）と空調（HVAC）は計画中。Kairos.ai 開発。図面を 1 枚送るだけで、24 時間以内に無料で積算します。",
   },
   es: {
-    title: "SetTime | Cómputo de armaduras, hormigón y encofrado con IA",
+    title: "SetTime | Preconstrucción con IA: armaduras, hormigón y encofrado",
     description: "SetTime sustituye el cómputo subcontratado: del plano estructural salen la lista de armadura (.xlsm) y los planos de taller (.dwg/DXF) de vigas, columnas, losas y muros, con plugin de AutoCAD 2021 y app de escritorio. Hormigón, encofrado, preparación de planos, cimentaciones y control 3D están en desarrollo; instalaciones (MEP) y climatización (HVAC) están planificadas. Desarrollado por Kairos.ai. Envíe un plano y reciba el cómputo gratis en 24 horas.",
   },
   fr: {
-    title: "SetTime | Métré d'armatures, béton et coffrage par IA",
+    title: "SetTime | Préconstruction par IA : armatures, béton et coffrage",
     description: "SetTime remplace le métré externalisé : du plan structurel, il tire la nomenclature d'armatures (.xlsm) et les plans d'atelier (.dwg/DXF) des poutres, poteaux, dalles et voiles, via un plugin AutoCAD 2021 et une application de bureau. Béton, coffrage, préparation des plans, fondations et contrôle 3D sont en développement ; lots techniques (MEP) et CVC (HVAC) sont prévus. Développé par Kairos.ai. Envoyez un plan, métré gratuit sous 24 heures.",
   },
   de: {
-    title: "SetTime | KI-Ermittlung für Bewehrung, Beton und Schalung",
+    title: "SetTime | KI-Bauvorbereitung: Bewehrung, Beton und Schalung",
     description: "SetTime ersetzt die ausgelagerte Ermittlung: Aus dem Konstruktionsplan entstehen Bewehrungsliste (.xlsm) und Werkstattzeichnungen (.dwg/DXF) für Balken, Stützen, Decken und Wände, per AutoCAD-2021-Plugin und Desktop-App. Beton, Schalung, Planaufbereitung, Fundamente und 3D-Prüfung sind in Entwicklung; MEP und HVAC sind geplant. Entwickelt von Kairos.ai. Einen Plan senden, kostenlose Ermittlung binnen 24 Stunden.",
   },
   it: {
-    title: "SetTime | Computo armature, calcestruzzo e casseratura con IA",
+    title: "SetTime | Precostruzione con IA: armature, calcestruzzo e casseratura",
     description: "SetTime sostituisce il computo esternalizzato: dal disegno strutturale ricava distinta armature (.xlsm) e disegni di officina (.dwg/DXF) di travi, pilastri, solai e pareti, con plugin AutoCAD 2021 e app desktop. Calcestruzzo, casseratura, preparazione dei disegni, fondazioni e controllo 3D sono in sviluppo; impianti (MEP) e climatizzazione (HVAC) sono pianificati. Sviluppato da Kairos.ai. Invii un disegno, computo gratuito entro 24 ore.",
   },
   pt: {
-    title: "SetTime | Levantamento de armaduras, concreto e fôrmas com IA",
+    title: "SetTime | Pré-construção com IA: armaduras, concreto e fôrmas",
     description: "O SetTime substitui o levantamento terceirizado: do projeto estrutural saem a lista de armação (.xlsm) e os desenhos de oficina (.dwg/DXF) de vigas, pilares, lajes e paredes, com plugin AutoCAD 2021 e app desktop. Concreto, fôrmas, preparação de desenhos, fundações e verificação 3D estão em desenvolvimento; instalações (MEP) e climatização (HVAC) estão planejadas. Desenvolvido pela Kairos.ai. Envie um desenho e receba o levantamento grátis em 24 horas.",
   },
 };

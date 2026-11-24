@@ -1,5 +1,5 @@
 // Page-wide 3D backdrop: fixed behind every section. The camera flies toward
-// a rebar cage while the user scrolls through the hero, then holds and keeps
+// a building frame while the user scrolls through the hero, then holds and keeps
 // idling for the rest of the page. Progressive enhancement only — falls back
 // to the static blueprint-grid background (.hero-static, hero section only)
 // when WebGL or `three` is unavailable.
@@ -89,40 +89,45 @@ async function init() {
   grid.material.opacity = 0.32;
   scene.add(grid);
 
-  // ===== Rebar cage: vertical bars + stirrup rings =====
-  const cage = new THREE.Group();
-  const barCount = 12;
-  const radius = 1.5;
-  const barHeight = 7;
-  const barGeo = new THREE.CylinderGeometry(0.045, 0.045, barHeight, 8);
-  const barMat = new THREE.MeshBasicMaterial({ color: 0xf2c066 });
+  // ===== Building frame: floor slabs, beams, columns =====
+  const building = new THREE.Group();
+  const half = 4;
+  const levels = [-3, -0.5, 2, 4.5];
+  const gridPts = [-half, 0, half];
+  const seg = [];
+  const line = (x1, y1, z1, x2, y2, z2) => seg.push(x1, y1, z1, x2, y2, z2);
+  levels.forEach((y, li) => {
+    gridPts.forEach((g) => {
+      line(-half, y, g, half, y, g);
+      line(g, y, -half, g, y, half);
+    });
+    if (li > 0) {
+      gridPts.forEach((gx) => gridPts.forEach((gz) => line(gx, levels[li - 1], gz, gx, y, gz)));
+    }
+  });
+  const frameGeo = new THREE.BufferGeometry();
+  frameGeo.setAttribute('position', new THREE.Float32BufferAttribute(seg, 3));
+  building.add(new THREE.LineSegments(frameGeo, new THREE.LineBasicMaterial({ color: 0xf2c066, transparent: true, opacity: 1, fog: false })));
 
-  for (let i = 0; i < barCount; i++) {
-    const angle = (i / barCount) * Math.PI * 2;
-    const bar = new THREE.Mesh(barGeo, barMat);
-    bar.position.set(Math.cos(angle) * radius, 0, Math.sin(angle) * radius);
-    cage.add(bar);
-  }
+  const slabGeo = new THREE.PlaneGeometry(half * 2, half * 2);
+  const slabMat = new THREE.MeshBasicMaterial({ color: 0xdd8e1f, transparent: true, opacity: 0.07, side: THREE.DoubleSide, depthWrite: false });
+  levels.forEach((y) => {
+    const slab = new THREE.Mesh(slabGeo, slabMat);
+    slab.rotation.x = Math.PI / 2;
+    slab.position.y = y;
+    building.add(slab);
+  });
 
-  const ringGeo = new THREE.TorusGeometry(radius, 0.025, 8, 32);
-  const ringMat = new THREE.MeshBasicMaterial({ color: 0xdd8e1f, transparent: true, opacity: 0.85 });
-  const ringCount = 6;
-  for (let i = 0; i < ringCount; i++) {
-    const ring = new THREE.Mesh(ringGeo, ringMat);
-    ring.rotation.x = Math.PI / 2;
-    ring.position.y = -barHeight / 2 + (i / (ringCount - 1)) * barHeight;
-    cage.add(ring);
-  }
+  building.position.set(0, 0, -9);
+  scene.add(building);
 
-  cage.position.set(0, 0.5, -9);
-  scene.add(cage);
-
-  // ===== AI verification scan plane — sweeps the cage =====
-  const scanGeo = new THREE.PlaneGeometry(radius * 2.6, 0.02);
-  const scanMat = new THREE.MeshBasicMaterial({ color: 0xf2c066, transparent: true, opacity: 0.9, side: THREE.DoubleSide });
-  const scanLine = new THREE.Mesh(scanGeo, scanMat);
-  scanLine.rotation.x = Math.PI / 2;
-  cage.add(scanLine);
+  const bottom = levels[0];
+  const span = levels[levels.length - 1] - bottom;
+  const scanGeo = new THREE.PlaneGeometry(half * 2.4, half * 2.4);
+  const scanMat = new THREE.MeshBasicMaterial({ color: 0xf2c066, transparent: true, opacity: 0.12, side: THREE.DoubleSide, depthWrite: false });
+  const scanPlane = new THREE.Mesh(scanGeo, scanMat);
+  scanPlane.rotation.x = Math.PI / 2;
+  building.add(scanPlane);
 
   // ===== Ambient particles =====
   const particleCount = isNarrow ? 90 : 220;
@@ -137,9 +142,9 @@ async function init() {
   const particleMat = new THREE.PointsMaterial({ color: 0xdd8e1f, size: 0.05, transparent: true, opacity: 0.5 });
   scene.add(new THREE.Points(particleGeo, particleMat));
 
-  // ===== Camera path: pulled-back/high -> inside the cage =====
+  // ===== Camera path: pulled-back/high -> inside the frame =====
   const camStart = new THREE.Vector3(2.2, 3.2, 15);
-  const camEnd = new THREE.Vector3(0.4, 0.8, -3.5);
+  const camEnd = new THREE.Vector3(0.6, 0.6, -6.2);
   const lookStart = new THREE.Vector3(0, 1, -9);
   const lookEnd = new THREE.Vector3(0, 0.6, -14);
   const camPos = new THREE.Vector3();
@@ -201,8 +206,8 @@ async function init() {
     camera.position.copy(camPos);
     camera.lookAt(lookPos);
 
-    cage.rotation.y = t * 0.06;
-    scanLine.position.y = -barHeight / 2 + ((Math.sin(t * 0.6) + 1) / 2) * barHeight;
+    building.rotation.y = t * 0.06;
+    scanPlane.position.y = bottom + ((Math.sin(t * 0.6) + 1) / 2) * span;
 
     renderer.render(scene, camera);
 

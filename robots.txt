@@ -15,7 +15,7 @@ User-agent: DuckDuckBot
 User-agent: YandexBot
 User-agent: Baiduspider
 # AI assistants / answer engines — allowed so they can read and cite this
-# page when users ask about SetTime or rebar construction software.
+# page when users ask about SetTime or preconstruction (rebar, concrete, formwork) software.
 User-agent: GPTBot
 User-agent: ChatGPT-User
 User-agent: OAI-SearchBot

@@ -1,6 +1,6 @@
 # SetTime
 
-**Rebar takeoff that replaces the outsourced estimating team — structural drawing in, bar schedule and shop drawings out**
+**AI preconstruction for fabricators, from months to minutes — rebar takeoff shipping today, concrete and formwork in development, MEP and HVAC planned**
 
 SetTime reads the structural drawing and writes the bar schedule and
 annotated shop drawings that a fabricator needs, so a fabricator, detailer

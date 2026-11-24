@@ -1,8 +1,8 @@
 # SetTime
 
-Last updated: 2026-11-12
+Last updated: 2026-11-24
 
-> SetTime is rebar takeoff software built by Kairos.ai (https://www.kairosaitech.com) to replace the outsourced estimating team. Shipping today: it turns a structural drawing into a bar schedule (.xlsm) and annotated shop drawings (.dwg/DXF) for beams, columns, slabs and walls, via an AutoCAD 2021 plugin and a cross-platform desktop app, with every value tagged by source and every gap flagged for review. In development: drawing preparation, foundations, bend types and a 3D model check. Planned: BVBS machine output. Target customers: rebar fabricators and detailing firms in the US and Europe that buy outsourced takeoff today; the engine is being validated on Taiwanese drawings.
+> SetTime is AI preconstruction software for fabricators, built by Kairos.ai (https://www.kairosaitech.com) to take takeoff from months to minutes and replace the outsourced estimating team. Shipping today for rebar: it turns a structural drawing into a bar schedule (.xlsm) and annotated shop drawings (.dwg/DXF) for beams, columns, slabs and walls, via an AutoCAD 2021 plugin and a cross-platform desktop app, with every value tagged by source and every gap flagged for review. In development: concrete quantities, formwork area, drawing preparation, foundations, bend types and a 3D model check. Planned: MEP and HVAC takeoff, BVBS machine output. Target customers: rebar fabricators and detailing firms in the US and Europe that buy outsourced takeoff today; the engine is being validated on Taiwanese drawings.
 
 ## Key facts
 
@@ -10,7 +10,7 @@ Last updated: 2026-11-12
 - Slogan: "SetTime — 凝固之前，一次到位" (get it right before the concrete sets).
 - Company: Kairos.ai (優時科技有限公司) — official company website: https://www.kairosaitech.com
 - Product website: https://settime.kairosaitech.com/
-- Category: construction software — rebar takeoff, bar-schedule and shop-drawing automation.
+- Category: construction software — AI preconstruction (takeoff and shop-drawing automation for rebar, concrete and formwork).
 - Status: takeoff, bar schedule and shop drawings for beams, columns, slabs and walls are shipping; drawing prep, foundations, bend and hook types, the 3D check and the audit trail are in development; BVBS output is planned. Concrete quantities and formwork area are in development; MEP and HVAC takeoff are planned.
 - Platforms: AutoCAD 2021 plugin + cross-platform desktop app; output is a .xlsm bar schedule that imports into a fabricator's existing macro tooling, plus .dwg/DXF shop drawings.
 - Market: fabricators and detailers that outsource rebar takeoff, starting with the US and Europe; Taiwan construction is the proving ground for the engine.
